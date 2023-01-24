@@ -154,6 +154,13 @@ header.section-title{
   h2{
     margin-bottom: 0;
   }
+  &.category-heading{
+    p{
+      font-family: $font-secondary;
+      font-weight: 300;
+      margin-bottom: 0;
+    }
+  }
 }
 
 .entry-content{

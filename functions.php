@@ -200,3 +200,8 @@ if ( ! function_exists( 'wp_custom_posts_ajax_pagination' ) ) {
   add_action('wp_ajax_nopriv_load_more_pagination', 'wp_custom_posts_ajax_pagination');
   add_action('wp_ajax_load_more_pagination', 'wp_custom_posts_ajax_pagination');
 }
+
+/**
+ * Remove "Category" from get_the_archive_title()
+ */
+add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );

@@ -1,10 +1,30 @@
 <?php
 // Register the columns.
-add_filter( "manage_post_posts_columns", function ( $defaults ) {
+add_filter( "manage_post_posts_columns", function ( $columns ) {
 	
-	$defaults['post-layout'] = 'Layout';
+	unset($columns['title']);
+	unset($columns['author']);
+	unset($columns['categories']);
+	unset($columns['comments']);
+	unset($columns['date']);
+	unset($columns['tags']);
 	
-	return $defaults;
+	
+	return array_merge ( $columns, array (
+		'title'       => __ ('Title'),
+		'author'      => __ ('Author'),
+		'post-layout' => __ ('Layout'),
+		'categories'  => __ ('Categories'),
+		'date'        => __('Date')
+//		'designation' => __ ( 'Designation' ),
+//		'image'       => __ ( 'Image' ),
+	) );
+	
+	
+	
+	//$columns['post-layout'] = 'Layout';
+	
+	return $columns;
 } );
 
 // Handle the value for each of the new columns.

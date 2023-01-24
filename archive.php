@@ -8,6 +8,6 @@
 
 get_header();
 
-get_template_part('template-parts/blog/markup');
+get_template_part('template-parts/archive/markup');
 
 get_footer();

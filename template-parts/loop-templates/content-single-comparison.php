@@ -48,9 +48,11 @@ get_template_part('template-parts/single-article/author-block'); ?>
 							<div class="top-picks-heading font-secondary">
 								<?= $top_picks['heading']['subtitle'] ? '<p class="subtitle mb-0 font-secondary fs-6 fw-bolder text-gray text-uppercase">'.$top_picks['heading']['subtitle'].'</p>' 	: null; ?>
 								<?= $top_picks['heading']['title'] 		? '<p class="title fs-4 fw-bold">'.$top_picks['heading']['title'].'</p>' 	: null; ?>
-								<a class="more" href="<?php the_permalink(); ?>#pick-<?= strtolower( preg_replace('/(\W)+/', '-', $top_picks['heading']['title']) ); ?>">
-									<i><?= $down_icon; ?></i><?php _e('Jump to Review', 'wp-theme'); ?>
-								</a>
+								<?php if ( $top_picks['heading']['title'] ) : ?>
+									<a class="more" href="<?php the_permalink(); ?>#pick-<?= strtolower( preg_replace('/(\W)+/', '-', $top_picks['heading']['title']) ); ?>">
+										<i><?= $down_icon; ?></i><?php _e('Jump to Review', 'wp-theme'); ?>
+									</a>
+								<?php endif; ?>
 							</div>
 						<?php endif; ?>
 					</div>
