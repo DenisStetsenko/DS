@@ -1,0 +1,36 @@
+/* ------------------------------------
+    Base #1
+------------------------------------- */
+@import "base/variables";
+@import "base/fonts";
+
+
+/* ------------------------------------
+    Libraries
+------------------------------------- */
+@import "libraries/bootstrap/bootstrap";
+@import "libraries/slick/slick";
+@import "libraries/slick/slick-theme";
+
+/* ------------------------------------
+    Layout
+------------------------------------- */
+@import "base/general";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/comments";
+
+
+/* ------------------------------------
+    Pages
+------------------------------------- */
+@import "pages/home-page";
+@import "pages/blog";
+@import "pages/single-article";
+
+
+/* ------------------------------------
+    Sections
+------------------------------------- */
+
+

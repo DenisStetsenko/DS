@@ -1,0 +1,422 @@
+// Fonts
+$font-primary           : 'Lora', serif;
+$font-secondary         : 'Inter', sans-serif;
+$custom-letter-spacing  : 0.03rem;
+
+// Colors
+$color-white      : #FFFFFF;  $white      : $color-white;
+//$color-black      : #1d1d1d;  $black      : $color-black;
+$color-black      : #252525;  $black      : $color-black;
+
+//$color-primary       : #008549;  $primary    : $color-primary;
+//$color-primary       : #18865F;  $primary    : $color-primary;
+$color-primary       : #0073DF;  $primary    : $color-primary;
+$color-primary-dark  : darken($color-primary, 20%);
+$color-primary-light : lighten($color-primary, 20%);
+
+$color-secondary  : #18865F;  $secondary  : $color-secondary;
+
+$color-accent        : #ffcb00;
+
+$color-gray          : #595959;
+$color-light-gray    : #f7f7f7;
+$color-border-gray   : #e5e5e5;
+
+$color-danger        : #EB5757;
+$color-success       : #36c384;
+
+
+$theme-colors: (
+        "primary"     : $color-primary,
+        "secondary"   : $color-secondary,
+        "danger"      : $color-danger,
+        "success"     : $color-success,
+);
+
+$custom-colors: (
+        "accent"        : $color-accent,
+        "gray"          : $color-gray,
+        "light-gray"    : $color-light-gray,
+        "primary-dark"  : $color-primary-dark,
+        "primary-light" : $color-primary-light,
+);
+
+// Merge 'Custom Colors' into 'Theme Colors' maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+$min-contrast-ratio : 1; // make sure to use white text on button OR use [$black : unset;]
+
+/**
+ * Custom Spacer
+ * https://getbootstrap.com/docs/5.1/utilities/spacing/#maps
+ */
+$spacer: 1rem;
+$spacers: (
+        0: 0,
+        1: $spacer * .25,
+        2: $spacer * .5,
+        3: $spacer,
+        4: $spacer * 1.5,
+        5: $spacer * 2.0,
+        6: $spacer * 2.5,
+        7: $spacer * 3.0,
+        8: $spacer * 3.5,
+        9: $spacer * 4.0,
+        10: $spacer * 5.5
+);
+
+/*
+ * Global Bootstrap Overrides
+ ***********************************************************************************************************************/
+$body-bg                  : $color-white;
+$body-color               : $color-black;
+
+$font-family-base         : $font-primary;
+$font-size-base           : 1.125rem; // body base font size 18px
+$brand-primary            : $color-primary;
+$line-height-base         : 1.70;
+
+$font-weight-lighter      : 300;
+$font-weight-base         : 400;
+$font-weight-bolder       : 600;
+$font-weight-bold         : 700;
+
+$paragraph-margin-bottom  : 20px;
+$enable-smooth-scroll     : false;
+$breadcrumb-active-color  : $color-gray;
+
+/* SVG Icons */
+$breadcrumb-divider-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#{$color-gray}' class='bi bi-chevron-right' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>");
+$bs-close-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#{$color-success}' class='bi bi-x' viewBox='0 0 16 16'><path d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z'/></svg>");
+$bs-check-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#{$color-danger}' class='bi bi-check' viewBox='0 0 16 16'><path d='M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z'/></svg>");
+
+$blockquote-font-size     : $font-size-base;
+$blockquote-footer-color  : $color-primary;
+$hr-margin-y              : 50px;
+$hr-border-color          : rgba(0, 0, 0, 0.5);
+
+$box-shadow               : 2px 3px 16px rgba(0, 0, 0, 0.1);
+$box-shadow-sm            : 0px 0px 15px rgba(0, 0, 0, 0.15);
+$box-shadow-lg            : 0px 0px 50px rgba(0, 0, 0, 0.08);
+
+/* Border Color */
+$border-color             : $color-border-gray;
+
+/* Border Radius */
+$border-radius-sm         : 5px; // rounded-1
+$border-radius            : 15px; // rounded-2
+$border-radius-lg         : 20px; // rounded-3
+$border-radius-xl         : 25px; // rounded-4
+
+/* Forms */
+$input-box-shadow       : none;
+$input-focus-box-shadow : none;
+$input-border-width     : 1px;
+$input-border-color     : $color-secondary;
+$input-border-radius    : 4px;
+
+/* Buttons */
+$btn-font-family    : $font-secondary;
+$btn-font-size      : 1rem;
+$btn-font-weight    : 500;
+$btn-line-height    : 1.1;
+$btn-white-space    : 'nowrap';
+$btn-padding-y      : 16px;
+$btn-padding-x      : 40px;
+$btn-border-width   : 2px;
+$btn-border-radius  : $border-radius-xl;
+
+// btn small
+$btn-font-size-sm     : 0.8rem;
+$btn-padding-y-sm     : 14px;
+$btn-padding-x-sm     : 30px;
+$btn-border-radius-sm : $border-radius-xl;
+
+$btn-box-shadow         : $box-shadow-sm;
+$btn-focus-width        : 0;
+$btn-disabled-opacity   : .65;
+$btn-active-box-shadow  : none;
+$btn-active-shadow      : none;
+$btn-focus-box-shadow   : none;
+
+$btn-link-color          : $color-black;
+$btn-link-hover-color    : $color-secondary;
+$btn-link-disabled-color : lighten($color-black, 65%);
+
+/* List */
+$list-group-bg    : transparent;
+$list-group-color : inherit;
+$list-group-item-padding-x : 0;
+$list-group-item-padding-y : 7px;
+$list-group-border-width   : 0;
+
+/* Links */
+$link-color             : $color-primary;
+$link-hover-color       : $color-accent;
+$link-decoration        : none;
+$link-hover-decoration  : none;
+
+/* H1-H6 */
+$headings-color         : $color-black;
+$headings-font-family   : $font-secondary;
+$headings-font-weight   : 700;
+$headings-line-height   : 1.25;
+$headings-margin-bottom : 20px;
+
+/* H1-H6 Responsive */
+$h1-font-size : 44px;
+$h2-font-size : 38px;
+$h3-font-size : 32px;
+
+$h4-font-size : 18px;
+$h5-font-size : 14px;
+$h6-font-size : 12px;
+
+/* Navbar */
+$navbar-padding-x                   : 0;
+$navbar-padding-y                   : 10px;
+$navbar-light-color                 : $color-white;
+$navbar-light-active-color          : $color-white;
+$navbar-light-hover-color           : $color-white;
+$navbar-light-toggler-border-color  : $color-white;
+
+/* Accordion */
+//$accordion-button-padding-y : 20px;
+//$accordion-button-padding-x : 27px;
+$accordion-bg             : white;
+$accordion-border-width   : 0;
+$accordion-border-radius  : $border-radius;
+//$accordion-body-padding-y : 15px;
+//$accordion-body-padding-x : 27px;
+
+// Normal
+$accordion-button-color : $color-gray;
+$accordion-button-bg    : $color-light-gray;
+
+// Active
+$accordion-button-active-color        : $color-black;
+$accordion-button-active-bg           : $color-white;
+$accordion-button-focus-border-color  : transparent;
+//$accordion-button-focus-box-shadow    : none;
+
+//
+//$accordion-icon-color           : $color-primary;
+//$accordion-color                : $color-primary;
+//$accordion-button-color         : $color-primary;
+//$accordion-icon-width           : 12px;
+$accordion-button-icon          : url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$color-gray}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+$accordion-button-active-icon   : url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$color-black}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+
+/* Card */
+$card-title-spacer-y: 10px;
+$card-border-radius : $border-radius;
+$card-border-width  : 0;
+
+$card-inner-border-radius : $border-radius;
+$card-spacer-y      : 30px;
+$card-spacer-x      : 30px;
+
+$card-cap-color     : $color-black;
+$card-cap-bg        : $color-white;
+$card-bg            : $color-white;
+$card-cap-padding-y : 20px;
+$card-cap-padding-x : 20px;
+
+/* OFF-Canvas */
+$offcanvas-bg-color: white;
+
+/* Modal */
+$close-color                  : white;
+$close-text-shadow            : none;
+$close-font-size              : 35px;
+$modal-header-border-color    : transparent;
+$modal-backdrop-opacity       : 0.8;
+$modal-content-bg             : transparent;
+$modal-content-border-width   : 0;
+$modal-content-border-color   : transparent;
+$modal-content-border-radius  : 0;
+$modal-content-box-shadow-xs  : none;
+$modal-lg                     : 800px;
+
+
+/* Container */
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px,
+        xxl: 1320px
+);
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px
+);
+
+
+/*
+ * Global Slick Overrides
+ ***********************************************************************************************************************/
+$slick-font-path          : "../../fonts/";
+$slick-loader-path        : "../../images/";
+$slick-opacity-default    : 1;
+$slick-opacity-not-active : 1;
+$slick-dot-size           : 1rem;
+$slick-dot-color          : $color-white;
+$slick-dot-color-active   : $color-white;
+
+
+/*
+ * Mixins
+ ***********************************************************************************************************************/
+@mixin custom-placeholder{
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}
+
+@mixin font-variant($ff: $font-family-base, $fw: $font-weight-base, $lh: $line-height-base){
+  font-family: $ff;
+  font-weight: $fw;
+  line-height: $lh;
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+@mixin responsive-ratio-background($x,$y, $pseudo: false) {
+  $padding: unquote(( $y / $x ) * 100 + '%');
+  @if $pseudo {
+    &:before {
+      @include pseudo($pos: relative);
+      width: 100%;
+      padding-top: $padding;
+    }
+  } @else {
+    padding-top: $padding;
+  }
+}
+
+@mixin full-cover(){
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
+
+@mixin custom-responsive-font-size($fs-map, $fs-breakpoints: $grid-breakpoints) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      font-size: $fs-font-size;
+    }
+    @else {
+      // If $fs-font-size is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media (min-width: $fs-breakpoint) {
+        font-size: $fs-font-size;
+      }
+    }
+  }
+}
+
+@mixin custom-letter-spacing($custom-letter-spacing : 0.03rem){
+  letter-spacing: $custom-letter-spacing / 2;
+  @include media-breakpoint-up(lg){
+    letter-spacing: $custom-letter-spacing;
+  }
+}
+
+@mixin custom-list-styling($color: $color-secondary){
+  list-style: none;
+  padding: 0;
+  margin: 0 0 $paragraph-margin-bottom 0;
+  overflow: hidden;
+  li{
+    list-style: none;
+    padding: 0 0 10px 18px;
+    margin: 0;
+    position: relative;
+    &:last-child{
+      padding-bottom: 0;
+    }
+    &:before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 100%;
+      position: absolute;
+      left: 0;
+      top: 6px;
+      background: $color;
+    }
+    ul{
+      li{
+        &:before {
+          border: 1px solid $color-primary;
+          background: transparent;
+        }
+        ul{
+          li{
+            &:before {
+              border: 1px solid $color-primary;
+              background: $color-primary;
+              border-radius: 0;
+            }
+            a{
+              color: $color-primary;
+              &:hover{
+                color: $color-accent;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@mixin hover-underline($color: $color-secondary, $line : $color-secondary, $position : 'after'){
+  display: inline-block;
+  position: relative;
+  padding-bottom: 2px;
+  &:hover{
+    color: $color;
+    &:before{ width: 100%; }
+  }
+  &:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+    width: 0;
+    height: 1px;
+    background: $line;
+    -moz-transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+    border-radius: 0;
+
+    @if $position == 'before' {
+      top: 0;
+    } @else {
+      bottom: 0;
+    }
+
+  }
+}

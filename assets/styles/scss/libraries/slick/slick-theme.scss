@@ -1,0 +1,186 @@
+@charset "UTF-8";
+
+// Default Variables
+
+// Slick icon entity codes outputs the following
+// "\2190" outputs ascii character "←"
+// "\2192" outputs ascii character "→"
+// "\2022" outputs ascii character "•"
+
+$slick-font-path: "./fonts/" !default;
+$slick-font-family: "slick" !default;
+$slick-loader-path: "./" !default;
+$slick-arrow-color: white !default;
+$slick-dot-color: black !default;
+$slick-dot-color-active: $slick-dot-color !default;
+$slick-prev-character: "\2190" !default;
+$slick-next-character: "\2192" !default;
+$slick-dot-character: "\2022" !default;
+$slick-dot-size: 6px !default;
+$slick-opacity-default: 0.75 !default;
+$slick-opacity-on-hover: 1 !default;
+$slick-opacity-not-active: 0.25 !default;
+
+@function slick-image-url($url) {
+    @if function-exists(image-url) {
+        @return image-url($url);
+    } @else {
+        @return url($slick-loader-path + $url);
+    }
+}
+
+@function slick-font-url($url) {
+    @if function-exists(font-url) {
+        @return font-url($url);
+    } @else {
+        @return url($slick-font-path + $url);
+    }
+}
+
+/* Slider */
+
+.slick-list {
+    &:before {
+        content: "";
+        background-image: url('../../images/arrow-left-white.svg');
+        visibility: hidden;
+        width: 0;
+        height: 0;
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    .slick-loading & {
+        background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
+    }
+}
+
+/* Icons */
+@if $slick-font-family == "slick" {
+    @font-face {
+        font-family: "slick";
+        src: slick-font-url("slick.eot");
+        src: slick-font-url("slick.eot?#iefix") format("embedded-opentype"), slick-font-url("slick.woff") format("woff"), slick-font-url("slick.ttf") format("truetype"), slick-font-url("slick.svg#slick") format("svg");
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+/* Arrows */
+
+.slick-prev,
+.slick-next {
+    position: absolute;
+    display: block;
+    cursor: pointer;
+    background-image: url('../../images/arrow-left.svg');
+    background-color: $color-primary;
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: 9px center;
+    width: 37px;
+    height: 62px;
+    color: transparent;
+    top: 50%;
+    border-radius: 18px;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    padding: 0;
+    border: none;
+    outline: none;
+    z-index: 100;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+
+    &:hover, &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        background-image: url('../../images/arrow-left-white.svg');
+        background-color: $color-primary;
+    }
+
+    &.slick-disabled:before {
+        opacity: $slick-opacity-not-active;
+    }
+}
+
+.slick-prev {
+    left: -5px;
+    @include media-breakpoint-up(md){
+        left: -50px;
+    }
+    [dir="rtl"] & {
+        left: auto;
+        right: 50px;
+    }
+}
+
+.slick-next {
+    transform: rotate(180deg);
+    transform-origin: 50% 25%;
+    right: -5px;
+    @include media-breakpoint-up(md){
+        right: -50px;
+    }
+
+    [dir="rtl"] & {
+        left: 50px;
+        right: auto;
+    }
+}
+
+/* Dots */
+
+.slick-dotted.slick-slider {
+    margin-bottom: 0;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: 40px;
+    list-style: none;
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    li {
+        position: relative;
+        display: inline-block;
+        height: 17px;
+        width: 17px;
+        margin: 0 7px;
+        padding: 0;
+        cursor: pointer;
+
+        button {
+            background: transparent;
+            display: block;
+            height: 17px;
+            width: 17px;
+            outline: none;
+            line-height: 0px;
+            font-size: 0px;
+            color: transparent;
+            padding: 5px;
+            cursor: pointer;
+            vertical-align: middle;
+            border-radius: 100%;
+            border: 2px solid $slick-dot-color;
+
+            &:hover, &:focus {
+                outline: none;
+            }
+        }
+
+        &.slick-active button {
+            opacity: $slick-opacity-default;
+            background-color: $slick-dot-color;
+        }
+    }
+}

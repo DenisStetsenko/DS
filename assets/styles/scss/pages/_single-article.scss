@@ -1,0 +1,194 @@
+#single-article-template {
+
+  /**
+   * Post Categories
+   */
+  .post-categories-nav {
+    @include font-size(11px);
+    @include custom-letter-spacing();
+
+    .nav-item {
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+
+      .nav-item-link {
+        color: $color-gray;
+        background-color: $color-light-gray;
+        border: 1px solid $color-border-gray;
+        padding: 7px 14px;
+        @include transition();
+
+        &:hover {
+          color: white;
+          background-color: $color-black;
+          border-color: $color-black;
+        }
+      }
+    }
+  }
+
+  /**
+   * Affiliate Disclosure
+   */
+  .affiliate-disclosure {
+    padding: rfs-value(12px 10px);
+    @include font-size(12px);
+
+    p:last-child {
+      margin: 0;
+    }
+  }
+
+  /**
+   * Product Summary
+   */
+  .product-summary-wrapper {
+    margin-top: rfs-value(30px);
+    margin-bottom: rfs-value(50px);
+
+    .top-picks {
+      &:not(:last-child) {
+        &:after {
+          content: '';
+          display: block;
+          width: 100%;
+          border-bottom: 1px solid $border-color;
+          margin-bottom: rfs-value(15px);
+          padding-bottom: rfs-value(15px);
+        }
+      }
+
+      .column-preview {
+        flex: 0 0 auto;
+        width: 125px;
+      }
+
+      .top-picks-heading {
+        .subtitle {
+          @include custom-letter-spacing();
+        }
+
+        .title {
+          line-height: 1.4;
+          margin-bottom: rfs-value(2px);
+        }
+
+        .more {
+          @include font-size(15px);
+
+          i {
+            margin-right: rfs-value(2px);
+          }
+        }
+      }
+    }
+
+  }
+
+  /**
+   * MAIN CONTENT AREA
+   */
+  .entry-content-main {
+
+    .product-heading {
+      .subtitle {
+        line-height: 1.2;
+        @include custom-letter-spacing();
+      }
+    }
+
+    .product-card {
+      &:not(:last-child) {
+        padding-bottom: rfs-value(50px);
+        margin-bottom: rfs-value(50px);
+        border-bottom: 1px solid $border-color;
+      }
+    }
+
+    // Pros and Cons
+    .pros-and-cons {
+
+      .column {
+        flex-basis: 0;
+        flex-grow: 1;
+
+        &.pros {
+          border-right: 1px solid $color-border-gray;
+        }
+
+        .heading {
+          background-color: $color-light-gray;
+          padding: rfs-value(12px 25px);
+          border-bottom: 1px solid $color-border-gray;
+        }
+
+        .list {
+          @include font-size(16px);
+          font-weight: 500;
+          padding: rfs-value(25px 22px);
+
+          &.pros-list {
+            .icon {
+              background-image: escape-svg($bs-check-icon);
+            }
+          }
+
+          &.cons-list {
+            .icon {
+              background-image: escape-svg($bs-close-icon);
+            }
+          }
+
+          li {
+            .icon {
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: 25px;
+              width: 18px;
+              height: 20px;
+              padding: 0;
+              display: inline-block;
+              margin-right: $breadcrumb-item-padding-x;
+              vertical-align: bottom;
+            }
+
+            margin: 0 0 18px 0;
+            line-height: 1.1;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  /**
+   * Accordion
+   */
+  #accordionFooter {
+    .accordion-item {
+      border: 1px solid $color-border-gray;
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+
+      .accordion-button {
+        @include font-size(22px);
+      }
+    }
+  }
+
+
+  /**
+   * Related
+   */
+  .related-posts {
+    margin-top: rfs-value(90px);
+  }
+
+}

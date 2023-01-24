@@ -1,0 +1,67 @@
+{
+    "key": "group_63c018a104492",
+    "title": "Author",
+    "fields": [
+        {
+            "key": "field_63c018a1ba261",
+            "label": "Author Photo",
+            "name": "author_photo",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "*Make sure to upload <b>square<\/b> photos at least 100x100",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "thumbnail"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "current_user_role",
+                "operator": "==",
+                "value": "author"
+            },
+            {
+                "param": "user_form",
+                "operator": "==",
+                "value": "edit"
+            }
+        ],
+        [
+            {
+                "param": "current_user_role",
+                "operator": "==",
+                "value": "administrator"
+            },
+            {
+                "param": "user_form",
+                "operator": "==",
+                "value": "edit"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "field",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1673538395
+}

@@ -1,0 +1,45 @@
+/**
+ * Breadcrumbs
+ */
+#nav-yoast-breadcrumb{
+  @include font-size(13px);
+  line-height: 1.4;
+  ol.breadcrumb{
+    li{
+      &.breadcrumb-item{
+
+        & + .breadcrumb-item::before{
+          content: "";
+          background-image: escape-svg($breadcrumb-divider-icon);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 12px;
+          width: 10px;
+          height: 20px;
+          padding: 0;
+          display: inline-block;
+          margin-right: $breadcrumb-item-padding-x;
+        }
+
+        &.breadcrumb-separator{
+
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Progress Bar
+ */
+#progress-bar {
+  --scrollAmount: 0%;
+
+  background-image: linear-gradient(120deg, #ffcb00 0%, #ffcb00 100%);
+  width: var(--scrollAmount);
+
+  //background: linear-gradient(to right, #F24E1E var(--scrollAmount), transparent 0);
+  //width: 100%;
+
+  height: 5px;
+}

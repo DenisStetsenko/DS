@@ -1,0 +1,15 @@
+# DEV BUILD .gitignore
+# ****************************
+*.css.map
+.DS_Store
+.idea/
+dist
+lib
+
+# PRODUCTION .gitignore
+# ****************************
+# *.css.map
+# .DS_Store
+# .idea/
+# styles/sourcemaps
+# lib
