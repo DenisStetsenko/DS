@@ -10,7 +10,7 @@
 
         & + .breadcrumb-item::before{
           content: "";
-          background-image: escape-svg($breadcrumb-divider-icon);
+          background-image: escape-svg($bs-chevron-right-icon);
           background-position: center;
           background-repeat: no-repeat;
           background-size: 12px;

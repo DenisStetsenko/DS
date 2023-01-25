@@ -192,14 +192,12 @@ function acf_reading_time() {
 	}
 	
 	if ( $readingtime == 0 ) { // if the reading time equals 0 then change it to 1
-		$totalreadingtime = "0" . $timer . " read";
+		$totalreadingtime = '<span class="total-reading-time">0 '.$timer.' read</span>';
 	} else {
-		$totalreadingtime = $readingtime . $timer . " read";
+		$totalreadingtime = '<span class="total-reading-time">'. $readingtime . $timer . ' read</span>';
 	}
 	
-	$totalreadingtime = '∙ ' . $totalreadingtime;
-	
-	echo $totalreadingtime;
+	return $totalreadingtime;
 }
 
 add_shortcode( 'acf-reading-time', 'acf_reading_time' );
@@ -232,14 +230,12 @@ function wp_reading_time() {
 		}
 		
 		if ( $readingtime == 0 ) { // if the reading time equals 0 then change it to 1
-			$totalreadingtime = "0" . $timer . " read";
+			$totalreadingtime = '<span class="total-reading-time">0 '.$timer.' read</span>';
 		} else {
-			$totalreadingtime = $readingtime . $timer . " read";
+			$totalreadingtime = '<span class="total-reading-time">'. $readingtime . $timer . ' read</span>';
 		}
 		
-		$totalreadingtime = '∙ ' . $totalreadingtime;
-		
-		echo $totalreadingtime;
+		return $totalreadingtime;
 	}
 }
 

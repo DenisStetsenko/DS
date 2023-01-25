@@ -161,6 +161,12 @@ header.section-title{
       margin-bottom: 0;
     }
   }
+  &.smaller{
+    h2{
+      @include font-size($h3-font-size);
+      outline: none;
+    }
+  }
 }
 
 .entry-content{

@@ -1,5 +1,30 @@
-footer#colophon{
-  a{
-    color: white;
+footer#colophon {
+  @include font-size(14px);
+
+  .icon {
+    margin-left: 2px;
+
+    svg {
+      width: auto;
+      max-height: 12px;
+    }
   }
+
+  #nav-footer-menu {
+    ul {
+      li {
+        display: inline-block;
+
+        &:not(:last-child) {
+          margin-right: $list-inline-padding;
+        }
+
+        a{
+          color: $color-black;
+          @include hover-underline();
+        }
+      }
+    }
+  }
+
 }

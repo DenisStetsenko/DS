@@ -24,9 +24,9 @@ get_header(); ?>
 						?>
 					</div>
 	
-					<div class="col-lg-4 d-flex">
+					<div class="col-lg-4">
 						<?php if ( is_active_sidebar( 'comparison-sidebar' ) ) { ?>
-							<aside id="right-sidebar" class="ps-lg-4 flex-grow-1 d-flex">
+							<aside id="right-sidebar" class="ps-lg-4">
 								<?php dynamic_sidebar( 'comparison-sidebar' ); ?>
 							</aside>
 						<?php } ?>

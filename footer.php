@@ -6,34 +6,37 @@
 
 </div><!-- #wrapper -->
 
-<footer id="colophon" class="footer site-footer bg-primary text-white py-4">
-  <div class="container">
-
-    <div class="row">
-      <div class="col-lg-12">
-        <?php wp_nav_menu( array(
-            'theme_location'  => 'footer-menu',
-            'menu_class'      => 'list-unstyled list-inline',
-            'fallback_cb'     => 'wp_bootstrap_navwalker::fallback')
-        ); ?>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-12">
-        <p class="m-0">Copyright © <?= bloginfo('name') . ' ' . date('Y'); ?>. All Rights Reserved.</p>
-      </div>
-    </div>
-
-  </div>
-</footer>
+	<footer id="colophon" aria-label="Footer"
+					class="footer site-footer border-top text-black font-secondary py-4">
+		<div class="container">
+	
+			<div class="row align-items-center">
+				<div class="col-lg-8 order-lg-2 text-lg-end">
+					<?php if ( has_nav_menu( 'footer-menu' ) ) { ?>
+						<nav id="nav-footer-menu" class="footer-menu" role="navigation">
+							<?php wp_nav_menu( array(
+									'theme_location'  => 'footer-menu',
+									'menu_class'      => 'list-inline m-0',
+									'container'      	=> FALSE,
+									'fallback_cb'     => 'wp_bootstrap_navwalker::fallback')
+							); ?>
+						</nav>
+					<?php } ?>
+				</div>
+				<div class="col-lg-4 order-lg-1">
+					<p class="m-0"><?php printf( __( '©%s %s. Published with <i class="icon">%s</i>', 'wp-theme' ), date('Y'), get_bloginfo('name'), wp_custom_bs_icons('ui', 'heart') ); ?></p>
+				</div>
+			</div>
+	
+		</div>
+	</footer>
 
 </div><!-- #page we need this extra closing tag here -->
 
 
 <?php if ( is_singular('post') ) : ?>
 	<script>
-      let processScroll = () => {
+      let progressScroll = () => {
           let docElem = document.documentElement,
               docBody = document.body,
               scrollTop = docElem['scrollTop'] || docBody['scrollTop'],
@@ -41,7 +44,7 @@
               scrollPercent = scrollTop / scrollBottom * 100 + '%';
           document.getElementById("progress-bar").style.setProperty("--scrollAmount", scrollPercent);
       }
-      document.addEventListener('scroll', processScroll);
+      document.addEventListener('scroll', progressScroll);
 	</script>
 <?php endif; ?>
 

@@ -1,3 +1,37 @@
+/**
+ * General article block
+ */
+.article-author{
+  .list-inline-item{
+    &:not(:last-child){
+      margin-right: 12px;
+    }
+  }
+  time, .total-reading-time{
+    &:before{
+      content: "";
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 13px;
+      display: inline-block;
+      width: 13px;
+      height: 16px;
+      vertical-align: sub;
+      margin-right: 5px;
+    }
+  }
+  time{
+    &:before{
+      background-image: escape-svg($bs-calendar-icon);
+    }
+  }
+  .total-reading-time{
+    &:before{
+      background-image: escape-svg($bs-timer-icon);
+    }
+  }
+}
+
 #single-article-template {
 
   /**

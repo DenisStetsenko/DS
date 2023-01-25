@@ -1,0 +1,70 @@
+/**
+ * General posts loop
+ */
+.posts-loop{
+  .post-loop-item{
+    .four-cols{
+      .subtitle{
+        @include font-size(14px);
+      }
+    }
+    .article-author{
+      .list-inline-item{
+        &:not(:last-child){
+          margin-right: 16px;
+        }
+      }
+    }
+    .bg{
+      @include responsive-ratio-background(16,9, true);
+    }
+    .category{
+      padding: 8px 12px 7px 12px;
+      @include font-size(11px);
+      @include custom-letter-spacing();
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+    .entry-title{
+      line-height: 1.35;
+    }
+    .subtitle{
+      @include font-size(16px);
+    }
+  }
+}
+
+/**
+ * Sidebar
+ */
+#right-sidebar{
+  .widget{
+    padding: 30px;
+    // SendInBlue Subscribe Form
+    &.widget_sib_subscribe_form{
+      background-color: $color-light-gray;
+      .sib-email-area{
+        input#sib-email-area{
+          background-image: escape-svg($bs-envelope-heart-icon);
+          background-position: 22px center;
+          background-repeat: no-repeat;
+          background-size: 20px;
+          padding-left: 53px;
+          &:focus{
+            background-image: escape-svg($bs-envelope-heart-icon-active);
+          }
+        }
+      }
+    }
+  }
+}
+
+.as{
+  content: "";
+  background-image: escape-svg($bs-envelope-heart-icon);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 12px;
+  width: 10px;
+  height: 20px;
+}
