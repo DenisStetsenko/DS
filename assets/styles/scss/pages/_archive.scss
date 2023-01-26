@@ -1,56 +1,85 @@
 /**
  * General posts loop
  */
-.posts-loop{
-  .post-loop-item{
-    .four-cols{
-      .subtitle{
+.posts-loop {
+
+  .item {
+    // 4 cols
+    &.four-cols {
+      .subtitle {
         @include font-size(14px);
       }
     }
-    .article-author{
-      .list-inline-item{
-        &:not(:last-child){
+    // 3 cols
+    &.three-cols{
+      .entry-title{ @include font-size(21px); }
+      .subtitle { @include font-size(15px); }
+    }
+    // 2 cols
+    &.two-cols{
+      .entry-title{
+        @include font-size(24px)
+      }
+    }
+
+    .article-author {
+      .list-inline-item {
+        &:not(:last-child) {
           margin-right: 16px;
         }
       }
     }
-    .bg{
-      @include responsive-ratio-background(16,9, true);
+
+    .bg {
+      @include responsive-ratio-background(16, 9, true);
     }
-    .category{
+
+    .category {
       padding: 8px 12px 7px 12px;
       @include font-size(11px);
       @include custom-letter-spacing();
       margin-bottom: 10px;
       line-height: 1;
     }
-    .entry-title{
+
+    .entry-title {
       line-height: 1.35;
     }
-    .subtitle{
+
+    .subtitle {
       @include font-size(16px);
     }
   }
 }
 
+
 /**
- * Sidebar
+ * Archive Sidebar + Single Sidebar
  */
-#right-sidebar{
-  .widget{
-    padding: 30px;
+#right-sidebar {
+  position: relative;
+  @include media-breakpoint-up(lg){
+    padding-left: 1.5rem;
+  }
+  .widget {
+    &:not(:last-child){
+      margin-bottom: 2rem;
+    }
+
     // SendInBlue Subscribe Form
-    &.widget_sib_subscribe_form{
+    &.widget_sib_subscribe_form {
+      padding: 30px;
       background-color: $color-light-gray;
-      .sib-email-area{
-        input#sib-email-area{
+
+      .sib-email-area {
+        input#sib-email-area {
           background-image: escape-svg($bs-envelope-heart-icon);
           background-position: 22px center;
           background-repeat: no-repeat;
           background-size: 20px;
           padding-left: 53px;
-          &:focus{
+
+          &:focus {
             background-image: escape-svg($bs-envelope-heart-icon-active);
           }
         }
@@ -59,12 +88,28 @@
   }
 }
 
-.as{
-  content: "";
-  background-image: escape-svg($bs-envelope-heart-icon);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 12px;
-  width: 10px;
-  height: 20px;
+
+/**
+ * Social Share Icons
+ */
+.social-share-icons{
+  li{
+    a{
+      &:hover{
+        svg{
+          path{
+            fill: $color-primary;
+          }
+        }
+      }
+      svg{
+        width: 21px;
+        height: auto;
+        path{
+          fill: $color-black;
+          @include transition();
+        }
+      }
+    }
+  }
 }

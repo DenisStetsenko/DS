@@ -26,7 +26,7 @@ get_header(); ?>
 					
 					<div class="col-lg-4">
 						<?php if ( is_active_sidebar( 'review-sidebar' ) ) { ?>
-							<aside id="right-sidebar" class="ps-lg-4">
+							<aside id="right-sidebar">
 								<?php dynamic_sidebar( 'review-sidebar' ); ?>
 							</aside>
 						<?php } ?>

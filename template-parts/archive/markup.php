@@ -52,7 +52,7 @@
 
 			<div class="col-lg-4">
 				<?php if ( is_active_sidebar( 'archive-sidebar' ) ) { ?>
-					<aside id="right-sidebar" class="ps-lg-4">
+					<aside id="right-sidebar">
 						<?php dynamic_sidebar( 'archive-sidebar' ); ?>
 					</aside>
 				<?php } ?>

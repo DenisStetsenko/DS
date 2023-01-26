@@ -1,14 +1,15 @@
 /**
  * General article block
  */
-.article-author{
-  .list-inline-item{
-    &:not(:last-child){
+.article-author {
+  .list-inline-item {
+    &:not(:last-child) {
       margin-right: 12px;
     }
   }
-  time, .total-reading-time{
-    &:before{
+
+  time, .total-reading-time {
+    &:before {
       content: "";
       background-repeat: no-repeat;
       background-position: center;
@@ -20,23 +21,30 @@
       margin-right: 5px;
     }
   }
-  time{
-    &:before{
-      background-image: escape-svg($bs-calendar-icon);
-    }
+
+  time {
+    &:before { background-image: escape-svg($bs-calendar-icon); }
   }
-  .total-reading-time{
-    &:before{
-      background-image: escape-svg($bs-timer-icon);
-    }
+
+  .total-reading-time {
+    &:before { background-image: escape-svg($bs-timer-icon); }
   }
 }
 
+
+/**
+ * Single Article Template
+ */
 #single-article-template {
 
-  /**
-   * Post Categories
-   */
+  .entry-header{
+    padding-bottom: 1.6rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid $color-border-gray;
+  }
+
+  // Post Categories
+  // ===================================================================================================================
   .post-categories-nav {
     @include font-size(11px);
     @include custom-letter-spacing();
@@ -62,9 +70,9 @@
     }
   }
 
-  /**
-   * Affiliate Disclosure
-   */
+
+  // Affiliate Disclosure
+  // ===================================================================================================================
   .affiliate-disclosure {
     padding: rfs-value(12px 10px);
     @include font-size(12px);
@@ -74,9 +82,9 @@
     }
   }
 
-  /**
-   * Product Summary
-   */
+
+  // Product Summary
+  // ===================================================================================================================
   .product-summary-wrapper {
     margin-top: rfs-value(30px);
     margin-bottom: rfs-value(50px);
@@ -117,12 +125,11 @@
         }
       }
     }
-
   }
 
-  /**
-   * MAIN CONTENT AREA
-   */
+
+  // MAIN CONTENT AREA
+  // ===================================================================================================================
   .entry-content-main {
 
     .product-heading {
@@ -197,12 +204,11 @@
         }
       }
     }
-
   }
 
-  /**
-   * Accordion
-   */
+
+  // Accordion
+  // ===================================================================================================================
   #accordionFooter {
     .accordion-item {
       border: 1px solid $color-border-gray;
@@ -218,9 +224,8 @@
   }
 
 
-  /**
-   * Related
-   */
+  // Related
+  // ===================================================================================================================
   .related-posts {
     margin-top: rfs-value(90px);
   }

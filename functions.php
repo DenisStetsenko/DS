@@ -140,12 +140,12 @@ if ( ! function_exists( 'wp_custom_posts_ajax_pagination' ) ) {
     $type     = isset($_POST['type']) ? $_POST['type'] : '';
 
     $args = [];
-    $args['post_type'] = 'post';
-    $args['post_status'] = 'publish';
-    $args['order'] = 'DESC';
-    $args['orderby'] = 'date';
+    $args['post_type']      = 'post';
+    $args['post_status']    = 'publish';
+    $args['order']          = 'DESC';
+    $args['orderby']        = 'date';
     $args['posts_per_page'] = $ppp;
-    $args['offset'] = $offset;
+    $args['offset']         = $offset;
 
 
     // Run WP_Query for BLOG posts
@@ -176,9 +176,7 @@ if ( ! function_exists( 'wp_custom_posts_ajax_pagination' ) ) {
 
     if ($wp_query->have_posts()) :
       while ($wp_query->have_posts()) : $wp_query->the_post();
-        if ($type === 'blog') {
-          get_template_part('template-parts/blog/blog-loop-item');
-        }
+	      get_template_part( 'template-parts/archive/post-loop', 'item', array( 'layout' => '2-cols', 'include-author-block' => 1 ) );
       endwhile;
     endif;
     wp_reset_query();

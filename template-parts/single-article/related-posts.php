@@ -14,7 +14,7 @@ if ( $wp_related_query->have_posts() ) : $originalPostUrl = get_the_permalink();
 		
 		<div class="row posts-loop g-4">
 			<?php while ( $wp_related_query->have_posts() ) : $wp_related_query->the_post(); ?>
-				<?php get_template_part( 'template-parts/archive/post-loop', 'item', array( 'original_post' => $originalPostUrl, 'layout' => '3-cols' ) ); ?>
+				<?php get_template_part( 'template-parts/archive/post-loop', 'item', array( 'original_post' => $originalPostUrl, 'layout' => '3-cols', 'include-author-block' => 1 ) ); ?>
 			<?php endwhile; ?>
 		</div>
 		

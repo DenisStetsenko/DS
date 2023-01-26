@@ -36,7 +36,7 @@
         'security'  : ajaxPagination.protection
       },
       beforeSend : function( xhr ) {
-        $(this).text('LOADING...');
+        $(this).text('Loading...');
       }
     });
 

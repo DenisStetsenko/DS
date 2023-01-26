@@ -83,7 +83,7 @@ $post_html_attrs .= $layout;
 		<div class="inner py-3">
 			<?php
 			//if ( $main_term ) echo '<span class="category rounded bg-light-gray text-uppercase fw-bolder border font-secondary text-gray d-inline-block">' . get_cat_name($main_term) . '</span>';
-			the_title( '<h3 class="entry-title h4 mb-2">', '</h3>' );
+			the_title( '<h3 class="entry-title mb-2">', '</h3>' );
 			
 			echo $author_block_html != '' ? $author_block_html : '';
 			
