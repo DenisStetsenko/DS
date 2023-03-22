@@ -199,7 +199,37 @@ if ( ! function_exists( 'wp_custom_posts_ajax_pagination' ) ) {
   add_action('wp_ajax_load_more_pagination', 'wp_custom_posts_ajax_pagination');
 }
 
+
 /**
  * Remove "Category" from get_the_archive_title()
  */
 add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
+
+
+/**
+ * Custom get_author for Denis Stetsenko User
+ */
+function custom_the_author_posts_link(){
+	
+	global $authordata;
+	if ( ! is_object( $authordata ) ) {
+		return '';
+	}
+	
+	if ( $authordata->user_nicename == 'denis_admin' ) {
+		$user_nicename = $authordata->nickname;
+	} else {
+		$user_nicename = $authordata->user_nicename;
+	}
+	
+	$link = sprintf(
+		'<a href="%1$s" title="%2$s" rel="author" class="test">%3$s</a>',
+		esc_url( get_author_posts_url( $authordata->ID, $user_nicename ) ),
+		/* translators: %s: Author's display name. */
+		esc_attr( sprintf( __( 'Posts by %s' ), get_the_author() ) ),
+		get_the_author()
+	);
+	
+	return $link;
+}
+//add_filter( 'the_author_posts_link', 'custom_the_author_posts_link' );

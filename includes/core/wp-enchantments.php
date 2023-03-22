@@ -1,5 +1,12 @@
 <?php
-if( ! defined('ABSPATH') ) exit;
+/**
+ * Add favicon to wp-admin area
+ * @return void
+ */
+function wp_custom_favicon4admin() {
+	echo '<link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico" />';
+}
+add_action( 'admin_head', 'wp_custom_favicon4admin' );
 
 /**
  * CUSTOM ADMIN STYLES

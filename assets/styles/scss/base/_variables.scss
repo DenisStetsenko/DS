@@ -9,13 +9,13 @@ $color-black      : #292929;  $black      : $color-black;
 
 //$color-primary       : #008549;  $primary    : $color-primary;
 //$color-primary       : #18865F;  $primary    : $color-primary;
-$color-primary       : #0073DF;  $primary    : $color-primary;
+$color-primary       : #1f6291;  $primary    : $color-primary;
 $color-primary-dark  : darken($color-primary, 20%);
 $color-primary-light : lighten($color-primary, 20%);
 
-$color-secondary      : #18865F;  $secondary  : $color-secondary;
+$color-secondary      : #298b76;  $secondary  : $color-secondary;
 
-$color-accent        : #ffcb00;
+$color-accent        : #fbdc6b;
 
 $color-gray          : #595959;
 $color-light-gray    : #f7f7f7;
@@ -193,12 +193,17 @@ $h5-font-size : 14px;
 $h6-font-size : 12px;
 
 /* Navbar */
+$navbar-brand-font-size             : 1rem;
+$navbar-toggler-font-size           : 1rem;
+$navbar-padding-y                   : 15px;
 $navbar-padding-x                   : 0;
-$navbar-padding-y                   : 10px;
-$navbar-light-color                 : $color-white;
-$navbar-light-active-color          : $color-white;
-$navbar-light-hover-color           : $color-white;
-$navbar-light-toggler-border-color  : $color-white;
+
+$navbar-nav-link-padding-y          : 10px;
+$navbar-nav-link-padding-x          : 15px;
+$navbar-light-color                 : $color-black;
+$navbar-light-active-color          : $color-primary;
+$navbar-light-hover-color           : $color-primary;
+$navbar-light-toggler-border-color  : $color-primary;
 
 /* Accordion */
 //$accordion-button-padding-y : 20px;

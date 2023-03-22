@@ -24,7 +24,7 @@ function handleErrors() {
 /**
  * Browsersync
  *******************************************************************************************************/
-var site = 'rightchoice.local'; // CHANGE IT FOR EVERY SITE
+var site = 'denstetsenko.local'; // CHANGE IT FOR EVERY SITE
 
 // see: https://www.browsersync.io/docs/options/
 var browserSyncWatchFiles = [

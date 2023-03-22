@@ -7,12 +7,22 @@
 
 				<header class="section-title category-heading">
 					<h1 class="entry-title mb-3">
-						<?php if ( is_archive() ){
-							$category = get_category(get_query_var('cat'));
-							echo '<i class="icon icon-'.$category->slug.'"></i><span>'.get_the_archive_title().'</span>';
-						} ?>
+						<?php
+							if ( is_archive() ){
+								
+								if ( is_category() ) {
+									$category = get_category(get_query_var('cat'));
+									if ( $category && ! is_wp_error($category) ) {
+										echo '<i class="icon icon-'.$category->slug.'"></i><span>'.get_the_archive_title().'</span>';
+									}
+								}
+								elseif ( is_author() ) {
+									echo 'The Latest Articles by ' . nl2br(get_the_author_meta('first_name'));
+								}
+							}
+						?>
 					</h1>
-					<?= category_description(); ?>
+					<?= is_archive() && category_description() ? category_description() : ''; ?>
 				</header>
 				
 				<?php
@@ -26,7 +36,9 @@
 					}
 					elseif ( is_archive() ) {
 						$category = get_category(get_query_var('cat'));
-						$curr_category_slug = 'data-category="'.$category->slug.'" data-year="'. get_query_var('year') .'" data-monthnum="'. get_query_var('monthnum') .'"';
+						if ( $category && ! is_wp_error($category) ) {
+							$curr_category_slug = 'data-category="'.$category->slug.'" data-year="'. get_query_var('year') .'" data-monthnum="'. get_query_var('monthnum') .'"';
+						}
 					}
 					elseif ( is_search() ) {
 						$curr_category_slug = 'data-category="all" data-search="'. get_search_query() .'"';

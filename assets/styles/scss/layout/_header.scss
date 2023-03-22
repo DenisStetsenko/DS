@@ -43,3 +43,39 @@
 
   height: 5px;
 }
+
+/**
+ * HEADER
+ */
+header#masthead{
+  box-shadow: 0 4px 3px -3px rgba(0,0,0,.08);
+  border-bottom: 1px solid $color-border-gray;
+  border-bottom: 1px solid #e7e7e7;
+
+  // Logo
+  .custom-logo-link{
+    img{
+      width: 100%;
+      height: auto;
+      max-width: 270px;
+    }
+  }
+
+  // Nav
+  .navbar{
+    font-family: $font-secondary;
+    font-weight: 600;
+    @include font-size(19px);
+    @include custom-letter-spacing(0.01rem);
+    .nav-item{
+      &.active{
+        .nav-link{
+          color: $color-primary;
+        }
+      }
+      .nav-link{
+
+      }
+    }
+  }
+}

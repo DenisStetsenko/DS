@@ -29,7 +29,7 @@ if ( ! function_exists('wp_custom_theme_setup') ) {
 
     add_theme_support( 'custom-logo', array(
       'height'      => 200,
-      'width'       => 400,
+      'width'       => 200,
       'flex-height' => true,
       'flex-width'  => true,
       'header-text' => array( 'site-title', 'site-description' ),
