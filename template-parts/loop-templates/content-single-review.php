@@ -28,8 +28,10 @@ get_template_part('template-parts/single-article/author-block'); ?>
 	} ?>
 
 	
-	<div class="entry-content entry-content-summary mb-4">
-		<?php the_content(); ?>
+	<div class="intro-content review-summary mb-4">
+		<div class="entry-content">
+			<?php the_content(); ?>
+		</div>
 	</div>
 
 	<?php get_template_part( 'template-parts/single-article/entry-footer' ); ?>

@@ -83,6 +83,21 @@
   }
 
 
+  // Intro
+  // ===================================================================================================================
+  .intro-content{
+    &.comparison-summary{
+
+    }
+    &.review-summary{
+      .entry-content{
+        h2, h3{
+          margin: 50px 0 15px;
+        }
+      }
+    }
+  }
+
   // Product Summary
   // ===================================================================================================================
   .product-summary-wrapper {
@@ -135,7 +150,7 @@
     .product-heading {
       .subtitle {
         line-height: 1.2;
-        @include custom-letter-spacing();
+
       }
     }
 
@@ -204,6 +219,15 @@
         }
       }
     }
+
+    // Entry Content
+    .entry-content{
+      h2,h3{
+        margin: 50px 0 15px;
+        &:first-child{ margin-top: 0; }
+      }
+    }
+
   }
 
 

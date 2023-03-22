@@ -135,8 +135,8 @@ embed, iframe, object { max-width: 100%; }
     //--bs-btn-disabled-bg: transparent;
     //--bs-btn-disabled-border-color: #18865F;
   }
-  &.btn-secondary{
-
+  &.btn-accent{
+    --bs-btn-color: #292929;
   }
   &.btn-outline-secondary{
     --bs-btn-color: #3058A3;
@@ -173,4 +173,8 @@ header.section-title{
   p:last-child{
     margin-bottom: 0;
   }
+}
+
+.ls-lg{
+  @include custom-letter-spacing();
 }

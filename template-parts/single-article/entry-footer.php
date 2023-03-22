@@ -1,7 +1,8 @@
 <?php
 $footer_content = get_field('footer_content');
 if ( $footer_content['show_footer_content'] ) : ?>
-	<section class="post-footer-content">
+	<section class="post-footer-content ">
+		<hr>
 		<?= $footer_content['content'] ? apply_filters('the_content', $footer_content['content']) : null; ?>
 		<?php if ( $footer_content['faq'] && array_filter($footer_content['faq']) ) : ?>
 			<div id="accordionFooter" class="accordion mt-5">

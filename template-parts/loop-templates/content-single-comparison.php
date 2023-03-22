@@ -29,8 +29,10 @@ get_template_part('template-parts/single-article/author-block'); ?>
 	} ?>
 
 	
-	<div class="entry-content entry-content-summary mb-4">
-		<?php the_content(); ?>
+	<div class="intro-content comparison-summary mb-4">
+		<div class="entry-content">
+			<?php the_content(); ?>
+		</div>
 	</div>
 
 	<!-- PRODUCTS SUMMARY[Top Picks] TABLE -->
@@ -69,7 +71,7 @@ get_template_part('template-parts/single-article/author-block'); ?>
 	<!-- / PRODUCTS SUMMARY[Top Picks] TABLE -->
 	
 	<?php if ( $summary_list && array_filter($summary_list) ) : ?>
-		<div class="entry-content entry-content-main">
+		<div class="entry-content-main">
 			<?php foreach ( $summary_list as $summary_list_item ) :
 				$summary_list_item['preview'] && $summary_list_item['preview']['alt'] ? $alt = $summary_list_item['preview']['alt'] : $alt = $summary_list_item['heading']['title'];
 				?>
@@ -78,7 +80,7 @@ get_template_part('template-parts/single-article/author-block'); ?>
 					
 					<!-- PRODUCT HEADING -->
 					<header class="product-heading mb-4">
-						<?= $summary_list_item['heading']['subtitle'] ? '<p class="subtitle mb-1 font-secondary text-gray fw-bolder text-uppercase">'.$summary_list_item['heading']['subtitle'].'</p>' 	: null; ?>
+						<?= $summary_list_item['heading']['subtitle'] ? '<p class="subtitle mb-1 font-secondary text-black fw-bolder text-uppercase fs-5 ls-lg">'.$summary_list_item['heading']['subtitle'].'</p>' 	: null; ?>
 						<?= $summary_list_item['heading']['title'] 		? '<h2 class="title m-0">'.$summary_list_item['heading']['title'].'</h2>' 	: null; ?>
 					</header>
 					<!-- / PRODUCT HEADING -->
@@ -95,13 +97,13 @@ get_template_part('template-parts/single-article/author-block'); ?>
 					
 					
 					<!-- PRODUCT PRICE BUTTON -->
-					<?= acf_link($summary_list_item['price'], 'btn btn-primary btn-price affiliate-link d-table mx-auto mb-4'); ?>
+					<?= acf_link($summary_list_item['price'], 'btn btn-accent btn-price affiliate-link d-table mx-auto mt-2 mb-7'); ?>
 					<!-- / PRODUCT PRICE BUTTON -->
 					
 					
 					<!-- PROS & CONS -->
 					<?php if ( $summary_list_item['display_pros_and_cons'] && array_filter($summary_list_item['pros_and_cons']) ) : ?>
-						<div class="pros-and-cons d-flex flex-wrap my-5 rounded border overflow-hidden font-secondary">
+						<div class="pros-and-cons d-flex flex-wrap mt-5 mb-7 rounded border overflow-hidden font-secondary">
 							
 							<?php if ( $summary_list_item['pros_and_cons']['pros'] ) : ?>
 								<div class="column pros">
