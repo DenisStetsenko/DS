@@ -67,6 +67,9 @@ $spacers: (
 /*
  * Global Bootstrap Overrides
  ***********************************************************************************************************************/
+/* General */
+$enable-smooth-scroll     : false;
+
 $body-bg                  : $color-white;
 $body-color               : $color-black;
 
@@ -81,8 +84,6 @@ $font-weight-base         : 400;
 $font-weight-bolder       : 600;
 $font-weight-bold         : 700;
 
-$paragraph-margin-bottom  : 20px;
-$enable-smooth-scroll     : false;
 $breadcrumb-active-color  : $color-gray;
 
 /* SVG Icons */
@@ -94,7 +95,8 @@ $bs-envelope-heart-icon-active : url("data:image/svg+xml,<svg xmlns='http://www.
 $bs-calendar-icon              : url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#{$color-gray}' class='bi bi-calendar3' viewBox='0 0 16 16'><path d='M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z'/><path d='M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z'/></svg>");
 $bs-timer-icon                 : url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#{$color-gray}' class='bi bi-stopwatch' viewBox='0 0 16 16'><path d='M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z'/><path d='M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z'/></svg>");
 
-
+/* Paragraph */
+$paragraph-margin-bottom  : 20px;
 $blockquote-font-size     : $font-size-base;
 $blockquote-footer-color  : $color-primary;
 $hr-margin-y              : 50px;
@@ -104,10 +106,9 @@ $box-shadow               : 2px 3px 16px rgba(0, 0, 0, 0.1);
 $box-shadow-sm            : 0px 0px 15px rgba(0, 0, 0, 0.15);
 $box-shadow-lg            : 0px 0px 50px rgba(0, 0, 0, 0.08);
 
-/* Border Color */
+/* Borders */
 $border-color             : $color-border-gray;
 
-/* Border Radius */
 $border-radius-sm         : 5px; // rounded-1
 $border-radius            : 15px; // rounded-2
 $border-radius-lg         : 20px; // rounded-3
@@ -131,26 +132,22 @@ $input-focus-color        : $color-black;
 $input-focus-bg           : $color-white;
 $input-focus-border-color : $color-primary;
 
-// Form text
 $form-text-font-size  : 0.85rem;
 $form-text-margin-top : 8px;
 
-
-/* Buttons */
-$btn-font-family    : $font-secondary;
-$btn-font-size      : 1rem;
-$btn-font-weight    : 500;
-$btn-line-height    : 1.1;
-$btn-white-space    : 'nowrap';
-$btn-padding-y      : 16px;
-$btn-padding-x      : 40px;
-$btn-border-width   : 2px;
-$btn-border-radius  : $border-radius-xl;
-
-// btn small
+/* Buttons Genera; */
+$btn-font-family      : $font-secondary;
+$btn-font-size        : 1rem;
 $btn-font-size-sm     : 0.8rem;
+$btn-font-weight      : 500;
+$btn-line-height      : 1.1;
+$btn-white-space      : 'nowrap';
+$btn-padding-y        : 16px;
 $btn-padding-y-sm     : 14px;
+$btn-padding-x        : 40px;
 $btn-padding-x-sm     : 30px;
+$btn-border-width     : 2px;
+$btn-border-radius    : $border-radius-xl;
 $btn-border-radius-sm : $border-radius-xl;
 
 $btn-box-shadow         : $box-shadow-sm;
@@ -262,20 +259,20 @@ $modal-lg                     : 800px;
 
 /* Container */
 $container-max-widths: (
-        sm: 540px,
-        md: 720px,
-        lg: 960px,
-        xl: 1140px,
-        xxl: 1320px
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px
 );
 
 $grid-breakpoints: (
-        xs: 0,
-        sm: 576px,
-        md: 768px,
-        lg: 992px,
-        xl: 1200px,
-        xxl: 1400px
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
 );
 
 
@@ -442,7 +439,3 @@ $slick-dot-color-active   : $color-white;
 
   }
 }
-
-/**
- * ICONS
- */
