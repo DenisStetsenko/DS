@@ -27,9 +27,9 @@ if ( ! function_exists( 'wp_custom_theme_widgets_init' ) ) {
 		) );
 		
 		register_sidebar( array(
-			'id'            => 'archive-sidebar',
-			'name'          => __( 'Archive Sidebar', 'wp-theme' ),
-			'description'   => __( 'This sidebar is located on the right-hand side of Archive page.', 'wp-theme' ),
+			'id'            => 'category-sidebar',
+			'name'          => __( 'Category Sidebar', 'wp-theme' ),
+			'description'   => __( 'This sidebar is located on the right-hand side of Category page.', 'wp-theme' ),
 			'before_widget' => '<aside role="region" aria-label="Sidebar Element" class="widget rounded %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h3 class="w-title">',

@@ -8,6 +8,8 @@
 
 get_header();
 
-get_template_part('template-parts/archive/markup');
+echo 'category.php';
+
+get_template_part('template-parts/category/markup');
 
 get_footer();

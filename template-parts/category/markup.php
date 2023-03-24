@@ -8,21 +8,18 @@
 				<header class="section-title category-heading">
 					<h1 class="entry-title mb-3">
 						<?php
-							if ( is_archive() ){
-								
-								if ( is_category() ) {
-									$category = get_category(get_query_var('cat'));
-									if ( $category && ! is_wp_error($category) ) {
-										echo '<i class="icon icon-'.$category->slug.'"></i><span>'.get_the_archive_title().'</span>';
-									}
-								}
-								elseif ( is_author() ) {
-									echo 'The Latest Articles by ' . nl2br(get_the_author_meta('first_name'));
-								}
+						if ( is_category() ) {
+							$category = get_category(get_query_var('cat'));
+							if ( $category && ! is_wp_error($category) ) {
+								echo '<i class="icon icon-'.$category->slug.'"></i><span>'.get_the_archive_title().'</span>';
 							}
+						}
+						elseif ( is_author() ) {
+							echo 'The Latest Articles by ' . nl2br(get_the_author_meta('first_name'));
+						}
 						?>
 					</h1>
-					<?= is_archive() && category_description() ? category_description() : ''; ?>
+					<?= is_category() && category_description() ? category_description() : ''; ?>
 				</header>
 				
 				<?php
@@ -34,19 +31,13 @@
 						$category = get_category(get_query_var('cat'));
 						$curr_category_slug = 'data-category="'.$category->slug.'"';
 					}
-					elseif ( is_archive() ) {
-						$category = get_category(get_query_var('cat'));
-						if ( $category && ! is_wp_error($category) ) {
-							$curr_category_slug = 'data-category="'.$category->slug.'" data-year="'. get_query_var('year') .'" data-monthnum="'. get_query_var('monthnum') .'"';
-						}
-					}
 					elseif ( is_search() ) {
 						$curr_category_slug = 'data-category="all" data-search="'. get_search_query() .'"';
 					}
 					
 					echo '<div class="row posts-loop g-4">';
 						while ( have_posts() ) : the_post();
-							 get_template_part( 'template-parts/archive/post-loop', 'item', array( 'layout' => '2-cols', 'include-author-block' => 1 ) );
+							 get_template_part( 'template-parts/category/post-loop', 'item', array( 'layout' => '2-cols', 'include-author-block' => 1 ) );
 						endwhile;
 					echo '</div>';
 					
@@ -63,9 +54,9 @@
 			</div>
 
 			<div class="col-lg-4">
-				<?php if ( is_active_sidebar( 'archive-sidebar' ) ) { ?>
+				<?php if ( is_active_sidebar( 'category-sidebar' ) ) { ?>
 					<aside id="right-sidebar">
-						<?php dynamic_sidebar( 'archive-sidebar' ); ?>
+						<?php dynamic_sidebar( 'category-sidebar' ); ?>
 					</aside>
 				<?php } ?>
 			</div>

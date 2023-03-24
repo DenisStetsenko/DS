@@ -11,6 +11,8 @@
  */
 get_header();
 
-get_template_part('template-parts/archive/markup');
+echo 'index.php';
+
+get_template_part('template-parts/category/markup');
 
 get_footer();

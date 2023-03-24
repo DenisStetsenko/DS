@@ -15,8 +15,8 @@ if ( $footer_content['show_footer_content'] ) : ?>
 							</button>
 						</h2>
 						<div id="collapse-<?= $i; ?>" class="accordion-collapse collapse <?= $i == 1 ? 'show' : ''; ?>" aria-labelledby="heading-<?= $i; ?>" data-bs-parent="#accordionFooter">
-							<div class="accordion-body pt-0">
-								<?= $item['answer'] ? apply_filters('the_content', $item['answer']) : null; ?>
+							<div class="accordion-body pt-0 ">
+								<?= $item['answer'] ? '<div class="entry-content fs-4 font-secondary">' . apply_filters('the_content', $item['answer']) . '</div>' : null; ?>
 							</div>
 						</div>
 					</div>
