@@ -22,6 +22,7 @@
       <?php
     } else { the_custom_logo(); }
     ?>
+		<?php //get_template_part('template-parts/header/site-branding'); ?>
     <!-- end custom logo -->
 
     <button class="navbar-toggler" type="button"
@@ -35,9 +36,9 @@
     wp_nav_menu(
         array(
             'theme_location'  => 'header-menu',
-            'container_class' => 'collapse navbar-collapse',
+            'container_class' => 'collapse navbar-collapse justify-content-end',
             'container_id'    => 'navbarNavDropdown',
-            'menu_class'      => 'navbar-nav ms-auto',
+            'menu_class'      => 'navbar-nav ',
             'fallback_cb'     => '',
             'menu_id'         => 'main-menu',
             'depth'           => 2,
@@ -45,6 +46,14 @@
         )
     );
     ?>
+		<!-- The WordPress Menu goes here -->
+		
+		<div id="search-subscribe-area" class="ms-4">
+			<ul class="list-inline m-0">
+				<li class="list-inline-item"><a href="#"><?= wp_custom_bs_icons('ui', 'search'); ?></a></li>
+				<li class="list-inline-item"><a href="#"><?= wp_custom_bs_icons('ui', 'mail'); ?></a></li>
+			</ul>
+		</div>
 
   </div><!-- .container -->
 

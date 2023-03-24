@@ -35,7 +35,7 @@
 	<?php if ( function_exists('yoast_breadcrumb') && is_singular('post') ) { ?>
 		<div class="yoast-breadcrumb-container py-3">
 			<div class="container">
-				<?php yoast_breadcrumb( '<nav id="nav-yoast-breadcrumb" aria-label="breadcrumb"><ol class="breadcrumb font-secondary">','</ol></nav>' ); ?>
+				<?php yoast_breadcrumb( '<nav id="nav-yoast-breadcrumb" aria-label="breadcrumb"><ol class="breadcrumb font-secondary m-0">','</ol></nav>' ); ?>
 			</div>
 		</div>
 	<?php } ?>
