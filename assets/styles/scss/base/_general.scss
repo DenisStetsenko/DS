@@ -3,6 +3,15 @@
 --------------------------------------------------------------*/
 body{
   //letter-spacing: -.2px;
+
+  ::selection {
+    color: $color-white;
+    background: $color-primary; /* WebKit/Blink Browsers */
+  }
+  ::-moz-selection {
+    color: $color-white;
+    background: $color-primary; /* Gecko Browsers */
+  }
 }
 a {
   transition: all 0.2s ease-in-out;

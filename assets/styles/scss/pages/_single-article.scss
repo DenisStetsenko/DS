@@ -43,6 +43,23 @@
     border-bottom: 1px solid $color-border-gray;
   }
 
+  // Author Block
+  // ===================================================================================================================
+  .article-block-meta{
+    ul{
+      li{
+        cite{
+          a{
+            color: $color-gray;
+            &:hover{
+              color: $color-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+
   // Post Categories
   // ===================================================================================================================
   .post-categories-nav {
@@ -63,8 +80,8 @@
 
         &:hover {
           color: white;
-          background-color: $color-black;
-          border-color: $color-black;
+          background-color: $color-primary;
+          border-color: $color-primary;
         }
       }
     }
@@ -95,6 +112,9 @@
           margin: 50px 0 15px;
         }
       }
+    }
+    .entry-content{
+      a{ @include link-border-hover(); }
     }
   }
 
@@ -133,7 +153,10 @@
 
         .more {
           @include font-size(15px);
-
+          color: $color-black;
+          &:hover{
+            color: $color-primary;
+          }
           i {
             margin-right: rfs-value(2px);
           }
@@ -226,6 +249,7 @@
         margin: 50px 0 15px;
         &:first-child{ margin-top: 0; }
       }
+      a{ @include link-border-hover(); }
     }
 
   }

@@ -62,21 +62,32 @@ header#masthead{
 
   // Logo
   .custom-logo-link{
-    img{
 
+    &:hover{
+      svg{
+        path.name-bg{ fill: $color-primary; }
+        //path.name-letter{ fill: $color-black }
+      }
+    }
+    svg{
+      width: 230px;
+      height: 44.36px;
+      display: inline-table;
+      path{
+        @include transition();
+      }
     }
   }
 
   // Nav
   .navbar{
     font-family: $font-secondary;
-    font-weight: 600;
-    @include font-size(19px);
+    //text-transform: uppercase;
     @include custom-letter-spacing(0.01rem);
     .nav-item{
       &.active{
         .nav-link{
-          color: $color-primary;
+
         }
       }
       .nav-link{
@@ -84,4 +95,33 @@ header#masthead{
       }
     }
   }
+
+  #search-subscribe-area{
+    li{
+      line-height: 1;
+      &:not(:last-child){
+        margin-right: 23px;
+      }
+      &.mail{
+        a{
+          svg{
+            width: 25px;
+            height: 25px;
+          }
+        }
+      }
+      a{
+        color: $color-black;
+        &:hover{
+          color: $color-primary;
+        }
+        svg{
+          width: 20px;
+          height: 20px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+
 }

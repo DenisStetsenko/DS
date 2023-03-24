@@ -9,11 +9,12 @@ $color-black      : #292929;  $black      : $color-black;
 
 //$color-primary       : #008549;  $primary    : $color-primary;
 //$color-primary       : #18865F;  $primary    : $color-primary;
-$color-primary       : #1f6291;  $primary    : $color-primary;
+$color-primary       : #5333ed;  $primary    : $color-primary;
+//$color-primary       : #5333ed;  $primary    : $color-primary;
 $color-primary-dark  : darken($color-primary, 20%);
 $color-primary-light : lighten($color-primary, 20%);
 
-$color-secondary      : #298b76;  $secondary  : $color-secondary;
+$color-secondary      : #1f6291;  $secondary  : $color-secondary;
 
 $color-accent        : #fbdc6b;
 
@@ -144,10 +145,10 @@ $btn-font-size-sm     : 0.8rem;
 $btn-font-weight      : 500;
 $btn-line-height      : 1.1;
 $btn-white-space      : 'nowrap';
-$btn-padding-y        : 16px;
-$btn-padding-y-sm     : 14px;
-$btn-padding-x        : 40px;
-$btn-padding-x-sm     : 30px;
+$btn-padding-y        : 14px;
+$btn-padding-y-sm     : 12px;
+$btn-padding-x        : 35px;
+$btn-padding-x-sm     : 26px;
 $btn-border-width     : 2px;
 $btn-border-radius    : $border-radius-xl;
 $btn-border-radius-sm : $border-radius-xl;
@@ -172,7 +173,7 @@ $list-group-border-width   : 0;
 
 /* Links */
 $link-color             : $color-primary;
-$link-hover-color       : $color-primary-light;
+$link-hover-color       : $color-primary-dark;
 $link-decoration        : none;
 $link-hover-decoration  : none;
 
@@ -193,13 +194,18 @@ $h5-font-size : 14px;
 $h6-font-size : 12px;
 
 /* Navbar */
+$nav-link-font-size                 : 1.125rem;
+$nav-link-font-weight               : 500;
+$nav-link-color                     : $color-black;
+$nav-link-hover-color               : $color-primary;
+
 $navbar-brand-font-size             : 1rem;
 $navbar-toggler-font-size           : 1rem;
 $navbar-padding-y                   : 15px;
 $navbar-padding-x                   : 0;
 
 $navbar-nav-link-padding-y          : 10px;
-$navbar-nav-link-padding-x          : 15px;
+$navbar-nav-link-padding-x          : 18px;
 $navbar-light-color                 : $color-black;
 $navbar-light-active-color          : $color-primary;
 $navbar-light-hover-color           : $color-primary;
@@ -444,5 +450,16 @@ $slick-dot-color-active   : $color-white;
       bottom: 0;
     }
 
+  }
+}
+
+@mixin link-border-hover(){
+  &:not(.btn){
+    color: $color-black;
+    border-bottom: 2.5px solid $color-primary;
+    &:hover{
+      color: $color-white;
+      background-color: $color-primary;
+    }
   }
 }

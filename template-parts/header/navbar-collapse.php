@@ -11,18 +11,19 @@
   <div class="container">
 
     <!-- Your site title as branding in the menu -->
-    <?php if ( ! has_custom_logo() ) { ?>
+    <?php 
+		//if ( ! has_custom_logo() ) { ?>
 
-      <?php if ( is_front_page() && is_home() ) : ?>
-        <h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
-      <?php else : ?>
-        <a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a>
-      <?php endif; ?>
+      <?php //if ( is_front_page() && is_home() ) : ?>
+        <!--<h1 class="navbar-brand mb-0"><a rel="home" href="<?php // echo esc_url( home_url( '/' ) ); ?>" itemprop="url"><?php // bloginfo( 'name' ); ?></a></h1>-->
+      <?php //else : ?>
+        <!--<a class="navbar-brand" rel="home" href="<?php // echo esc_url( home_url( '/' ) ); ?>" itemprop="url"><?php // bloginfo( 'name' ); ?></a>-->
+      <?php //endif; ?>
 
       <?php
-    } else { the_custom_logo(); }
+    //} else { the_custom_logo(); }
     ?>
-		<?php //get_template_part('template-parts/header/site-branding'); ?>
+		<?php get_template_part('template-parts/header/site-branding'); ?>
     <!-- end custom logo -->
 
     <button class="navbar-toggler" type="button"
@@ -36,7 +37,7 @@
     wp_nav_menu(
         array(
             'theme_location'  => 'header-menu',
-            'container_class' => 'collapse navbar-collapse justify-content-end',
+            'container_class' => 'collapse navbar-collapse justify-content-center pe-10',
             'container_id'    => 'navbarNavDropdown',
             'menu_class'      => 'navbar-nav ',
             'fallback_cb'     => '',
@@ -50,8 +51,8 @@
 		
 		<div id="search-subscribe-area" class="ms-4">
 			<ul class="list-inline m-0">
-				<li class="list-inline-item"><a href="#"><?= wp_custom_bs_icons('ui', 'search'); ?></a></li>
-				<li class="list-inline-item"><a href="#"><?= wp_custom_bs_icons('ui', 'mail'); ?></a></li>
+				<li class="list-inline-item mail"><a href="#"><?= wp_custom_bs_icons('ui', 'mail'); ?></a></li>
+				<li class="list-inline-item search"><a href="#"><?= wp_custom_bs_icons('ui', 'search'); ?></a></li>
 			</ul>
 		</div>
 
