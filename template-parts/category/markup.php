@@ -53,9 +53,9 @@
 				?>
 			</div>
 
-			<div class="col-lg-4">
+			<div class="col-lg-4 d-flex">
 				<?php if ( is_active_sidebar( 'category-sidebar' ) ) { ?>
-					<aside id="right-sidebar">
+					<aside id="right-sidebar" class="position-relative">
 						<?php dynamic_sidebar( 'category-sidebar' ); ?>
 					</aside>
 				<?php } ?>

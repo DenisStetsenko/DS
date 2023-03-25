@@ -8,8 +8,7 @@
 
 get_header();
 
-echo 'category.php';
-
+//echo 'category.php';
 get_template_part('template-parts/category/markup');
 
 get_footer();

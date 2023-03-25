@@ -1,0 +1,90 @@
+.gform_wrapper{
+  background-color: $color-light-gray;
+  @include border-radius($border-radius);
+  border: 1px solid rgba($color-border-gray, 0.7);
+  box-shadow: $box-shadow;
+  padding: 30px 40px 35px 40px;
+  font-family: $font-secondary;
+  &#gform_wrapper_1{
+    margin-top: 40px;
+  }
+  &.gravity-theme{
+    // errors styling
+    &.gform_validation_error{
+      .gform_validation_errors{
+        margin-top: 0;
+        box-shadow: none;
+        margin-bottom: 15px;
+        padding: 20px;
+        .gform_submission_error{
+          @include font-size(16px);
+        }
+        ol{
+          margin-bottom: 0;
+        }
+      }
+      .gform_body{
+        .gform_fields{
+          .gfield.gfield_error{
+            input,textarea{ border-color: #c02b0a }
+            .validation_message{ display: none }
+          }
+        }
+      }
+    }
+    .gform_body{
+      .gform_fields{
+        grid-row-gap: 25px;
+        .gfield{
+          .gfield_label{
+            font-weight: 500;
+            margin-bottom: 6px;
+          }
+          input,textarea{
+            @include border-radius($border-radius-sm);
+            border: 1px solid darken($color-border-gray, 10%);
+            padding: 8px 12px;
+            -webkit-transition: border 200ms ease-out;
+            transition: border 200ms ease-out;
+            &:focus{
+              box-shadow: none;
+              outline-width: thin;
+              outline-color: $color-primary;
+              border-color: $color-primary;
+            }
+          }
+        }
+      }
+    }
+    .gform_footer{
+      margin: 0 !important;
+      padding: 0 !important;
+      justify-content: center;
+      position: relative;
+      .gform_button{
+        margin: 0;
+        @include make-button-primary();
+      }
+      img.gform_ajax_spinner {
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        margin-left: -8px;
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+.gform_confirmation_wrapper{
+  background-color: $color-light-gray;
+  @include border-radius($border-radius);
+  border: 1px solid rgba($color-border-gray, 0.7);
+  box-shadow: $box-shadow;
+  padding: 30px 40px 30px 40px;
+  font-family: $font-secondary;
+  text-align: center;
+  &#gform_confirmation_wrapper_1{
+    margin-top: 40px;
+  }
+}

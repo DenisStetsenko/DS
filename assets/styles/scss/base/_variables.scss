@@ -145,13 +145,13 @@ $btn-font-size-sm     : 0.8rem;
 $btn-font-weight      : 500;
 $btn-line-height      : 1.1;
 $btn-white-space      : 'nowrap';
-$btn-padding-y        : 14px;
+$btn-padding-y        : 15px;
 $btn-padding-y-sm     : 12px;
 $btn-padding-x        : 35px;
 $btn-padding-x-sm     : 26px;
 $btn-border-width     : 2px;
 $btn-border-radius    : $border-radius-xl;
-$btn-border-radius-sm : $border-radius-xl;
+$btn-border-radius-sm : $border-radius-lg;
 
 $btn-box-shadow         : $box-shadow-sm;
 $btn-focus-width        : 0;
@@ -461,5 +461,24 @@ $slick-dot-color-active   : $color-white;
       color: $color-white;
       background-color: $color-primary;
     }
+  }
+}
+
+@mixin make-button-primary(){
+  color: $color-white;
+  font-size: $btn-font-size;
+  background-color: $color-primary;
+  padding: $btn-padding-y $btn-padding-x;
+  font-family: $btn-font-family;
+  border-radius: $btn-border-radius;
+  line-height: $btn-line-height;
+  font-weight: $btn-font-weight;
+  letter-spacing: $custom-letter-spacing;
+  border: $btn-border-width solid $color-primary;
+  @include transition();
+  &:hover{
+    color: $color-primary;
+    background-color: transparent;
+    border-color: $color-primary;
   }
 }

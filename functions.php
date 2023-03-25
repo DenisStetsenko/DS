@@ -3,7 +3,7 @@
  * Functions
  */
 
-//show_admin_bar(false);
+show_admin_bar(false);
 
 /**
  * Included Files
@@ -235,3 +235,9 @@ if ( ! function_exists( 'wp_custom_the_author_posts_link' ) ) {
 	}
 	//add_filter( 'the_author_posts_link', 'wp_custom_the_author_posts_link' );
 }
+
+
+/**
+ * “indicates required fields” - How to hide it?
+ */
+add_filter( 'gform_required_legend', '__return_empty_string' );

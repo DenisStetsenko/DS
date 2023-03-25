@@ -6,8 +6,7 @@
 
 </div><!-- #wrapper -->
 
-	<footer id="colophon" aria-label="Footer"
-					class="footer site-footer border-top text-black font-secondary py-4">
+	<footer id="colophon" aria-label="Footer" class="footer site-footer border-top text-black font-secondary py-4 bg-light-gray">
 		<div class="container">
 	
 			<div class="row align-items-center">
@@ -24,7 +23,10 @@
 					<?php } ?>
 				</div>
 				<div class="col-lg-4 order-lg-1">
-					<p class="m-0"><?php printf( __( '©%s %s. Published with <i class="icon">%s</i>', 'wp-theme' ), date('Y'), get_bloginfo('name'), wp_custom_bs_icons('ui', 'heart') ); ?></p>
+					<p class="m-0"><?php printf( __( '©%s %s. Published with <i class="icon">%s</i>', 'wp-theme' ),
+															 date('Y'),
+															 get_bloginfo('name'),
+															 wp_custom_bs_icons('ui', 'heart') ); ?></p>
 				</div>
 			</div>
 	

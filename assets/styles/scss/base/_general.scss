@@ -1,9 +1,16 @@
 /*--------------------------------------------------------------
   1.0 Misc
 --------------------------------------------------------------*/
-body{
-  //letter-spacing: -.2px;
+html, body {
+  min-height: 100vh;
+  #page{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
 
+body{
   ::selection {
     color: $color-white;
     background: $color-primary; /* WebKit/Blink Browsers */
@@ -123,12 +130,13 @@ embed, iframe, object { max-width: 100%; }
 
 .btn{
   &.btn-primary{
-    //--bs-btn-color: #FFF;
-    //--bs-btn-bg: #000;
-    //--bs-btn-hover-color: #404447;
-    //--bs-btn-hover-bg: transparent;
-    //--bs-btn-active-color: #404447;
-    //--bs-btn-active-bg: transparent;
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #5333ed;
+    --bs-btn-hover-color: #5333ed;
+    --bs-btn-hover-bg: transparent;
+    --bs-btn-active-color: #5333ed;
+    --bs-btn-active-bg: transparent;
+    @include custom-letter-spacing();
   }
   &.btn-outline-primary{
     //--bs-btn-border-color: #18865F;

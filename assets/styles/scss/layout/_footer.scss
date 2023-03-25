@@ -1,5 +1,8 @@
 footer#colophon {
+  margin-top: auto; // sticky bottom
+
   @include font-size(14px);
+  font-weight: 500;
 
   .icon {
     margin-left: 2px;

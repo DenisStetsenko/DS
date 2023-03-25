@@ -11,8 +11,7 @@
  */
 get_header();
 
-echo 'index.php';
-
+//echo 'index.php';
 get_template_part('template-parts/category/markup');
 
 get_footer();
