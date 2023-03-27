@@ -5,11 +5,11 @@ footer#colophon {
   font-weight: 500;
 
   .icon {
-    margin-left: 2px;
+    margin-left: 4px;
 
     svg {
       width: auto;
-      max-height: 12px;
+      max-height: 16px;
     }
   }
 
@@ -25,6 +25,7 @@ footer#colophon {
         a{
           color: $color-black;
           @include hover-underline();
+          line-height: 1.45;
         }
       }
     }

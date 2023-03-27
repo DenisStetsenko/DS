@@ -10,8 +10,8 @@
 		<div class="container">
 	
 			<div class="row align-items-center">
-				<div class="col-lg-8 order-lg-2 text-lg-end">
-					<?php if ( has_nav_menu( 'footer-menu' ) ) { ?>
+				<?php if ( has_nav_menu( 'footer-menu' ) ) { ?>
+					<div class="col-lg-8 order-lg-2 text-lg-end">
 						<nav id="nav-footer-menu" class="footer-menu" role="navigation">
 							<?php wp_nav_menu( array(
 									'theme_location'  => 'footer-menu',
@@ -20,13 +20,13 @@
 									'fallback_cb'     => 'wp_bootstrap_navwalker::fallback')
 							); ?>
 						</nav>
-					<?php } ?>
-				</div>
+					</div>
+				<?php } ?>
 				<div class="col-lg-4 order-lg-1">
 					<p class="m-0"><?php printf( __( '©%s %s. Published with <i class="icon">%s</i>', 'wp-theme' ),
 															 date('Y'),
 															 get_bloginfo('name'),
-															 wp_custom_bs_icons('ui', 'heart') ); ?></p>
+															 wp_custom_bs_icons('ui', 'heartUA') ); ?></p>
 				</div>
 			</div>
 	
