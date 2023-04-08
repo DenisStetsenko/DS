@@ -1,5 +1,4 @@
 <?php
-defined( 'ABSPATH' ) || exit;
 /**
  * Searchform
  *
@@ -12,10 +11,14 @@ if ( isset( $args['aria_label'] ) && ! empty( $args['aria_label'] ) ) {
 }
 ?>
 
-<form role="search" class="search-form" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>" <?php echo $aria_label; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped above. ?>>
+<form id="ajax-search-form" role="search" class="search-form" autocomplete="off" onsubmit="return false;"
+			action="#" <?php echo $aria_label; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped above. ?>>
   <label class="screen-reader-text" for="<?php echo $uid; ?>"><?php echo esc_html_x( 'Search for:', 'label', 'understrap' ); ?></label>
   <div class="input-group">
-    <input type="search" class="field search-field form-control" id="<?php echo $uid; ?>" name="s" value="<?php the_search_query(); ?>" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'understrap' ); ?>">
-    <input type="submit" class="submit search-submit btn btn-primary" name="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'understrap' ); ?>">
+    <input type="search" class="field search-field form-control" id="<?php echo $uid; ?>" minlength="2"
+					 name="s" value="<?php the_search_query(); ?>"
+					 onkeyup="wp_ajax_live_search(this)"
+					 placeholder="<?php echo esc_attr_x( 'Start Typing to Search &hellip;', 'placeholder', 'understrap' ); ?>">
   </div>
+	<ul id="ajax-search-results" data-message="<?php _e('Please enter at least 2 characters', 'wp-theme'); ?>" class="list-unstyled m-0 font-secondary"></ul>
 </form>

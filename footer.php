@@ -50,6 +50,9 @@
 	</script>
 <?php endif; ?>
 
+<?php get_template_part('template-parts/popups/search-popup'); ?>
+<?php get_template_part('template-parts/popups/email-popup'); ?>
+
 <?php wp_footer(); ?>
 </body>
 </html>

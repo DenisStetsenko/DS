@@ -261,14 +261,19 @@ $close-color                  : white;
 $close-text-shadow            : none;
 $close-font-size              : 35px;
 $modal-header-border-color    : transparent;
-$modal-backdrop-opacity       : 0.8;
 $modal-content-bg             : transparent;
 $modal-content-border-width   : 0;
 $modal-content-border-color   : transparent;
 $modal-content-border-radius  : 0;
 $modal-content-box-shadow-xs  : none;
+
+$modal-backdrop-bg            : $color-black;
+$modal-backdrop-opacity       : 0.9;
+
+$modal-md                     : 600px;
 $modal-lg                     : 800px;
 
+$modal-dialog-margin-y-sm-up  : 70px;
 
 /* Container */
 $container-max-widths: (

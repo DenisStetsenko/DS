@@ -51,8 +51,10 @@
 		
 		<div id="search-subscribe-area" class="ms-4">
 			<ul class="list-inline m-0">
-				<li class="list-inline-item mail"><a href="#"><?= wp_custom_bs_icons('ui', 'mail'); ?></a></li>
-				<li class="list-inline-item search"><a href="#"><?= wp_custom_bs_icons('ui', 'search'); ?></a></li>
+				<li class="list-inline-item mail"><a href="#" class="email-popup"><?= wp_custom_bs_icons('ui', 'mail'); ?></a></li>
+				<li class="list-inline-item search">
+					<a href="#" class="search-popup" data-bs-toggle="modal" data-bs-target="#searchModal"><?= wp_custom_bs_icons('ui', 'search'); ?></a>
+				</li>
 			</ul>
 		</div>
 

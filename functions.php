@@ -3,7 +3,7 @@
  * Functions
  */
 
-//show_admin_bar(false);
+show_admin_bar(false);
 
 /**
  * Included Files
@@ -88,7 +88,7 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
       ));
     endif;
 
-    wp_enqueue_script( 'bootstrap', get_theme_file_uri('assets/scripts/bootstrap/bootstrap.bundle.min.js'), array('jquery'), null, true );
+    wp_enqueue_script( 'bootstrap', get_theme_file_uri('assets/scripts/bootstrap/bootstrap.min.js'), array('jquery'), null, true );
     //wp_enqueue_script( 'global', get_theme_file_uri('assets/scripts/global.js'), array('jquery'), null, true );
 
     wp_enqueue_style( 'main', get_theme_file_uri('assets/styles/css/main.css'), array(), time() );
@@ -241,3 +241,49 @@ if ( ! function_exists( 'wp_custom_the_author_posts_link' ) ) {
  * “indicates required fields” - How to hide it?
  */
 add_filter( 'gform_required_legend', '__return_empty_string' );
+
+
+/**
+ * Popup Ajax Search
+ */
+function wp_ajax_live_search(){
+	
+	if ( ! check_ajax_referer( 'wp-denstetsenko-key', 'security', false ) ) {
+		wp_send_json_error( 'Invalid Request' );
+	}
+	
+	$args = [];
+	$args['post_type']      = 'post';
+	$args['post_status']    = 'publish';
+	$args['order']          = 'DESC';
+	$args['orderby']        = 'date';
+	$args['posts_per_page'] = -1;
+	$args['s']              = sanitize_text_field( $_POST['keyword'] );
+	
+	$wp_query = new WP_Query($args);
+	
+	// get total posts
+	$postsCount = $wp_query->post_count;
+	$foundCount = $wp_query->found_posts;
+	
+	ob_start();
+	
+	if ( $wp_query->have_posts() ) :
+		while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+			<li class="list-item font-secondary"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></li>
+		<?php endwhile;
+	else : ?>
+	<li class="list-item font-secondary fs-4 text-center"><?php _e('Sorry, nothing was found', 'wp-theme') ?></li>
+	<?php endif;
+	
+	wp_reset_query();
+	
+	$response = array(
+		'html' => ob_get_clean(),
+	);
+	
+	wp_send_json_success($response);
+	wp_die();
+}
+add_action('wp_ajax_wp_ajax_live_search_data_fetch' , 'wp_ajax_live_search');
+add_action('wp_ajax_nopriv_wp_ajax_live_search_data_fetch','wp_ajax_live_search');
