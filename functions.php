@@ -250,6 +250,7 @@ function wp_ajax_live_search(){
 	
 	if ( ! check_ajax_referer( 'wp-denstetsenko-key', 'security', false ) ) {
 		wp_send_json_error( 'Invalid Request' );
+		return;
 	}
 	
 	$args = [];
@@ -262,10 +263,6 @@ function wp_ajax_live_search(){
 	
 	$wp_query = new WP_Query($args);
 	
-	// get total posts
-	$postsCount = $wp_query->post_count;
-	$foundCount = $wp_query->found_posts;
-	
 	ob_start();
 	
 	if ( $wp_query->have_posts() ) :
@@ -273,7 +270,7 @@ function wp_ajax_live_search(){
 			<li class="list-item font-secondary"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></li>
 		<?php endwhile;
 	else : ?>
-	<li class="list-item font-secondary fs-4 text-center"><?php _e('Sorry, nothing was found', 'wp-theme') ?></li>
+	<li class="list-item font-secondary text-center"><?php _e('Sorry, nothing was found.', 'wp-theme') ?></li>
 	<?php endif;
 	
 	wp_reset_query();

@@ -20,5 +20,7 @@ if ( isset( $args['aria_label'] ) && ! empty( $args['aria_label'] ) ) {
 					 onkeyup="wp_ajax_live_search(this)"
 					 placeholder="<?php echo esc_attr_x( 'Start Typing to Search &hellip;', 'placeholder', 'understrap' ); ?>">
   </div>
-	<ul id="ajax-search-results" data-message="<?php _e('Please enter at least 2 characters', 'wp-theme'); ?>" class="list-unstyled m-0 font-secondary"></ul>
+	<ul id="ajax-search-results"
+			data-error="<?php _e('Something went wrong. Please try again or refresh the page', 'wp-theme'); ?>"
+			data-message="<?php _e('Please enter at least 2 characters', 'wp-theme'); ?>" class="list-unstyled m-0 font-secondary"></ul>
 </form>

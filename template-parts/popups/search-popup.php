@@ -28,12 +28,13 @@
 			var $searchResultsContainer = $('#ajax-search-results');
 			var inputTypeChars 					= $(el).val().length;
 			var message									= $searchResultsContainer.data('message');
+			var error										= $searchResultsContainer.data('error');
 			
 			if ( inputTypeChars > 1 ) {
 				$.ajax({
 					url			 : '<?= admin_url('admin-ajax.php'); ?>',
 					dataType : "json",
-					type		 : 'post',
+					type		 : 'POST',
 					cache    : false,
 					context  : this,
 					data: {
@@ -41,23 +42,30 @@
 						keyword		: $('#s-1').val(),
 						security  : '<?php echo $ajax_nonce; ?>'
 					},
+					error: function (xhr, ajaxOptions, thrownError) {
+						// console.log(xhr.status);
+						// console.log(xhr.responseText);
+						// console.log(thrownError);
+						$searchResultsContainer.html('<li class="list-item font-secondary text-danger text-center">'+ error +'</li>').addClass('ajax-search-active');
+					},
 					success: function( result ) {
-
-              console.log(result.data.args);
-              
-						var $searchResults = $(result.data.html);
-						$searchResultsContainer
+						if ( result.success ) {
+							var $searchResults = $(result.data.html);
+							$searchResultsContainer
 								.css({ opacity: 0 })
 								.addClass('ajax-search-active')
 								.html( $searchResults )
 								.animate({ opacity: 1 }, 200);
+						} else {
+							$searchResultsContainer.html('<li class="list-item font-secondary text-danger text-center">'+ error +'</li>').addClass('ajax-search-active');
+						}
 					}
 				});
-			}
-			else {
-				$searchResultsContainer.html('<li class="list-item">' + message + '</li>');
+			} else {
+				$searchResultsContainer.html('<li class="list-item font-secondary text-center">' + message + '</li>');
 			}
 			
+			return false;
 		}(jQuery));
   }
 	
