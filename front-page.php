@@ -1,5 +1,4 @@
 <?php
-defined( 'ABSPATH' ) || exit;
 /**
  * Front page template.
  * USE Settings->Reading and set up Front Page.
@@ -7,22 +6,16 @@ defined( 'ABSPATH' ) || exit;
 get_header(); ?>
 
   <div class="wrapper" id="front-page-wrapper">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <main class="site-main" id="main">
-						
-            <?php
-            while ( have_posts() ) {
-              the_post();
-              get_template_part( 'template-parts/front-page/content' );
-            }
-            ?>
+		<main class="site-main" id="main">
+		
+		  <?php
+		  while ( have_posts() ) {
+			  the_post();
+			  //get_template_part( 'template-parts/front-page/content' );
+		  }
+		  ?>
 
-          </main><!-- #main -->
-        </div>
-      </div>
-    </div>
+		</main><!-- #main -->
   </div>
 
 <?php get_footer(); ?>

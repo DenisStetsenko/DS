@@ -12,7 +12,7 @@ $color-black      : #292929;  $black      : $color-black;
 $color-primary       : #5333ed;  $primary    : $color-primary;
 //$color-primary       : #5333ed;  $primary    : $color-primary;
 $color-primary-dark  : darken($color-primary, 20%);
-$color-primary-light : lighten($color-primary, 20%);
+$color-primary-light : lighten($color-primary, 2%);
 
 $color-secondary      : #1f6291;  $secondary  : $color-secondary;
 
@@ -469,7 +469,7 @@ $slick-dot-color-active   : $color-white;
   }
 }
 
-@mixin make-button-primary(){
+@mixin make-button-primary( $type : 'outline' ){
   color: $color-white;
   font-size: $btn-font-size;
   background-color: $color-primary;
@@ -481,9 +481,19 @@ $slick-dot-color-active   : $color-white;
   letter-spacing: $custom-letter-spacing;
   border: $btn-border-width solid $color-primary;
   @include transition();
-  &:hover{
-    color: $color-primary;
-    background-color: transparent;
-    border-color: $color-primary;
+  @if $type == 'outline' {
+    &:hover{
+      color: $color-primary;
+      background-color: transparent;
+      border-color: $color-primary;
+    }
   }
+  @if $type == 'lighten' {
+    &:hover{
+      color: $color-white;
+      background-color: $color-primary-light;
+      border-color: $color-primary-light;
+    }
+  }
+
 }

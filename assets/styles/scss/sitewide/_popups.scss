@@ -1,3 +1,66 @@
+// Subscribe Modal
+// =====================================================================================================================
+#subscribeModal{
+  .modal-body{
+    padding: 30px 35px 35px 35px;
+    background-color: $color-light-gray;
+    border: 1px solid rgba($color-border-gray, 0.7);
+    box-shadow: $box-shadow;
+    @include border-radius($border-radius-lg);
+  }
+
+  .gform_confirmation_wrapper{
+    background-color: $color-white;
+    padding: 40px 20px 40px 20px;
+    @include border-radius($border-radius-lg);
+    .gform_confirmation_message{
+      h2{
+        @include font-size(28px);
+      }
+      @include font-size(17px);
+    }
+  }
+
+  .gform_wrapper{
+    padding: 0;
+    background: none;
+    border: 0;
+    box-shadow: none;
+
+    .gform_body{
+      .gform_fields{
+        grid-row-gap: 25px;
+        grid-column-gap: 0;
+        .gfield{
+          input[type="email"]{
+            height: 52px;
+            @include border-bottom-end-radius(0);
+            @include border-top-end-radius(0);
+            outline: none;
+          }
+        }
+        #field_submit{
+          .gform-button{
+            @include make-button-primary($type : 'lighten');
+            @include border-bottom-start-radius(0);
+            @include border-top-start-radius(0);
+            padding: 10px 10px;
+            height: 52px;
+            flex-grow: 1;
+          }
+        }
+      }
+    }
+  }
+  .footer-meta{
+    @include font-size(16px);
+    text-align: right;
+  }
+}
+
+
+// Search Modal
+// =====================================================================================================================
 #searchModal{
   .search-form{
     background-color: $color-white;
