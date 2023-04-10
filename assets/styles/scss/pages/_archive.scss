@@ -30,6 +30,17 @@
       }
     }
 
+    .post-loop-item{
+      transition: all .25s cubic-bezier(.02,.01,.47,1);
+      box-shadow: 0 7px 7px rgba(#f0f3f4,0.95), 0 0 0 transparent;
+      //backface-visibility: hidden;
+      &:hover{
+  -webkit-transform: translateY(-4px) translate3d(0,0,0) translateZ(0);
+          transform: translateY(-4px) translate3d(0,0,0) translateZ(0);
+          box-shadow: 0 4px 35px 0 rgba(#d8d8d8,0.95), 0 0 0 transparent;
+      }
+    }
+
     .bg {
       @include responsive-ratio-background(16, 9, true);
     }
@@ -60,14 +71,53 @@
   @include media-breakpoint-up(lg){
     padding-left: 2rem;
   }
+  .sticky-top{
+    top: 105px;
+    z-index: 1;
+  }
   .widget {
-    top: 100px;
-    position: sticky;
     background-color: $color-light-gray;
     border: 1px solid $color-border-gray;
     padding: 25px 32px;
     &:not(:last-child){
       margin-bottom: 2rem;
+    }
+
+    // Gravity Forms
+    .gform_wrapper{
+      padding: 5px 0 15px 0;
+      background-color: transparent;
+      border-radius: 0;
+      border: none;
+      box-shadow: none;
+      .gform_heading{
+        .gform_description{
+          font-weight: 700;
+          line-height: 1.4;
+        }
+      }
+      .gform_body{
+        .gform_fields{
+          display: flex;
+          flex-wrap: wrap;
+          grid-row-gap: 15px;
+          .gfield{
+            flex: 1 1 100%;
+            &.gfield--type-email{
+              input{
+                min-height: 52px;
+                text-align: center;
+              }
+            }
+            &.gfield--type-submit{
+              input[type="submit"]{
+                @include make-button-primary();
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
     }
 
     // SendInBlue Subscribe Form

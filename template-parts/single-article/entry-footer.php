@@ -1,5 +1,6 @@
 <?php
 $footer_content = get_field('footer_content');
+
 if ( $footer_content['show_footer_content'] ) : ?>
 	<section class="post-footer-content ">
 		<hr>

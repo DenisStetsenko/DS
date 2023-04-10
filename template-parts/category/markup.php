@@ -1,4 +1,4 @@
-<div id="template-articles-archive" class="section-padding">
+<div id="template-articles-archive" class="main-area-padding">
 	<div class="container">
 		
 		<div class="row">
@@ -16,6 +16,9 @@
 						}
 						elseif ( is_author() ) {
 							echo 'The Latest Articles by ' . nl2br(get_the_author_meta('first_name'));
+						}
+						elseif ( is_home() ) {
+							echo 'The Latest Articles';
 						}
 						?>
 					</h1>
@@ -56,7 +59,9 @@
 			<div class="col-lg-4 d-flex">
 				<?php if ( is_active_sidebar( 'category-sidebar' ) ) { ?>
 					<aside id="right-sidebar" class="position-relative">
-						<?php dynamic_sidebar( 'category-sidebar' ); ?>
+						<div class="sticky-top">
+							<?php dynamic_sidebar( 'category-sidebar' ); ?>
+						</div>
 					</aside>
 				<?php } ?>
 			</div>

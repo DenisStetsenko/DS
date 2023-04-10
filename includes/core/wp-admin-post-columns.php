@@ -26,13 +26,12 @@ add_filter( "manage_post_posts_columns", function ( $columns ) {
 // Handle the value for each of the new columns.
 add_action( "manage_post_posts_custom_column", function ( $column_name, $post_id ) {
 	
-	
 	if ( $column_name == 'post-layout' ) {
 		$template = get_post_meta( $post_id, '_wp_page_template', true );
 		if ( $template === 'default' || $template === '' ) {
-			$icon = '<span class="dashicons dashicons-image-flip-horizontal"></span>';
-		} else {
 			$icon = '<span class="dashicons dashicons-table-col-before"></span>';
+		} else {
+			$icon = '<span class="dashicons dashicons-image-flip-horizontal"></span>';
 		}
 		
 		// Display an ACF Icon field

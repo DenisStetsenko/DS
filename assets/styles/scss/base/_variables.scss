@@ -1,3 +1,9 @@
+// TODO: need to decided FINAL color scheme
+// gray v1: #f7f7f7
+// gray v2: #f7f8f9
+// border-gray v1: #e5e5e5
+// border-gray v2: #eaecee
+
 // Fonts
 $font-primary           : 'Lora', serif;
 $font-secondary         : 'Inter', sans-serif;
@@ -19,8 +25,9 @@ $color-secondary      : #1f6291;  $secondary  : $color-secondary;
 $color-accent        : #fbdc6b;
 
 $color-gray          : #595959;
-$color-light-gray    : #f7f7f7;
-$color-border-gray   : #e5e5e5;
+
+$color-light-gray    : #f7f8f9;
+$color-border-gray   : #eaecee;
 
 $color-danger        : #EB5757;
 $color-success       : #36c384;
@@ -205,7 +212,7 @@ $navbar-padding-y                   : 15px;
 $navbar-padding-x                   : 0;
 
 $navbar-nav-link-padding-y          : 10px;
-$navbar-nav-link-padding-x          : 18px;
+$navbar-nav-link-padding-x          : 23px;
 $navbar-light-color                 : $color-black;
 $navbar-light-active-color          : $color-primary;
 $navbar-light-hover-color           : $color-primary;

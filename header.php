@@ -32,7 +32,7 @@
 
   <?php get_template_part( 'template-parts/header/site-header' ); ?>
 		
-	<?php if ( function_exists('yoast_breadcrumb') && is_singular('post') ) { ?>
+	<?php if ( function_exists('yoast_breadcrumb') && is_singular('post') && get_field('show_breadcrumbs', 'option') ) { ?>
 		<div class="yoast-breadcrumb-container py-3">
 			<div class="container">
 				<?php yoast_breadcrumb( '<nav id="nav-yoast-breadcrumb" aria-label="breadcrumb"><ol class="breadcrumb font-secondary m-0">','</ol></nav>' ); ?>

@@ -8,15 +8,31 @@
  */
 get_header(); ?>
 
-<div id="default-page-wrapper" class="section-padding">
+<div id="default-page-wrapper" class="main-area-padding">
 	<main id="main" class="site-main">
 		<div class="container">
-			<?php
-			while ( have_posts() ) {
-				the_post();
-				get_template_part( 'template-parts/loop-templates/content', 'page' );
-			}
-			?>
+			<div class="row">
+				
+				<div class="col-lg-8">
+					<?php
+					while ( have_posts() ) {
+						the_post();
+						get_template_part( 'template-parts/loop-templates/content', 'page' );
+					}
+					?>
+				</div>
+				
+				<div class="col-lg-4 d-flex">
+					<?php if ( is_active_sidebar( 'page-sidebar' ) ) { ?>
+						<div id="right-sidebar" class="position-relative">
+							<div class="sticky-top">
+								<?php dynamic_sidebar( 'page-sidebar' ); ?>
+							</div>
+						</div>
+					<?php } ?>
+				</div>
+				
+			</div>
 		</div>
 	</main>
 </div>

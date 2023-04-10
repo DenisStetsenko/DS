@@ -17,7 +17,7 @@ $post_m_date	= get_the_modified_date( 'M j, Y' );
 					<figcaption>
 						<ul class="list-inline m-0">
 							<li class="list-heading mb-1">
-								<?php printf( __( 'By <cite class="fst-normal">%s</cite>', 'wp-theme' ), get_the_author_posts_link() ); ?>
+								<?php printf( __( 'By <cite class="fst-normal">%s</cite>', 'wp-theme' ), get_the_author_meta('display_name', $author_id) ); //get_the_author_posts_link() ?>
 							</li>
 							<li class="list-inline-item">
 								<?= is_page_template('single-review-template.php') ? do_shortcode('[wp-reading-time]') : do_shortcode('[acf-reading-time]'); ?>

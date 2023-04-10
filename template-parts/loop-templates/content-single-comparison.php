@@ -141,5 +141,7 @@ get_template_part('template-parts/single-article/author-block'); ?>
 			<?php endforeach; ?>
 		</div>
 	<?php endif; ?>
-
+	
+	<?php get_template_part( 'template-parts/single-article/entry-footer' ); ?>
+	
 </article><!-- #post-## -->

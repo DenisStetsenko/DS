@@ -25,6 +25,7 @@ function display_social_share_icons() {
 	$title = get_the_title();
 	?>
 	<ul class="list-inline m-0 social-share-icons">
+		<li class="list-inline-item fs-5 font-secondary text-gray"><?php _e('Share article', 'wp-theme'); ?>:</li>
 		<li class="list-inline-item"><a target="popup" aria-label="<?php _e('Share on Twitter', 'wp-theme'); ?>" data-service="Twitter" href="<?= get_share_link($url, $title, 'twitter'); ?>" rel="nofollow noopener"><?= wp_custom_bs_icons('social', 'twitter'); ?></a></li>
 		<li class="list-inline-item"><a target="popup" aria-label="<?php _e('Share on Facebook', 'wp-theme'); ?>" data-service="Facebook" href="<?= get_share_link($url, $title, 'facebook'); ?>" rel="nofollow noopener"><?= wp_custom_bs_icons('social', 'facebook'); ?></a></li>
 		<li class="list-inline-item"><a target="popup" aria-label="<?php _e('Share on Linkedin', 'wp-theme'); ?>" data-service="Linkedin" href="<?= get_share_link($url, $title, 'linkedin'); ?>" rel="nofollow noopener"><?= wp_custom_bs_icons('social', 'linkedin'); ?></a></li>

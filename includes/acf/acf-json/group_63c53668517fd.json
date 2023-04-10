@@ -297,8 +297,8 @@
             },
             {
                 "param": "post_template",
-                "operator": "!=",
-                "value": "single-review-template.php"
+                "operator": "==",
+                "value": "single-comparison-template.php"
             }
         ]
     ],
@@ -311,5 +311,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1674236099
+    "modified": 1681145961
 }
