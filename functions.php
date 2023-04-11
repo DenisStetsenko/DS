@@ -3,7 +3,7 @@
  * Functions
  */
 
-show_admin_bar(false);
+//show_admin_bar(false);
 
 /**
  * Included Files
@@ -131,13 +131,13 @@ if ( ! function_exists( 'wp_custom_posts_ajax_pagination' ) ) {
     check_ajax_referer('wp-custom-key', 'security');
 
     // Define args
-    $ppp      = isset($_POST['ppp']) ? $_POST['ppp'] : get_option('posts_per_page');
-    $cat      = isset($_POST['cat']) ? $_POST['cat'] : '';
-    $search   = isset($_POST['search']) ? $_POST['search'] : '';
-    $offset   = isset($_POST['offset']) ? $_POST['offset'] : get_option('posts_per_page');
-    $year     = isset($_POST['year']) ? $_POST['year'] : '';
+    $layout   = isset($_POST['layout']) 	? $_POST['layout'] : '3-cols';
+    $ppp      = isset($_POST['ppp']) 			? $_POST['ppp'] : get_option('posts_per_page');
+    $cat      = isset($_POST['cat']) 			? $_POST['cat'] : '';
+    $offset   = isset($_POST['offset']) 	? $_POST['offset'] : get_option('posts_per_page');
+    $year     = isset($_POST['year']) 		? $_POST['year'] : '';
     $monthnum = isset($_POST['monthnum']) ? $_POST['monthnum'] : '';
-    $type     = isset($_POST['type']) ? $_POST['type'] : '';
+    $type     = isset($_POST['type']) 		? $_POST['type'] : '';
 
     $args = [];
     $args['post_type']      = 'post';
@@ -176,7 +176,7 @@ if ( ! function_exists( 'wp_custom_posts_ajax_pagination' ) ) {
 
     if ($wp_query->have_posts()) :
       while ($wp_query->have_posts()) : $wp_query->the_post();
-	      get_template_part( 'template-parts/category/post-loop', 'item', array( 'layout' => '2-cols', 'include-author-block' => 1 ) );
+	      get_template_part( 'template-parts/category/post-loop', 'item', array( 'layout' => $layout, 'include-author-block' => 1 ) );
       endwhile;
     endif;
     wp_reset_query();
@@ -185,6 +185,7 @@ if ( ! function_exists( 'wp_custom_posts_ajax_pagination' ) ) {
         'html' => ob_get_clean(),
       //'args' => $args,
         'type' => $type,
+        'layout' => $layout,
         'count' => $postsCount,
         'found' => $foundCount,
         'isLastPage' => $postsCount < $ppp

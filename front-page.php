@@ -5,16 +5,12 @@
  */
 get_header(); ?>
 
-  <div class="wrapper" id="front-page-wrapper">
+  <div id="front-page-wrapper">
 		<main class="site-main" id="main">
 		
-		  <?php
-		  while ( have_posts() ) {
-			  the_post();
-			  //get_template_part( 'template-parts/front-page/content' );
-		  }
-		  ?>
-
+			<?php get_template_part('template-parts/front-page/hero-intro'); ?>
+			<?php get_template_part('template-parts/front-page/latest-articles'); ?>
+			
 		</main><!-- #main -->
   </div>
 

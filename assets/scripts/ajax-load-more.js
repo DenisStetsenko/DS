@@ -5,8 +5,8 @@
 
     var posts_per_page        = $(this).data('ppp'); // Define Posts Per Page
     var posts_category        = $(this).data('category'); // Define Category
-    var posts_search_results  = $(this).data('search'); // Define Search Results
     var posts_type_results    = $(this).data('type'); // Define Type Results
+    var posts_layout          = $(this).data('layout'); // Define Layout 2 or 3 cols
 
     var posts_archive_year      = $(this).data('year'); // Define Archive Results
     var posts_archive_monthnum  = $(this).data('monthnum'); // Define Archive Results
@@ -25,9 +25,9 @@
       cache    : false,
       context  : this,
       data : {
+        'layout'    : posts_layout,
         'ppp'       : posts_per_page,
         'cat'       : posts_category,
-        'search'    : posts_search_results,
         'year'      : posts_archive_year,
         'monthnum'  : posts_archive_monthnum,
         'type'      : posts_type_results,
@@ -53,7 +53,7 @@
         $(this).text(load_more_btn_text); // Change AJAX button text
 
         var $newElements = $(result.data.html).css({ opacity: 0 });
-        $container.append($newElements.animate({ opacity: 1 }, 600)); // Append NEW elements
+        $container.append($newElements.animate({ opacity: 1 }, 500)); // Append NEW elements
       }
 
       if ( result.data.isLastPage === true ) {

@@ -46,7 +46,7 @@
         }
         #field_submit{
           .gform-button{
-            @include make-button-primary($type : 'lighten');
+            @include make-button-primary('lighten');
             @include border-bottom-start-radius(0);
             @include border-top-start-radius(0);
             padding: 10px 10px;

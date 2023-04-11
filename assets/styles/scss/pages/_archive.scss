@@ -1,4 +1,30 @@
 /**
+ * Archive Heading
+ */
+header#category-heading{
+  text-align: center;
+  padding-bottom: 30px;
+  margin-bottom: 40px;
+  //border-bottom: 1px solid $color-border-gray;
+  margin-top: -5px; // offset to have equal top/bottom paddings
+  h1, .category-title{
+    margin-bottom: 0;
+    @include highlight();
+  }
+  .cat-description{
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    p{
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+/**
  * General posts loop
  */
 .posts-loop {
@@ -33,16 +59,29 @@
     .post-loop-item{
       transition: all .25s cubic-bezier(.02,.01,.47,1);
       box-shadow: 0 7px 7px rgba(#f0f3f4,0.95), 0 0 0 transparent;
-      //backface-visibility: hidden;
       &:hover{
-  -webkit-transform: translateY(-4px) translate3d(0,0,0) translateZ(0);
+          -webkit-transform: translateY(-4px) translate3d(0,0,0) translateZ(0);
           transform: translateY(-4px) translate3d(0,0,0) translateZ(0);
           box-shadow: 0 4px 35px 0 rgba(#d8d8d8,0.95), 0 0 0 transparent;
+        .bg {
+          &:after { opacity: 0.4; } // Todo: do we need it?
+        }
       }
     }
 
     .bg {
+      position: relative;
       @include responsive-ratio-background(16, 9, true);
+      &:after {
+        content: "";
+        -o-transition: opacity 0.4s ease;
+        transition: opacity 0.4s ease;
+        -webkit-transition: opacity 0.4s ease;
+        -moz-transition: opacity 0.4s ease;
+        -ms-transition: opacity 0.4s ease;
+        @include full-cover();
+        @include gradient-y(transparent, rgba(0,0,0,.45), 60%, 100%);
+      }
     }
 
     .category {
@@ -64,83 +103,6 @@
 }
 
 
-/**
- * Archive Sidebar + Single Sidebar
- */
-#right-sidebar {
-  @include media-breakpoint-up(lg){
-    padding-left: 2rem;
-  }
-  .sticky-top{
-    top: 105px;
-    z-index: 1;
-  }
-  .widget {
-    background-color: $color-light-gray;
-    border: 1px solid $color-border-gray;
-    padding: 25px 32px;
-    &:not(:last-child){
-      margin-bottom: 2rem;
-    }
-
-    // Gravity Forms
-    .gform_wrapper{
-      padding: 5px 0 15px 0;
-      background-color: transparent;
-      border-radius: 0;
-      border: none;
-      box-shadow: none;
-      .gform_heading{
-        .gform_description{
-          font-weight: 700;
-          line-height: 1.4;
-        }
-      }
-      .gform_body{
-        .gform_fields{
-          display: flex;
-          flex-wrap: wrap;
-          grid-row-gap: 15px;
-          .gfield{
-            flex: 1 1 100%;
-            &.gfield--type-email{
-              input{
-                min-height: 52px;
-                text-align: center;
-              }
-            }
-            &.gfield--type-submit{
-              input[type="submit"]{
-                @include make-button-primary();
-                width: 100%;
-              }
-            }
-          }
-        }
-      }
-    }
-
-    // SendInBlue Subscribe Form
-    &.widget_sib_subscribe_form {
-      padding: 30px;
-      background-color: $color-light-gray;
-
-      .sib-email-area {
-        input#sib-email-area {
-          background-image: escape-svg($bs-envelope-heart-icon);
-          background-position: 22px center;
-          background-repeat: no-repeat;
-          background-size: 20px;
-          padding-left: 53px;
-
-          &:focus {
-            background-image: escape-svg($bs-envelope-heart-icon-active);
-          }
-        }
-      }
-    }
-  }
-}
 
 
 /**

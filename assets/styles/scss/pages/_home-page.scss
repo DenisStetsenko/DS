@@ -1,0 +1,18 @@
+#front-page-wrapper{
+  .entry-content{
+    @include font-size(22px);
+    line-height: 1.45;
+    h1{
+      @include font-size(50px);
+      em{
+        font-weight: 400;
+        font-style: italic;
+        font-family: $font-primary;
+      }
+      u{
+        text-decoration: none;
+        @include highlight(18px);
+      }
+    }
+  }
+}

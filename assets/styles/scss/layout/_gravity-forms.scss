@@ -79,7 +79,7 @@
       position: relative;
       .gform_button{
         margin: 0;
-        @include make-button-primary($type : 'lighten');
+        @include make-button-primary('lighten');
       }
       img.gform_ajax_spinner {
         position: absolute;

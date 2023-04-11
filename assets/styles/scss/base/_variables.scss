@@ -13,14 +13,14 @@ $custom-letter-spacing  : 0.03rem;
 $color-white      : #FFFFFF;  $white      : $color-white;
 $color-black      : #292929;  $black      : $color-black;
 
-//$color-primary       : #008549;  $primary    : $color-primary;
 //$color-primary       : #18865F;  $primary    : $color-primary;
-$color-primary       : #5333ed;  $primary    : $color-primary;
 //$color-primary       : #5333ed;  $primary    : $color-primary;
-$color-primary-dark  : darken($color-primary, 20%);
-$color-primary-light : lighten($color-primary, 2%);
 
-$color-secondary      : #1f6291;  $secondary  : $color-secondary;
+$color-primary       : #fdd11f;  $primary    : $color-primary;
+$color-primary-light : #ffd941;
+$color-primary-dark  : #f0c000;
+
+$color-secondary      : #5333ed;  $secondary  : $color-secondary;
 
 $color-accent        : #fbdc6b;
 
@@ -45,7 +45,6 @@ $custom-colors: (
         "accent"        : $color-accent,
         "gray"          : $color-gray,
         "light-gray"    : $color-light-gray,
-        "primary-dark"  : $color-primary-dark,
         "primary-light" : $color-primary-light,
 );
 
@@ -180,14 +179,14 @@ $list-group-border-width   : 0;
 
 /* Links */
 $link-color             : $color-primary;
-$link-hover-color       : $color-primary-dark;
+$link-hover-color       : $color-primary-light;
 $link-decoration        : none;
 $link-hover-decoration  : none;
 
 /* H1-H6 */
 $headings-color         : $color-black;
 $headings-font-family   : $font-secondary;
-$headings-font-weight   : 700;
+$headings-font-weight   : 800;
 $headings-line-height   : 1.25;
 $headings-margin-bottom : 20px;
 
@@ -214,9 +213,9 @@ $navbar-padding-x                   : 0;
 $navbar-nav-link-padding-y          : 10px;
 $navbar-nav-link-padding-x          : 23px;
 $navbar-light-color                 : $color-black;
-$navbar-light-active-color          : $color-primary;
-$navbar-light-hover-color           : $color-primary;
-$navbar-light-toggler-border-color  : $color-primary;
+$navbar-light-active-color          : $color-black;
+$navbar-light-hover-color           : $color-black;
+$navbar-light-toggler-border-color  : $color-black;
 
 /* Accordion */
 //$accordion-button-padding-y : 20px;
@@ -477,7 +476,7 @@ $slick-dot-color-active   : $color-white;
 }
 
 @mixin make-button-primary( $type : 'outline' ){
-  color: $color-white;
+  color: $color-black;
   font-size: $btn-font-size;
   background-color: $color-primary;
   padding: $btn-padding-y $btn-padding-x;
@@ -490,17 +489,40 @@ $slick-dot-color-active   : $color-white;
   @include transition();
   @if $type == 'outline' {
     &:hover{
-      color: $color-primary;
+      color: $color-black;
       background-color: transparent;
-      border-color: $color-primary;
+      border-color: $color-black;
     }
   }
   @if $type == 'lighten' {
     &:hover{
-      color: $color-white;
+      color: $color-black;
       background-color: $color-primary-light;
       border-color: $color-primary-light;
     }
   }
+  @if $type == 'contrast' {
+    &:hover{
+      color: $color-white;
+      background-color: $color-black;
+      border-color: $color-black;
+    }
+  }
 
+}
+
+@mixin highlight($height: 14px, $botton: 4px){
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  &:after {
+    background: $color-primary;
+    bottom: $botton;
+    content: '';
+    height: $height;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
 }

@@ -1,0 +1,20 @@
+body.page-template-template-contact{
+  #wrapper{
+    background-image: url(../../images/page-bg-hero.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top 80px right 0;
+  }
+}
+#template-contact{
+
+  position: relative;
+  z-index: 1;
+  background-position: bottom right;
+
+
+
+  article.hentry{
+    text-align: center;
+  }
+}

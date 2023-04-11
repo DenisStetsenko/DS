@@ -1,0 +1,77 @@
+/**
+ * Archive Sidebar + Single Sidebar + Page Sidebar
+ */
+#right-sidebar {
+  @include media-breakpoint-up(lg){
+    padding-left: 2rem;
+  }
+  .sticky-top{
+    top: 105px;
+    z-index: 1;
+  }
+  .widget {
+    background-color: $color-light-gray;
+    border: 1px solid $color-border-gray;
+    padding: 25px 32px;
+    &:not(:last-child){
+      margin-bottom: 2rem;
+    }
+
+    // Gravity Forms
+    .gform_wrapper{
+      padding: 5px 0 15px 0;
+      background-color: transparent;
+      border-radius: 0;
+      border: none;
+      box-shadow: none;
+      .gform_heading{
+        .gform_description{
+          font-weight: 700;
+          line-height: 1.4;
+        }
+      }
+      .gform_body{
+        .gform_fields{
+          display: flex;
+          flex-wrap: wrap;
+          grid-row-gap: 15px;
+          .gfield{
+            flex: 1 1 100%;
+            &.gfield--type-email{
+              input{
+                min-height: 52px;
+                text-align: center;
+              }
+            }
+            &.gfield--type-submit{
+              input[type="submit"]{
+                @include make-button-primary('lighten');
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // SendInBlue Subscribe Form
+    &.widget_sib_subscribe_form {
+      padding: 30px;
+      background-color: $color-light-gray;
+
+      .sib-email-area {
+        input#sib-email-area {
+          background-image: escape-svg($bs-envelope-heart-icon);
+          background-position: 22px center;
+          background-repeat: no-repeat;
+          background-size: 20px;
+          padding-left: 53px;
+
+          &:focus {
+            background-image: escape-svg($bs-envelope-heart-icon-active);
+          }
+        }
+      }
+    }
+  }
+}

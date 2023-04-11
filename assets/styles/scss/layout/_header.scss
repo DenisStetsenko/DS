@@ -43,7 +43,7 @@
 #progress-bar {
   --scrollAmount: 0%;
 
-  background-image: linear-gradient(120deg, #ffcb00 0%, #ffcb00 100%);
+  background-image: linear-gradient(120deg, $color-primary 0%, $color-primary 100%);
   width: var(--scrollAmount);
 
   //background: linear-gradient(to right, #F24E1E var(--scrollAmount), transparent 0);
@@ -65,8 +65,8 @@ header#masthead{
 
     &:hover{
       svg{
-        path.name-bg{ fill: $color-primary; }
-        //path.name-letter{ fill: $color-black }
+        path.name-bg{ fill: $color-black; }
+        path.name-letter{ fill: $color-white }
       }
     }
     svg{
@@ -75,6 +75,8 @@ header#masthead{
       display: inline-table;
       path{
         @include transition();
+        &.name-bg{ fill: $color-primary; }
+        &.name-letter{ fill: $color-black }
       }
     }
   }
@@ -113,7 +115,7 @@ header#masthead{
       a{
         color: $color-black;
         &:hover{
-          color: $color-primary;
+          color: $color-primary-dark;
         }
         svg{
           width: 20px;
