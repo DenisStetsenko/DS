@@ -48,7 +48,7 @@ include get_theme_file_path('/includes/core/yoast-breadcrumbs-list.php');
 //include get_theme_file_path('/includes/core/wp-custom-metabox.php');
 
 // Load Custom Post Types
-//include get_theme_file_path('/includes/core/custom-post-types.php');
+include get_theme_file_path('/includes/core/custom-post-types.php');
 
 // Load Widgets
 include get_theme_file_path('/includes/core/wp-widgets.php');
@@ -87,9 +87,18 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
           'protection'  => wp_create_nonce('wp-custom-key')
       ));
     endif;
+	
+	  wp_enqueue_style( 'animate', get_theme_file_uri( 'assets/styles/css/animate.css' ), array(), array() );
+	  wp_enqueue_script( 'wow', get_theme_file_uri( 'assets/scripts/wow.min.js' ), array( 'jquery' ), array(), true );
+		
+	  wp_enqueue_script( 'js-call', get_theme_file_uri( 'assets/scripts/js-call.js' ), array(
+		  'jquery',
+		  'wow'
+	  ), null, true );
 
     wp_enqueue_script( 'bootstrap', get_theme_file_uri('assets/scripts/bootstrap/bootstrap.min.js'), array('jquery'), null, true );
     //wp_enqueue_script( 'global', get_theme_file_uri('assets/scripts/global.js'), array('jquery'), null, true );
+	  wp_register_script( 'slick', get_theme_file_uri('assets/scripts/slick.min.js'), array('jquery'), array(), true );
 
     wp_enqueue_style( 'main', get_theme_file_uri('assets/styles/css/main.css'), array(), time() );
 

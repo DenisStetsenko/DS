@@ -8,7 +8,7 @@ if ( $show_category_sidebar ) $layout = '2-cols';
 <div id="template-articles-archive" class="main-area-padding">
 	<div class="container">
 
-		<header id="category-heading">
+		<header id="category-heading" class="wow fadeInDown" data-wow-delay="50ms">
 			<h1 class="category-title">
 				<?php
 				if ( is_category() ) {

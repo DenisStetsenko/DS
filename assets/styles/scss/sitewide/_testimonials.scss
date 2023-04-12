@@ -1,0 +1,25 @@
+#hero-testimonials{
+  #testimonials-slider{
+    padding: 10px 100px 40px 100px;
+    .testimonials-loop-card{
+      padding: 50px 50px;
+      .entry-content{
+        @include font-size(22px);
+      }
+      .name{
+        @include font-size(24px);
+        font-weight: 700;
+        &:before{
+          content: "";
+          display: block;
+          background-color: $color-primary;
+          width: 30px;
+          height: 5px;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}

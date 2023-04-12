@@ -60,6 +60,26 @@
             "ui": 1
         },
         {
+            "key": "field_6436d5e14b326",
+            "label": "Show Category Buttons",
+            "name": "show_category_buttons",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "*single post",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_622cb48cfe216",
             "label": "API",
             "name": "",
@@ -250,5 +270,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681233894
+    "modified": 1681315344
 }

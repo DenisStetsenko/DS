@@ -11,8 +11,8 @@
 	<section id="front-latest-articles" class="section-margin">
 		<div class="container">
 			
-			<header class="section-title">
-				<h2 class="h1"><span><?php _e('Read The Latest'); ?></span></h2>
+			<header class="section-title wow fadeInLeft" data-wow-delay="150ms" data-wow-offset="40">
+				<h2 class=""><?php _e('Read The Latest'); ?></h2>
 			</header>
 			
 			<div class="row posts-loop g-4 g-lg-5">

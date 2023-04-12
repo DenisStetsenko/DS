@@ -8,7 +8,7 @@ defined( 'ABSPATH' ) || exit;
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-  <header id="page-header">
+  <header id="page-header" class="wow fadeInDown" data-wow-delay="50ms">
     <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
   </header><!-- .entry-header -->
 

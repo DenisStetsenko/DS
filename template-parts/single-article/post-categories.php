@@ -1,5 +1,8 @@
 <?php
-$post_categories 							= wp_get_post_categories(get_the_ID());
+$show_category_buttons = get_field('show_category_buttons', 'option');
+if ( ! $show_category_buttons ) return;
+
+$post_categories 							= wp_get_post_categories(get_the_ID());;
 $cats 												= array();
 $yoast_wpseo_primary_category = (int) get_post_meta(get_the_ID(), '_yoast_wpseo_primary_category', true);
 

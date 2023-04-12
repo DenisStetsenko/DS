@@ -49,7 +49,7 @@
   //background: linear-gradient(to right, #F24E1E var(--scrollAmount), transparent 0);
   //width: 100%;
 
-  height: 5px;
+  height: 4px;
 }
 
 /**
@@ -87,22 +87,44 @@ header#masthead{
     //text-transform: uppercase;
     @include custom-letter-spacing(0.01rem);
     .nav-item{
+      margin: rfs-value(0 22px);
       &.active{
         .nav-link{
-
+          &:after{
+            background-color: $color-primary;
+          }
         }
       }
       .nav-link{
-
+        position: relative;
+        &:hover{
+          &:after{
+            background-color: $color-primary;
+          }
+        }
+        &:after{
+          content: "";
+          width: 100%;
+          height: 3px;
+          background-color: transparent;
+          position: absolute;
+          bottom: -1px;
+          left: 0;
+          right: 0;
+          z-index: 10;
+          -webkit-transition: background-color 300ms ease;
+          transition: background-color 300ms ease;
+        }
       }
     }
   }
 
   #search-subscribe-area{
     li{
-      line-height: 1;
+      vertical-align: middle;
+      line-height: 28px;
       &:not(:last-child){
-        margin-right: 23px;
+        margin-right: 20px;
       }
       &.mail{
         a{
@@ -114,9 +136,21 @@ header#masthead{
       }
       a{
         color: $color-black;
+        width: 25px;
+        height: 30px;
+        overflow: hidden;
+        display: block;
+        position: relative;
+        transition: opacity 300ms ease;
         &:hover{
-          color: $color-primary-dark;
+          .hover{ opacity: 1; z-index: 1; visibility: visible }
+          .normal{ opacity: 0; z-index: -1; visibility: hidden  }
         }
+        .normal, .hover{
+          position: absolute;
+          transition: opacity 300ms ease, visibility 300ms ease;
+        }
+        .hover{ opacity: 0; z-index: -1; visibility: hidden }
         svg{
           width: 20px;
           height: 20px;

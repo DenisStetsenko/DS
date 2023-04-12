@@ -1,9 +1,17 @@
 #front-page-wrapper{
+
+}
+
+#front-hero-intro{
+  background-image: url(../../images/page-bg-hero.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top 0 right 0;
   .entry-content{
     @include font-size(22px);
     line-height: 1.45;
     h1{
-      @include font-size(50px);
+      //@include font-size(50px);
       em{
         font-weight: 400;
         font-style: italic;
@@ -11,7 +19,51 @@
       }
       u{
         text-decoration: none;
-        @include highlight(18px);
+        @include highlight(18px,5px);
+      }
+    }
+  }
+}
+
+
+#front-the-process{
+  .list-group{
+    .list-group-item{
+      &:not(:last-child){
+        .icon{
+          &:after{
+            content: "";
+            width: 3px;
+            height: calc(100% - 68px);
+            background-color: $color-primary;
+            position: absolute;
+            bottom: 0;
+            left: 1.156rem;
+            top: 60px;
+            z-index: -1;
+          }
+        }
+      }
+    }
+    .icon{
+      background-image: escape-svg($bs-check-circle-icon);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 40px;
+      height: 40px;
+      display: inline-block;
+      flex: 0 0 40px;
+      background-color: white;
+
+    }
+    .content{
+      padding-left: 40px;
+      @include font-size(17px);
+      line-height: 1.5;
+      .title{
+        @include font-size(26px);
+        padding-top: 2px;
       }
     }
   }

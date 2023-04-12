@@ -50,12 +50,18 @@
 		<!-- The WordPress Menu goes here -->
 		
 		<div id="search-subscribe-area" class="ms-4">
-			<ul class="list-inline m-0">
+			<ul class="list-inline m-0 ">
 				<li class="list-inline-item mail">
-					<a href="#" class="email-popup" data-bs-toggle="modal" data-bs-target="#subscribeModal"><?= wp_custom_bs_icons('ui', 'mail'); ?></a>
+					<a href="#" class="email-popup" data-bs-toggle="modal" data-bs-target="#subscribeModal">
+						<span class="normal"><?= wp_custom_bs_icons('ui', 'mail'); ?></span>
+						<span class="hover"><?= wp_custom_bs_icons('ui', 'mail-heart'); ?></span>
+					</a>
 				</li>
 				<li class="list-inline-item search">
-					<a href="#" class="search-popup" data-bs-toggle="modal" data-bs-target="#searchModal"><?= wp_custom_bs_icons('ui', 'search'); ?></a>
+					<a href="#" class="search-popup" data-bs-toggle="modal" data-bs-target="#searchModal">
+						<span class="normal"><?= wp_custom_bs_icons('ui', 'search'); ?></span>
+						<span class="hover"><?= wp_custom_bs_icons('ui', 'search-heart'); ?></span>
+					</a>
 				</li>
 			</ul>
 		</div>

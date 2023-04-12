@@ -12,7 +12,7 @@ if ( $wp_related_query->have_posts() ) : $originalPostUrl = get_the_permalink();
 	
 	<aside aria-label="<?php _e('Suggested Articles', 'wp-theme'); ?>" role="region" class="related-posts">
 		<header class="section-title">
-			<h2 class="h3"><?php _e( 'You might also like', 'wp-theme' ); ?></h2>
+			<h2 ><?php _e( 'You Might Also Like', 'wp-theme' ); ?></h2>
 		</header>
 		
 		<div class="row posts-loop g-4">
