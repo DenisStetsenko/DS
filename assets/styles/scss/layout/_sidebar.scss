@@ -73,5 +73,35 @@
         }
       }
     }
+
+    // TOC
+    #ez-toc-container{
+      background: none;
+      border: none;
+      padding: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      box-shadow: none;
+      .ez-toc-list{
+        // 1st level
+        &.ez-toc-list-level-1{
+          & > li{
+            &:not(:last-child){
+              margin-bottom: 10px;
+            }
+          }
+        }
+        .ez-toc-link{
+          text-decoration: none;
+          @include highlight-on-hover($offset: 22px);
+
+          &:before{
+            width: 20px;
+            margin-right: rfs-value(3px);
+          }
+        }
+      }
+    }
+
   }
 }

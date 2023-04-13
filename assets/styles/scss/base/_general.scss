@@ -117,13 +117,22 @@ embed, iframe, object { max-width: 100%; }
 
 .btn{
   &.btn-primary{
-    --bs-btn-color: #fff;
-    --bs-btn-bg: #5333ed;
-    --bs-btn-hover-color: #5333ed;
-    --bs-btn-hover-bg: transparent;
-    --bs-btn-active-color: #5333ed;
-    --bs-btn-active-bg: transparent;
+    --bs-btn-color: #292929;
+    --bs-btn-bg: #fdd11f;
+    --bs-btn-border-color: #fdd11f;
+    --bs-btn-hover-color: #292929;
+    --bs-btn-hover-bg: #fdd11f;
+    --bs-btn-hover-border-color: #fdd11f;
+    --bs-btn-active-color: #292929;
+    --bs-btn-active-bg: #fdd11f;
+    --bs-btn-active-border-color: #fdd11f;
     @include custom-letter-spacing();
+    transition: all 300ms ease;
+    box-shadow: 0 0 3px 0 transparent;
+    &:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.35);
+    }
   }
   &.btn-outline-primary{
     //--bs-btn-border-color: #18865F;

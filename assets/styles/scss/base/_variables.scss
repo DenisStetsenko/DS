@@ -23,7 +23,6 @@ $color-primary-dark  : #f0c000;
 $color-secondary      : #5333ed;  $secondary  : $color-secondary;
 
 $color-accent        : #fbdc6b;
-
 $color-gray          : #595959;
 
 $color-light-gray    : #f7f8f9;
@@ -149,9 +148,9 @@ $form-text-margin-top : 8px;
 
 /* Buttons Genera; */
 $btn-font-family      : $font-secondary;
-$btn-font-size        : 1rem;
-$btn-font-size-sm     : 0.8rem;
-$btn-font-weight      : 500;
+$btn-font-size        : 1.063rem;
+$btn-font-size-sm     : 1rem;
+$btn-font-weight      : 600;
 $btn-line-height      : 1.1;
 $btn-white-space      : 'nowrap';
 $btn-padding-y        : 15px;
@@ -516,18 +515,46 @@ $slick-dot-color-active   : $color-black;
 
 }
 
-@mixin highlight($height: 16px, $botton: 5px){
+@mixin highlight($height: 16px, $bottom: 5px){
   display: inline-block;
   position: relative;
   z-index: 1;
   &:after {
     background: $color-primary;
-    bottom: $botton;
+    bottom: $bottom;
     content: '';
     height: $height;
     position: absolute;
     left: 0;
     width: 100%;
+    z-index: -1;
+  }
+}
+
+@mixin highlight-on-hover($bg: $color-primary, $height: 7px, $bottom: 2px, $offset: 0px ){
+  position: relative;
+  z-index: 1;
+  line-height: 1.4;
+  &:hover{
+    &:after{
+      width: calc(100% - #{$offset});
+    }
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    left: $offset;
+    right: auto;
+
+    margin: auto;
+    width: 0;
+    height: $height;
+    background: $bg;
+    -moz-transition: all .25s linear;
+    -webkit-transition: all .25s linear;
+    transition: all .25s linear;
+    border-radius: 0;
+    bottom: $bottom;
     z-index: -1;
   }
 }

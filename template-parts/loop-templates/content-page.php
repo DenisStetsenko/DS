@@ -11,10 +11,8 @@ defined( 'ABSPATH' ) || exit;
   <header id="page-header" class="wow fadeInDown" data-wow-delay="50ms">
     <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
   </header><!-- .entry-header -->
-
-  <?php echo get_the_post_thumbnail( get_the_ID(), 'thumbnail', array( 'class' => 'img-fluid' ) ); ?>
-
-  <div class="entry-content">
+	
+  <div class="entry-content wow fadeIn" data-wow-delay="150ms">
     <?php the_content();?>
   </div><!-- .entry-content -->
 

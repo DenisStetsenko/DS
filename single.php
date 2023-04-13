@@ -27,7 +27,7 @@ get_header(); ?>
 					<div class="col-lg-4 d-flex">
 					  <?php if ( is_active_sidebar( 'review-sidebar' ) ) { ?>
 							<div id="right-sidebar" class="position-relative">
-								<div class="sticky-top">
+								<div class="sticky-top wow fadeInUp" data-wow-delay="50ms">
 							  	<?php dynamic_sidebar( 'review-sidebar' ); ?>
 								</div>
 							</div>

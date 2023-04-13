@@ -24,9 +24,9 @@ $post_m_date	= get_the_modified_date( 'M j, Y' );
 							</li>
 							<li class="list-inline-item">
 								<?php if( get_the_modified_date() != get_the_date() ) : ?>
-									<time datetime="<?= $post_m_date; ?>" itemprop="dateModified"><?php printf( __( 'updated on %s', 'wp-theme' ), $post_m_date ); ?></time>
+									<time datetime="<?= $post_m_date; ?>" itemprop="dateModified"><?php printf( __( 'Updated on %s', 'wp-theme' ), $post_m_date ); ?></time>
 								<?php else : ?>
-									<time datetime="<?= $post_date; ?>" itemprop="datePublished"><?php printf( __( 'published on %s', 'wp-theme' ), $post_date ); ?></time>
+									<time datetime="<?= $post_date; ?>" itemprop="datePublished"><?php printf( __( 'Published on %s', 'wp-theme' ), $post_date ); ?></time>
 								<?php endif; ?>
 							</li>
 						</ul>
