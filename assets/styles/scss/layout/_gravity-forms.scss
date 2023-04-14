@@ -102,5 +102,8 @@
   text-align: center;
   &#gform_confirmation_wrapper_1{
     margin-top: 40px;
+    .gform_confirmation_message{
+      p:last-child{ margin-bottom: 0;}
+    }
   }
 }

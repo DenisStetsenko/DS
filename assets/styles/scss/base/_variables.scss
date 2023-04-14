@@ -201,7 +201,9 @@ $h4-font-size : 18px;
 $h5-font-size : 14px;
 $h6-font-size : 12px;
 
-/* Navbar */
+/**
+ * Navbar
+ ***********************************************************************************************************************/
 $nav-link-font-size                 : 1.125rem;
 $nav-link-font-weight               : 500;
 $nav-link-color                     : $color-black;
@@ -221,7 +223,19 @@ $navbar-light-active-color          : $color-black;
 $navbar-light-hover-color           : $color-black;
 $navbar-light-toggler-border-color  : $color-black;
 
-/* Accordion */
+/* Navbar Toggler */
+$navbar-toggler-padding-y     : 6px;
+$navbar-toggler-padding-x     : 12px;
+$navbar-toggler-font-size     : 20px;
+$navbar-toggler-border-color  : $color-primary;
+$navbar-toggler-border-radius : $border-radius-sm;
+$navbar-toggler-focus-width   : 0;
+$navbar-light-toggler-icon-bg       : url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$color-black}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+$navbar-light-toggler-icon-bg-hover : url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$color-white}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+
+/**
+ * Accordion
+ ***********************************************************************************************************************/
 //$accordion-button-padding-y : 20px;
 //$accordion-button-padding-x : 27px;
 $accordion-bg             : white;
@@ -263,8 +277,15 @@ $card-bg            : $color-white;
 $card-cap-padding-y : 20px;
 $card-cap-padding-x : 20px;
 
-/* OFF-Canvas */
-$offcanvas-bg-color: white;
+/**
+ * OFF-Canvas
+ **/
+$offcanvas-bg-color           : white;
+$offcanvas-horizontal-width   : 300px;
+$offcanvas-border-width       : 0;
+$offcanvas-padding-x          : 25px;
+$offcanvas-padding-y          : 16px;
+$offcanvas-title-line-height  : 1.4;
 
 /* Modal */
 $close-color                  : white;

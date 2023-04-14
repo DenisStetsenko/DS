@@ -27,6 +27,8 @@
 
 <body <?php body_class(); ?> itemscope itemtype="https://schema.org/WebPage">
 
+<?php get_template_part('template-parts/header/offcanvas-mobile-menu'); ?>
+
 <div class="site" id="page">
   <a class="skip-link visually-hidden-focusable" href="#wrapper"><?php esc_html_e( 'Skip to content', 'wp-theme' ); ?></a>
 

@@ -40,16 +40,18 @@
 /**
  * Progress Bar
  */
-#progress-bar {
-  --scrollAmount: 0%;
+#progress-bar-container{
+  position: sticky;
+  top: 0;
+  z-index: 1200;
+  #progress-bar {
+    --scrollAmount: 0%;
 
-  background-image: linear-gradient(120deg, $color-primary 0%, $color-primary 100%);
-  width: var(--scrollAmount);
+    background-image: linear-gradient(120deg, $color-primary 0%, $color-primary 100%);
+    width: var(--scrollAmount);
 
-  //background: linear-gradient(to right, #F24E1E var(--scrollAmount), transparent 0);
-  //width: 100%;
-
-  height: 4px;
+    height: 3px;
+  }
 }
 
 /**
@@ -57,9 +59,12 @@
  */
 header#masthead{
   box-shadow: 0 4px 3px -3px rgba(0,0,0,.08);
-  border-bottom: 1px solid $color-border-gray;
   border-bottom: 1px solid #e7e7e7;
-
+  top: 3px;
+  padding-bottom: 3px;
+  @include media-breakpoint-down(lg){
+    padding: 7px 0 10px 0;
+  }
   // Logo
   .custom-logo-link{
 
@@ -108,12 +113,25 @@ header#masthead{
           height: 3px;
           background-color: transparent;
           position: absolute;
-          bottom: -1px;
+          bottom: -4px;
           left: 0;
           right: 0;
           z-index: 10;
           -webkit-transition: background-color 300ms ease;
           transition: background-color 300ms ease;
+        }
+      }
+    }
+
+    .navbar-toggler {
+      border: none;
+      background-color: $color-primary;
+      &:hover{
+        background-color: $color-black;
+        @include transition();
+        .navbar-toggler-icon {
+          @include transition();
+          background-image: escape-svg($navbar-light-toggler-icon-bg-hover);
         }
       }
     }
@@ -160,4 +178,32 @@ header#masthead{
     }
   }
 
+}
+
+#navbarOffCanvas{
+  .offcanvas-header{
+    box-shadow: 0 4px 3px -3px rgba(0,0,0,.08);
+    border-bottom: 1px solid #e7e7e7;
+    .offcanvas-title{
+      @include font-size(24px);
+      letter-spacing: 0.2rem;
+      @include highlight($height: 9px, $bottom: 2px);
+    }
+  }
+  #navbar-offcanvas-nav{
+    font-weight: 500;
+    @include font-size(20px);
+    @include custom-letter-spacing(0.01rem);
+    ul{
+      li{
+        &:not(:last-child){
+          margin-bottom: 9px;
+        }
+        a{
+          color: $color-black;
+          @include highlight-on-hover($height: 6px, $bottom: 1px);
+        }
+      }
+    }
+  }
 }

@@ -12,10 +12,11 @@ $wrapper_classes .= has_custom_logo() ? ' has-logo' : '';
 $wrapper_classes .= ' bg-white sticky-top ';
 ?>
 
-
 <?php get_template_part( 'template-parts/header/notification-bar' ); ?>
 
+<div id="progress-bar-container" class="bg-white">
 	<div id="progress-bar"></div>
+</div>
 <header id="masthead" class="<?php echo esc_attr( $wrapper_classes ); ?>" role="banner">
   <?php get_template_part( 'template-parts/header/navbar-collapse' ); ?>
 </header><!-- #masthead -->
