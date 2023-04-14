@@ -35,6 +35,7 @@ get_header();
 				</div>
 			
 			  <?php get_template_part('template-parts/single-article/related-posts'); ?>
+			  <?php get_template_part('template-parts/single-article/comments-form'); ?>
 
 			</div>
 

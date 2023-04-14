@@ -48,3 +48,13 @@ if ( ! function_exists( 'wp_custom_disable_x_pingback' ) ) {
 }
 add_filter( 'wp_headers', 'wp_custom_disable_x_pingback' );
 add_filter( 'xmlrpc_enabled', '__return_false' );
+
+/**
+ * Disable /wp-admin screen on log-out
+ ***********************************************************************************************************************/
+add_action('wp_logout','wp_custom_auto_redirect_after_logout');
+function wp_custom_auto_redirect_after_logout(){
+	$location = $_SERVER['HTTP_REFERER'];
+	wp_safe_redirect( home_url($location) );
+	exit();
+}

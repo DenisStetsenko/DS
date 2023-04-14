@@ -97,9 +97,7 @@
         margin: 5px 0;
         a{
           color: $color-black;
-          &:hover{
-            color: $color-primary;
-          }
+          @include highlight-on-hover($height: 6px, $bottom: 0px);
         }
       }
     }

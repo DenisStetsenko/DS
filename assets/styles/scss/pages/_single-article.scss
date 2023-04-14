@@ -276,8 +276,26 @@
 
   // Related
   // ===================================================================================================================
-  .related-posts {
-    margin-top: rfs-value(90px);
+  #related-posts {
+    margin-top: rfs-value(80px);
+  }
+
+
+  // Comments
+  // ===================================================================================================================
+  #comments-form {
+    margin-top: rfs-value(80px);
+    #comments {
+      max-width: 1100px;
+      margin: 0 auto;
+      color: $color-gray;
+      font-family: $font-secondary;
+      #wpdcom{
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
+      }
+    }
   }
 
 }

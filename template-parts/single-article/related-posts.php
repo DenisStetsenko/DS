@@ -10,10 +10,10 @@ $wp_related_query  = new WP_Query( array(
 
 if ( $wp_related_query->have_posts() ) : $originalPostUrl = get_the_permalink(); ?>
 	
-	<aside class="related-posts" aria-label="<?php _e('Suggested Articles', 'wp-theme'); ?>" role="region">
+	<aside id="related-posts" aria-label="<?php _e('Suggested Articles', 'wp-theme'); ?>" role="region">
 
 		<header class="section-title wow fadeInLeft" data-wow-delay="50ms" data-wow-offset="60" data-wow-duration="700ms">
-			<h2 ><?php _e( 'You Might Also Like', 'wp-theme' ); ?></h2>
+			<h2><?php _e( 'You Might Also Like', 'wp-theme' ); ?></h2>
 		</header>
 
 		<div class="row posts-loop g-4 g-lg-5 wow fadeIn" data-wow-delay="150ms" data-wow-offset="60" data-wow-duration="700ms">
