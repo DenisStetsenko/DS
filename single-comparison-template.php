@@ -25,13 +25,7 @@ get_header(); ?>
 					</div>
 
 					<div class="col-lg-4 d-flex">
-						<?php if ( is_active_sidebar( 'comparison-sidebar' ) ) { ?>
-							<div id="right-sidebar" class="position-relative">
-								<div class="sticky-top wow fadeInUp" data-wow-delay="100ms">
-									<?php dynamic_sidebar( 'comparison-sidebar' ); ?>
-								</div>
-							</div>
-						<?php } ?>
+						<?php get_sidebar(); ?>
 					</div>
 
 				</div>

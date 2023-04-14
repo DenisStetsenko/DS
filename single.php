@@ -4,7 +4,11 @@
  *
  * Default post template for Review layout
  */
-get_header(); ?>
+get_header();
+
+
+
+?>
 
   <div id="single-article-template" class="post-review-layout main-area-padding">
 		<main id="main" class="site-main">
@@ -25,13 +29,7 @@ get_header(); ?>
 					</div>
 
 					<div class="col-lg-4 d-flex">
-					  <?php if ( is_active_sidebar( 'review-sidebar' ) ) { ?>
-							<div id="right-sidebar" class="position-relative">
-								<div class="sticky-top wow fadeInUp" data-wow-delay="50ms">
-							  	<?php dynamic_sidebar( 'review-sidebar' ); ?>
-								</div>
-							</div>
-					  <?php } ?>
+						<?php get_sidebar(); ?>
 					</div>
 
 				</div>

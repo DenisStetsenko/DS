@@ -531,7 +531,7 @@ $slick-dot-color-active   : $color-black;
   }
 }
 
-@mixin highlight-on-hover($bg: $color-primary, $height: 7px, $bottom: 2px, $offset: 0px ){
+@mixin highlight-on-hover($bg: $color-primary, $height: 7px, $bottom: 1px, $offset: 0px ){
   position: relative;
   z-index: 1;
   line-height: 1.4;

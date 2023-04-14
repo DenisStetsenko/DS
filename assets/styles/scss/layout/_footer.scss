@@ -24,7 +24,7 @@ footer#colophon {
 
         a{
           color: $color-black;
-          @include highlight-on-hover($height: 4px, $bottom: 1px);
+          @include highlight-on-hover($height: 0.3rem, $bottom: 0.035rem);
         }
       }
     }

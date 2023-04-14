@@ -12,7 +12,7 @@
   .widget {
     background-color: $color-light-gray;
     border: 1px solid $color-border-gray;
-    padding: 25px 32px;
+    padding: 30px 32px;
     &:not(:last-child){
       margin-bottom: 2rem;
     }
@@ -83,23 +83,47 @@
       margin-bottom: 0;
       box-shadow: none;
       .ez-toc-list{
-        // 1st level
-        &.ez-toc-list-level-1{
-          & > li{
-            &:not(:last-child){
-              margin-bottom: 10px;
-            }
-          }
-        }
+
+        // General
         .ez-toc-link{
           text-decoration: none;
-          @include highlight-on-hover($offset: 22px);
+          font-weight: 500;
+          @include highlight-on-hover($offset: 23px);
 
           &:before{
             width: 20px;
             margin-right: rfs-value(3px);
           }
         }
+
+        // 1st level
+        .ez-toc-heading-level-2{
+          &:not(:last-child){
+            margin-bottom: 8px;
+          }
+          .ez-toc-heading-1{
+            @include font-size(18px);
+          }
+        }
+
+        // 2nd Level
+        .ez-toc-list-level-3{
+          margin-left: 25px;
+          list-style: circle;
+          li{
+            @include font-size(16px);
+            .ez-toc-link{
+              font-weight: 400;
+              @include highlight-on-hover($height: 7px, $bottom: 0, $offset: 15px);
+              &::before {
+                content: counter(item, circle) "";
+                width: 12px;
+              }
+            }
+          }
+        }
+
+
       }
     }
 

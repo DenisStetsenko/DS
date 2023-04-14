@@ -1,7 +1,7 @@
 <section id="front-hero-intro" class="section-padding bg-light-gray">
 	<div class="container">
 		<div class="row align-items-center">
-			<div class="col-lg-7 wow fadeInUp" data-wow-delay="100ms">
+			<div class="col-lg-7 wow fadeInUp" data-wow-delay="100ms" data-wow-duration="700ms">
 				<?php
 				while ( have_posts() ) {
 					the_post();

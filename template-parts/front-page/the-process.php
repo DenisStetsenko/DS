@@ -6,7 +6,7 @@ if ( $the_process ) : ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6">
-					<div class="left-side wow fadeIn" data-wow-delay="100ms">
+					<div class="left-side wow fadeIn" data-wow-delay="150ms" data-wow-duration="700ms">
 						<?php if ( $the_process['left_side']['section_title'] ) : ?>
 							<header class="section-title mb-4">
 								<h2 class=""><?= $the_process['left_side']['section_title']; ?></h2>
@@ -24,7 +24,7 @@ if ( $the_process ) : ?>
 					<?php if ( $the_process['the_process'] ) : ?>
 						<ul class="list-group">
 							<?php foreach ( $the_process['the_process'] as $item ) : ?>
-								<li class="list-group-item d-flex position-relative wow fadeInUp" data-wow-delay="100ms" data-wow-offset="40">
+								<li class="list-group-item d-flex position-relative wow fadeInUp" data-wow-delay="150ms" data-wow-offset="40" data-wow-duration="700ms">
 									<i class="icon"></i>
 									<div class="content font-secondary">
 										<h3 class="title mb-2"><?= $item['title']; ?></h3>
