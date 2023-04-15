@@ -124,6 +124,7 @@ $border-radius-sm         : 5px; // rounded-1
 $border-radius            : 15px; // rounded-2
 $border-radius-lg         : 20px; // rounded-3
 $border-radius-xl         : 25px; // rounded-4
+$border-radius-xxl        : 50px; // rounded-5
 
 /* Forms */
 $input-box-shadow       : none;
@@ -286,6 +287,7 @@ $offcanvas-border-width       : 0;
 $offcanvas-padding-x          : 25px;
 $offcanvas-padding-y          : 16px;
 $offcanvas-title-line-height  : 1.4;
+$btn-close-focus-shadow       : none;
 
 /* Modal */
 $close-color                  : white;
@@ -507,7 +509,7 @@ $slick-dot-color-active   : $color-black;
   padding: $btn-padding-y $btn-padding-x;
   font-family: $btn-font-family;
   border-radius: $btn-border-radius;
-  line-height: $btn-line-height;
+  line-height: $btn-line-height !important;
   font-weight: $btn-font-weight;
   letter-spacing: $custom-letter-spacing;
   border: $btn-border-width solid $color-primary;

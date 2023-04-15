@@ -2,6 +2,9 @@
  * Archive Sidebar + Single Sidebar + Page Sidebar
  */
 #right-sidebar {
+  @include media-breakpoint-down(lg){
+    flex-grow: 1;
+  }
   @include media-breakpoint-up(lg){
     padding-left: 2rem;
   }
@@ -12,9 +15,30 @@
   .widget {
     background-color: $color-light-gray;
     border: 1px solid $color-border-gray;
-    padding: 30px 32px;
+    padding: 20px 22px;
+    @include media-breakpoint-up(sm){
+      padding: 30px 32px;
+    }
+    @include media-breakpoint-only(lg){
+      padding: 18px 20px 14px 20px;
+    }
+    @include media-breakpoint-only(xl){
+      padding: 22px 23px;
+    }
+    @include media-breakpoint-up(xxl){
+      padding: 30px 32px;
+    }
     &:not(:last-child){
       margin-bottom: 2rem;
+    }
+
+    .w-title{
+      @include media-breakpoint-only(lg){
+        @include font-size(23px)
+      }
+      @include media-breakpoint-only(xl){
+        @include font-size(26px)
+      }
     }
 
     // Gravity Forms
@@ -28,6 +52,12 @@
         .gform_description{
           font-weight: 700;
           line-height: 1.4;
+          @include media-breakpoint-only(lg){
+            @include font-size(17px);
+          }
+          @include media-breakpoint-only(xl){
+            @include font-size(20px);
+          }
         }
       }
       .gform_body{
@@ -101,8 +131,14 @@
           &:not(:last-child){
             margin-bottom: 8px;
           }
-          .ez-toc-heading-1{
-            @include font-size(18px);
+          .ez-toc-link{
+            @include font-size(16px);
+            @include media-breakpoint-only(xl){
+              @include font-size(17px);
+            }
+            @include media-breakpoint-up(xxl){
+              @include font-size(18px);
+            }
           }
         }
 
@@ -111,8 +147,14 @@
           margin-left: 25px;
           list-style: circle;
           li{
-            @include font-size(16px);
             .ez-toc-link{
+              @include font-size(16px);
+              @include media-breakpoint-only(xl){
+                @include font-size(15px);
+              }
+              @include media-breakpoint-up(xxl){
+                @include font-size(16px);
+              }
               font-weight: 400;
               @include highlight-on-hover($height: 7px, $bottom: 0, $offset: 15px);
               &::before {

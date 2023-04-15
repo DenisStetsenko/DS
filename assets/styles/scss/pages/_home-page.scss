@@ -1,17 +1,50 @@
-#front-page-wrapper{
-
-}
-
 #front-hero-intro{
   background-image: url(../../images/page-bg-hero.svg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top 0 right 0;
+  padding-top: 55px;
+  padding-bottom: 60px;
+  @include media-breakpoint-down(sm){
+    background-position: top 230px right 0;
+    background-size: 100% auto;
+  }
+  @include media-breakpoint-up(xl){
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
   .entry-content{
-    @include font-size(22px);
     line-height: 1.45;
+    @include media-breakpoint-down(sm){
+      @include font-size(16px);
+    }
+    @include media-breakpoint-up(sm){
+      @include font-size(17px);
+    }
+    @include media-breakpoint-only(lg){
+      @include font-size(19px);
+    }
+    @include media-breakpoint-up(xl){
+      @include font-size(22px);
+    }
+    p br{
+      @include media-breakpoint-down(lg){
+        display: none;
+      }
+    }
     h1{
-      //@include font-size(50px);
+      @include media-breakpoint-down(sm){
+        @include font-size(48px);
+      }
+      @include media-breakpoint-only(sm){
+        @include font-size(46px);
+      }
+      @include media-breakpoint-only(lg){
+        @include font-size(40px);
+      }
+      @include media-breakpoint-only(xl){
+        @include font-size(48px);
+      }
       em{
         font-weight: 400;
         font-style: italic;
@@ -25,7 +58,9 @@
   }
 }
 
-
+/**
+ * The Process
+ */
 #front-the-process{
   .list-group{
     .list-group-item{
@@ -58,9 +93,18 @@
 
     }
     .content{
-      padding-left: 40px;
-      @include font-size(17px);
-      line-height: 1.5;
+      line-height: 1.55;
+      padding-left: 22px;
+      @include font-size(16px);
+      @include media-breakpoint-up(sm){
+        @include font-size(17px);
+      }
+      @include media-breakpoint-up(lg){
+        padding-left: 25px;
+      }
+      @include media-breakpoint-up(xl){
+        padding-left: 40px;
+      }
       .title{
         @include font-size(26px);
         padding-top: 2px;

@@ -3,8 +3,11 @@
   @include border-radius($border-radius-lg);
   border: 1px solid rgba($color-border-gray, 0.7);
   box-shadow: $box-shadow;
-  padding: 30px 40px 35px 40px;
+  padding: 25px 25px 30px 25px;
   font-family: $font-secondary;
+  @include media-breakpoint-up(md){
+    padding: 30px 40px 35px 40px;
+  }
   &#gform_wrapper_1{
     margin-top: 40px;
   }
@@ -77,9 +80,14 @@
       padding: 0 !important;
       justify-content: center;
       position: relative;
+
       .gform_button{
         margin: 0;
         @include make-button-primary('lighten');
+        @include media-breakpoint-down(md){
+          @include border-radius($border-radius-xxl)
+
+        }
       }
       img.gform_ajax_spinner {
         position: absolute;

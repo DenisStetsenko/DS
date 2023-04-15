@@ -5,7 +5,7 @@ if ( $the_process ) : ?>
 	<section id="front-the-process" class="section-margin">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6">
+				<div class="col-lg-6 mb-5 mb-lg-0">
 					<div class="left-side wow fadeIn" data-wow-delay="150ms" data-wow-duration="700ms">
 						<?php if ( $the_process['left_side']['section_title'] ) : ?>
 							<header class="section-title mb-4">
@@ -13,7 +13,7 @@ if ( $the_process ) : ?>
 							</header>
 						<?php endif; ?>
 						<?php if ( $the_process['left_side']['content'] ) : ?>
-							<div class="entry-content font-primary mb-5">
+							<div class="entry-content mobile-content-sm-size font-primary mb-5">
 								<?= $the_process['left_side']['content']; ?>
 							</div>
 						<?php endif; ?>

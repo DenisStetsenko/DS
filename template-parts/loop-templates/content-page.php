@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
     <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
   </header><!-- .entry-header -->
 	
-  <div class="entry-content wow fadeIn" data-wow-delay="100ms" data-wow-duration="700ms">
+  <div class="entry-content mobile-content-sm-size wow fadeIn" data-wow-delay="100ms" data-wow-duration="700ms">
     <?php the_content();?>
   </div><!-- .entry-content -->
 

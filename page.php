@@ -13,7 +13,7 @@ get_header(); ?>
 		<div class="container">
 			<div class="row">
 				
-				<div class="col-lg-8">
+				<div class="col-lg-8 mb-5 mb-lg-0">
 					<?php
 					while ( have_posts() ) {
 						the_post();

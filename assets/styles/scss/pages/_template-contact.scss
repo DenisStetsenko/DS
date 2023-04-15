@@ -4,6 +4,13 @@ body.page-template-template-contact{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top 80px right 0;
+    @include media-breakpoint-down(lg){
+      background-size: 120% auto;
+      background-position: top 200px right 0;
+    }
+    @include media-breakpoint-down(sm){
+      background-position: top 300px right 0;
+    }
   }
 }
 #template-contact{
@@ -11,10 +18,14 @@ body.page-template-template-contact{
   position: relative;
   z-index: 1;
   background-position: bottom right;
-
-
-
   article.hentry{
     text-align: center;
+  }
+  .entry-content{
+    p br{
+      @include media-breakpoint-down(sm){
+        display: none;
+      }
+    }
   }
 }

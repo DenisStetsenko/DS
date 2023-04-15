@@ -48,7 +48,15 @@ if ( $wp_query->have_posts() ) :
                     slidesToScroll: 1,
                     useTransform: true,
                     adaptiveHeight: false,
-                    rows: 0
+                    rows: 0,
+                    responsive: [
+                        {
+                            breakpoint: 992,
+                            settings: {
+                                arrows: false,
+                            }
+                        },
+                    ]
                 });
             }
           });

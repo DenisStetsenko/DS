@@ -189,6 +189,9 @@ header#masthead{
       letter-spacing: 0.2rem;
       @include highlight($height: 9px, $bottom: 2px);
     }
+    .btn-close{
+
+    }
   }
   #navbar-offcanvas-nav{
     font-weight: 500;

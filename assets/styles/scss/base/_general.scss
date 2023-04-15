@@ -184,6 +184,12 @@ header#page-header{
   p:last-child{
     margin-bottom: 0;
   }
+  &.mobile-content-sm-size{
+    @include media-breakpoint-down(sm){
+      @include font-size(17px);
+      line-height: $line-height-base - 0.1;
+    }
+  }
 }
 
 .ls-lg{

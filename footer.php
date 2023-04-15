@@ -6,12 +6,12 @@
 
 </div><!-- #wrapper -->
 
-	<footer id="colophon" aria-label="Footer" class="footer site-footer border-top text-black font-secondary py-4 bg-light-gray">
+	<footer id="colophon" aria-label="Footer" class="footer site-footer border-top text-black font-secondary py-3 py-md-4 bg-light-gray">
 		<div class="container">
 	
 			<div class="row align-items-center">
 				<?php if ( has_nav_menu( 'footer-menu' ) ) { ?>
-					<div class="col-lg-8 order-lg-2 text-lg-end">
+					<div class="col-md-6 order-md-2 text-center text-md-end mb-2 mb-md-0">
 						<nav id="nav-footer-menu" class="footer-menu" role="navigation">
 							<?php wp_nav_menu( array(
 									'theme_location'  => 'footer-menu',
@@ -22,7 +22,7 @@
 						</nav>
 					</div>
 				<?php } ?>
-				<div class="col-lg-4 order-lg-1">
+				<div class="col-md-6 order-md-1 text-center text-md-start">
 					<p class="m-0"><?php printf( __( '©%s %s. Published with <i class="icon">%s</i>', 'wp-theme' ),
 															 date('Y'),
 															 get_bloginfo('name'),
