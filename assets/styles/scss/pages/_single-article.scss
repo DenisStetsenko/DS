@@ -36,16 +36,23 @@
  * Single Article Template
  */
 #single-article-template {
-  .entry-header{
+  header.entry-header{
+    margin-top: -5px; // offset to have equal top/bottom paddings
     padding-bottom: 1.6rem;
     margin-bottom: 2rem;
     border-bottom: 1px solid $color-border-gray;
+    h1.entry-title{
+      line-height: 1.25;
+      @include media-breakpoint-down(sm){
+        @include font-size(80px);
+      }
+    }
   }
 
   // Author Block
   // ===================================================================================================================
-  .article-block-meta{
-    ul{
+  .author-block-meta{
+    ul:not(.social-share-icons){
       li{
         cite{
           a{
@@ -54,6 +61,16 @@
               color: $color-primary;
             }
           }
+        }
+      }
+    }
+    .social-share-icons{
+      @include media-breakpoint-down(md){
+        padding-left: 67px;
+      }
+      li.list-inline-item{
+        @include media-breakpoint-only(lg){
+          margin-right: 8px;
         }
       }
     }
@@ -101,6 +118,11 @@
 
   // Intro
   // ===================================================================================================================
+  .post-thumbnail{
+    .figure-img{
+      margin-bottom: 0;
+    }
+  }
   .intro-content{
     &.comparison-summary{
 

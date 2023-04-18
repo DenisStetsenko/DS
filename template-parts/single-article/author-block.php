@@ -7,11 +7,11 @@ $post_date 		= get_the_date( 'M j, Y' );
 $post_m_date	= get_the_modified_date( 'M j, Y' );
 
 ?>
-<aside class="article-block-meta mb-4">
+<aside class="author-block-meta mb-4">
 	<div class="row align-items-center">
 		
 		<?php if ( $author_photo ) : ?>
-			<div class="col-sm-8">
+			<div class="col-md-8 mb-3 mb-md-0">
 				<figure class="article-author d-flex align-items-center font-secondary fs-5 m-0 text-gray">
 					<img class="rounded-circle me-3" width="50" height="50" loading="lazy" src="<?= $author_photo['sizes']['thumbnail']; ?>" alt="<?= $author_photo['alt']; ?>">
 					<figcaption>
@@ -35,7 +35,7 @@ $post_m_date	= get_the_modified_date( 'M j, Y' );
 			</div>
 		<?php endif; ?>
 		
-		<div class="col-sm-4 text-sm-end">
+		<div class="col-md-4 text-md-end ps-md-0">
 			<?php echo do_shortcode('[social-share]'); ?>
 		</div>
 	

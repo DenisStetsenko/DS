@@ -19,6 +19,7 @@ get_header();
 			  <?php get_template_part('template-parts/single-article/entry-header'); ?>
 
 				<div class="row">
+					
 					<div class="col-lg-8">
 					  <?php
 					  while ( have_posts() ) {
