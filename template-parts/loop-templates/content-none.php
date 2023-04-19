@@ -10,13 +10,13 @@ defined( 'ABSPATH' ) || exit;
 
 <section class="no-results not-found">
 
-  <header class="page-header">
+  <header class="page-header text-center">
 
     <h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'wp-theme' ); ?></h1>
 
   </header><!-- .page-header -->
 
-  <div class="page-content">
+  <div class="page-content text-center">
 
     <?php
     if ( is_home() && current_user_can( 'publish_posts' ) ) :
@@ -40,9 +40,9 @@ defined( 'ABSPATH' ) || exit;
 
       printf(
           '<p>%s<p>',
-          esc_html__( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'wp-theme' )
+          esc_html__( 'It seems we can&rsquo;t find what you&rsquo;re looking for.', 'wp-theme' )
       );
-      get_search_form();
+      //get_search_form();
 
     endif;
     ?>

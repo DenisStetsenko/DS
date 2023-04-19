@@ -15,6 +15,9 @@
 		elseif ( is_single() && 'post' == get_post_type() && is_active_sidebar( 'review-sidebar' ) ) {
 			dynamic_sidebar( 'review-sidebar' );
 		}
+		elseif ( 'page' == get_post_type() && is_page('about') && is_active_sidebar( 'about-page-sidebar' ) ) {
+			dynamic_sidebar( 'about-page-sidebar' );
+		}
 		elseif ( 'page' == get_post_type() && is_active_sidebar( 'page-sidebar' ) ) {
 			dynamic_sidebar( 'page-sidebar' );
 		}

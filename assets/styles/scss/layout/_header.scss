@@ -194,13 +194,13 @@ header#masthead{
     }
   }
   #navbar-offcanvas-nav{
-    font-weight: 500;
-    @include font-size(20px);
-    @include custom-letter-spacing(0.01rem);
+    font-weight: 600;
+    @include font-size(22px);
+    @include custom-letter-spacing(0.1rem);
     ul{
       li{
         &:not(:last-child){
-          margin-bottom: 9px;
+          margin-bottom: 20px;
         }
         a{
           color: $color-black;

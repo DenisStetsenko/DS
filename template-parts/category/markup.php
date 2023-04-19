@@ -53,7 +53,7 @@ if ( $show_category_sidebar ) $layout = '2-cols';
 					
 					
 					if ( $wp_query->found_posts > get_option('posts_per_page') ) :
-						echo '<button id="load-more" class="btn btn-primary mt-5"
+						echo '<button id="load-more" class="btn btn-primary mt-7 d-table mx-auto px-8"
                    '. $curr_category_slug .'
                    data-type="blog"
                    data-ppp="'. get_option('posts_per_page') .'"

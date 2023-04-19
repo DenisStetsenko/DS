@@ -1,0 +1,28 @@
+#default-page-wrapper{
+  .entry-content{
+
+    h2, h3{
+      margin: 40px 0 9px;
+      &:first-child{
+        margin-top: 0;
+      }
+    }
+
+    h2{
+      @include font-size(30px);
+      & + h3{
+        margin-top: 20px;
+      }
+    }
+
+    h3{
+      @include font-size(25px);
+      font-weight: 700;
+    }
+
+    li a{
+      @include link-hover-effect();
+    }
+
+  }
+}

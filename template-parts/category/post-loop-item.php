@@ -81,7 +81,7 @@ $post_html_attrs .= $layout;
 <div class="<?= $post_html_attrs; ?>">
 	<article class="post-loop-item rounded-3 position-relative border flex-grow-1 bg-white overflow-hidden">
 		<div class="bg rounded-top-3 d-block" style="background: url(<?= get_the_post_thumbnail_url() ? get_the_post_thumbnail_url(get_the_ID(), 'large') : 'https://place-hold.it/420x250'; ?>) no-repeat center/cover"></div>
-		<div class="inner py-4 px-4 ">
+		<div class="inner">
 			<?php
 			//if ( $main_term ) echo '<span class="category rounded bg-light-gray text-uppercase fw-bolder border font-secondary text-gray d-inline-block">' . get_cat_name($main_term) . '</span>';
 			the_title( '<h3 class="entry-title mb-2">', '</h3>' );

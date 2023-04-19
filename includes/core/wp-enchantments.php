@@ -1,14 +1,5 @@
 <?php
 /**
- * Add favicon to wp-admin area
- * @return void
- */
-function wp_custom_favicon4admin() {
-	echo '<link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico" />';
-}
-add_action( 'admin_head', 'wp_custom_favicon4admin' );
-
-/**
  * CUSTOM ADMIN STYLES
  * apply custom styles for pages section in the Dashboard section
  ***********************************************************************************************************************/
@@ -133,12 +124,68 @@ add_filter('excerpt_length', 'wp_custom_excerpt_length', 20);
 if ( ! function_exists( 'wp_custom_theme_wordpress_login_styling' ) ) {
   function wp_custom_theme_wordpress_login_styling() { ?>
     <style type="text/css">
-      body.login {
-        background-color: #1D678C;
-        background-image: url('<?php echo get_background_image(); ?>') !important;
-        background-repeat: repeat;
-        background-position: center center;
-      }
+        body.login {
+            background-color: #292929;
+            background-image: none !important;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+        body.login #login{
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        body.login h1 a {
+            background-image: url('<?php echo get_theme_file_uri('assets/images/logo-white-text.png'); ?>') !important;
+        }
+        body.login #nav, body.login #backtoblog{
+            text-align: center;
+        }
+        body.login #nav a, body.login #backtoblog a{
+            color: #fff;
+            border-bottom: 1px solid transparent;
+        }
+        body.login #nav a:hover, body.login #backtoblog a:hover{
+            color: #fff;
+            border-bottom-color: #fdd11f;
+        }
+        body.login .privacy-policy-page-link{
+            margin-top: 15px;
+        }
+        body.login .privacy-policy-page-link a{
+            color: #fff
+        }
+        body.login #loginform{
+            border-radius: 15px;
+            color: #292929;
+        }
+        body.login input[type=text]:focus,
+        body.login input[type=checkbox]:focus,
+        body.login input[type=password]:focus{
+            color: #292929;
+            border-color: #fdd11f;
+            box-shadow: 0 0 0 1px #fdd11f;
+        }
+        body.login .button.wp-hide-pw .dashicons{
+            color: #292929;
+        }
+        body.login #loginform input[type="submit"]{
+            color: #292929;
+            background-color: #fdd11f;
+            border-color: #fdd11f;
+            font-weight: 600;
+            border-radius: 25px;
+            padding: 1px 20px;
+            display: inline-block;
+            font-size: 15px;
+        }
+        body.login .language-switcher { display: none }
     </style>
   <?php }
   add_action('login_enqueue_scripts', 'wp_custom_theme_wordpress_login_styling');

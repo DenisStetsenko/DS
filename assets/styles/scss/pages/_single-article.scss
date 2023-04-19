@@ -107,9 +107,9 @@
   // Affiliate Disclosure
   // ===================================================================================================================
   .affiliate-disclosure {
-    padding: rfs-value(12px 10px);
+    padding: rfs-value(12px 17px);
     @include font-size(12px);
-
+    line-height: 1.5;
     p:last-child {
       margin: 0;
     }

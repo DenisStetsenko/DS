@@ -76,7 +76,7 @@
                             "label": "Content",
                             "name": "content",
                             "aria-label": "",
-                            "type": "textarea",
+                            "type": "wysiwyg",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -86,10 +86,10 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "maxlength": "",
-                            "rows": 4,
-                            "placeholder": "",
-                            "new_lines": "wpautop"
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 0,
+                            "delay": 0
                         },
                         {
                             "key": "field_6436cc6adab41",
@@ -205,5 +205,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681313979
+    "modified": 1681902998
 }

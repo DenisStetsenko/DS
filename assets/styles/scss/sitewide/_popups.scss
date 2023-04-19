@@ -2,11 +2,14 @@
 // =====================================================================================================================
 #subscribeModal{
   .modal-body{
-    padding: 32px 32px 35px 32px;
+    padding: 25px 22px 25px 22px;
     background-color: $color-light-gray;
     border: 1px solid rgba($color-border-gray, 0.7);
     box-shadow: $box-shadow;
     @include border-radius($border-radius-lg);
+    @include media-breakpoint-up(sm){
+      padding: 32px 32px 35px 32px;
+    }
   }
 
   .gform_confirmation_wrapper{
@@ -35,24 +38,31 @@
     }
     .gform_body{
       .gform_fields{
-        grid-row-gap: 25px;
+        grid-row-gap: 18px;
         grid-column-gap: 0;
+        @media (min-width: 640px){
+          grid-row-gap: 25px;
+        }
         .gfield{
           input[type="email"]{
             height: 52px;
-            @include border-bottom-end-radius(0);
-            @include border-top-end-radius(0);
             outline: none;
+            @media (min-width: 640px){
+              @include border-bottom-end-radius(0);
+              @include border-top-end-radius(0);
+            }
           }
         }
         #field_submit{
           .gform-button{
             @include make-button-primary('lighten');
-            @include border-bottom-start-radius(0);
-            @include border-top-start-radius(0);
             padding: 10px 10px;
             height: 52px;
             flex-grow: 1;
+            @media (min-width: 640px){
+              @include border-bottom-start-radius(0);
+              @include border-top-start-radius(0);
+            }
           }
         }
       }

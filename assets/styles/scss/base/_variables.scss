@@ -13,16 +13,13 @@ $custom-letter-spacing  : 0.03rem;
 $color-white      : #FFFFFF;  $white      : $color-white;
 $color-black      : #292929;  $black      : $color-black;
 
-//$color-primary       : #18865F;  $primary    : $color-primary;
-//$color-primary       : #5333ed;  $primary    : $color-primary;
-
 $color-primary       : #fdd11f;  $primary    : $color-primary;
 $color-primary-light : #ffd941;
 $color-primary-dark  : #f0c000;
 
-$color-secondary      : #5333ed; $secondary  : $color-secondary;
+$color-secondary     : #5333ed; $secondary  : $color-secondary;
 
-$color-accent        : #fbdc6b;
+$color-accent        : #5333ed;
 $color-gray          : #595959;
 
 $color-light-gray    : #f7f8f9;
@@ -74,7 +71,7 @@ $spacers: (
  * Global Bootstrap Overrides
  ***********************************************************************************************************************/
 /* General */
-$enable-smooth-scroll     : false;
+$enable-smooth-scroll     : true;
 
 $body-bg                  : $color-white;
 $body-color               : $color-black;
@@ -109,7 +106,7 @@ $bs-check-circle-icon          : url("data:image/svg+xml, <svg xmlns='http://www
 /* Paragraph */
 $paragraph-margin-bottom  : 20px;
 $blockquote-font-size     : $font-size-base;
-$blockquote-footer-color  : $color-primary;
+$blockquote-footer-color  : $color-black;
 $hr-margin-y              : 50px;
 $hr-border-color          : rgba(0, 0, 0, 0.5);
 
@@ -130,7 +127,7 @@ $border-radius-xxl        : 50px; // rounded-5
 $input-box-shadow       : none;
 $input-focus-box-shadow : none;
 $input-border-width     : 1px;
-$input-border-color     : $color-secondary;
+$input-border-color     : $color-black;
 $input-border-radius    : $border-radius-xl;
 
 $input-padding-y        : 10px;
@@ -170,7 +167,7 @@ $btn-active-shadow      : none;
 $btn-focus-box-shadow   : none;
 
 $btn-link-color          : $color-black;
-$btn-link-hover-color    : $color-secondary;
+$btn-link-hover-color    : $color-black;
 $btn-link-disabled-color : lighten($color-black, 65%);
 
 /* List */
@@ -181,8 +178,8 @@ $list-group-item-padding-y : 7px;
 $list-group-border-width   : 0;
 
 /* Links */
-$link-color             : $color-primary;
-$link-hover-color       : $color-primary-light;
+$link-color             : $color-black;
+$link-hover-color       : $color-black;
 $link-decoration        : none;
 $link-hover-decoration  : none;
 
@@ -539,7 +536,7 @@ $slick-dot-color-active   : $color-black;
 }
 
 @mixin highlight($height: 16px, $bottom: 5px){
-  display: inline-block;
+  display: inline;
   position: relative;
   z-index: 1;
   &:after {
@@ -579,5 +576,19 @@ $slick-dot-color-active   : $color-black;
     border-radius: 0;
     bottom: $bottom;
     z-index: -1;
+  }
+}
+
+@mixin link-hover-effect(){
+  font-weight: 700;
+  position: relative;
+  text-decoration: none;
+  z-index: 1;
+  border-bottom: 2px solid $color-primary;
+  box-shadow: inset 0 -1px 0 0 $color-primary;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+  &:hover{
+    box-shadow: inset 0 -30px 0 0 $color-primary;
   }
 }

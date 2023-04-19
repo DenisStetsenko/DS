@@ -3,11 +3,20 @@
  */
 header#category-heading{
   text-align: center;
-  margin-bottom: 65px;
   margin-top: -5px; // offset to have equal top/bottom paddings
+  margin-bottom: 45px;
+  @include media-breakpoint-up(md){
+    margin-bottom: 65px;
+  }
   h1, .category-title{
     margin-bottom: 0;
-    @include highlight();
+    @include highlight(12px, 1px);
+    @include media-breakpoint-up(md){
+      @include highlight(12px, 3px);
+    }
+    @include media-breakpoint-up(lg){
+      @include highlight(15px, 3px);
+    }
   }
   .cat-description{
     max-width: 800px;
@@ -36,7 +45,7 @@ header#category-heading{
     }
     // 3 cols
     &.three-cols{
-      .entry-title{ @include font-size(21px); }
+      .entry-title{ @include font-size(22px); }
       .subtitle { @include font-size(15px); }
     }
     // 2 cols
@@ -82,21 +91,28 @@ header#category-heading{
       }
     }
 
-    .category {
-      padding: 8px 12px 7px 12px;
-      @include font-size(11px);
-      @include custom-letter-spacing();
-      margin-bottom: 10px;
-      line-height: 1;
+    .inner{
+      padding: 26px;
+      @include media-breakpoint-up(lg){
+        padding: 28px 30px;
+      }
+      .category {
+        padding: 8px 12px 7px 12px;
+        @include font-size(11px);
+        @include custom-letter-spacing();
+        margin-bottom: 10px;
+        line-height: 1;
+      }
+
+      .entry-title {
+        line-height: 1.25;
+      }
+
+      .subtitle {
+        @include font-size(16px);
+      }
     }
 
-    .entry-title {
-      line-height: 1.35;
-    }
-
-    .subtitle {
-      @include font-size(16px);
-    }
   }
 }
 
