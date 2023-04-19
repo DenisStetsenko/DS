@@ -13,11 +13,11 @@ if ( $the_process ) : ?>
 							</header>
 						<?php endif; ?>
 						<?php if ( $the_process['left_side']['content'] ) : ?>
-							<div class="entry-content mobile-content-sm-size font-primary mb-5">
+							<div class="entry-content mobile-content-sm-size font-primary mb-3 mb-lg-10">
 								<?= $the_process['left_side']['content']; ?>
 							</div>
 						<?php endif; ?>
-						<?= $the_process['left_side']['image'] ? '<img class="img-fluid" src="'.$the_process['left_side']['image']['sizes']['medium_large'].'" loading="lazy" alt="'.$the_process['left_side']['image']['alt'].'">' : null ; ?>
+						<?= $the_process['left_side']['image'] ? '<img class="img-fluid mx-auto d-none d-lg-block" src="'.$the_process['left_side']['image']['sizes']['medium_large'].'" loading="lazy" alt="'.$the_process['left_side']['image']['alt'].'">' : null ; ?>
 					</div>
 				</div>
 				<div class="col-lg-5 offset-lg-1">
@@ -34,7 +34,7 @@ if ( $the_process ) : ?>
 							<?php endforeach; ?>
 						</ul>
 					<?php endif; ?>
-					
+					<?= $the_process['left_side']['image'] ? '<img class="img-fluid mx-auto d-lg-none mt-6" src="'.$the_process['left_side']['image']['sizes']['medium_large'].'" loading="lazy" alt="'.$the_process['left_side']['image']['alt'].'">' : null ; ?>
 				</div>
 			</div>
 			
