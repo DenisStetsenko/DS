@@ -166,7 +166,7 @@ header.section-title{
     margin-bottom: 0;
     @include highlight(11px, 1px);
     @include media-breakpoint-up(lg){
-      @include highlight(14px, 2px);
+      @include highlight(13px, 3px);
     }
   }
 }

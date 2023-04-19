@@ -148,7 +148,7 @@
       }
       @include media-breakpoint-up(xxl){
         @include font-size($h3-font-size);
-        @include highlight($height: 12px, $bottom: 5px);
+        @include highlight($height: 11px, $bottom: 6px);
       }
 
     }
