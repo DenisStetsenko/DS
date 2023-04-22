@@ -159,11 +159,9 @@
         padding: 3px 0 3px 6px;
         font-weight: 700;
         .wpd-inline-icon-wrapper {
+          font-family: $font-secondary;
           svg.wpd-inline-icon{
             vertical-align: baseline;
-          }
-          .wpd-inline-form-wrapper{
-            font-family: $font-secondary;
           }
         }
       }
