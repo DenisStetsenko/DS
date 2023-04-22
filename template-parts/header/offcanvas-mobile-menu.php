@@ -1,4 +1,4 @@
-<div id="navbarOffCanvas" class="offcanvas offcanvas-end" tabindex="-1"  aria-labelledby="navbarOffCanvasLabel">
+<div id="navbarOffCanvas" class="offcanvas offcanvas-end d-lg-none" tabindex="-1"  aria-labelledby="navbarOffCanvasLabel">
 	
 	<div class="offcanvas-header">
 		<h5 class="offcanvas-title" id="navbarOffCanvasLabel">MENU</h5>
