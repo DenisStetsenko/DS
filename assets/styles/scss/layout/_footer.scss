@@ -5,11 +5,11 @@ footer#colophon {
   font-weight: 500;
 
   .icon {
-    margin-left: 4px;
+    margin-left: rfs-value(4px);
 
     svg {
       width: auto;
-      max-height: 16px;
+      max-height: rfs-value(16px);
     }
   }
 

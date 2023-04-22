@@ -157,6 +157,11 @@
       a{ @include link-border-hover(); }
     }
   }
+  .post-footer-content{
+    border-top: 1px solid $color-border-gray;
+    margin-top: 50px;
+    padding-top: 25px;
+  }
 
   // Product Summary
   // ===================================================================================================================
@@ -302,7 +307,7 @@
       border: 1px solid $color-border-gray;
 
       &:not(:last-child) {
-        margin-bottom: 20px;
+        margin-bottom: rfs-value(20px);
       }
 
       .accordion-button {
@@ -322,7 +327,7 @@
   // Comments
   // ===================================================================================================================
   #comments-form {
-    margin-top: rfs-value(80px);
+    margin-top: rfs-value(90px);
     #comments {
       max-width: 1100px;
       margin: 0 auto;
@@ -345,7 +350,7 @@
         .wpdiscuz-subscribe-bar{
           background-color: $color-light-gray;
           border: 1px solid $color-border-gray;
-          padding: 10px 15px;
+          padding: rfs-value(10px 15px);
           .wpdiscuz_subscribe_status{
             .wpd-unsubscribe{
               color: $color-secondary;
@@ -354,22 +359,22 @@
           .wpdiscuz-subscribe-form-option{
             select{
               border: 1px solid darken($color-border-gray, 10%) !important;
-              height: 32px !important;
+              height: rfs-value(32px !important);
             }
           }
           .wpdiscuz-subscribe-form-email{
             input{
               border: 1px solid darken($color-border-gray, 10%);
-              padding: 5px 10px !important;
-              height: 32px;
+              padding: rfs-value(5px 10px !important);
+              height: rfs-value(32px);
               box-shadow: none;
               outline: none;
             }
           }
           .wpdiscuz-subscribe-form-button{
             input{
-              min-height: 32px!important;
-              height: 32px!important;
+              min-height: rfs-value(32px !important);
+              height: rfs-value(32px !important);
             }
           }
         }

@@ -23,18 +23,18 @@
 }
 
 .widget {
-  padding: 20px 22px;
+  padding: rfs-value(20px 22px);
   @include media-breakpoint-up(sm){
-    padding: 30px 32px;
+    padding: rfs-value(30px 32px);
   }
   @include media-breakpoint-only(lg){
-    padding: 18px 20px 14px 20px;
+    padding: rfs-value(18px 20px 14px 20px);
   }
   @include media-breakpoint-only(xl){
-    padding: 22px 23px;
+    padding: rfs-value(22px 23px);
   }
   @include media-breakpoint-up(xxl){
-    padding: 30px 32px;
+    padding: rfs-value(30px 32px);
   }
   &:not(:last-child){
     margin-bottom: 2rem;
@@ -53,7 +53,7 @@
   // Gravity Forms
   .gform_confirmation_wrapper{
     background-color: $color-white;
-    padding: 40px 20px 40px 20px;
+    padding: rfs-value(40px 20px 40px 20px);
     @include border-radius($border-radius-lg);
     .gform_confirmation_message{
       h2{
@@ -65,7 +65,7 @@
   }
 
   .gform_wrapper{
-    padding: 5px 0 15px 0;
+    padding: rfs-value(5px 0 15px 0);
     background-color: transparent;
     border-radius: 0;
     border: none;
@@ -86,7 +86,7 @@
       .gform_fields{
         display: flex;
         flex-wrap: wrap;
-        grid-row-gap: 15px;
+        grid-row-gap: rfs-value(15px);
         .gfield{
           flex: 1 1 100%;
           &.gfield--type-email{
@@ -108,7 +108,7 @@
 
   // SendInBlue Subscribe Form
   &.widget_sib_subscribe_form {
-    padding: 30px;
+    padding: rfs-value(30px);
     background-color: $color-light-gray;
 
     .sib-email-area {
@@ -116,8 +116,8 @@
         background-image: escape-svg($bs-envelope-heart-icon);
         background-position: 22px center;
         background-repeat: no-repeat;
-        background-size: 20px;
-        padding-left: 53px;
+        background-size: rfs-value(20px);
+        padding-left: rfs-value(53px);
 
         &:focus {
           background-image: escape-svg($bs-envelope-heart-icon-active);
@@ -136,7 +136,7 @@
     box-shadow: none;
     .ez-toc-title{
       @include font-size(24px);
-      margin-bottom: 15px;
+      margin-bottom: rfs-value(15px);
       display: inline-block !important;
       @include highlight($height: 9px, $bottom: 3px);
       @include media-breakpoint-up(md){
@@ -161,7 +161,7 @@
         @include highlight-on-hover($offset: 23px);
 
         &:before{
-          width: 20px;
+          width: rfs-value(20px);
           margin-right: rfs-value(3px);
         }
       }
@@ -169,7 +169,7 @@
       // 1st level
       .ez-toc-heading-level-2{
         &:not(:last-child){
-          margin-bottom: 8px;
+          margin-bottom: rfs-value(8px);
         }
         .ez-toc-link{
           @include font-size(16px);
@@ -184,7 +184,7 @@
 
       // 2nd Level
       .ez-toc-list-level-3{
-        margin-left: 25px;
+        margin-left: rfs-value(25px);
         list-style: circle;
         li{
           .ez-toc-link{
@@ -199,7 +199,7 @@
             @include highlight-on-hover($height: 7px, $bottom: 0, $offset: 15px);
             &::before {
               content: counter(item, circle) "";
-              width: 12px;
+              width: rfs-value(12px);
             }
           }
         }

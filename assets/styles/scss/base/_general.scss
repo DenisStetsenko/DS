@@ -2,7 +2,7 @@
   1.0 Misc
 --------------------------------------------------------------*/
 html{
-  scroll-padding-top: 100px;
+  scroll-padding-top: rfs-value(100px);
 }
 html, body {
   min-height: 100vh;
@@ -159,8 +159,8 @@ embed, iframe, object { max-width: 100%; }
 }
 
 header.section-title{
-  margin-top: -5px; // offset to have equal top/bottom paddings
-  margin-bottom: 35px;
+  margin-top: rfs-value(-5px); // offset to have equal top/bottom paddings
+  margin-bottom: rfs-value(35px);
   position: relative;
   h2{
     margin-bottom: 0;
@@ -172,10 +172,10 @@ header.section-title{
 }
 
 header#page-header{
-  margin-top: -5px; // offset to have equal top/bottom paddings
-  margin-bottom: 28px;
+  margin-top: rfs-value(-5px); // offset to have equal top/bottom paddings
+  margin-bottom: rfs-value(28px);
   @include media-breakpoint-up(md){
-    margin-bottom: 40px;
+    margin-bottom: rfs-value(40px);
   }
   h1{
     margin-bottom: 0;

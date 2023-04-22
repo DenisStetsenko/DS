@@ -63,7 +63,7 @@ header#masthead{
   top: 3px;
   padding-bottom: 3px;
   @include media-breakpoint-down(lg){
-    padding: 7px 0 10px 0;
+    padding: rfs-value(7px 0 10px 0);
   }
   // Logo
   .custom-logo-link{
