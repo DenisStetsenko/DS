@@ -204,7 +204,7 @@ header#masthead{
         }
         a{
           color: $color-black;
-          @include highlight-on-hover($height: 6px, $bottom: 1px);
+          @include highlight-on-hover($height: 7px, $bottom: 1px);
           &:after{
             width: 100%; opacity: 0;
           }
