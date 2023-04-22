@@ -179,6 +179,8 @@
           @include media-breakpoint-up(xxl){
             @include font-size(18px);
           }
+          color: #636363;
+          &:hover{ color: #000; }
         }
       }
 
@@ -195,13 +197,13 @@
             @include media-breakpoint-up(xxl){
               @include font-size(16px);
             }
+            color: #636363;
             font-weight: 400;
-            //line-height: 22px;
-            //@include highlight-on-hover($height: 6px, $bottom: 2px, $offset: 15px);
             &::before {
               content: counter(item, circle) "";
               width: rfs-value(12px);
             }
+            &:hover{ color: #000; }
           }
         }
       }
