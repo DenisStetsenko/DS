@@ -154,6 +154,16 @@
       }
     }
     .entry-content{
+      .wpd-inline-shortcode{
+        background: #f4f4f4;
+        padding: 3px 0 3px 6px;
+        font-weight: 700;
+        .wpd-inline-icon-wrapper {
+          svg.wpd-inline-icon{
+            vertical-align: baseline;
+          }
+        }
+      }
 
     }
   }
