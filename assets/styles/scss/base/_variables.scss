@@ -488,17 +488,6 @@ $slick-dot-color-active   : $color-black;
   }
 }
 
-@mixin link-border-hover(){
-  &:not(.btn){
-    color: $color-black;
-    border-bottom: 2.5px solid $color-primary;
-    &:hover{
-      color: $color-white;
-      background-color: $color-primary;
-    }
-  }
-}
-
 @mixin make-button-primary( $type : 'outline' ){
   color: $color-black;
   font-size: $btn-font-size;

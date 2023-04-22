@@ -11,7 +11,7 @@ $post_m_date	= get_the_modified_date( 'M j, Y' );
 	<div class="row align-items-center">
 		
 		<?php if ( $author_photo ) : ?>
-			<div class="col-md-8 mb-3 mb-md-0">
+			<div class="col-md-8 mb-0 mb-md-0">
 				<figure class="article-author d-flex align-items-center font-secondary fs-5 m-0 text-gray">
 					<img class="rounded-circle me-3" width="50" height="50" loading="lazy" src="<?= $author_photo['sizes']['thumbnail']; ?>" alt="<?= $author_photo['alt']; ?>">
 					<figcaption>

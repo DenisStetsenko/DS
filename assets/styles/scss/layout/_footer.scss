@@ -6,6 +6,10 @@ footer#colophon {
 
   .icon {
     margin-left: rfs-value(4px);
+    display: inline-block;
+    width: rfs-value(20px);
+    position: relative;
+    top: rfs-value(-2px);
 
     svg {
       width: auto;

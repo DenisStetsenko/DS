@@ -205,6 +205,14 @@ header#masthead{
         a{
           color: $color-black;
           @include highlight-on-hover($height: 6px, $bottom: 1px);
+          &:after{
+            width: 100%; opacity: 0;
+          }
+          &:hover{
+            &:after{
+              opacity: 1;
+            }
+          }
         }
       }
     }
