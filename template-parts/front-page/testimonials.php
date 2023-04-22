@@ -21,7 +21,7 @@ if ( $wp_query->have_posts() ) :
 					<div class="slick-slide">
 						<div class="testimonials-loop-card rounded-3 position-relative border bg-light-gray text-center">
 							<div class="entry-content fst-italic"><?php the_content(); ?></div>
-							<h3 class="name mt-3 ls-lg mb-0"><?php the_title(); ?></h3>
+							<h2 class="name mt-3 ls-lg mb-0"><?php the_title(); ?></h2>
 						</div>
 					</div>
 				<?php endwhile; ?>
