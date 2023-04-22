@@ -5,7 +5,7 @@
  */
 ?>
 
-<nav id="main-nav" class="navbar navbar-expand-lg navbar-light" aria-labelledby="main-nav-label">
+<nav id="main-nav" class="navbar navbar-expand-lg navbar-light">
 
   <div class="container">
 
