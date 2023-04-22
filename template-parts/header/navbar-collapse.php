@@ -5,7 +5,6 @@
  */
 ?>
 
-<label id="main-nav-label" for="main-nav" class="screen-reader-text"><?php esc_html_e( 'Main Navigation', 'wp-theme' ); ?></label>
 <nav id="main-nav" class="navbar navbar-expand-lg navbar-light" aria-labelledby="main-nav-label">
 
   <div class="container">

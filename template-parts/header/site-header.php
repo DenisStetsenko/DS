@@ -17,6 +17,6 @@ $wrapper_classes .= ' bg-white sticky-top ';
 <div id="progress-bar-container" class="bg-white">
 	<div id="progress-bar"></div>
 </div>
-<header id="masthead" class="<?php echo esc_attr( $wrapper_classes ); ?>" role="banner">
+<header id="masthead" class="<?php echo esc_attr( $wrapper_classes ); ?>">
   <?php get_template_part( 'template-parts/header/navbar-collapse' ); ?>
 </header><!-- #masthead -->

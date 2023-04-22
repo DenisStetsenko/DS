@@ -35,8 +35,11 @@ if ( $args && ! empty($args['include-author-block']) && $args['include-author-bl
 	
 	$author_id 	 	= get_post_field( 'post_author' );
 	$author_name 	= get_the_author_meta( 'display_name', $author_id );
-	$post_date 		= get_the_date( 'M j, Y' );
+	$post_date 				= get_the_date( 'M j, Y' );
+	$format_post_date = date("Y-m-d", strtotime($post_date));
+	
 	$post_m_date	= get_the_modified_date( 'M j, Y' );
+	$format_post_m_date = date("Y-m-d", strtotime($post_m_date));
 	
 	$author_block_html .= '<figure class="article-author font-secondary fs-5 mb-1 text-gray">';
 		$author_block_html .= '<figcaption>';
@@ -50,9 +53,9 @@ if ( $args && ! empty($args['include-author-block']) && $args['include-author-bl
 			$author_block_html .= '</li>';
 			
 			if ( get_the_modified_date() != get_the_date() ) :
-				$author_block_html .=	'<li class="list-inline-item dateModified"><time datetime="'. $post_m_date .'" itemprop="dateModified">'. sprintf( __( '%s', 'wp-theme' ), $post_m_date ) .'</time></li>';
+				$author_block_html .=	'<li class="list-inline-item dateModified"><time datetime="'. $format_post_m_date .'" itemprop="dateModified">'. sprintf( __( '%s', 'wp-theme' ), $post_m_date ) .'</time></li>';
 			else :
-				$author_block_html .=	'<li class="list-inline-item datePublished"><time datetime="'. $post_date .'" itemprop="datePublished">'. sprintf( __( '%s', 'wp-theme' ), $post_date ) .'</time></li>';
+				$author_block_html .=	'<li class="list-inline-item datePublished"><time datetime="'. $format_post_date .'" itemprop="datePublished">'. sprintf( __( '%s', 'wp-theme' ), $post_date ) .'</time></li>';
 			endif;
 	
 			$author_block_html .= '</ul>';

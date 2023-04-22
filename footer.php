@@ -12,7 +12,7 @@
 			<div class="row align-items-center">
 				<?php if ( has_nav_menu( 'footer-menu' ) ) { ?>
 					<div class="col-md-6 order-md-2 text-center text-md-end mb-2 mb-md-0">
-						<nav id="nav-footer-menu" class="footer-menu" role="navigation">
+						<nav id="nav-footer-menu" class="footer-menu">
 							<?php wp_nav_menu( array(
 									'theme_location'  => 'footer-menu',
 									'menu_class'      => 'list-inline m-0',
