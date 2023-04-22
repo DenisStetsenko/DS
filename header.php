@@ -20,7 +20,33 @@
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+	<!-- Eliminate render-blocking resources google fonts FIX -->
+	<link
+			rel="preload"
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+			as="style"
+			onload="this.onload=null;this.rel='stylesheet'"
+	/>
+	<noscript>
+		<link
+				href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+				rel="stylesheet"
+				type="text/css"
+		/>
+	</noscript>
+	<!-- / Eliminate render-blocking resources google fonts FIX -->
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-H6ZQK70J7T"></script>
+	<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-H6ZQK70J7T');
+	</script>
+	<!-- Google tag (gtag.js) -->
 	
 	<?php wp_head(); ?>
 </head>

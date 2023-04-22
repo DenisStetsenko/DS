@@ -8,6 +8,18 @@ var plumber         = require('gulp-plumber');
 var sourcemaps      = require('gulp-sourcemaps');
 var browserSync     = require('browser-sync').create();
 
+var rename          = require('gulp-rename');
+var cssnano         = require('gulp-cssnano');
+
+var environments  = require('gulp-environments');
+var development   = environments.development;
+var production    = environments.production;
+
+//environments.current(development); // Set current environment to DEVELOPMENT
+environments.current(production); // Set current environment to PRODUCTION
+var current_env = environments.current();
+
+
 function handleErrors() {
   var args = Array.prototype.slice.call(arguments);
 
@@ -86,17 +98,25 @@ gulp.task('autoprefixes', function(cb) {
 gulp.task('sass', function () {
   return gulp.src(basePaths.scss + 'main.scss')
       .pipe(plumber())
-      .pipe(sourcemaps.init({ loadMaps: true, largeFile: true }))
+      .pipe(development(sourcemaps.init({loadMaps: true, largeFile: true})))
       .pipe(sass().on('error', handleErrors))
-      //.pipe(autoprefixer({ cascade: false }).on('error', handleErrors))
-      .pipe(sourcemaps.write())
+      .pipe(production(autoprefixer({ cascade: false })))
+      .pipe(development(sourcemaps.write()))
+      .pipe(production(rename({basename: 'main', suffix: '.min'})))
+      .pipe(production(cssnano({ discardComments: { removeAll: true }, reduceIdents: false })))
       .pipe(gulp.dest(basePaths.css))
-      .pipe(browserSync.stream({ match: '**/*.css' }));
+      .pipe(development(browserSync.stream({ match: '**/*.css' })));
 });
 
 gulp.task('watch', function () {
-  browserSync.init(browserSyncWatchFiles, browserSyncOptions);
+
+  // Run browsersync only for DEV ENV
+  if (current_env === development){
+    browserSync.init(browserSyncWatchFiles, browserSyncOptions);
+  }
+
   gulp.watch(basePaths.scss + '**/*.scss', gulp.series('sass'));
+
 });
 
 gulp.task('default', gulp.series('watch'));

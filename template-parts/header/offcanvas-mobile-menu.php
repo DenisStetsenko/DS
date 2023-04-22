@@ -6,7 +6,8 @@
 	</div>
 	
 	<div class="offcanvas-body">
-		<nav id="navbar-offcanvas-nav" class="mt-5 mb-6">
+		<?php if ( has_nav_menu( 'header-menu' ) ) : ?>
+		<nav id="navbar-offcanvas-nav" class="mt-5 mb-6" role="navigation" aria-label="<?php esc_attr_e( 'Primary Mobile Navigation', 'twentytwentyone-child' ); ?>">
 			<?php
 			wp_nav_menu( array(
 				'theme_location'  => 'header-menu',
@@ -19,6 +20,7 @@
 			) );
 			?>
 		</nav>
+		<?php endif; ?>
 		
 		<button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#subscribeModal"><?php _e('Subscribe', 'wp-theme'); ?></button>
 		<button class="btn btn-secondary w-100 mt-4" data-bs-toggle="modal" data-bs-target="#searchModal"><?php _e('Search', 'wp-theme'); ?></button>
