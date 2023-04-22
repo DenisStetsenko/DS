@@ -180,7 +180,7 @@
             @include font-size(18px);
           }
           color: #636363;
-          &:hover{ color: #000; }
+          &:hover, &:visited{ color: #000; }
         }
       }
 
@@ -203,7 +203,7 @@
               content: counter(item, circle) "";
               width: rfs-value(12px);
             }
-            &:hover{ color: #000; }
+            &:hover, &:visited{ color: #000; }
           }
         }
       }
