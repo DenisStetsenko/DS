@@ -1,5 +1,5 @@
 <div id="subscribeModal" class="modal fade" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-md">
+	<div class="modal-dialog modal-md modal-dialog-centered">
 		<div class="modal-content">
 			<div class="modal-body">
 				<?php echo do_shortcode('[gravityform id="2" title="false" description="true" ajax="true"]'); ?>
