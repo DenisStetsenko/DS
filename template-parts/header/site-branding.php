@@ -7,9 +7,10 @@
 		
 		if ( $image ) {
 			$html = sprintf(
-				'<a href="%1$s" class="custom-logo-link d-inline-block" rel="home" aria-current="page">%2$s</a>',
+				'<a href="%1$s" class="custom-logo-link d-inline-block" rel="home" aria-current="page" aria-label="%3$s">%2$s</a>',
 				esc_url( home_url( '/' ) ),
-				$image
+				$image,
+				__($custom_logo['alt']. ' Logo', 'wp-theme')
 			);
 			echo $html;
 		}

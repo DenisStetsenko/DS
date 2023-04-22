@@ -39,13 +39,13 @@
 		<div id="search-subscribe-area" class="ms-4 d-none d-lg-block">
 			<ul class="list-inline m-0 ">
 				<li class="list-inline-item mail">
-					<a href="#" class="email-popup" data-bs-toggle="modal" data-bs-target="#subscribeModal">
+					<a href="#" class="email-popup" data-bs-toggle="modal" data-bs-target="#subscribeModal" aria-label="<?php _e('Subscribe Modal Link', 'wp-theme'); ?>">
 						<span class="normal"><?= wp_custom_bs_icons('ui', 'mail'); ?></span>
 						<span class="hover"><?= wp_custom_bs_icons('ui', 'mail-heart'); ?></span>
 					</a>
 				</li>
 				<li class="list-inline-item search">
-					<a href="#" class="search-popup" data-bs-toggle="modal" data-bs-target="#searchModal">
+					<a href="#" class="search-popup" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="<?php _e('Search Modal Link', 'wp-theme'); ?>">
 						<span class="normal"><?= wp_custom_bs_icons('ui', 'search'); ?></span>
 						<span class="hover"><?= wp_custom_bs_icons('ui', 'search-heart'); ?></span>
 					</a>
