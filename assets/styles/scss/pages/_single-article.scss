@@ -191,8 +191,7 @@
 
       // Block Editor => Gallery
       .wp-block-gallery{
-        display: flex;
-        flex-wrap: wrap;
+        @include make-row();
         &.columns-3{
           .wp-block-image{
             @include make-col(12);
@@ -210,12 +209,11 @@
           }
         }
         &.columns-1{
-          .wp-block-image{
-            flex: 1 1 100%;
-            max-width: 100%;
-          }
+          @include make-col(12);
         }
-
+        .wp-block-image{
+          @include make-col-ready();
+        }
       }
 
     }
