@@ -195,17 +195,17 @@
         flex-wrap: wrap;
         &.columns-3{
           .wp-block-image{
+            @include make-col(12);
             @include media-breakpoint-up(md){
-              flex-basis: 0;
-              flex-grow: 1;
+              @include make-col(4);
             }
           }
         }
         &.columns-2{
           .wp-block-image{
+            @include make-col(12);
             @include media-breakpoint-up(md){
-              flex-basis: 0;
-              flex-grow: 1;
+              @include make-col(6);
             }
           }
         }
