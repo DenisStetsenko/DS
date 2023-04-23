@@ -13,7 +13,7 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 	
 	<?php get_template_part('template-parts/single-article/post-thumbnail')?>
 	
-	<div class="intro-content comparison-summary mb-4">
+	<div class="intro-content comparison-summary mb-4" itemprop="description">
 		<div class="entry-content">
 			<?php the_content(); ?>
 		</div>

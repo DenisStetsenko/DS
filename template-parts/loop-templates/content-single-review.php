@@ -20,7 +20,7 @@ get_template_part('template-parts/single-article/affiliate-disclosure');
 			<?php echo do_shortcode('[ez-toc]'); ?>
 		</div>
 		
-		<div class="entry-content mobile-content-sm-size">
+		<div class="entry-content mobile-content-sm-size" itemprop="description">
 			<?php the_content(); ?>
 		</div>
 	</div>
