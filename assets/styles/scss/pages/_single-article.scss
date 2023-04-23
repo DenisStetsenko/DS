@@ -194,6 +194,7 @@
       figure.wp-block-gallery{
         display: flex;
         flex-wrap: wrap;
+        gap: rfs-value(16px);
         &.columns-3{
           .wp-block-image{
 
