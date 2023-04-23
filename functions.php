@@ -71,6 +71,7 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
     wp_dequeue_style( 'wp-block-library-theme' );
     wp_dequeue_style( 'wc-blocks-style' ); // Remove WooCommerce block CSS
 	  wp_dequeue_style('core-block-supports');
+	  wp_dequeue_style('core-block-supports-inline');
 		
 	  // Fancybox (BS Replacement)
     // wp_enqueue_style('fancybox', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css', array(), array() );
