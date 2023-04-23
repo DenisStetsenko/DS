@@ -21,8 +21,7 @@
 
     <!-- The WordPress Menu goes here -->
     <?php
-			if ( ! wp_is_mobile() ) :
-			wp_nav_menu( array(
+    	wp_nav_menu( array(
 				'theme_location'  => 'header-menu',
 				'container_class' => 'collapse navbar-collapse justify-content-center pe-10',
 				'container_id'    => 'navbarNavDropdown',
@@ -32,7 +31,6 @@
 				'depth'           => 2,
 				'walker'          => new WP_Custom_Bootstrap_Navwalker()
 			) );
-			endif;
     ?>
 		<!-- The WordPress Menu goes here -->
 		
