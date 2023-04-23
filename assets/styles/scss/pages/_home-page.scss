@@ -52,7 +52,7 @@
       }
       u{
         text-decoration: none;
-        @include highlight(19px,3px);
+        @include bottom-highlight($height: 29%, $bottom: 2px);
       }
     }
   }

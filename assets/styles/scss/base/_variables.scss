@@ -71,7 +71,8 @@ $spacers: (
  * Global Bootstrap Overrides
  ***********************************************************************************************************************/
 /* General */
-$enable-smooth-scroll     : true;
+$enable-smooth-scroll         : true;
+$headings-top-negative-margin : -0.313rem;
 
 $body-bg                  : $color-white;
 $body-color               : $color-black;
@@ -524,13 +525,14 @@ $slick-dot-color-active   : $color-black;
 
 }
 
-@mixin highlight($height: 16px, $bottom: 5px){
+@mixin bottom-highlight($height: 25%, $bottom: 1px){
   display: inline;
   position: relative;
   z-index: 1;
+  line-height: 1.1;
   &:after {
     background: $color-primary;
-    bottom: $bottom;
+    bottom: rfs-value($bottom);
     content: '';
     height: $height;
     position: absolute;
@@ -540,6 +542,9 @@ $slick-dot-color-active   : $color-black;
   }
 }
 
+/**
+ * used on Header/Footer/Popups
+ */
 @mixin highlight-on-hover($bg: $color-primary, $height: 7px, $bottom: 1px, $offset: 0px ){
   position: relative;
   z-index: 1;

@@ -3,19 +3,16 @@
  */
 header#category-heading{
   text-align: center;
-  margin-top: -5px; // offset to have equal top/bottom paddings
+  margin-top: $headings-top-negative-margin; // offset to have equal top/bottom paddings
   margin-bottom: 45px;
   @include media-breakpoint-up(md){
     margin-bottom: 65px;
   }
   h1, .category-title{
     margin-bottom: 0;
-    @include highlight(12px, 1px);
+    @include bottom-highlight($bottom: 2px);
     @include media-breakpoint-up(md){
-      @include highlight(12px, 3px);
-    }
-    @include media-breakpoint-up(lg){
-      @include highlight(15px, 3px);
+      @include bottom-highlight($bottom: 3px);
     }
   }
   .cat-description{

@@ -41,13 +41,17 @@
   }
 
   .w-title{
+    @include font-size(30px);
     @include media-breakpoint-only(lg){
-      @include font-size(23px)
+      @include font-size(25px);
     }
     @include media-breakpoint-only(xl){
-      @include font-size(26px)
+      @include font-size(30px);
     }
-    @include highlight($height: 12px, $bottom: 4px);
+    @include media-breakpoint-up(xxl){
+      @include font-size(36px);
+    }
+    @include bottom-highlight();
   }
 
   // Gravity Forms
@@ -135,20 +139,20 @@
     margin-bottom: 0;
     box-shadow: none;
     .ez-toc-title{
-      @include font-size(24px);
+      font-weight: 800;
       margin-bottom: rfs-value(15px);
       display: inline-block !important;
-      @include highlight($height: 9px, $bottom: 3px);
-      @include media-breakpoint-up(md){
-        @include highlight($height: 9px, $bottom: 4px);
+      @include bottom-highlight();
+
+      @include font-size(30px);
+      @include media-breakpoint-only(lg){
+        @include font-size(25px);
       }
-      @include media-breakpoint-up(xl){
+      @include media-breakpoint-only(xl){
         @include font-size(30px);
-        @include highlight($height: 10px, $bottom: 5px);
       }
       @include media-breakpoint-up(xxl){
-        @include font-size($h3-font-size);
-        @include highlight($height: 11px, $bottom: 6px);
+        @include font-size(36px);
       }
 
     }

@@ -6,7 +6,7 @@
  */
 ?>
 
-<div id="right-sidebar" class="position-relative d-none d-lg-block">
+<div id="right-sidebar" class="position-relative d-none d-lg-block flex-grow-1">
 	<div class="sticky-top wow fadeInUp" data-wow-delay="100ms" data-wow-duration="700ms">
 		<?php
 		if ( is_single() && 'post' == get_post_type() && is_page_template('single-comparison-template.php') && is_active_sidebar( 'comparison-sidebar' ) ) {
