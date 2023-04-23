@@ -191,28 +191,22 @@
 
       // Block Editor => Gallery
       .wp-block-gallery{
-        @include make-row();
+
         &.columns-3{
           .wp-block-image{
-            @include make-col(12);
-            @include media-breakpoint-up(md){
-              @include make-col(4);
-            }
+
           }
         }
         &.columns-2{
           .wp-block-image{
-            @include make-col(12);
-            @include media-breakpoint-up(md){
-              @include make-col(6);
-            }
+
           }
         }
         &.columns-1{
-          @include make-col(12);
+
         }
         .wp-block-image{
-          @include make-col-ready();
+
         }
       }
 
