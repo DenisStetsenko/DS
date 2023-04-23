@@ -192,6 +192,7 @@
       // Block Editor => Gallery
       figure.wp-block-gallery{
         display: flex;
+        flex-wrap: wrap;
         &.columns-3{
           .wp-block-image{
 
