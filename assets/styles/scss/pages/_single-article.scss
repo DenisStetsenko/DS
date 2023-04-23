@@ -190,8 +190,8 @@
       }
 
       // Block Editor => Gallery
-      .wp-block-gallery{
-
+      figure.wp-block-gallery{
+        display: flex;
         &.columns-3{
           .wp-block-image{
 
@@ -205,8 +205,10 @@
         &.columns-1{
 
         }
-        .wp-block-image{
-
+        figure.wp-block-image{
+          figcaption.wp-element-caption{
+            color: white;
+          }
         }
       }
 
