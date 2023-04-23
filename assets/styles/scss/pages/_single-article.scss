@@ -193,7 +193,7 @@
       .wp-block-gallery{
         display: flex;
         flex-wrap: wrap;
-        .wp-block-gallery-3{
+        &.wp-block-gallery-3{
           .wp-block-image{
             @include media-breakpoint-up(md){
               flex-basis: 0;
@@ -201,7 +201,7 @@
             }
           }
         }
-        .wp-block-gallery-2{
+        &.wp-block-gallery-2{
           .wp-block-image{
             @include media-breakpoint-up(md){
               flex-basis: 0;
@@ -209,7 +209,7 @@
             }
           }
         }
-        .wp-block-gallery-1{
+        &.wp-block-gallery-1{
           .wp-block-image{
             flex: 1 1 100%;
             max-width: 100%;
