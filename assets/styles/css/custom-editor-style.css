@@ -88,7 +88,7 @@ a.btn.btn-primary[data-mce-selected], a.btn.btn-secondary[data-mce-selected]{
 }
 
 .ta-editor-shortcode{
-  border: 2px dashed #5333ed;
+  border: 2px dashed #5333ed !important;
   padding: 5px 10px;
   font-weight: 700;
   display: inline-block;
