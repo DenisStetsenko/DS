@@ -70,7 +70,8 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
     wp_dequeue_style( 'wp-block-library' );
     wp_dequeue_style( 'wp-block-library-theme' );
     wp_dequeue_style( 'wc-blocks-style' ); // Remove WooCommerce block CSS
-	
+	  wp_dequeue_style('core-block-supports');
+		
 	  // Fancybox (BS Replacement)
     // wp_enqueue_style('fancybox', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css', array(), array() );
     // wp_enqueue_script('fancybox', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js', array('jquery'), array(), true );
