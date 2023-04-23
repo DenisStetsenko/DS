@@ -82,10 +82,3 @@ if ( ! function_exists( 'wp_custom_theme_add_editor_styles' ) ) {
   }
 }
 add_action('admin_init', 'wp_custom_theme_add_editor_styles');
-
-
-function wp_block_editor_links_control( $rel, $link ) {
-	$rel = 'noopener';
-	return $rel;
-}
-add_filter( 'wp_targeted_link_rel', 'wp_block_editor_links_control', 10, 2 );
