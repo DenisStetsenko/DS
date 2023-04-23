@@ -154,6 +154,7 @@
       }
     }
     .entry-content{
+      // comment form shortcode
       .wpd-inline-shortcode{
         background: #f4f4f4;
         padding: 3px 0 3px 6px;
@@ -164,6 +165,10 @@
             vertical-align: baseline;
           }
         }
+      }
+      // Affilate Links
+      .link{
+        @include link-hover-effect();
       }
 
     }
