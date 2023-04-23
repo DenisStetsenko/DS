@@ -1,84 +1,51 @@
-<!--You can change it for current website!-->
-<style>
-	* {
-		margin: 0;
-		padding: 0;
-	}
-	a {
-		-webkit-transition: all 0.2s ease-out;
-		-moz-transition: all 0.2s ease-out;
-		-ms-transition: all 0.2s ease-out;
-		-o-transition: all 0.2s ease-out;
-		transition: all 0.2s ease-out;
-	}
-	.lost {
-		color: #fff;
-		font-family: 'Open Sans', Arial, sans-serif;
-		text-align: center;
-	}
+<?php
+/**
+ * The template for displaying 404 pages (not found)
+ *
+ * @link https://codex.wordpress.org/Creating_an_Error_404_Page
+ *
+ * @package WordPress
+ * @subpackage Twenty_Twenty_One
+ * @since Twenty Twenty-One 1.0
+ */
 
-	.lost h2 {
-		margin: 10px 0;
-		font-size: 80px;
-		line-height: 1;
-	}
-	.lost h3 {
-		font-size: 30px;
-		margin-bottom: 20px;
-	}
-
-	.lost a {
-		color: #fff;
-		font-family: 'Open Sans', Arial, sans-serif;
-		text-align: center;
-		font-weight: 700;
-		text-decoration: none;
-		border: 2px solid #fff;
-		-webkit-border-radius: 5px;
-		-moz-border-radius: 5px;
-		border-radius: 5px;
-		padding: 5px 10px;
-		margin-left: 10px;
-		outline: none;
-		line-height: 60px;
-	}
-
-	.lost a:hover {
-		text-decoration: none;
-		background: #fff;
-		color: #000;
-	}
-
-	.lost img {
-		margin: 0 auto;
-		display: block;
-		margin-top: 40px;
-		margin-bottom: 40px;
-		padding-top: 0;
-	}
-	.lost .container {
-		display: inline-block;
-		position: absolute;
-		left: 50%;
-		top: 30%;
-	}
-	@media (max-width: 650px) {
-		.lost .container {
-			display: inline-block;
-			position: absolute;
-			left: 5%;
-			right: 5%;
-			bottom: 10%;
-			top: auto;
+get_header(); ?>
+	<style>
+		#wrapper{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
 		}
-	}
-</style>
-<body class="lost" style="background: url(<?php echo get_template_directory_uri(); ?>/assets/images/404.png) no-repeat center center fixed; background-size: cover;">
-<div class="container">
-	<h2>404</h2>
-	<h3>It looks like you're a little lost</h3>
-	<p>Double check the URL or go back to the <a href="<?php bloginfo( 'url' ); ?>">HOMEPAGE</a></p>
-</div>
-</body>
+	</style>
+  <div id="404-page-wrapper" class="section-padding flex-grow-1">
+    <div class="container">
+      <div class="row align-items-center">
+
+				<div class="col-lg-7 text-center order-lg-2 mb-8 mb-lg-0">
+					<header class="section-title">
+						<h1 class="page-title mb-2" style="font-size: 120px"><?php esc_html_e( '404', 'wp-theme' ); ?></h1>
+						<h2 class="page-subtitle"><?php esc_html_e( 'Page Not Found', 'wp-theme' ); ?></h2>
+					</header><!-- .page-header -->
+
+					<div class="error-404">
+						<div class="entry-content mobile-content-sm-size">
+							<p><?php esc_html_e( "The page you're looking for can not be found.", "wp-theme" ); ?></p>
+						</div><!-- .page-content -->
+					</div><!-- .error-404 -->
+				</div>
+				
+				<div class="col-lg-5 order-lg-1 text-center text-lg-start pe-lg-0">
+					<img src="<?= get_theme_file_uri('assets/images/404.svg'); ?>" class="img-fluid not-found-img px-4 px-lg-0" alt="<?php esc_html_e( '404 Not Found Image', 'wp-theme' ); ?>">
+				</div>
+				
+				
+      
+      </div>
+    </div>
+  </div>
 
 
+<?php get_footer();
