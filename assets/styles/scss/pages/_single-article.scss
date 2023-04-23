@@ -210,7 +210,10 @@
           }
         }
         .wp-block-gallery-1{
-
+          .wp-block-image{
+            flex: 1 1 100%;
+            max-width: 100%;
+          }
         }
 
       }
