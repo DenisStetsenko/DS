@@ -84,12 +84,8 @@ if ( ! function_exists( 'wp_custom_theme_add_editor_styles' ) ) {
 add_action('admin_init', 'wp_custom_theme_add_editor_styles');
 
 
-/**
- * Remove type="text/javascript" | type="text/css"
- */
-add_action('init', function(){ ob_start("prefix_output_callback"); });
-add_action('shutdown', function(){ ob_end_flush(); });
-
-function prefix_output_callback($buffer) {
-	return preg_replace( "%[ ]type=[\'\"]text\/(javascript|css)[\'\"]%", '', $buffer );
+function wp_block_editor_links_control( $rel, $link ) {
+	$rel = 'noopener';
+	return $rel;
 }
+add_filter( 'wp_targeted_link_rel', 'wp_block_editor_links_control', 10, 2 );

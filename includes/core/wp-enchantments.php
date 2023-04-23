@@ -38,62 +38,6 @@ add_filter('the_content_more_link', 'wp_custom_remove_more_jump_link');
 
 
 /**
- * Prints HTML with meta information for the categories, tags and comments.
- ***********************************************************************************************************************/
-if ( ! function_exists( 'post_meta' ) ) {
-  function post_meta() {
-
-    // Get Categories for posts.
-    $categories = get_the_category();
-
-    echo '<div class="entry-meta"><ul class="list-inline mb-0">';
-
-    if ( is_single() ) { ?>
-      <li class="list-inline-item mb-1">
-        <ul class="list-inline mb-0 single-post-user">
-          <li class="list-inline-item">
-            <?php echo get_avatar( get_the_author_meta('user_email'), $size = '65'); ?>
-          </li>
-          <li class="list-inline-item author vcard">
-            <?php printf('<a class="url fn n " href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author() . '</a>'); ?>
-          </li>
-        </ul>
-      </li>
-    <?php }
-
-    // Date
-    $time_string = '<li class="list-inline-item mb-1"><i class="fa fa-calendar mr-1" aria-hidden="true"></i><time class="entry-date published updated" datetime="%1$s">%2$s</time></li>';
-    $time_string = sprintf( $time_string, get_the_date( DATE_W3C ), get_the_date(get_option( 'date_format' )) );
-    echo $time_string;
-
-    if ( !is_single() ) {
-      // Author
-      printf('<li class="list-inline-item author vcard mb-1"><i class="fa fa-user mr-1" aria-hidden="true"></i><a class="url fn n " href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author() . '</a></li>');
-    }
-
-    // Categories
-    if ( !empty( $categories )) {
-      echo '<li class="list-inline-item mb-1"><ul class="list-inline post-categories">';
-      echo '<li class="list-inline-item"><i class="fa fa-heart" aria-hidden="true"></i></li>';
-      printf( '<li class="list-inline-item cat-links"><a href="%1$s">%2$s</a></li>',
-          esc_url( get_category_link( $categories[0]->term_id ) ),
-          esc_html( $categories[0]->name )
-      );
-      echo '</ul></li>';
-    }
-
-    // Comments
-    echo '<li class="list-inline-item mb-1"><i class="fa fa-comment mr-1" aria-hidden="true"></i>';
-    printf( _nx( '1 commentaar', '%1$s reacties', get_comments_number(), 'comments title', 'wp-theme' ), number_format_i18n( get_comments_number() ) );
-    echo '</li>';
-
-    echo '</ul></div><!-- /.entry-meta -->';
-
-  }
-}
-
-
-/**
  * Custom excerpt length read more
  ***********************************************************************************************************************/
 if ( ! function_exists( 'wp_custom_excerpt_more' ) ) {
@@ -123,7 +67,7 @@ add_filter('excerpt_length', 'wp_custom_excerpt_length', 20);
  ***********************************************************************************************************************/
 if ( ! function_exists( 'wp_custom_theme_wordpress_login_styling' ) ) {
   function wp_custom_theme_wordpress_login_styling() { ?>
-    <style type="text/css">
+    <style>
         body.login {
             background-color: #292929;
             background-image: none !important;
@@ -143,6 +87,11 @@ if ( ! function_exists( 'wp_custom_theme_wordpress_login_styling' ) ) {
         }
         body.login h1 a {
             background-image: url('<?php echo get_theme_file_uri('assets/images/logo-white-text.png'); ?>') !important;
+            outline: none;
+						box-shadow: none;
+            width: 100%;
+            background-size: contain;
+            height: 54px;
         }
         body.login #nav, body.login #backtoblog{
             text-align: center;
@@ -204,27 +153,6 @@ if ( ! function_exists( 'wp_custom_admin_logo_custom_url' ) ) {
 
 
 /**
- * wp-admin custom logo => site logo
- ***********************************************************************************************************************/
-if ( ! function_exists( 'wp_custom_wordpress_filter_login_head' ) ) {
-  function wp_custom_wordpress_filter_login_head(){
-    if (has_custom_logo()) : $image = wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'medium'); ?>
-      <style type="text/css">
-        .login h1 a {
-          background-image: url(<?php echo esc_url( $image[0] ); ?>);
-          -webkit-background-size: <?php echo absint( $image[1] )?>px;
-          background-size: <?php echo absint( $image[1] ) ?>px;
-          height: <?php echo absint( $image[2] ) ?>px;
-          width: <?php echo absint( $image[1] ) ?>px;
-        }
-      </style>
-    <?php endif;
-  }
-}
-add_action('login_head', 'wp_custom_wordpress_filter_login_head', 100);
-
-
-/**
  * Allow SVG through WordPress Media Uploader
  ***********************************************************************************************************************/
 if ( ! function_exists( 'wp_custom_cc_mime_types' ) ) {
@@ -237,20 +165,11 @@ add_filter('upload_mimes', 'wp_custom_cc_mime_types');
 
 
 /**
- * Custom Wordpress Comments form
- * https://codex.wordpress.org/Function_Reference/comment_form
- **********************************************************************************************************************/
-if ( ! function_exists( 'wp_custom_theme_comment_form' ) ) {
-  function wp_custom_theme_comment_form($args){
-    $args['comment_field'] =
-        '<div class="form-group comment-form-comment">
-          <label for="comment">' . _x('Comment', 'noun', 'wp-theme') . (' <span class="required">*</span>') . '</label>
-          <textarea class="form-control" id="comment" name="comment" aria-required="true" cols="45" rows="6"></textarea>
-        </div>';
+ * Remove type="text/javascript" | type="text/css"
+ ***********************************************************************************************************************/
+add_action('init', function(){ ob_start("prefix_output_callback"); });
+add_action('shutdown', function(){ ob_end_flush(); });
 
-    $args['class_submit'] = 'btn btn-primary'; // since WP 4.1.
-
-    return $args;
-  }
+function prefix_output_callback($buffer) {
+	return preg_replace( "%[ ]type=[\'\"]text\/(javascript|css)[\'\"]%", '', $buffer );
 }
-add_filter('comment_form_defaults', 'wp_custom_theme_comment_form');
