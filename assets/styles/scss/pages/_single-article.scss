@@ -166,9 +166,53 @@
           }
         }
       }
+
       // Affilate Links
       .link{
         @include link-hover-effect();
+      }
+
+      // Block Editor => Image
+      figure.wp-block-image{
+        img{
+          @include img-fluid()
+        }
+        figcaption.wp-element-caption{
+          color: $color-gray;
+          font-family: $font-secondary;
+          @include font-size($h6-font-size);
+        }
+      }
+
+      // Block Editor => Heading
+      .wp-block-heading{
+
+      }
+
+      // Block Editor => Gallery
+      .wp-block-gallery{
+        display: flex;
+        flex-wrap: wrap;
+        .wp-block-gallery-3{
+          .wp-block-image{
+            @include media-breakpoint-up(md){
+              flex-basis: 0;
+              flex-grow: 1;
+            }
+          }
+        }
+        .wp-block-gallery-2{
+          .wp-block-image{
+            @include media-breakpoint-up(md){
+              flex-basis: 0;
+              flex-grow: 1;
+            }
+          }
+        }
+        .wp-block-gallery-1{
+
+        }
+
       }
 
     }
