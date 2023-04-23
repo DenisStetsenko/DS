@@ -65,16 +65,11 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
 
     wp_enqueue_script('jquery');
 
-    // Special script for comments
-    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-      wp_enqueue_script( 'comment-reply' );
-    }
-
+    
     // Remove Gutenberg Block Library CSS from loading on the frontend
     wp_dequeue_style( 'wp-block-library' );
     wp_dequeue_style( 'wp-block-library-theme' );
     wp_dequeue_style( 'wc-blocks-style' ); // Remove WooCommerce block CSS
-	  
 	
 	  // Fancybox (BS Replacement)
     // wp_enqueue_style('fancybox', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css', array(), array() );
