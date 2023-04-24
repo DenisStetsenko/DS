@@ -4,11 +4,7 @@
  *
  * Default post template for Review layout
  */
-get_header();
-
-
-
-?>
+get_header(); ?>
 
   <div id="single-article-template" class="post-review-layout main-area-padding">
 		<main id="main" class="site-main">

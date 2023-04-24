@@ -38,7 +38,7 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 								<?= $top_picks['heading']['title'] 		? '<p class="title fs-4 fw-bold">'.$top_picks['heading']['title'].'</p>' 	: null; ?>
 								<?php if ( $top_picks['heading']['title'] ) : ?>
 									<a class="more" href="<?php the_permalink(); ?>#pick-<?= strtolower( preg_replace('/(\W)+/', '-', $top_picks['heading']['title']) ); ?>">
-										<i><?= $down_icon; ?></i><?php _e('Jump to Review', 'wp-theme'); ?>
+										<i class="icon-down"></i><?php _e('Jump to Review', 'wp-theme'); ?>
 									</a>
 								<?php endif; ?>
 							</div>
@@ -83,7 +83,7 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 					
 					
 					<!-- PRODUCT PRICE BUTTON -->
-					<?= acf_link($summary_list_item['price'], 'btn btn-accent btn-price affiliate-link d-table mx-auto mt-2 mb-7'); ?>
+					<?= acf_link($summary_list_item['price'], 'btn btn-primary btn-price affiliate-link d-table mx-auto mt-2 mb-7'); ?>
 					<!-- / PRODUCT PRICE BUTTON -->
 					
 					

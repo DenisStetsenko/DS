@@ -16,10 +16,13 @@ get_header(); ?>
 								<header id="page-header" class="text-center text-lg-start wow fadeIn" data-wow-delay="50ms" data-wow-duration="700ms">
 									<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 								</header><!-- .entry-header -->
-
-								<?php if ( is_active_sidebar( 'about-page-mobile-sidebar' ) ) {
-									dynamic_sidebar( 'about-page-mobile-sidebar' );
-								}; ?>
+								
+								<?php if ( has_post_thumbnail() ) : ?>
+									<aside id="media-image-mobile" role="region" aria-label="Sidebar Element"
+												 class="widget rounded-3 font-secondary bg-light-gray border fs-4 widget_media_image d-lg-none">
+										<?php the_post_thumbnail('full', array( 'loading' => 'eager', 'class' => 'img-fluid image' )); ?>
+									</aside>
+								<?php endif; ?>
 								
 								<div class="entry-content mobile-content-sm-size wow fadeIn" data-wow-delay="100ms" data-wow-duration="700ms">
 									<?php the_content();?>

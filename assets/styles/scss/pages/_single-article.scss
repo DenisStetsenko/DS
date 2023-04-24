@@ -219,10 +219,17 @@
           @include font-size(15px);
           color: $color-black;
           &:hover{
-            color: $color-primary;
+            text-decoration: underline;
           }
           i {
             margin-right: rfs-value(2px);
+            background-image: escape-svg($bs-chevron-double-down-icon);
+            width: 14px;
+            height: 14px;
+            background-size: contain;
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: -2px;
           }
         }
       }
