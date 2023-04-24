@@ -289,11 +289,3 @@ function wp_ajax_live_search(){
 }
 add_action('wp_ajax_wp_ajax_live_search_data_fetch' , 'wp_ajax_live_search');
 add_action('wp_ajax_nopriv_wp_ajax_live_search_data_fetch','wp_ajax_live_search');
-
-/**
- * Custom classes for TA Shortcode
- */
-add_filter( 'ta_link_insert_extend_data_attributes', function( $link_atts, $thirstylink, $post_id ) {
-	$link_atts['class'] = $link_atts['class'] . ' ta-shortcode';
-	return $link_atts;
-}, 10, 3 );
