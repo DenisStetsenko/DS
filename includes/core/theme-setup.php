@@ -125,7 +125,7 @@ if ( ! function_exists('wp_custom_theme_setup') ) {
 	  /**
 	   * Gutenberg Theme Font Sizes
 	   */
-	  add_theme_support('disable-custom-font-sizes'); // disable custom font size
+	  //add_theme_support('disable-custom-font-sizes'); // disable custom font size
 	  add_theme_support( 'editor-font-sizes', array(
 		  array(
 			  'name' => esc_attr__( '14px (0.875rem)', 'wp-theme' ),
