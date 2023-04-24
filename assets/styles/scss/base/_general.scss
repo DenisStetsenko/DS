@@ -199,7 +199,7 @@ header#page-header{
       line-height: 1.65;
     }
   }
-  p a{
+  p a:not(.btn){
     @include link-hover-effect();
   }
 }

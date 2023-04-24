@@ -51,34 +51,109 @@ if ( ! function_exists('wp_custom_theme_setup') ) {
     add_theme_support( 'wp-block-styles' );
 
     // Editor Style
-    add_theme_support( 'editor-style' );
-		
-    // remove render gutenberg svg_filters junk
-    remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
-    remove_action( 'wp_body_open', 'gutenberg_global_styles_render_svg_filters' );
-
-    // remove render_block filters which adding unnecessary stuff
-    remove_filter('render_block', 'wp_render_duotone_support');
-    remove_filter('render_block', 'wp_restore_group_inner_container');
-    remove_filter('render_block', 'wp_render_layout_support_flag');
-	
-	  //Completely Remove Default styles
-	  remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
+	  add_theme_support('editor-styles');
+	  add_editor_style( array( 'assets/styles/css/editor-styles.css' ) );
 		
 		// new image sizes
 	  add_image_size( 'top-picks-thumbnail', 100, 100 );
 		
+		
+    // remove render gutenberg svg_filters junk
+    remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
+	  remove_action( 'wp_body_open', 'gutenberg_global_styles_render_svg_filters' );
+
+    // remove render_block filters which adding unnecessary stuff
+	  remove_filter('render_block', 'wp_render_duotone_support');
+	  remove_filter('render_block', 'wp_restore_group_inner_container');
+	  remove_filter('render_block', 'wp_render_layout_support_flag');
+	
+	  //Completely Remove Default styles
+	  remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
+	
+	  /**
+	   * Gutenberg Default block styles
+	   */
+	  add_theme_support( 'wp-block-styles' );
+	  add_theme_support( 'responsive-embeds' ); // The embed blocks automatically apply styles to embedded content to reflect the aspect ratio of content that is embedded in an iFrame.
+	  add_theme_support( 'custom-units', 'px', 'rem' );
+	  add_theme_support( 'custom-spacing' ); // Some blocks can have padding controls.
+	  remove_theme_support( 'core-block-patterns' );
+		
+	  /**
+	   * Gutenberg Add Theme Colors
+	   */
+	  add_theme_support( 'disable-custom-gradients' ); // Disabling custom gradients
+	  add_theme_support( 'editor-color-palette', array(
+		  array(
+			  'name'  => esc_attr__( 'Primary Yellow', 'wp-theme' ),
+			  'slug'  => 'primary-yellow',
+			  'color' => '#fdd11f',
+		  ),
+		  array(
+			  'name'  => esc_attr__( 'Primary Yellow Dark', 'wp-theme' ),
+			  'slug'  => 'light-grayish-magenta',
+			  'color' => '#f0c000',
+		  ),
+		  array(
+			  'name'  => esc_attr__( 'White', 'wp-theme' ),
+			  'slug'  => 'white',
+			  'color' => '#ffffff',
+		  ),
+		  array(
+			  'name'  => esc_attr__( 'Black', 'wp-theme' ),
+			  'slug'  => 'black',
+			  'color' => '#292929',
+		  ),
+		  array(
+			  'name'  => esc_attr__( 'Gray', 'wp-theme' ),
+			  'slug'  => 'gray',
+			  'color' => '#595959',
+		  ),
+		  array(
+			  'name'  => esc_attr__( 'Light Gray', 'wp-theme' ),
+			  'slug'  => 'light-gray',
+			  'color' => '#f7f8f9',
+		  ),
+		  array(
+			  'name'  => esc_attr__( 'Color Border Gray', 'wp-theme' ),
+			  'slug'  => 'border-gray',
+			  'color' => '#eaecee',
+		  ),
+	  ) );
+	
+	  /**
+	   * Gutenberg Theme Font Sizes
+	   */
+	  add_theme_support('disable-custom-font-sizes'); // disable custom font size
+	  add_theme_support( 'editor-font-sizes', array(
+		  array(
+			  'name' => esc_attr__( '14px (0.875rem)', 'wp-theme' ),
+			  'size' => '0.875rem',
+			  'slug' => 'small'
+		  ),
+		  array(
+			  'name' => esc_attr__( '18px (1.125rem)', 'wp-theme' ),
+			  'size' => '1.125rem',
+			  'slug' => 'medium'
+		  ),
+		  array(
+			  'name' => esc_attr__( '36px (2.25rem)', 'wp-theme' ),
+			  'size' => '2.25rem',
+			  'slug' => 'large'
+		  ),
+		  array(
+			  'name' => esc_attr__( '44px (2.75rem)', 'wp-theme' ),
+			  'size' => '2.75rem',
+			  'slug' => 'x-large'
+		  ),
+		  array(
+			  'name' => esc_attr__( '54px (3.375rem)', 'wp-theme' ),
+			  'size' => '3.375rem',
+			  'slug' => 'huge'
+		  )
+	  ) );
+		
+	  
   }
 }
 add_action( 'after_setup_theme', 'wp_custom_theme_setup' );
-
-
-/**
- * Editor styles
- ***********************************************************************************************************************/
-if ( ! function_exists( 'wp_custom_theme_add_editor_styles' ) ) {
-  function wp_custom_theme_add_editor_styles(){
-    add_editor_style( array( 'assets/styles/css/custom-editor-style.css' ) );
-  }
-}
-add_action('admin_init', 'wp_custom_theme_add_editor_styles');

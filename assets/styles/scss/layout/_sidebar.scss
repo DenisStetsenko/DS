@@ -165,7 +165,7 @@
         //@include highlight-on-hover($offset: 23px, $height: 6px, $bottom: 3px);
 
         &:before{
-          width: rfs-value(20px);
+          width: rfs-value(16px);
           margin-right: rfs-value(3px);
         }
       }
@@ -173,7 +173,7 @@
       // 1st level
       .ez-toc-heading-level-2{
         &:not(:last-child){
-          margin-bottom: rfs-value(8px);
+          margin-bottom: rfs-value(4px);
         }
         .ez-toc-link{
           @include font-size(16px);
@@ -190,8 +190,8 @@
 
       // 2nd Level
       .ez-toc-list-level-3{
-        margin-left: rfs-value(25px);
-        list-style: circle;
+        margin-left: rfs-value(20px);
+        list-style: none;
         li{
           .ez-toc-link{
             @include font-size(16px);
@@ -204,8 +204,11 @@
             color: #636363;
             font-weight: 400;
             &::before {
-              content: counter(item, circle) "";
-              width: rfs-value(12px);
+              content: counter(item, decimal-leading-zero) ". ";
+              //counter-increment: section; /* Increment the value of section counter by 1 */
+              //content: "- " counter(item) ": ";
+
+              width: rfs-value(22px);
             }
             &:hover, &:visited{ color: #000; }
           }

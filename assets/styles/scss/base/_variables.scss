@@ -500,7 +500,10 @@ $slick-dot-color-active   : $color-black;
   font-weight: $btn-font-weight;
   letter-spacing: $custom-letter-spacing;
   border: $btn-border-width solid $color-primary;
+  @include custom-letter-spacing();
   @include transition();
+  display: inline-block;
+
   @if $type == 'outline' {
     &:hover{
       color: $color-black;
@@ -522,7 +525,15 @@ $slick-dot-color-active   : $color-black;
       border-color: $color-black;
     }
   }
-
+  @if $type == 'default' {
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+    box-shadow: 0 0 3px 0 transparent;
+    &:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.35);
+    }
+  }
 }
 
 @mixin bottom-highlight($height: 25%, $bottom: 1px){

@@ -1,0 +1,180 @@
+.entry-content{
+  // Block Editor => Image
+  figure.wp-block-image{
+    margin: $paragraph-margin-bottom 0 $paragraph-margin-bottom;
+    img{
+      @include img-fluid()
+    }
+    figcaption.wp-element-caption{
+      color: $color-gray;
+      font-family: $font-secondary;
+      @include font-size($h6-font-size);
+    }
+  }
+
+  // Block Editor => Heading
+  .wp-block-heading{
+
+  }
+  .has-small-font-size {
+    @include font-size($h5-font-size);
+  }
+  .has-medium-font-size {
+    @include font-size($h4-font-size);
+  }
+  .has-large-font-size {
+    @include font-size($h3-font-size);
+  }
+  .has-x-large-font-size {
+    @include font-size($h2-font-size);
+  }
+  .has-huge-font-size {
+    @include font-size($h1-font-size);
+  }
+
+  // Block Editor => Gallery
+  figure.wp-block-gallery{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: $paragraph-margin-bottom 0 $paragraph-margin-bottom;
+    &.columns-3{
+      .wp-block-image{
+        width: 100%;
+        @include media-breakpoint-up(md){
+          width: calc(50% - 16px/2);
+        }
+        @include media-breakpoint-up(xl){
+          width: calc(33.33333% - 16px *.66667);
+        }
+      }
+    }
+    &.columns-2{
+      .wp-block-image{
+        width: 100%;
+        @include media-breakpoint-up(md){
+          width: calc(50% - 16px/2);
+        }
+      }
+    }
+    &.columns-1{
+
+    }
+    figure.wp-block-image{
+      margin: 0;
+      align-self: inherit;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: center;
+      max-width: 100%;
+      position: relative;
+      img{
+        flex: 1 0 0%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        width: 100%;
+      }
+      figcaption.wp-element-caption{
+        color: white;
+        background: linear-gradient(0deg,rgba(0,0,0,.7),rgba(0,0,0,.3) 70%,transparent);
+        bottom: 0;
+        box-sizing: border-box;
+        font-size: 13px;
+        left: 0;
+        margin-bottom: 0;
+        max-height: 60%;
+        overflow: auto;
+        padding: 0 8px 8px;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+
+  // Block Editor => Buttons
+  .wp-block-buttons{
+    margin: $paragraph-margin-bottom 0 $paragraph-margin-bottom;
+    .wp-block-button{
+      .wp-block-button__link{
+        @include make-button-primary('default');
+      }
+    }
+  }
+
+  // Block Editor => Media and Text
+  .wp-block-media-text{
+    display: grid;
+    grid-template-columns: 50% 1fr;
+    grid-template-rows: auto;
+    row-gap: $paragraph-margin-bottom;
+    margin: $paragraph-margin-bottom 0 $paragraph-margin-bottom;
+    @include media-breakpoint-down(md){
+      grid-template-columns: 100% !important;
+    }
+    &.is-vertically-aligned-center{
+      .wp-block-media-text__media{
+        align-self: center;
+      }
+      .wp-block-media-text__content{
+        align-self: center;
+      }
+    }
+    &.is-vertically-aligned-top{
+      .wp-block-media-text__media{
+        align-self: start;
+      }
+      .wp-block-media-text__content{
+        align-self: start;
+      }
+    }
+    &.is-vertically-aligned-bottom{
+      .wp-block-media-text__media{
+        align-self: end;
+      }
+      .wp-block-media-text__content{
+        align-self: end;
+      }
+    }
+    &.has-media-on-the-right{
+      .wp-block-media-text__media{
+        order: 1;
+      }
+      .wp-block-media-text__content{
+        order: 2;
+      }
+      @include media-breakpoint-up(md){
+        .wp-block-media-text__media{
+          grid-column: 2;
+          order: 2;
+        }
+        .wp-block-media-text__content{
+          grid-column: 1;
+          order: 1;
+        }
+      }
+    }
+    .wp-block-media-text__media{
+      margin: 0;
+      align-self: center;
+      grid-row: auto;
+      grid-column: 1;
+      @include media-breakpoint-up(md){
+        grid-row: 1;
+        grid-column: 1;
+      }
+      img{ @include img-fluid() }
+    }
+    .wp-block-media-text__content{
+      grid-row: auto;
+      grid-column: 1;
+      @include media-breakpoint-up(md){
+        padding: rfs-value(0 30px);
+        grid-row: 1;
+        grid-column: 2;
+      }
+    }
+  }
+}

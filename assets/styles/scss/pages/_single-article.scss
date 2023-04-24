@@ -172,48 +172,8 @@
         @include link-hover-effect();
       }
 
-      // Block Editor => Image
-      figure.wp-block-image{
-        margin: 0 0 $paragraph-margin-bottom;
-        img{
-          @include img-fluid()
-        }
-        figcaption.wp-element-caption{
-          color: $color-gray;
-          font-family: $font-secondary;
-          @include font-size($h6-font-size);
-        }
-      }
-
-      // Block Editor => Heading
-      .wp-block-heading{
-
-      }
-
-      // Block Editor => Gallery
-      figure.wp-block-gallery{
-        display: flex;
-        flex-wrap: wrap;
-        gap: rfs-value(16px);
-        &.columns-3{
-          .wp-block-image{
-
-          }
-        }
-        &.columns-2{
-          .wp-block-image{
-
-          }
-        }
-        &.columns-1{
-
-        }
-        figure.wp-block-image{
-          margin: 0;
-          figcaption.wp-element-caption{
-            color: white;
-          }
-        }
+      .btn{
+        //@include make-button-primary('default');
       }
 
     }
