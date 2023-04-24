@@ -100,7 +100,7 @@ gulp.task('sass', function () {
       .pipe(plumber())
       .pipe(development(sourcemaps.init({loadMaps: true, largeFile: true})))
       .pipe(sass().on('error', handleErrors))
-      .pipe(production(autoprefixer({ cascade: false })))
+      .pipe(production( autoprefixer({ cascade: false }) ))
       .pipe(development(sourcemaps.write()))
       .pipe(production(rename({basename: 'main', suffix: '.min'})))
       .pipe(production(cssnano({ discardComments: { removeAll: true }, reduceIdents: false })))
