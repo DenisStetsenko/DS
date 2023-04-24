@@ -49,14 +49,15 @@ if ( ! function_exists('wp_custom_theme_setup') ) {
 
     // Add support for block styles.
     add_theme_support( 'wp-block-styles' );
-
-    // Editor Style
-	  add_theme_support('editor-styles');
-	  add_editor_style( array( 'assets/styles/css/editor-styles.css' ) );
+	
+	  // Editor Style
+	  add_theme_support( 'editor-styles' );
+	  add_editor_style( 'style-editor.css' );
+	
+	  add_editor_style( array( 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap', 'style-editor.css' ));
 		
 		// new image sizes
 	  add_image_size( 'top-picks-thumbnail', 100, 100 );
-		
 		
     // remove render gutenberg svg_filters junk
     remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
@@ -153,7 +154,6 @@ if ( ! function_exists('wp_custom_theme_setup') ) {
 		  )
 	  ) );
 		
-	  
   }
 }
 add_action( 'after_setup_theme', 'wp_custom_theme_setup' );

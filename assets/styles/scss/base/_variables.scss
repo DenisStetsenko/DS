@@ -153,11 +153,11 @@ $btn-font-size-sm     : 1rem;
 $btn-font-weight      : 600;
 $btn-line-height      : 1.1;
 $btn-white-space      : 'nowrap';
-$btn-padding-y        : 15px;
-$btn-padding-y-sm     : 12px;
-$btn-padding-x        : 35px;
-$btn-padding-x-sm     : 26px;
-$btn-border-width     : 2px;
+$btn-padding-y        : 0.938rem;
+$btn-padding-y-sm     : 0.75rem;
+$btn-padding-x        : 2.188rem;
+$btn-padding-x-sm     : 1.625rem;
+$btn-border-width     : 0.125rem;
 $btn-border-radius    : $border-radius-xl;
 $btn-border-radius-sm : $border-radius-lg;
 
@@ -501,7 +501,6 @@ $slick-dot-color-active   : $color-black;
   font-weight: $btn-font-weight;
   letter-spacing: $custom-letter-spacing;
   border: $btn-border-width solid $color-primary;
-  @include custom-letter-spacing();
   @include transition();
   display: inline-block;
 

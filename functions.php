@@ -289,3 +289,9 @@ function wp_ajax_live_search(){
 }
 add_action('wp_ajax_wp_ajax_live_search_data_fetch' , 'wp_ajax_live_search');
 add_action('wp_ajax_nopriv_wp_ajax_live_search_data_fetch','wp_ajax_live_search');
+
+
+function style_editor() {
+
+}
+add_action( 'after_setup_theme', 'style_editor' );

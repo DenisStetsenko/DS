@@ -101,6 +101,8 @@
     .wp-block-button{
       .wp-block-button__link{
         @include make-button-primary('default');
+        min-width: 200px;
+        text-align: center;
       }
     }
   }
@@ -191,7 +193,7 @@
     }
   }
 
-  // Block Editor => Embeds
+  // Block Editor => Separator
   .wp-block-separator{
     opacity: 1;
     border-bottom: 2px solid $color-border-gray;

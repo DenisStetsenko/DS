@@ -172,7 +172,10 @@
         @include link-hover-effect();
       }
 
-
+      .btn{
+        min-width: 200px;
+        text-align: center;
+      }
 
     }
   }
