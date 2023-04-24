@@ -50,7 +50,7 @@ if ( ! function_exists( 'wp_custom_theme_widgets_init' ) ) {
 			'id'            => 'about-page-sidebar',
 			'name'          => __( 'About Page Sidebar', 'wp-theme' ),
 			'description'   => __( 'This sidebar is located on the right-hand side of About page.', 'wp-theme' ),
-			'before_widget' => '<aside id="%1$s" role="region" aria-label="Sidebar Element" class="widget rounded-3 font-secondary bg-light-gray border fs-4 %2$s d-none d-lg-block">',
+			'before_widget' => '<aside id="%1$s" role="region" aria-label="Sidebar Element" class="widget rounded-3 font-secondary bg-light-gray border fs-4 %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h3 class="w-title">',
 			'after_title'   => '</h3>',
