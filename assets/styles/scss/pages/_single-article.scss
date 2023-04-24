@@ -168,7 +168,7 @@
       }
 
       // Affilate Links
-      .link{
+      .link:not(.wp-block-button__link){
         @include link-hover-effect();
       }
 
