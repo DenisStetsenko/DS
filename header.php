@@ -21,6 +21,16 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+	<link rel='dns-prefetch' href='//scripts.mediavine.com' />
+	<link rel='dns-prefetch' href='//use.fontawesome.com' />
+	<link rel='dns-prefetch' href='//appwiki.nl' />
+	<link rel='dns-prefetch' href='//app.convertbox.com' />
+	<link rel='dns-prefetch' href='//cdn.convertbox.com' />
+	<link rel='dns-prefetch' href='//fast.wistia.net' />
+	<link rel='dns-prefetch' href='//images.convertbox.com' />
+	<link rel='dns-prefetch' href='//distillery.wistia.com' />
+	<link rel='dns-prefetch' href='//pipedream.wistia.com' />
+
 	<!-- Eliminate render-blocking resources google fonts FIX -->
 	<link
 			rel="preload"
