@@ -1,5 +1,10 @@
 <?php
 $subtitle = get_field( 'subtitle' );
+if ( ! $subtitle && has_excerpt() ) {
+	$excerpt = get_the_excerpt();
+	$excerpt = wp_strip_all_tags($excerpt);
+	$subtitle = $excerpt;
+}
 
 // GA Tracker based ON $args on get_template_part
 $gaTrackers = '';

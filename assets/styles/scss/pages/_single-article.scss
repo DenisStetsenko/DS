@@ -172,9 +172,7 @@
         @include link-hover-effect();
       }
 
-      .btn{
-        //@include make-button-primary('default');
-      }
+
 
     }
   }
@@ -343,6 +341,17 @@
     margin-top: rfs-value(80px);
   }
 
+  // Sidebar
+  // ===================================================================================================================
+  #right-sidebar{
+    .widget{
+      &.text-2{
+        @include media-breakpoint-down(lg){
+          display: none;
+        }
+      }
+    }
+  }
 
   // Comments
   // ===================================================================================================================

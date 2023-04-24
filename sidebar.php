@@ -6,7 +6,7 @@
  */
 ?>
 
-<div id="right-sidebar" class="position-relative d-none d-lg-block flex-grow-1">
+<div id="right-sidebar" class="position-relative flex-grow-1">
 	<div class="sticky-top wow fadeInUp" data-wow-delay="100ms" data-wow-duration="700ms">
 		<?php
 		if ( is_single() && 'post' == get_post_type() && is_page_template('single-comparison-template.php') && is_active_sidebar( 'comparison-sidebar' ) ) {
@@ -15,7 +15,7 @@
 		elseif ( is_single() && 'post' == get_post_type() && is_active_sidebar( 'review-sidebar' ) ) {
 			dynamic_sidebar( 'review-sidebar' );
 		}
-		elseif ( 'page' == get_post_type() && is_page('about') && is_active_sidebar( 'about-page-sidebar' ) ) {
+		elseif ( is_page_template('template-about.php') && is_active_sidebar( 'about-page-sidebar' ) ) {
 			dynamic_sidebar( 'about-page-sidebar' );
 		}
 		elseif ( 'page' == get_post_type() && is_active_sidebar( 'page-sidebar' ) ) {

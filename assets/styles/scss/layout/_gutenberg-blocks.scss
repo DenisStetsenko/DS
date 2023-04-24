@@ -1,14 +1,15 @@
 .entry-content{
   // Block Editor => Image
-  figure.wp-block-image{
+  .wp-block-image{
     margin: $paragraph-margin-bottom 0 $paragraph-margin-bottom;
     img{
       @include img-fluid()
     }
-    figcaption.wp-element-caption{
+    .wp-element-caption{
       color: $color-gray;
       font-family: $font-secondary;
       @include font-size($h6-font-size);
+      margin-top: rfs-value(5px);
     }
   }
 
@@ -33,7 +34,7 @@
   }
 
   // Block Editor => Gallery
-  figure.wp-block-gallery{
+  .wp-block-gallery{
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
@@ -60,7 +61,7 @@
     &.columns-1{
 
     }
-    figure.wp-block-image{
+    .wp-block-image{
       margin: 0;
       align-self: inherit;
       display: flex;
@@ -177,4 +178,49 @@
       }
     }
   }
+
+  // Block Editor => Embeds
+  .wp-block-embed{
+    margin: $paragraph-margin-bottom 0 $paragraph-margin-bottom;
+    outline: none;
+    .wp-element-caption{
+      color: $color-gray;
+      font-family: $font-secondary;
+      @include font-size($h6-font-size);
+      margin-top: rfs-value(5px);
+    }
+  }
+
+  // Block Editor => Embeds
+  .wp-block-separator{
+    opacity: 1;
+    border-bottom: 2px solid $color-border-gray;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    &.is-style-wide{ }
+    &.is-style-default{
+      width: 100%;
+      max-width: 250px;
+    }
+  }
+
+  // Block Editor => Table
+  .wp-block-table{
+    font-family: $font-secondary;
+    margin: $paragraph-margin-bottom 0 $paragraph-margin-bottom;
+    overflow-x: auto;
+    @include font-size($h4-font-size);
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      caption-side: bottom;
+      td, th {
+        word-break: normal;
+        border: 1px solid $color-gray;
+        padding: 0.5em;
+      }
+    }
+  }
+
 }

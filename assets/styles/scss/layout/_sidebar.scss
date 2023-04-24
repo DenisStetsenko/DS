@@ -13,13 +13,16 @@
     z-index: 1;
   }
 
-  #about-page-sidebar{
-    img.image{
-      border: 7px solid white;
-      border-radius: 100%;
-    }
-  }
+}
 
+#about-page-sidebar, #about-page-mobile-sidebar{
+  img.image{
+    border: 7px solid white;
+    border-radius: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
 }
 
 .widget {
@@ -101,7 +104,7 @@
           }
           &.gfield--type-submit{
             input[type="submit"]{
-              @include make-button-primary('lighten');
+              @include make-button-primary('default');
               width: 100%;
             }
           }
@@ -184,7 +187,10 @@
             @include font-size(18px);
           }
           color: #636363;
-          &:hover, &:visited{ color: #000; }
+          &:hover{
+            color: #000;
+            text-decoration: underline;
+          }
         }
       }
 
@@ -193,8 +199,12 @@
         margin-left: rfs-value(20px);
         list-style: none;
         li{
+          line-height: 1.4;
           .ez-toc-link{
-            @include font-size(16px);
+            @include font-size(15px);
+            @include media-breakpoint-between(lg,xl){
+              @include font-size(14px);
+            }
             @include media-breakpoint-only(xl){
               @include font-size(15px);
             }
@@ -202,15 +212,30 @@
               @include font-size(16px);
             }
             color: #636363;
-            font-weight: 400;
+            font-weight: 500;
             &::before {
               content: counter(item, decimal-leading-zero) ". ";
-              //counter-increment: section; /* Increment the value of section counter by 1 */
-              //content: "- " counter(item) ": ";
-
-              width: rfs-value(22px);
+              width: rfs-value(21px);
+              @include font-size(13px);
+              display: inline-block;
+              margin-top: 2px;
+              @include media-breakpoint-between(lg,xl){
+                @include font-size(12.5px);
+                margin-top: rfs-value(1.8px);
+                width: rfs-value(19px);
+              }
+              @include media-breakpoint-only(xl){
+                @include font-size(13px);
+                width: rfs-value(19px);
+              }
+              @include media-breakpoint-up(xxl){
+                @include font-size(14px);
+              }
             }
-            &:hover, &:visited{ color: #000; }
+            &:hover{ 
+              color: #000;
+              text-decoration: underline;
+            }
           }
         }
       }

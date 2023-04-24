@@ -83,7 +83,7 @@
 
       .gform_button{
         margin: 0;
-        @include make-button-primary('lighten');
+        @include make-button-primary('default');
         @include media-breakpoint-down(md){
           @include border-radius($border-radius-xxl)
 
