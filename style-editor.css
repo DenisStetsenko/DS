@@ -57,6 +57,13 @@ figure {
 	font-weight: 600;
 }
 
+.ta-editor-shortcode{
+	border: 2px dashed #5333ed !important;
+	padding: 5px 10px;
+	font-weight: 700;
+	display: inline-block;
+}
+
 /* TINY MCE */
 .mce-content-body a:not(.btn){
     color: #292929;
