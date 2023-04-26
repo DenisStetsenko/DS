@@ -112,6 +112,9 @@
     &.is-vertical{
       flex-direction: column;
       row-gap: 20px;
+      .wp-block-button{
+        margin-right: 0;
+      }
     }
     &.is-horizontal{
       flex-direction: row;
