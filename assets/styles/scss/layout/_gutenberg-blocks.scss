@@ -1,4 +1,16 @@
 .entry-content{
+  --wp--preset--spacing--50 : 50px;
+  --wp--preset--spacing--40 : 40px;
+  --wp--preset--spacing--30 : 30px;
+  --wp--preset--spacing--20 : 20px;
+  --wp--preset--spacing--10 : 10px;
+
+  --wp--preset--spacing--x-small  : 20px;
+  --wp--preset--spacing--small    : 40px;
+  --wp--preset--spacing--medium   : 60px;
+  --wp--preset--spacing--large    : 80px;
+  --wp--preset--spacing--x-large  : 100px;
+
   // Block Editor => Image
   .wp-block-image{
     margin: $paragraph-margin-bottom 0 $paragraph-margin-bottom;
@@ -108,6 +120,9 @@
     }
     &.is-content-justification-right{
       justify-content: end;
+    }
+    &.is-content-justification-space-between{
+      justify-content: space-between;
     }
     &.is-vertical{
       flex-direction: column;
