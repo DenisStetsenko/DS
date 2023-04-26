@@ -112,19 +112,19 @@
     &.is-vertical{
       flex-direction: column;
       row-gap: 20px;
-      .wp-block-button{
-        margin-right: 0;
-      }
+
     }
     &.is-horizontal{
       flex-direction: row;
+      .wp-block-button{
+        &:not(:last-child){
+          margin-right: 20px;
+        }
+      }
     }
 
     .wp-block-button{
 
-      &:not(:last-child){
-        margin-right: 20px;
-      }
       .wp-block-button__link{
         @include make-button-primary('default');
         min-width: 200px;
