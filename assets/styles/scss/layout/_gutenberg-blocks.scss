@@ -97,8 +97,30 @@
 
   // Block Editor => Buttons
   .wp-block-buttons{
-    margin: $paragraph-margin-bottom 0 $paragraph-margin-bottom;
+    display: flex;
+    flex-wrap: wrap;
+    //is-vertical is-content-justification-center is-layout-flex
+    &.is-content-justification-center{
+      justify-content: center;
+    }
+    &.is-content-justification-left{
+      justify-content: start;
+    }
+    &.is-content-justification-right{
+      justify-content: end;
+    }
+    &.is-vertical{
+      flex-direction: column;
+    }
+    &.is-horizontal{
+      flex-direction: row;
+    }
+
     .wp-block-button{
+      margin: $paragraph-margin-bottom 0 $paragraph-margin-bottom;
+      &:not(:last-child){
+        margin-right: 20px;
+      }
       .wp-block-button__link{
         @include make-button-primary('default');
         min-width: 200px;

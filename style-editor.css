@@ -57,11 +57,13 @@ figure {
 	font-weight: 600;
 }
 
-.ta-editor-shortcode{
+
+.editor-rich-text ta, ta, .ta-editor-shortcode {
 	border: 2px dashed #5333ed !important;
-	padding: 5px 10px;
+	padding: 4px 10px;
 	font-weight: 700;
 	display: inline-block;
+	box-shadow: none;
 }
 
 /* TINY MCE */

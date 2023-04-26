@@ -47,13 +47,12 @@ if ( ! function_exists('wp_custom_theme_setup') ) {
 	  // Add theme support WooCommerce
 	  add_theme_support( 'woocommerce' );
 
-    // Add support for block styles.
+    // Add support for Block styles.
     add_theme_support( 'wp-block-styles' );
 	
 	  // Editor Style
 	  add_theme_support( 'editor-styles' );
 	  add_editor_style( 'style-editor.css' );
-	
 	  add_editor_style( array( 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap', 'style-editor.css' ));
 		
 		// new image sizes
@@ -64,9 +63,9 @@ if ( ! function_exists('wp_custom_theme_setup') ) {
 	  remove_action( 'wp_body_open', 'gutenberg_global_styles_render_svg_filters' );
 
     // remove render_block filters which adding unnecessary stuff
-	  remove_filter('render_block', 'wp_render_duotone_support');
-	  remove_filter('render_block', 'wp_restore_group_inner_container');
-	  remove_filter('render_block', 'wp_render_layout_support_flag');
+	  //remove_filter('render_block', 'wp_render_duotone_support');
+	  //remove_filter('render_block', 'wp_restore_group_inner_container');
+	  //remove_filter('render_block', 'wp_render_layout_support_flag');
 	
 	  //Completely Remove Default styles
 	  remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
@@ -74,7 +73,6 @@ if ( ! function_exists('wp_custom_theme_setup') ) {
 	  /**
 	   * Gutenberg Default block styles
 	   */
-	  add_theme_support( 'wp-block-styles' );
 	  add_theme_support( 'responsive-embeds' ); // The embed blocks automatically apply styles to embedded content to reflect the aspect ratio of content that is embedded in an iFrame.
 	  add_theme_support( 'custom-units', 'px', 'rem' );
 	  add_theme_support( 'custom-spacing' ); // Some blocks can have padding controls.
