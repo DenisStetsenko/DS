@@ -15,8 +15,8 @@ var environments  = require('gulp-environments');
 var development   = environments.development;
 var production    = environments.production;
 
-//environments.current(development); // Set current environment to DEVELOPMENT
-environments.current(production); // Set current environment to PRODUCTION
+environments.current(development); // Set current environment to DEVELOPMENT
+//environments.current(production); // Set current environment to PRODUCTION
 var current_env = environments.current();
 
 

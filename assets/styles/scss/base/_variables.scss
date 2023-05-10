@@ -79,7 +79,8 @@ $body-color               : $color-black;
 
 $font-family-base         : $font-primary;
 //$font-size-base           : 1.125rem; // body base font size 18px
-$font-size-base           : 1.188rem; // body base font size 19px
+//$font-size-base           : 1.188rem; // body base font size 19px
+$font-size-base           : 1.25rem; // body base font size 20px
 $brand-primary            : $color-primary;
 //$line-height-base         : 1.70;
 $line-height-base         : 1.725;
@@ -148,8 +149,8 @@ $form-text-margin-top : 8px;
 
 /* Buttons Genera; */
 $btn-font-family      : $font-secondary;
-$btn-font-size        : 1.063rem;
-$btn-font-size-sm     : 1rem;
+$btn-font-size        : 1.063rem;   // 17px
+$btn-font-size-sm     : 0.938rem;   // 15px
 $btn-font-weight      : 600;
 $btn-line-height      : 1.1;
 $btn-white-space      : 'nowrap';

@@ -35,7 +35,42 @@
 /**
  * Single Article Template
  */
+@mixin entry-content-heading-styling(){
+  h2, h3{
+    margin: 45px 0 9px;
+    &:first-child{
+      margin-top: 0;
+    }
+  }
+  h2{
+    & + h3{
+      margin-top: 10px;
+    }
+  }
+  ul > li, ol > li{
+    margin-bottom: 11px;
+    line-height: 1.65;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  figure{
+    img{
+      @include img-fluid();
+    }
+    figcaption{
+      color: $color-gray;
+      font-family: $font-secondary;
+      @include font-size(14px);
+      margin-top: 7px;
+    }
+  }
+}
 #single-article-template {
+  .entry-content-headings-styling{
+    @include entry-content-heading-styling();
+  }
+
   header.entry-header{
     margin-top: -5px; // offset to have equal top/bottom paddings
     padding-bottom: 1.6rem;
@@ -140,20 +175,20 @@
     }
   }
   .intro-content{
+    &.product-list-intro{
+      border-top: 1px solid $color-border-gray;
+      margin-top: 50px;
+      padding-top: 50px;
+    }
     &.comparison-summary{
 
     }
     &.review-summary{
-      .entry-content{
-        h2, h3{
-          margin: 40px 0 10px;
-          &:first-child{
-            margin-top: 0;
-          }
-        }
-      }
+
     }
     .entry-content{
+      @include entry-content-heading-styling();
+
       // comment form shortcode
       .wpd-inline-shortcode{
         background: #f4f4f4;
@@ -181,14 +216,15 @@
   }
   .post-footer-content{
     border-top: 1px solid $color-border-gray;
-    margin-top: 50px;
-    padding-top: 25px;
+    margin-top: rfs-value(50px);
+    padding-top: rfs-value(35px);
+
   }
 
-  // Product Summary
+  // Product Summary [TOP PICKS]
   // ===================================================================================================================
   .product-summary-wrapper {
-    margin-top: rfs-value(30px);
+    margin-top: rfs-value(35px);
     margin-bottom: rfs-value(50px);
 
     .top-picks {
@@ -197,15 +233,43 @@
           content: '';
           display: block;
           width: 100%;
-          border-bottom: 1px solid $border-color;
-          margin-bottom: rfs-value(15px);
-          padding-bottom: rfs-value(15px);
+          border-bottom: 1px solid $color-border-gray;
+          margin-bottom: rfs-value(20px);
+          padding-bottom: rfs-value(20px);
+        }
+      }
+      &.best{
+        .column-preview{
+          border-color: $color-primary-dark;
+          border-width: 1px;
+          &:after{
+            content: "";
+            background-image: url("../../images/certificate.svg");
+            background-size: 30px 30px;
+            position: absolute;
+            bottom: -13px;
+            left: 50%;
+            margin-left: -15px;
+            z-index: 2;
+            width: 30px;
+            height: 30px;
+          }
         }
       }
 
       .column-preview {
         flex: 0 0 auto;
-        width: 125px;
+        width: 150px;
+        min-height: 90px;
+        border: 1px solid $color-border-gray;
+      }
+      .column-description {
+        flex: 0 0 auto;
+        width: calc(100% - 350px);
+      }
+      .column-link {
+        flex: 0 0 auto;
+        width: 200px;
       }
 
       .top-picks-heading {
@@ -247,7 +311,15 @@
     .product-heading {
       .subtitle {
         line-height: 1.2;
-
+      }
+      .title{
+        i{
+          font-style: normal;
+          background-color: $color-primary;
+          padding-left: 10px;
+          padding-right: 7px;
+          margin-right: 10px;
+        }
       }
     }
 
@@ -257,60 +329,69 @@
         margin-bottom: rfs-value(50px);
         border-bottom: 1px solid $border-color;
       }
-    }
-
-    // Pros and Cons
-    .pros-and-cons {
-
-      .column {
-        flex-basis: 0;
-        flex-grow: 1;
-
-        &.pros {
-          border-right: 1px solid $color-border-gray;
+      .post-thumbnail{
+        min-height: 300px;
+        .figure-img{
+          max-height: 350px;
         }
+      }
+      .affiliate-link{
+        min-width: 260px;
+        @include font-size(20px);
+      }
+      .pros-and-cons {
 
-        .heading {
-          background-color: $color-light-gray;
-          padding: rfs-value(12px 25px);
-          border-bottom: 1px solid $color-border-gray;
-        }
+        .column {
+          flex-basis: 0;
+          flex-grow: 1;
 
-        .list {
-          @include font-size(16px);
-          font-weight: 500;
-          padding: rfs-value(25px 22px);
-
-          &.pros-list {
-            .icon {
-              background-image: escape-svg($bs-check-icon);
-            }
+          &.pros {
+            border-right: 1px solid $color-border-gray;
           }
 
-          &.cons-list {
-            .icon {
-              background-image: escape-svg($bs-close-icon);
-            }
+          .heading {
+            background-color: $color-light-gray;
+            padding: rfs-value(12px 25px);
+            border-bottom: 1px solid $color-border-gray;
           }
 
-          li {
-            .icon {
-              background-position: center;
-              background-repeat: no-repeat;
-              background-size: 25px;
-              width: 18px;
-              height: 20px;
-              padding: 0;
-              display: inline-block;
-              margin-right: $breadcrumb-item-padding-x;
-              vertical-align: bottom;
+          .list {
+            @include font-size(16px);
+            font-weight: 400;
+            padding: rfs-value(25px 22px);
+
+            &.pros-list {
+              .icon {
+                background-image: escape-svg($bs-check-icon);
+              }
             }
 
-            margin: 0 0 18px 0;
-            line-height: 1.1;
+            &.cons-list {
+              .icon {
+                background-image: escape-svg($bs-close-icon);
+              }
+            }
 
-            &:last-child {
-              margin-bottom: 0;
+            li {
+              line-height: 1.3;
+              margin: 0 0 15px 0;
+              padding-left: 27px;
+
+              .icon {
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 25px;
+                width: 18px;
+                height: 20px;
+                padding: 0;
+                display: inline-block;
+                margin-right: $breadcrumb-item-padding-x;
+                vertical-align: bottom;
+                margin-left: -27px;
+              }
+              &:last-child {
+                margin-bottom: 0;
+              }
             }
           }
         }
@@ -319,10 +400,8 @@
 
     // Entry Content
     .entry-content{
-      h2,h3{
-        margin: 50px 0 15px;
-        &:first-child{ margin-top: 0; }
-      }
+
+
     }
 
   }

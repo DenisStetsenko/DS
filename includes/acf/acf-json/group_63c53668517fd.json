@@ -3,6 +3,26 @@
     "title": "Products Comparison: Body Layout",
     "fields": [
         {
+            "key": "field_645bbdfa768f5",
+            "label": "Product List Intro",
+            "name": "product_list_intro",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
             "key": "field_63c53668a6f6d",
             "label": "Products List",
             "name": "summary_list",
@@ -21,7 +41,7 @@
             "min": 0,
             "max": 0,
             "collapsed": "field_63c5379ee4847",
-            "button_label": "Add Row",
+            "button_label": "Add New Product",
             "rows_per_page": 20,
             "sub_fields": [
                 {
@@ -47,7 +67,7 @@
                     "max_height": "",
                     "max_size": "",
                     "mime_types": "",
-                    "preview_size": "thumbnail",
+                    "preview_size": "medium",
                     "parent_repeater": "field_63c53668a6f6d"
                 },
                 {
@@ -60,7 +80,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "45",
+                        "width": "40",
                         "class": "",
                         "id": ""
                     },
@@ -119,11 +139,32 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "35",
+                        "width": "40",
                         "class": "",
                         "id": ""
                     },
                     "return_format": "array",
+                    "parent_repeater": "field_63c53668a6f6d"
+                },
+                {
+                    "key": "field_63c54ac0273af",
+                    "label": "Main Content",
+                    "name": "content",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0,
                     "parent_repeater": "field_63c53668a6f6d"
                 },
                 {
@@ -263,27 +304,6 @@
                         }
                     ],
                     "parent_repeater": "field_63c53668a6f6d"
-                },
-                {
-                    "key": "field_63c54ac0273af",
-                    "label": "Main Content",
-                    "name": "content",
-                    "aria-label": "",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1,
-                    "delay": 0,
-                    "parent_repeater": "field_63c53668a6f6d"
                 }
             ]
         }
@@ -311,5 +331,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681145961
+    "modified": 1683734687
 }
