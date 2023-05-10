@@ -3,7 +3,14 @@ $footer_content = get_field('footer_content');
 
 if ( $footer_content['show_footer_content'] ) : ?>
 	<section class="post-footer-content font-secondary">
-		<?= $footer_content['content'] ? '<div class="entry-content fs-4 entry-content-headings-styling">' . apply_filters('the_content', $footer_content['content']) . '</div>' : null; ?>
+		
+		<?php if ( $footer_content['content'] ) :
+			echo '<div class="entry-content fs-4 entry-content-headings-styling">';
+				$footer_entry_content = preg_replace_callback("#<(h2)>(.*?)</\\1>#", "retitle", $footer_content['content']);
+				echo apply_filters('the_content', $footer_entry_content);
+			echo '</div>';
+		endif; ?>
+		
 		<?php if ( $footer_content['faq'] && array_filter($footer_content['faq']) ) : ?>
 			<div id="accordionFooter" class="accordion mt-5">
 				

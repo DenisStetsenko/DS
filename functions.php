@@ -289,3 +289,89 @@ function wp_ajax_live_search(){
 }
 add_action('wp_ajax_wp_ajax_live_search_data_fetch' , 'wp_ajax_live_search');
 add_action('wp_ajax_nopriv_wp_ajax_live_search_data_fetch','wp_ajax_live_search');
+
+/**
+ *
+ */
+function cs_toc(){
+	global $post;
+	$summary_list 			= get_field('summary_list', $post->ID);
+	$product_list_intro = get_field('product_list_intro', $post->ID);
+	$footer_content 		= get_field('footer_content', $post->ID);
+	
+	ob_start();
+	
+	if ( $summary_list && array_filter($summary_list) ) :
+		echo '<div id="ez-toc-container" class="counter-hierarchy ez-toc-counter ez-toc-container-direction">
+						<p class="ez-toc-title">'. __('Table of Contents', 'wp-theme') . '</p>
+						<nav>
+						<ul class="ez-toc-list ez-toc-list-level-1">';
+		
+						// Intro Content
+						if ( $product_list_intro ) :
+							preg_match_all('#<h2.*?>(.*?)</h2>#i',$product_list_intro, $product_list_intro_H2);
+							foreach ($product_list_intro_H2[1] as $h2) : ?>
+								<li class="ez-toc-page-1 ez-toc-heading-level-2">
+									<a class="ez-toc-link ez-toc-heading-1" href="#<?= sanitize_title_with_dashes($h2); ?>" title="<?= $h2; ?>"><?= $h2; ?></a>
+								</li>
+							<?php endforeach;
+							
+							echo '<li class="ez-toc-page-1 ez-toc-heading-level-2">
+											<ul class="ez-toc-list-level-3 offset-top add-counter">';
+								$i = 1;
+								foreach ( $summary_list as $summary_list_item ) : ?>
+									<li class="ez-toc-heading-level-3">
+										<a class="ez-toc-link ez-toc-heading-3" href="#pick-<?= sanitize_title_with_dashes($summary_list_item['heading']['title']); ?>"
+											 title="<?= $summary_list_item['heading']['title']; ?>"><?= $i .'. '.$summary_list_item['heading']['title']; ?></a>
+									</li>
+								<?php $i++; endforeach;
+							echo 		'</ul>
+										</li>';
+							
+						else :
+							
+							// NO INTRO h2
+							foreach ( $summary_list as $summary_list_item ) : ?>
+								<li class="ez-toc-page-1 ez-toc-heading-level-2">
+									<a class="ez-toc-link ez-toc-heading-1" href="#pick-<?= sanitize_title_with_dashes($summary_list_item['heading']['title']); ?>"
+										 title="<?= $summary_list_item['heading']['title']; ?>"><?= $summary_list_item['heading']['title']; ?></a>
+								</li>
+							<?php endforeach;
+							
+						endif;
+		
+						// Footer Content
+						if ( $footer_content['content'] ) :
+							preg_match_all('#<h2.*?>(.*?)</h2>#i',$footer_content['content'], $footer_content_H2);
+							
+							foreach ($footer_content_H2[1] as $h2) : ?>
+								<li class="ez-toc-page-1 ez-toc-heading-level-2">
+									<a class="ez-toc-link ez-toc-heading-1" href="#<?= sanitize_title_with_dashes($h2); ?>" title="<?= $h2; ?>"><?= $h2; ?></a>
+								</li>
+							<?php endforeach;
+						
+						endif;
+						
+						
+		echo 	 '</ul>
+						</nav>
+					</div>';
+	endif;
+	
+	return ob_get_clean();
+}
+add_shortcode('cs-toc', 'cs_toc');
+
+/**
+ * Simple function to replace headings with id=''
+ * @param $match
+ *
+ * @return string
+ */
+function retitle($match) {
+	list($_unused, $h2, $title) = $match;
+	
+	$id = sanitize_title_with_dashes($title);
+	
+	return "<$h2 id='$id'>$title</$h2>";
+}

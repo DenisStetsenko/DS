@@ -12,6 +12,10 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 	
 	<?php get_template_part('template-parts/single-article/post-thumbnail')?>
+
+	<div class="content-widget widget rounded-3 font-secondary fs-4 bg-light-gray border p-4 d-lg-none mb-4">
+		<?php echo do_shortcode('[cs-toc]'); ?>
+	</div>
 	
 	<div class="intro-content comparison-summary mb-4" itemprop="description">
 		<div class="entry-content">
@@ -22,7 +26,11 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 	<?php if ( $product_list_intro = get_field('product_list_intro') ) : ?>
 		<div class="intro-content product-list-intro">
 			<div class="entry-content">
-				<?php echo apply_filters('the_content', $product_list_intro); ?>
+				<?php
+				// preg_replace_callback("#<(h[1-6])>(.*?)</\\1>#", "retitle", $product_list_intro);
+				$product_list_intro = preg_replace_callback("#<(h2)>(.*?)</\\1>#", "retitle", $product_list_intro);
+				echo apply_filters('the_content', $product_list_intro);
+				?>
 			</div>
 		</div>
 	<?php endif; ?>
@@ -52,7 +60,7 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 								</div>
 								<div class="bottom lh-sm">
 									<?php if ( $top_picks['heading']['title'] ) : ?>
-										<a class="more" href="<?php the_permalink(); ?>#pick-<?= strtolower( preg_replace('/(\W)+/', '-', $top_picks['heading']['title']) ); ?>">
+										<a class="more" href="<?php the_permalink(); ?>#pick-<?= sanitize_title_with_dashes($top_picks['heading']['title']); ?>">
 											<i class="icon-down"></i><?php _e('Jump to Review', 'wp-theme'); ?>
 										</a>
 									<?php endif; ?>
@@ -79,8 +87,7 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 			foreach ( $summary_list as $summary_list_item ) :
 				$summary_list_item['preview'] && $summary_list_item['preview']['alt'] ? $alt = $summary_list_item['preview']['alt'] : $alt = $summary_list_item['heading']['title'];
 				?>
-				<section <?= $summary_list_item['heading']['title'] ? 'id="pick-'.strtolower( preg_replace('/(\W)+/', '-', $summary_list_item['heading']['title']) ).'"' : ''; ?> class="product-card ">
-					
+				<section <?= $summary_list_item['heading']['title'] ? 'id="pick-'. sanitize_title_with_dashes($summary_list_item['heading']['title']) .'"' : ''; ?> class="product-card ">
 					
 					<!-- PRODUCT HEADING -->
 					<header class="product-heading mb-4">
@@ -88,7 +95,6 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 						<?= $summary_list_item['heading']['title'] 		? '<h2 class="title m-0"><i>'.$i.'.</i>' .$summary_list_item['heading']['title'].'</h2>' 	: null; ?>
 					</header>
 					<!-- / PRODUCT HEADING -->
-
 					
 					<!-- PRODUCT BIG IMAGE -->
 					<?php if ( $summary_list_item['preview'] ) {
