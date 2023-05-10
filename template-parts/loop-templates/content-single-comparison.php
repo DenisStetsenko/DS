@@ -18,14 +18,14 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 	</div>
 	
 	<div class="intro-content comparison-summary mb-4" itemprop="description">
-		<div class="entry-content">
+		<div class="entry-content mobile-content-sm-size">
 			<?php the_content(); ?>
 		</div>
 	</div>
 	
 	<?php if ( $product_list_intro = get_field('product_list_intro') ) : ?>
 		<div class="intro-content product-list-intro">
-			<div class="entry-content">
+			<div class="entry-content mobile-content-sm-size">
 				<?php
 				// preg_replace_callback("#<(h[1-6])>(.*?)</\\1>#", "retitle", $product_list_intro);
 				$product_list_intro = preg_replace_callback("#<(h2)>(.*?)</\\1>#", "retitle", $product_list_intro);
@@ -47,13 +47,13 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 				?>
 				<div class="top-picks d-flex flex-wrap justify-content-between <?= $i == 1 ? 'best' : ''; ?>">
 					
-					<?= $top_picks['preview'] ? '<div class="column-preview rounded-2 bg-white d-flex align-items-center justify-content-center py-2 px-2 position-relative">
+					<?= $top_picks['preview'] ? '<div class="column-preview rounded-2 bg-white d-flex align-items-center justify-content-center py-2 px-2 position-relative mb-4 mb-sm-0">
 																					<img class="img-fluid" src="'.$top_picks['preview']['sizes']['top-picks-thumbnail'].'" loading="lazy" alt="'. $alt_top . '">
 																			 </div>' : null ; ?>
 
 					<div class="d-flex <?= $top_picks['preview'] ? 'column-description' : 'col-lg-8'; ?>">
 						<?php if ( $top_picks['heading'] ) : ?>
-							<div class="top-picks-heading font-secondary flex-grow-1 px-3 py-0 d-flex flex-column justify-content-between">
+							<div class="top-picks-heading font-secondary flex-grow-1 ps-1 pe-1 ps-sm-3 pe-sm-0 pe-xl-3 py-0 d-flex flex-column justify-content-between">
 								<div class="top">
 									<?= $top_picks['heading']['subtitle'] ? '<p class="subtitle mb-0 font-secondary fs-6 fw-bolder text-gray text-uppercase">'.$top_picks['heading']['subtitle'].'</p>' 	: null; ?>
 									<?= $top_picks['heading']['title'] 		? '<p class="title fs-4 fw-bold mb-2">'.$top_picks['heading']['title'].'</p>' 	: null; ?>
@@ -69,8 +69,8 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 						<?php endif; ?>
 					</div>
 					
-					<div class="d-flex align-items-center <?= $top_picks['preview'] ? 'column-link' : 'col-lg-4'; ?> text-lg-end">
-						<?= acf_link($top_picks['price'], 'btn btn-primary btn-sm btn-price affiliate-link flex-grow-1', 'nofollow noreferrer noopener'); ?>
+					<div class="d-flex align-items-center justify-content-end <?= $top_picks['preview'] ? 'column-link' : 'col-lg-4'; ?> text-lg-end mt-4 mt-xl-0">
+						<?= acf_link($top_picks['price'], 'btn btn-primary btn-sm btn-price affiliate-link ', 'nofollow noreferrer noopener'); ?>
 					</div>
 					
 				</div>
@@ -83,30 +83,31 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 	<?php if ( $summary_list && array_filter($summary_list) ) : ?>
 		<div class="entry-content-main">
 			<?php
-			$i = 1;
+			$i 		= 1;
 			foreach ( $summary_list as $summary_list_item ) :
+				$i == 1 ? $best = 'best' : $best = '';;
 				$summary_list_item['preview'] && $summary_list_item['preview']['alt'] ? $alt = $summary_list_item['preview']['alt'] : $alt = $summary_list_item['heading']['title'];
 				?>
 				<section <?= $summary_list_item['heading']['title'] ? 'id="pick-'. sanitize_title_with_dashes($summary_list_item['heading']['title']) .'"' : ''; ?> class="product-card ">
 					
 					<!-- PRODUCT HEADING -->
 					<header class="product-heading mb-4">
-						<?= $summary_list_item['heading']['subtitle'] ? '<p class="subtitle mb-2 font-secondary text-black fw-bolder text-uppercase fs-4 ls-lg">'.$summary_list_item['heading']['subtitle'].'</p>' 	: null; ?>
+						<?= $summary_list_item['heading']['subtitle'] ? '<p class="subtitle mb-2 font-secondary text-black fw-bold text-uppercase fs-4 ls-lg">'.$summary_list_item['heading']['subtitle'].'</p>' 	: null; ?>
 						<?= $summary_list_item['heading']['title'] 		? '<h2 class="title m-0"><i>'.$i.'.</i>' .$summary_list_item['heading']['title'].'</h2>' 	: null; ?>
 					</header>
 					<!-- / PRODUCT HEADING -->
 					
 					<!-- PRODUCT BIG IMAGE -->
 					<?php if ( $summary_list_item['preview'] ) {
-						echo '<figure class="post-thumbnail figure border bg-white rounded overflow-hidden w-100 d-flex align-items-center justify-content-center mb-5">';
+						echo '<figure class="post-thumbnail figure position-relative bg-white rounded overflow-hidden w-100 d-flex align-items-center justify-content-center mb-5 '.$best.'">';
 							echo '<img class="figure-img img-fluid p-2" src="'. $summary_list_item['preview']['sizes']['large'] .'" loading="lazy" alt="'. $alt .'">';
-							echo $summary_list_item['preview']['caption'] ? '<figcaption class="figure-caption font-secondary text-gray fs-6">' . $summary_list_item['preview']['caption'] . '</figcaption>' : '';
+							//echo $summary_list_item['preview']['caption'] ? '<figcaption class="figure-caption font-secondary text-gray fs-6">' . $summary_list_item['preview']['caption'] . '</figcaption>' : '';
 						echo '</figure>';
 					} ?>
 					<!-- / PRODUCT BIG IMAGE -->
 
 					<!-- PRODUCT SUMMARY -->
-					<?= $summary_list_item['content'] ? '<div class="entry-content entry-content-headings-styling">' . apply_filters('the_content', $summary_list_item['content']) . '</div>' : null; ?>
+					<?= $summary_list_item['content'] ? '<div class="entry-content entry-content-headings-styling mobile-content-sm-size">' . apply_filters('the_content', $summary_list_item['content']) . '</div>' : null; ?>
 					<!-- / PRODUCT SUMMARY -->
 					
 					<!-- PROS & CONS -->

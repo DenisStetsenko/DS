@@ -15,8 +15,8 @@ var environments  = require('gulp-environments');
 var development   = environments.development;
 var production    = environments.production;
 
-environments.current(development); // Set current environment to DEVELOPMENT
-//environments.current(production); // Set current environment to PRODUCTION
+//environments.current(development); // Set current environment to DEVELOPMENT
+environments.current(production); // Set current environment to PRODUCTION
 var current_env = environments.current();
 
 
@@ -103,7 +103,7 @@ gulp.task('sass', function () {
       .pipe(production( autoprefixer({ cascade: false }) ))
       .pipe(development(sourcemaps.write()))
       .pipe(production(rename({basename: 'main', suffix: '.min'})))
-      .pipe(production(cssnano({ discardComments: { removeAll: true }, reduceIdents: false })))
+      .pipe(production(cssnano({ discardComments: { removeAll: true }, mergeLonghand: false, reduceIdents: false })))
       .pipe(gulp.dest(basePaths.css))
       .pipe(development(browserSync.stream({ match: '**/*.css' })));
 });

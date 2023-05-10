@@ -55,6 +55,7 @@
     }
   }
   figure{
+    width: auto !important;
     img{
       @include img-fluid();
     }
@@ -64,6 +65,9 @@
       @include font-size(14px);
       margin-top: 7px;
     }
+  }
+  img{
+    @include img-fluid();
   }
 }
 #single-article-template {
@@ -259,17 +263,42 @@
 
       .column-preview {
         flex: 0 0 auto;
-        width: 150px;
-        min-height: 90px;
+        min-height: 115px;
         border: 1px solid $color-border-gray;
+        width: 100%;
+        @include media-breakpoint-up(sm){
+          max-width: 150px;
+          min-height: 90px;
+        }
+        @include media-breakpoint-up(xl){
+          max-width: 150px;
+        }
       }
       .column-description {
         flex: 0 0 auto;
-        width: calc(100% - 350px);
+        width: 100%;
+        @include media-breakpoint-up(sm){
+          max-width: calc(100% - 150px);
+        }
+        @include media-breakpoint-up(xl){
+          max-width: calc(100% - 350px);
+        }
       }
       .column-link {
         flex: 0 0 auto;
-        width: 200px;
+        width: 100%;
+        @include media-breakpoint-up(xl){
+          width: 200px;
+        }
+        .btn{
+          width: 100%;
+          @include media-breakpoint-up(sm){
+            max-width: calc(100% - 165px);
+          }
+          @include media-breakpoint-up(xl){
+            max-width: 100%;
+          }
+        }
       }
 
       .top-picks-heading {
@@ -330,9 +359,32 @@
         border-bottom: 1px solid $border-color;
       }
       .post-thumbnail{
-        min-height: 300px;
+        min-height: 250px;
+        border: 1px solid $color-border-gray;
+        @include media-breakpoint-up(sm){
+          min-height: 300px;
+        }
+        &.best{
+          position: relative;
+          border-width: 2px;
+          border-color: $color-primary-dark;
+          &:after{
+            content: "";
+            background-image: url("../../images/certificate.svg");
+            background-size: 40px 40px;
+            position: absolute;
+            top: 13px;
+            right: 8px;
+            z-index: 2;
+            width: 40px;
+            height: 40px;
+          }
+        }
         .figure-img{
-          max-height: 350px;
+          max-height: 300px;
+          @include media-breakpoint-up(sm){
+            max-height: 350px;
+          }
         }
       }
       .affiliate-link{
@@ -342,11 +394,14 @@
       .pros-and-cons {
 
         .column {
-          flex-basis: 0;
-          flex-grow: 1;
-
+          @include media-breakpoint-up(sm){
+            flex-basis: 0;
+            flex-grow: 1;
+          }
           &.pros {
-            border-right: 1px solid $color-border-gray;
+            @include media-breakpoint-up(sm){
+              border-right: 1px solid $color-border-gray;
+            }
           }
 
           .heading {

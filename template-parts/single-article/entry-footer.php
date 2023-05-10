@@ -5,7 +5,7 @@ if ( $footer_content['show_footer_content'] ) : ?>
 	<section class="post-footer-content">
 		
 		<?php if ( $footer_content['content'] ) :
-			echo '<div class="entry-content entry-content-headings-styling">';
+			echo '<div class="entry-content entry-content-headings-styling mobile-content-sm-size">';
 				$footer_entry_content = preg_replace_callback("#<(h2)>(.*?)</\\1>#", "retitle", $footer_content['content']);
 				echo apply_filters('the_content', $footer_entry_content);
 			echo '</div>';
