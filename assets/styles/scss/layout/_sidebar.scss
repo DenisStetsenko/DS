@@ -140,9 +140,11 @@
     border: none;
     padding: 0;
     border-radius: 0;
-    margin-bottom: 0;
+    //margin-bottom: 0;
+    margin-bottom: -5px;
     box-shadow: none;
     .ez-toc-title{
+      color: $color-black;
       font-weight: 800;
       margin-bottom: rfs-value(15px);
       display: inline-block !important;
@@ -160,14 +162,30 @@
       }
 
     }
-    .ez-toc-list{
 
+    ul{
+      list-style: none;
+      line-height: 1.6;
+      margin: 0;
+      overflow: hidden;
+      padding: 0;
+      direction: ltr;
+      counter-reset: item;
+      li a::before {
+        content: counters(item, ".", decimal) ". ";
+        display: inline-block;
+        counter-increment: item;
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin-right: 0.2em;
+      }
+    }
+
+    .ez-toc-list{
       // General
       .ez-toc-link{
         text-decoration: none;
         font-weight: 500;
-        //@include highlight-on-hover($offset: 23px, $height: 6px, $bottom: 3px);
-
         &:before{
           width: rfs-value(16px);
           margin-right: rfs-value(3px);
