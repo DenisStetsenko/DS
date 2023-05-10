@@ -2,17 +2,17 @@
 $footer_content = get_field('footer_content');
 
 if ( $footer_content['show_footer_content'] ) : ?>
-	<section class="post-footer-content font-secondary">
+	<section class="post-footer-content">
 		
 		<?php if ( $footer_content['content'] ) :
-			echo '<div class="entry-content fs-4 entry-content-headings-styling">';
+			echo '<div class="entry-content entry-content-headings-styling">';
 				$footer_entry_content = preg_replace_callback("#<(h2)>(.*?)</\\1>#", "retitle", $footer_content['content']);
 				echo apply_filters('the_content', $footer_entry_content);
 			echo '</div>';
 		endif; ?>
 		
 		<?php if ( $footer_content['faq'] && array_filter($footer_content['faq']) ) : ?>
-			<div id="accordionFooter" class="accordion mt-5">
+			<div id="accordionFooter" class="accordion font-secondary mt-5">
 				
 				<?php $i = 1; foreach( $footer_content['faq'] as $item ) : ?>
 					<div class="accordion-item rounded overflow-hidden">
