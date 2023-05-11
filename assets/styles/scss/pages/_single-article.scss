@@ -177,8 +177,9 @@
   .intro-content{
     &.product-list-intro{
       border-top: 1px solid $color-border-gray;
-      margin-top: 50px;
-      padding-top: 50px;
+      border-bottom: 1px solid $color-border-gray;
+      margin: 50px 0;
+      padding: 35px 0;
     }
     &.comparison-summary{
 
@@ -347,6 +348,14 @@
           padding-left: 10px;
           padding-right: 7px;
           margin-right: 10px;
+        }
+        a{
+          transition: color 300ms ease;
+          &:hover{
+            text-decoration: underline;
+            text-decoration-color: $color-primary-dark;
+            text-decoration-thickness: 3px;
+          }
         }
       }
     }

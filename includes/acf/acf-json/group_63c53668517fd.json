@@ -113,7 +113,7 @@
                             "aria-label": "",
                             "type": "text",
                             "instructions": "",
-                            "required": 0,
+                            "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
@@ -131,8 +131,8 @@
                 },
                 {
                     "key": "field_63c538af527b7",
-                    "label": "Price",
-                    "name": "price",
+                    "label": "Affilate Link",
+                    "name": "link",
                     "aria-label": "",
                     "type": "link",
                     "instructions": "",
@@ -304,6 +304,27 @@
                         }
                     ],
                     "parent_repeater": "field_63c53668a6f6d"
+                },
+                {
+                    "key": "field_645cf5e293e60",
+                    "label": "Final Thoughts",
+                    "name": "final_thoughts",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0,
+                    "parent_repeater": "field_63c53668a6f6d"
                 }
             ]
         }
@@ -331,5 +352,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683734687
+    "modified": 1683813874
 }

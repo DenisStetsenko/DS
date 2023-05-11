@@ -16,24 +16,14 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 	<div class="content-widget widget rounded-3 font-secondary fs-4 bg-light-gray border p-4 d-lg-none mb-4">
 		<?php echo do_shortcode('[cs-toc navid="ez-toc-nav-mobile"]'); ?>
 	</div>
-	
-	<div class="intro-content comparison-summary mb-4" itemprop="description">
+
+	<!-- SHORT INTRO -->
+	<div class="intro-content comparison-summary mb-5" itemprop="description">
 		<div class="entry-content mobile-content-sm-size">
 			<?php the_content(); ?>
 		</div>
 	</div>
-	
-	<?php if ( $product_list_intro = get_field('product_list_intro') ) : ?>
-		<div class="intro-content product-list-intro">
-			<div class="entry-content mobile-content-sm-size">
-				<?php
-				// preg_replace_callback("#<(h[1-6])>(.*?)</\\1>#", "retitle", $product_list_intro);
-				$product_list_intro = preg_replace_callback("#<(h2)>(.*?)</\\1>#", "retitle", $product_list_intro);
-				echo apply_filters('the_content', $product_list_intro);
-				?>
-			</div>
-		</div>
-	<?php endif; ?>
+	<!-- /SHORT INTRO -->
 
 	<!-- PRODUCTS SUMMARY[Top Picks] TABLE -->
 	<?php
@@ -70,7 +60,7 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 					</div>
 					
 					<div class="d-flex align-items-center justify-content-end <?= $top_picks['preview'] ? 'column-link' : 'col-lg-4'; ?> text-lg-end mt-4 mt-xl-0">
-						<?= acf_link($top_picks['price'], 'btn btn-primary btn-sm btn-price affiliate-link ', 'nofollow noreferrer noopener'); ?>
+						<?= acf_link($top_picks['link'], 'btn btn-primary btn-sm btn-price affiliate-link ', 'nofollow noreferrer noopener'); ?>
 					</div>
 					
 				</div>
@@ -79,6 +69,20 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 		</div>
 	<?php endif; ?>
 	<!-- / PRODUCTS SUMMARY[Top Picks] TABLE -->
+
+	<!-- MAIN COPY -->
+	<?php if ( $product_list_intro = get_field('product_list_intro') ) : ?>
+		<div class="intro-content product-list-intro">
+			<div class="entry-content mobile-content-sm-size">
+				<?php
+				// preg_replace_callback("#<(h[1-6])>(.*?)</\\1>#", "retitle", $product_list_intro);
+				$product_list_intro = preg_replace_callback("#<(h2)>(.*?)</\\1>#", "retitle", $product_list_intro);
+				echo apply_filters('the_content', $product_list_intro);
+				?>
+			</div>
+		</div>
+	<?php endif; ?>
+	<!-- / MAIN COPY -->
 	
 	<?php if ( $summary_list && array_filter($summary_list) ) : ?>
 		<div class="entry-content-main">
@@ -93,7 +97,10 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 					<!-- PRODUCT HEADING -->
 					<header <?= $summary_list_item['heading']['title'] ? 'id="pick-'. sanitize_title_with_dashes($summary_list_item['heading']['title']) .'"' : ''; ?> class="product-heading mb-4">
 						<?= $summary_list_item['heading']['subtitle'] ? '<p class="subtitle mb-2 font-secondary text-black fw-bold text-uppercase fs-4 ls-lg">'.$summary_list_item['heading']['subtitle'].'</p>' 	: null; ?>
-						<?= $summary_list_item['heading']['title'] 		? '<h2 class="title m-0"><i>'.$i.'.</i>' .$summary_list_item['heading']['title'].'</h2>' 	: null; ?>
+						<h2 class="title m-0">
+							<i><?= $i; ?>.</i><a class="thirstylink" title="Kajabi" href="<?= $summary_list_item['link'] ? esc_url($summary_list_item['link']['url']) : '#'; ?>"
+								 <?= $summary_list_item['link'] && $summary_list_item['link']['target'] ? 'target="_blank" rel="nofollow noopener noreferrer"' : ''; ?>><?= $summary_list_item['heading']['title']; ?></a>
+						</h2>
 					</header>
 					<!-- / PRODUCT HEADING -->
 					
@@ -106,13 +113,17 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 					} ?>
 					<!-- / PRODUCT BIG IMAGE -->
 
+					<!-- AFFILIATE URL BUTTON -->
+					<?= acf_link($summary_list_item['link'], 'btn btn-primary btn-price affiliate-link d-table mx-auto mt-6 mb-5', 'nofollow noreferrer noopener'); ?>
+					<!-- / AFFILIATE URL BUTTON -->
+
 					<!-- PRODUCT SUMMARY -->
 					<?= $summary_list_item['content'] ? '<div class="entry-content entry-content-headings-styling mobile-content-sm-size">' . apply_filters('the_content', $summary_list_item['content']) . '</div>' : null; ?>
 					<!-- / PRODUCT SUMMARY -->
 					
 					<!-- PROS & CONS -->
 					<?php if ( $summary_list_item['display_pros_and_cons'] && array_filter($summary_list_item['pros_and_cons']) ) : ?>
-						<div class="pros-and-cons d-flex flex-wrap mt-5 mb-7 rounded border overflow-hidden font-secondary">
+						<div class="pros-and-cons d-flex flex-wrap mt-6 mb-7 rounded border overflow-hidden font-secondary">
 							
 							<?php if ( $summary_list_item['pros_and_cons']['pros'] ) : ?>
 								<div class="column pros">
@@ -139,10 +150,20 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 						</div>
 					<?php endif; ?>
 					<!-- / PROS & CONS -->
+					<?php if ( $product_list_final_thoughts = $summary_list_item['final_thoughts'] ) : ?>
+						<div class="intro-content product-final-thoughts">
+							<div class="entry-content mobile-content-sm-size">
+								<?php
+								$product_list_final_thoughts = preg_replace_callback("#<(h2)>(.*?)</\\1>#", "retitle", $product_list_final_thoughts);
+								echo apply_filters('the_content', $product_list_final_thoughts);
+								?>
+							</div>
+						</div>
+					<?php endif; ?>
 
-					<!-- PRODUCT PRICE BUTTON -->
-					<?= acf_link($summary_list_item['price'], 'btn btn-primary btn-price affiliate-link d-table mx-auto mt-5', 'nofollow noreferrer noopener'); ?>
-					<!-- / PRODUCT PRICE BUTTON -->
+					<!-- AFFILIATE URL BUTTON -->
+					<?= acf_link($summary_list_item['link'], 'btn btn-primary btn-price affiliate-link d-table mx-auto mt-5', 'nofollow noreferrer noopener'); ?>
+					<!-- / AFFILIATE URL BUTTON -->
 					
 					
 				</section>

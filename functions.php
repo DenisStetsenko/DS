@@ -158,9 +158,7 @@ if ( ! function_exists( 'wp_custom_posts_ajax_pagination' ) ) {
       // if BLOG page DO NOT categorize output, just load all posts
       if ($cat !== 'all' && $cat !== '') $args['category_name'] = $cat;
 
-      // if Search Results - Define Search results
-      if ($search !== '') $args['s'] = $search;
-
+			
       // if Search Results
       if ($year && $monthnum !== '') {
         $args['year']     = (int)$year;
