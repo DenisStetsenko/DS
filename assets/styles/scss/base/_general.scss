@@ -4,7 +4,7 @@
 html{
   scroll-padding-top: rfs-value(85px);
   @include media-breakpoint-up(lg){
-    scroll-padding-top: rfs-value(95px);
+    scroll-padding-top: rfs-value(100px);
   }
 }
 html, body {

@@ -55,7 +55,6 @@
     }
   }
   figure{
-    width: auto !important;
     img{
       @include img-fluid();
     }
@@ -82,9 +81,6 @@
     border-bottom: 1px solid $color-border-gray;
     h1.entry-title{
       line-height: 1.2;
-      @include media-breakpoint-down(sm){
-        //@include font-size(80px);
-      }
       position: relative;
       padding-left: 6px;
       &:before{
@@ -314,8 +310,11 @@
         .more {
           @include font-size(15px);
           color: $color-black;
+          transition: color 300ms ease;
           &:hover{
             text-decoration: underline;
+            text-decoration-color: $color-primary-dark;
+            text-decoration-thickness: 2px;
           }
           i {
             margin-right: rfs-value(2px);

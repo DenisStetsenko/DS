@@ -293,8 +293,13 @@ add_action('wp_ajax_nopriv_wp_ajax_live_search_data_fetch','wp_ajax_live_search'
 /**
  *
  */
-function cs_toc(){
+function cs_toc($atts){
 	global $post;
+	
+	$atts = shortcode_atts( array(
+		'navid' => 'ez-toc-nav',
+	), $atts, 'cs-toc' );
+	
 	$summary_list 			= get_field('summary_list', $post->ID);
 	$product_list_intro = get_field('product_list_intro', $post->ID);
 	$footer_content 		= get_field('footer_content', $post->ID);
@@ -304,7 +309,7 @@ function cs_toc(){
 	if ( $summary_list && array_filter($summary_list) ) :
 		echo '<div id="ez-toc-container" class="counter-hierarchy ez-toc-counter ez-toc-container-direction">
 						<p class="ez-toc-title">'. __('Table of Contents', 'wp-theme') . '</p>
-						<nav>
+						<nav id="'.esc_html($atts['navid']).'">
 						<ul class="ez-toc-list ez-toc-list-level-1">';
 		
 						// Intro Content

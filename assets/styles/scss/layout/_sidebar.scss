@@ -140,27 +140,22 @@
     border: none;
     padding: 0;
     border-radius: 0;
-    //margin-bottom: 0;
     margin-bottom: -5px;
     box-shadow: none;
     .ez-toc-title{
       color: $color-black;
       font-weight: 800;
       margin-bottom: rfs-value(15px);
+      line-height: 1.25;
       display: inline-block !important;
-      @include bottom-highlight();
+      @include font-size(36px);
 
-      @include font-size(30px);
       @include media-breakpoint-only(lg){
         @include font-size(25px);
       }
       @include media-breakpoint-only(xl){
         @include font-size(30px);
       }
-      @include media-breakpoint-up(xxl){
-        @include font-size(36px);
-      }
-
     }
 
     ul{
@@ -206,9 +201,12 @@
             @include font-size(18px);
           }
           color: #636363;
-          &:hover{
+          transition: color 300ms ease;
+          &:hover, &.active{
             color: #000;
             text-decoration: underline;
+            text-decoration-color: $color-primary-dark;
+            text-decoration-thickness: 3px;
           }
         }
       }
@@ -220,25 +218,21 @@
         &.offset-top{
           margin-top: rfs-value(-8px);
         }
-        &.add-counter{
-          li{
-
-          }
-        }
         li{
           line-height: 1.5;
           .ez-toc-link{
             color: #636363;
             font-weight: 400;
+            transition: color 300ms ease;
             @include font-size(15px);
             @include media-breakpoint-up(md){
               @include font-size(16px);
             }
-
-
-            &:hover{ 
+            &:hover, &.active{
               color: #000;
               text-decoration: underline;
+              text-decoration-color: $color-primary-dark;
+              text-decoration-thickness: 2px;
             }
           }
         }

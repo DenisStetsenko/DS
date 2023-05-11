@@ -9,12 +9,12 @@ get_template_part('template-parts/single-article/author-block');
 // Affiliate Disclosure
 get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class(); ?> id="post-<?php the_ID(); ?>" data-bs-spy="scroll" data-bs-target="#ez-toc-nav" data-bs-root-margin="0px 0px -30%">
 	
-	<?php get_template_part('template-parts/single-article/post-thumbnail')?>
+	<?php // get_template_part('template-parts/single-article/post-thumbnail')?>
 
 	<div class="content-widget widget rounded-3 font-secondary fs-4 bg-light-gray border p-4 d-lg-none mb-4">
-		<?php echo do_shortcode('[cs-toc]'); ?>
+		<?php echo do_shortcode('[cs-toc navid="ez-toc-nav-mobile"]'); ?>
 	</div>
 	
 	<div class="intro-content comparison-summary mb-4" itemprop="description">
@@ -83,15 +83,15 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 	<?php if ( $summary_list && array_filter($summary_list) ) : ?>
 		<div class="entry-content-main">
 			<?php
-			$i 		= 1;
+			$i = 1;
 			foreach ( $summary_list as $summary_list_item ) :
 				$i == 1 ? $best = 'best' : $best = '';;
 				$summary_list_item['preview'] && $summary_list_item['preview']['alt'] ? $alt = $summary_list_item['preview']['alt'] : $alt = $summary_list_item['heading']['title'];
 				?>
-				<section <?= $summary_list_item['heading']['title'] ? 'id="pick-'. sanitize_title_with_dashes($summary_list_item['heading']['title']) .'"' : ''; ?> class="product-card ">
+				<section class="product-card">
 					
 					<!-- PRODUCT HEADING -->
-					<header class="product-heading mb-4">
+					<header <?= $summary_list_item['heading']['title'] ? 'id="pick-'. sanitize_title_with_dashes($summary_list_item['heading']['title']) .'"' : ''; ?> class="product-heading mb-4">
 						<?= $summary_list_item['heading']['subtitle'] ? '<p class="subtitle mb-2 font-secondary text-black fw-bold text-uppercase fs-4 ls-lg">'.$summary_list_item['heading']['subtitle'].'</p>' 	: null; ?>
 						<?= $summary_list_item['heading']['title'] 		? '<h2 class="title m-0"><i>'.$i.'.</i>' .$summary_list_item['heading']['title'].'</h2>' 	: null; ?>
 					</header>

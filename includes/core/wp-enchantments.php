@@ -173,3 +173,8 @@ add_action('shutdown', function(){ ob_end_flush(); });
 function prefix_output_callback($buffer) {
 	return preg_replace( "%[ ]type=[\'\"]text\/(javascript|css)[\'\"]%", '', $buffer );
 }
+
+/**
+ * remove the inline style width from the figure element?
+ */
+add_filter('img_caption_shortcode_width', '__return_false');
