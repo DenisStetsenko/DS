@@ -60,7 +60,7 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 					</div>
 					
 					<div class="d-flex align-items-center justify-content-end <?= $top_picks['preview'] ? 'column-link' : 'col-lg-4'; ?> text-lg-end mt-4 mt-xl-0">
-						<?= acf_link($top_picks['link'], 'btn btn-primary btn-sm btn-price affiliate-link ', 'nofollow noreferrer noopener'); ?>
+						<?= acf_link($top_picks['link'], 'btn btn-primary btn-sm btn-price affiliate-link', 'nofollow noreferrer noopener'); ?>
 					</div>
 					
 				</div>
