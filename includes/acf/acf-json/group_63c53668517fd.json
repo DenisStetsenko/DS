@@ -1,14 +1,14 @@
 {
     "key": "group_63c53668517fd",
-    "title": "Products Comparison: Body Layout",
+    "title": "Products Comparison Layout",
     "fields": [
         {
             "key": "field_645bbdfa768f5",
-            "label": "Product List Intro",
+            "label": "Products List Intro",
             "name": "product_list_intro",
             "aria-label": "",
             "type": "wysiwyg",
-            "instructions": "",
+            "instructions": "*Just another piece of content to involve the reader in further reading.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -85,6 +85,7 @@
                         "id": ""
                     },
                     "layout": "block",
+                    "parent_repeater": "field_63c53668a6f6d",
                     "sub_fields": [
                         {
                             "key": "field_63c537b0e4848",
@@ -126,8 +127,7 @@
                             "prepend": "",
                             "append": ""
                         }
-                    ],
-                    "parent_repeater": "field_63c53668a6f6d"
+                    ]
                 },
                 {
                     "key": "field_63c538af527b7",
@@ -211,6 +211,7 @@
                         "id": ""
                     },
                     "layout": "row",
+                    "parent_repeater": "field_63c53668a6f6d",
                     "sub_fields": [
                         {
                             "key": "field_63c5474c43bbe",
@@ -302,8 +303,7 @@
                                 }
                             ]
                         }
-                    ],
-                    "parent_repeater": "field_63c53668a6f6d"
+                    ]
                 },
                 {
                     "key": "field_645cf5e293e60",
@@ -345,12 +345,12 @@
     ],
     "menu_order": 2,
     "position": "normal",
-    "style": "seamless",
+    "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683813874
+    "modified": 1683887749
 }
