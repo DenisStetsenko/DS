@@ -2,9 +2,9 @@
   1.0 Misc
 --------------------------------------------------------------*/
 html{
-  scroll-padding-top: rfs-value(85px);
+  scroll-padding-top: rfs-value(90px);
   @include media-breakpoint-up(lg){
-    scroll-padding-top: rfs-value(100px);
+    scroll-padding-top: rfs-value(105px);
   }
 }
 html, body {
