@@ -91,7 +91,11 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
 		  'wow'
 	  ), null, true );
 
-    wp_enqueue_script( 'bootstrap', get_theme_file_uri('assets/scripts/bootstrap/bootstrap.min.js'), array('jquery'), null, true );
+		if ( is_singular('post') ) :
+			wp_enqueue_script( 'gumshoe', get_theme_file_uri('assets/scripts/gumshoe.polyfills.min.js'), array(), array(), true );
+		endif;
+		
+    wp_enqueue_script( 'bootstrap', get_theme_file_uri('assets/scripts/bootstrap/bootstrap.min.js'), array('jquery'), array(), true );
 	  wp_register_script( 'slick', get_theme_file_uri('assets/scripts/slick.min.js'), array('jquery'), array(), true );
 
     //wp_enqueue_style( 'main', get_theme_file_uri('assets/styles/css/main.css'), array(), time() );
@@ -298,6 +302,7 @@ function cs_toc($atts){
 		'navid' => 'ez-toc-nav',
 	), $atts, 'cs-toc' );
 	
+	$the_content 				= get_post_field('post_content', $post->ID);
 	$summary_list 			= get_field('summary_list', $post->ID);
 	$product_list_intro = get_field('product_list_intro', $post->ID);
 	$footer_content 		= get_field('footer_content', $post->ID);
@@ -306,10 +311,20 @@ function cs_toc($atts){
 	
 	if ( $summary_list && array_filter($summary_list) ) :
 		echo '<div id="ez-toc-container" class="counter-hierarchy ez-toc-counter ez-toc-container-direction">
-						<p class="ez-toc-title">'. __('Table of Contents', 'wp-theme') . '</p>
+						
 						<nav id="'.esc_html($atts['navid']).'">
 						<ul class="ez-toc-list ez-toc-list-level-1">';
 		
+						// Main Content
+						if ( $the_content ) :
+							preg_match_all('#<h2.*?>(.*?)</h2>#i',$the_content, $the_content_H2);
+							foreach ($the_content_H2[1] as $h2) : ?>
+								<li class="ez-toc-page-1 ez-toc-heading-level-2">
+									<a class="ez-toc-link ez-toc-heading-1" href="#<?= sanitize_title_with_dashes($h2); ?>" title="<?= $h2; ?>"><?= $h2; ?></a>
+								</li>
+							<?php endforeach;
+						endif;
+	
 						// Intro Content
 						if ( $product_list_intro ) :
 							preg_match_all('#<h2.*?>(.*?)</h2>#i',$product_list_intro, $product_list_intro_H2);

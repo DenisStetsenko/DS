@@ -9,7 +9,7 @@ get_template_part('template-parts/single-article/author-block');
 // Affiliate Disclosure
 get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>" data-bs-spy="scroll" data-bs-target="#ez-toc-nav" data-bs-root-margin="0px 0px -30%">
+<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 	
 	<?php // get_template_part('template-parts/single-article/post-thumbnail')?>
 

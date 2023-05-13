@@ -45,17 +45,18 @@
   }
 
   .w-title{
-    @include font-size(30px);
+    color: $color-black;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: rfs-value(15px);
+    display: inline-block;
+    @include font-size(36px);
     @include media-breakpoint-only(lg){
       @include font-size(25px);
     }
     @include media-breakpoint-only(xl){
       @include font-size(30px);
     }
-    @include media-breakpoint-up(xxl){
-      @include font-size(36px);
-    }
-    @include bottom-highlight();
   }
 
   // Gravity Forms
@@ -178,19 +179,38 @@
 
     .ez-toc-list{
       // General
-      .ez-toc-link{
-        text-decoration: none;
-        font-weight: 500;
-        &:before{
-          width: rfs-value(16px);
-          margin-right: rfs-value(3px);
+      li{
+        transition: color 300ms ease;
+        &.active-parent{
+          & > .ez-toc-link{
+            color: #000;
+          }
+        }
+        &.active{
+          & > .ez-toc-link{
+            color: #000;
+            text-decoration: underline;
+            text-decoration-color: $color-primary-dark;
+            text-decoration-thickness: 3px;
+          }
+        }
+        .ez-toc-link{
+          color: #636363;
+          text-decoration: none;
+          font-weight: 500;
+          transition: color 300ms ease;
+          &:before{
+            width: rfs-value(16px);
+            margin-right: rfs-value(3px);
+          }
         }
       }
+
 
       // 1st level
       .ez-toc-heading-level-2{
         &:not(:last-child){
-          margin-bottom: rfs-value(10px);
+          margin-bottom: rfs-value(7px);
         }
         .ez-toc-link{
           @include font-size(16px);
@@ -200,9 +220,7 @@
           @include media-breakpoint-up(xxl){
             @include font-size(18px);
           }
-          color: #636363;
-          transition: color 300ms ease;
-          &:hover, &.active{
+          &:hover{
             color: #000;
             text-decoration: underline;
             text-decoration-color: $color-primary-dark;
@@ -221,14 +239,12 @@
         li{
           line-height: 1.5;
           .ez-toc-link{
-            color: #636363;
             font-weight: 400;
-            transition: color 300ms ease;
             @include font-size(15px);
             @include media-breakpoint-up(md){
               @include font-size(16px);
             }
-            &:hover, &.active{
+            &:hover{
               color: #000;
               text-decoration: underline;
               text-decoration-color: $color-primary-dark;

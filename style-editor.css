@@ -1,7 +1,7 @@
 body {
 	color: #292929;
 	font-family: 'Lora', serif;
-	font-size: 1.188rem;
+	font-size: 1.125rem;
 	line-height: 1.65;
 }
 
@@ -10,18 +10,6 @@ h1, h2, h3, h4, h5 {
 	font-family: 'Inter', sans-serif;
 	margin: 30px 0 5px 0;
 	font-weight: 800;
-}
-
-h1 {
-	font-size: 54px;
-}
-
-h2 {
-	font-size: 44px;
-}
-
-h3 {
-	font-size: 36px;
 }
 
 p {
@@ -57,6 +45,9 @@ figure {
 	font-weight: 600;
 }
 
+h1.wp-block-post-title{ font-size: 48px; }
+h2.wp-block-heading{ font-size: 36px; }
+h3.wp-block-heading{ font-size: 28px; }
 
 .editor-rich-text ta, ta, .ta-editor-shortcode {
 	border: 2px dashed #5333ed !important;
@@ -67,13 +58,13 @@ figure {
 }
 
 /* TINY MCE */
-.mce-content-body a:not(.btn){
+body.mce-content-body a:not(.btn){
     color: #292929;
     border-bottom: 2px solid #fdd11f;
     text-decoration: none;
     font-weight: 600;
 }
-.mce-content-body a.btn.btn-primary, a.btn.btn-primary:focus{
+body.mce-content-body a.btn.btn-primary, a.btn.btn-primary:focus{
     color: #292929;
     background-color: #fdd11f;
     text-decoration: none;
@@ -87,3 +78,7 @@ figure {
     outline: none;
     font-family: 'Inter', sans-serif;
 }
+
+body.mce-content-body h1{ font-size: 36px }
+body.mce-content-body h2{ font-size: 30px }
+body.mce-content-body h3{ font-size: 26px }
