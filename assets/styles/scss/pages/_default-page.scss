@@ -1,32 +1,53 @@
-#default-page-wrapper{
-  .entry-content{
+#default-page-wrapper {
+  .entry-content {
 
-    h2, h3{
-      margin: 40px 0 9px;
-      &:first-child{
+    h2, h3 {
+      margin: rfs-value(45px 0 9px);
+      &:first-child {
         margin-top: 0;
       }
     }
 
-    h2{
+    h2 {
       @include font-size(30px);
-      & + h3{
-        margin-top: 20px;
+      & + h3 {
+        margin-top: rfs-value(10px);
       }
     }
 
-    h3{
+    h3 {
       @include font-size(25px);
       font-weight: 700;
     }
 
-    li a{
+    ul > li, ol > li {
+      margin-bottom: rfs-value(11px);
+      line-height: 1.65;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    li a {
       @include link-hover-effect();
+    }
+
+    figure {
+      img {
+        @include img-fluid();
+      }
+
+      figcaption {
+        color: $color-gray;
+        font-family: $font-secondary;
+        @include font-size(14px);
+        margin-top: rfs-value(7px);
+      }
+    }
+    img {
+      @include img-fluid();
     }
 
   }
 }
-
-/**
- * About Page
- */

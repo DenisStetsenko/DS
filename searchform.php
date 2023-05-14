@@ -4,7 +4,8 @@
  *
  * Custom template for search form
  */
-$uid               = wp_unique_id( 's-' ); // The search form specific unique ID for the input.
+//$uid               = wp_unique_id( 's-' ); // The search form specific unique ID for the input.
+$uid               = 'the-s-1'; // The search form specific unique ID for the input.
 $aria_label = '';
 if ( isset( $args['aria_label'] ) && ! empty( $args['aria_label'] ) ) {
   $aria_label = 'aria-label="' . esc_attr( $args['aria_label'] ) . '"';

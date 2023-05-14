@@ -51,7 +51,7 @@
   .wp-block-gallery{
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: rfs-value(16px);
     margin: $paragraph-margin-bottom 0 $paragraph-margin-bottom;
     &.columns-3{
       .wp-block-image{
@@ -96,12 +96,12 @@
         background: linear-gradient(0deg,rgba(0,0,0,.7),rgba(0,0,0,.3) 70%,transparent);
         bottom: 0;
         box-sizing: border-box;
-        font-size: 13px;
+        font-size: rfs-value(13px);
         left: 0;
         margin-bottom: 0;
         max-height: 60%;
         overflow: auto;
-        padding: 0 8px 8px;
+        padding: rfs-value(0 8px 8px);
         position: absolute;
         text-align: center;
         width: 100%;
@@ -128,14 +128,14 @@
     }
     &.is-vertical{
       flex-direction: column;
-      row-gap: 20px;
+      row-gap: rfs-value(20px);
 
     }
     &.is-horizontal{
       flex-direction: row;
       .wp-block-button{
         &:not(:last-child){
-          margin-right: 20px;
+          margin-right: rfs-value(20px);
         }
       }
     }
@@ -144,7 +144,7 @@
 
       .wp-block-button__link{
         @include make-button-primary('default');
-        min-width: 200px;
+        min-width: rfs-value(200px);
         text-align: center;
       }
     }
@@ -246,7 +246,7 @@
     &.is-style-wide{ }
     &.is-style-default{
       width: 100%;
-      max-width: 250px;
+      max-width: rfs-value(250px);
     }
   }
 

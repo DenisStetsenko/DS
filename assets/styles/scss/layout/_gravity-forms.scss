@@ -105,11 +105,11 @@
   @include border-radius($border-radius);
   border: 1px solid rgba($color-border-gray, 0.7);
   box-shadow: $box-shadow;
-  padding: 30px 40px 30px 40px;
+  padding: rfs-value(30px 40px 30px 40px);
   font-family: $font-secondary;
   text-align: center;
   &#gform_confirmation_wrapper_1{
-    margin-top: 40px;
+    margin-top: rfs-value(40px);
     .gform_confirmation_message{
       p:last-child{ margin-bottom: 0;}
     }

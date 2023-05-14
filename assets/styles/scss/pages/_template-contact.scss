@@ -3,13 +3,13 @@ body.page-template-template-contact{
     background-image: url(../../images/page-bg-hero.svg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: top 80px right 0;
+    background-position: top 5rem right 0;
     @include media-breakpoint-down(lg){
       background-size: 120% auto;
-      background-position: top 200px right 0;
+      background-position: top 12.5rem right 0;
     }
     @include media-breakpoint-down(sm){
-      background-position: top 300px right 0;
+      background-position: top 18.75rem right 0;
     }
   }
 }

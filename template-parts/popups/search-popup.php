@@ -11,7 +11,7 @@
 <script>
 	const searchModal 				= document.getElementById('searchModal');
 	const searchModalForm			= document.getElementById('ajax-search-form');
-	const searchModalInput 		= document.getElementById('s-1');
+	const searchModalInput 		= document.getElementById('the-s-1');
 	const searchModalResults	= document.getElementById('ajax-search-results');
 	
 	searchModal.addEventListener('shown.bs.modal', event => {
@@ -22,7 +22,6 @@
       searchModalForm.reset();
       searchModalResults.classList.remove("ajax-search-active");
   })
-	
   function wp_ajax_live_search(el){
 		(function($) {
 			var $searchResultsContainer = $('#ajax-search-results');
@@ -39,7 +38,7 @@
 					context  : this,
 					data: {
 						action	 	: 'wp_ajax_live_search_data_fetch',
-						keyword		: $('#s-1').val(),
+						keyword		: $('#the-s-1').val(),
 						security  : '<?php echo $ajax_nonce; ?>'
 					},
 					error: function (xhr, ajaxOptions, thrownError) {
@@ -50,7 +49,7 @@
 					},
 					success: function( result ) {
 						if ( result.success ) {
-							var $searchResults = $(result.data.html);
+							let $searchResults = $(result.data.html);
 							$searchResultsContainer
 								.css({ opacity: 0 })
 								.addClass('ajax-search-active')

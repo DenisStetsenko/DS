@@ -3,23 +3,29 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top 0 right 0;
-  padding-top: 40px;
-  padding-bottom: 45px;
-  @include media-breakpoint-down(sm){
-    background-position: top 215px right 0;
+  padding-top: rfs-value(40px);
+  padding-bottom: rfs-value(45px);
+  @include media-breakpoint-down(lg){
+    background-position: top 13.438rem right 0;
     background-size: 100% auto;
   }
+  @include media-breakpoint-up(sm){
+    padding-top: rfs-value(45px);
+    padding-bottom: rfs-value(50px);
+  }
   @include media-breakpoint-up(xl){
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: rfs-value(80px);
+    padding-bottom: rfs-value(80px);
   }
   .entry-content{
-    line-height: 1.45;
-    @include media-breakpoint-down(sm){
-      @include font-size(16px);
+    line-height: 1.55;
+    @include font-size(17px);
+    @include media-breakpoint-only(sm){
+      @include font-size(19px);
     }
-    @include media-breakpoint-up(sm){
-      @include font-size(17px);
+    @include media-breakpoint-only(md){
+
+      @include font-size(27px);
     }
     @include media-breakpoint-only(lg){
       @include font-size(19px);
@@ -62,19 +68,26 @@
  * The Process
  */
 #front-the-process{
+
+  .entry-content{
+    @include media-breakpoint-only(lg){
+      @include font-size(19px);
+    }
+  }
+
   .list-group{
     .list-group-item{
       &:not(:last-child){
         .icon{
           &:after{
             content: "";
-            width: 3px;
+            width: rfs-value(3px);
             height: calc(100% - 68px);
             background-color: $color-primary;
             position: absolute;
             bottom: 0;
             left: 1.156rem;
-            top: 60px;
+            top: rfs-value(60px);
             z-index: -1;
           }
         }
@@ -85,16 +98,16 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
-      width: 40px;
-      height: 40px;
+      width: rfs-value(40px);
+      height: rfs-value(40px);
       display: inline-block;
-      flex: 0 0 40px;
+      flex: rfs-value(0 0 40px);
       background-color: white;
 
     }
     .content{
       line-height: 1.55;
-      padding-left: 22px;
+      padding-left: rfs-value(22px);
       @include font-size(16px);
       @include media-breakpoint-up(md){
         @include font-size(17px);
@@ -103,14 +116,14 @@
         @include font-size(16px);
       }
       @include media-breakpoint-up(lg){
-        padding-left: 25px;
+        padding-left: rfs-value(25px);
       }
       @include media-breakpoint-up(xl){
-        padding-left: 40px;
+        padding-left: rfs-value(40px);
       }
       .title{
         @include font-size(26px);
-        padding-top: 2px;
+        padding-top: rfs-value(2px);
       }
     }
   }

@@ -98,7 +98,7 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 					<header <?= $summary_list_item['heading']['title'] ? 'id="pick-'. sanitize_title_with_dashes($summary_list_item['heading']['title']) .'"' : ''; ?> class="product-heading mb-4">
 						<?= $summary_list_item['heading']['subtitle'] ? '<p class="subtitle mb-2 font-secondary text-black fw-bold text-uppercase fs-4 ls-lg">'.$summary_list_item['heading']['subtitle'].'</p>' 	: null; ?>
 						<h2 class="title m-0">
-							<i><?= $i; ?>.</i><a class="thirstylink" title="Kajabi" href="<?= $summary_list_item['link'] ? esc_url($summary_list_item['link']['url']) : '#'; ?>"
+							<span class="number"><?= $i; ?>.</span><a class="thirstylink" title="Kajabi" href="<?= $summary_list_item['link'] ? esc_url($summary_list_item['link']['url']) : '#'; ?>"
 								 <?= $summary_list_item['link'] && $summary_list_item['link']['target'] ? 'target="_blank" rel="nofollow noopener noreferrer"' : ''; ?>><?= $summary_list_item['heading']['title']; ?></a>
 						</h2>
 					</header>

@@ -20,7 +20,7 @@ if ( $the_process ) : ?>
 						<?= $the_process['left_side']['image'] ? '<img class="img-fluid mx-auto d-none d-lg-block" src="'.$the_process['left_side']['image']['sizes']['medium_large'].'" loading="lazy" alt="'.$the_process['left_side']['image']['alt'].'">' : null ; ?>
 					</div>
 				</div>
-				<div class="col-lg-5 offset-lg-1">
+				<div class="col-lg-5 offset-lg-1 ps-lg-0">
 					<?php if ( $the_process['the_process'] ) : ?>
 						<ul class="list-group">
 							<?php foreach ( $the_process['the_process'] as $item ) : ?>

@@ -16,16 +16,6 @@ html, body {
   }
 }
 
-body{
-  //::selection {
-  //  color: $color-white;
-  //  background: $color-primary; /* WebKit/Blink Browsers */
-  //}
-  //::-moz-selection {
-  //  color: $color-white;
-  //  background: $color-primary; /* Gecko Browsers */
-  //}
-}
 a {
   transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
@@ -94,27 +84,27 @@ embed, iframe, object { max-width: 100%; }
   4.0 General
 --------------------------------------------------------------*/
 .section-padding {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: rfs-value(60px);
+  padding-bottom: rfs-value(60px);
   @include media-breakpoint-up(lg) {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: rfs-value(80px);
+    padding-bottom: rfs-value(80px);
   }
 }
 
 .section-margin{
-  margin-top: 60px;
-  margin-bottom: 60px;
+  margin-top: rfs-value(60px);
+  margin-bottom: rfs-value(60px);
   @include media-breakpoint-up(lg) {
-    margin-top: 80px;
-    margin-bottom: 80px;
+    margin-top: rfs-value(80px);
+    margin-bottom: rfs-value(80px);
   }
 }
 
 .main-area-padding{
-  padding: 40px 0;
+  padding: rfs-value(40px 0);
   @include media-breakpoint-up(md){
-    padding: 55px 0;
+    padding: rfs-value(55px 0);
   }
 }
 
@@ -126,10 +116,10 @@ embed, iframe, object { max-width: 100%; }
   @include custom-letter-spacing();
   font-weight: 600;
   transition: all 300ms ease;
-  box-shadow: 0 0 3px 0 transparent;
+  box-shadow: 0 0 0.188rem 0 transparent;
   &:hover{
     transform: translateY(-2px);
-    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.35);
+    box-shadow: 0 0.188rem 0.438rem 0 rgba(0, 0, 0, 0.35);
   }
 
   &.btn-primary{
