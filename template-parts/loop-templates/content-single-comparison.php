@@ -123,7 +123,7 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 					
 					<!-- PROS & CONS -->
 					<?php if ( $summary_list_item['display_pros_and_cons'] && array_filter($summary_list_item['pros_and_cons']) ) : ?>
-						<div class="pros-and-cons d-flex flex-wrap mt-6 mb-7 rounded border overflow-hidden font-secondary">
+						<div class="pros-and-cons d-sm-flex flex-wrap mt-6 mb-7 rounded border overflow-hidden font-secondary">
 							
 							<?php if ( $summary_list_item['pros_and_cons']['pros'] ) : ?>
 								<div class="column pros">
