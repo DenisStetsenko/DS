@@ -50,7 +50,7 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 								</div>
 								<div class="bottom lh-sm">
 									<?php if ( $top_picks['heading']['title'] ) : ?>
-										<a class="more" href="<?php the_permalink(); ?>#pick-<?= sanitize_title_with_dashes($top_picks['heading']['title']); ?>">
+										<a class="more" href="<?php the_permalink(); ?>#try-<?= sanitize_title_with_dashes($top_picks['heading']['title']); ?>">
 											<i class="icon-down"></i><?php _e('Jump to Review', 'wp-theme'); ?>
 										</a>
 									<?php endif; ?>
@@ -95,7 +95,7 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 				<section class="product-card">
 					
 					<!-- PRODUCT HEADING -->
-					<header <?= $summary_list_item['heading']['title'] ? 'id="pick-'. sanitize_title_with_dashes($summary_list_item['heading']['title']) .'"' : ''; ?> class="product-heading mb-4">
+					<header <?= $summary_list_item['heading']['title'] ? 'id="try-'. sanitize_title_with_dashes($summary_list_item['heading']['title']) .'"' : ''; ?> class="product-heading mb-4">
 						<?= $summary_list_item['heading']['subtitle'] ? '<p class="subtitle mb-2 font-secondary text-black fw-bold text-uppercase fs-4 ls-lg">'.$summary_list_item['heading']['subtitle'].'</p>' 	: null; ?>
 						<h3 class="title m-0">
 							<span class="number"><?= $i; ?>.</span><a class="thirstylink" title="Kajabi" href="<?= $summary_list_item['link'] ? esc_url($summary_list_item['link']['url']) : '#'; ?>"

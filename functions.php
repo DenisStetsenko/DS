@@ -339,7 +339,7 @@ function cs_toc($atts){
 								$i = 1;
 								foreach ( $summary_list as $summary_list_item ) : ?>
 									<li class="ez-toc-heading-level-3">
-										<a class="ez-toc-link ez-toc-heading-3" href="#pick-<?= sanitize_title_with_dashes($summary_list_item['heading']['title']); ?>"
+										<a class="ez-toc-link ez-toc-heading-3" href="#try-<?= sanitize_title_with_dashes($summary_list_item['heading']['title']); ?>"
 											 title="<?= $summary_list_item['heading']['title']; ?>"><?= $i .'. '.$summary_list_item['heading']['title']; ?></a>
 									</li>
 								<?php $i++; endforeach;
@@ -352,7 +352,7 @@ function cs_toc($atts){
 							$i = 1;
 							foreach ( $summary_list as $summary_list_item ) : ?>
 								<li class="ez-toc-page-1 ez-toc-heading-level-2">
-									<a class="ez-toc-link ez-toc-heading-1" href="#pick-<?= sanitize_title_with_dashes($summary_list_item['heading']['title']); ?>"
+									<a class="ez-toc-link ez-toc-heading-1" href="#try-<?= sanitize_title_with_dashes($summary_list_item['heading']['title']); ?>"
 										 title="<?= $summary_list_item['heading']['title']; ?>"><?= $i .'. '.$summary_list_item['heading']['title']; ?></a>
 								</li>
 							<?php $i++; endforeach;
