@@ -151,7 +151,7 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 					<?php endif; ?>
 					<!-- / PROS & CONS -->
 					<?php if ( $product_list_final_thoughts = $summary_list_item['final_thoughts'] ) : ?>
-						<div class="intro-content product-final-thoughts">
+						<div class="final-thoughts intro-content">
 							<div class="entry-content mobile-content-sm-size">
 								<?php
 								$product_list_final_thoughts = preg_replace_callback("#<(h2)>(.*?)</\\1>#", "retitle", $product_list_final_thoughts);

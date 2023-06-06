@@ -195,13 +195,10 @@
       margin: rfs-value(50px 0);
       padding: rfs-value(35px 0);
     }
-
-    &.comparison-summary {
-
-    }
-
-    &.review-summary {
-
+    &.final-thoughts{
+      border-top: 1px solid $color-border-gray;
+      margin-top: rfs-value(50px);
+      padding-top: rfs-value(35px);
     }
 
     .entry-content {
