@@ -55,7 +55,7 @@
     @include font-size(28px);
   }
   ul > li, ol > li {
-    margin-bottom: rfs-value(11px);
+    margin-bottom: rfs-value(8px);
     line-height: 1.65;
 
     &:last-child {
