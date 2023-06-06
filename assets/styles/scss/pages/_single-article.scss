@@ -40,7 +40,7 @@
  * Single Article Template
  */
 @mixin entry-content-heading-styling() {
-  h2, h3 {
+  h2, h3, h4 {
     margin: rfs-value(45px 0 9px);
     &:first-child {
       margin-top: 0;
@@ -50,6 +50,9 @@
     & + h3 {
       margin-top: rfs-value(10px);
     }
+  }
+  h4{
+    @include font-size(28px);
   }
   ul > li, ol > li {
     margin-bottom: rfs-value(11px);
