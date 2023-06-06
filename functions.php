@@ -310,7 +310,7 @@ function cs_toc($atts){
 	ob_start();
 	
 	if ( $summary_list && array_filter($summary_list) ) :
-		echo '<div id="ez-toc-container" class="counter-hierarchy ez-toc-counter ez-toc-container-direction">
+		echo '<div id="ez-toc-container" class="custom-ez-toc counter-hierarchy ez-toc-counter ez-toc-container-direction">
 						
 						<nav id="'.esc_html($atts['navid']).'">
 						<ul class="ez-toc-list ez-toc-list-level-1">';
