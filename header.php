@@ -35,17 +35,6 @@
 	</noscript>
 	<!-- / Eliminate render-blocking resources google fonts FIX -->
 
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-H6ZQK70J7T"></script>
-	<script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-H6ZQK70J7T');
-	</script>
-	<!-- Google tag (gtag.js) -->
-	
 	<?php wp_head(); ?>
 </head>
 
