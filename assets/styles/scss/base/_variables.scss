@@ -1,9 +1,3 @@
-// TODO: need to decided FINAL color scheme
-// gray v1: #f7f7f7
-// gray v2: #f7f8f9
-// border-gray v1: #e5e5e5
-// border-gray v2: #eaecee
-
 // Fonts
 $font-primary           : 'Lora', serif;
 $font-secondary         : 'Inter', sans-serif;
@@ -31,17 +25,17 @@ $color-success       : #36c384;
 $color-cultured      : #F5F7F7;
 
 $theme-colors: (
-        "primary"     : $color-primary,
-        "secondary"   : $color-secondary,
-        "danger"      : $color-danger,
-        "success"     : $color-success,
+    "primary"     : $color-primary,
+    "secondary"   : $color-secondary,
+    "danger"      : $color-danger,
+    "success"     : $color-success,
 );
 
 $custom-colors: (
-        "accent"        : $color-accent,
-        "gray"          : $color-gray,
-        "light-gray"    : $color-light-gray,
-        "primary-light" : $color-primary-light,
+    "accent"        : $color-accent,
+    "gray"          : $color-gray,
+    "light-gray"    : $color-light-gray,
+    "primary-light" : $color-primary-light,
 );
 
 // Merge 'Custom Colors' into 'Theme Colors' maps
@@ -79,11 +73,8 @@ $body-color               : $color-black;
 $border-width             : 1px;
 $border-style             : solid;
 $font-family-base         : $font-primary;
-//$font-size-base           : 1.125rem; // body base font size 18px
-//$font-size-base           : 1.188rem; // body base font size 19px
-$font-size-base           : 1.25rem; // body base font size 20px
+$font-size-base           : 1.25rem;
 $brand-primary            : $color-primary;
-//$line-height-base         : 1.70;
 $line-height-base         : 1.725;
 $list-inline-padding      : 0.875rem;
 
