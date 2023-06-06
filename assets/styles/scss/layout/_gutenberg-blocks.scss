@@ -239,7 +239,7 @@
   // Block Editor => Separator
   .wp-block-separator{
     opacity: 1;
-    border-bottom: 2px solid $color-border-gray;
+    border-top-color: $color-border-gray;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
