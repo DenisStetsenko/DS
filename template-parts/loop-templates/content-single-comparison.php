@@ -157,7 +157,7 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 								$final_thoughts = preg_replace_callback("#<(h2)>(.*?)</\\1>#", "retitle", $final_thoughts);
 								echo apply_filters('the_content', $final_thoughts);
 								?>
-							</div> q
+							</div>
 						</div>
 					<?php endif; ?>
 
