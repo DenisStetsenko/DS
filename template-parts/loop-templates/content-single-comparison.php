@@ -150,21 +150,20 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 						</div>
 					<?php endif; ?>
 					<!-- / PROS & CONS -->
-					<?php if ( $product_list_final_thoughts = $summary_list_item['final_thoughts'] ) : ?>
+					<?php if ( $final_thoughts = $summary_list_item['final_thoughts'] ) : ?>
 						<div class="final-thoughts intro-content">
 							<div class="entry-content mobile-content-sm-size">
 								<?php
-								$product_list_final_thoughts = preg_replace_callback("#<(h2)>(.*?)</\\1>#", "retitle", $product_list_final_thoughts);
-								echo apply_filters('the_content', $product_list_final_thoughts);
+								$final_thoughts = preg_replace_callback("#<(h2)>(.*?)</\\1>#", "retitle", $final_thoughts);
+								echo apply_filters('the_content', $final_thoughts);
 								?>
-							</div>
+							</div> q
 						</div>
 					<?php endif; ?>
 
 					<!-- AFFILIATE URL BUTTON -->
 					<?= acf_link($summary_list_item['link'], 'btn btn-primary btn-price affiliate-link d-table mx-auto mt-5', 'nofollow noreferrer noopener'); ?>
 					<!-- / AFFILIATE URL BUTTON -->
-					
 					
 				</section>
 			
