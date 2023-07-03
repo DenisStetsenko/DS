@@ -8,7 +8,7 @@ if ( $show_category_sidebar ) $layout = '2-cols';
 <div id="template-articles-archive" class="main-area-padding">
 	<div class="container">
 
-		<header id="category-heading" class="wow fadeIn" data-wow-delay="50ms" data-wow-duration="700ms">
+		<header id="category-heading" class="no-wow no-fadeIn" data-wow-delay="50ms" data-wow-duration="700ms">
 			<h1 class="category-title">
 				<?php
 				if ( is_category() ) {
@@ -45,7 +45,7 @@ if ( $show_category_sidebar ) $layout = '2-cols';
 						$curr_category_slug = 'data-category="all" data-search="'. get_search_query() .'"';
 					}
 					
-					echo '<div class="row posts-loop g-4 g-lg-5 wow fadeIn" data-wow-delay="100ms" data-wow-duration="700ms">';
+					echo '<div class="row posts-loop g-4 g-lg-5 no-wow no-fadeIn" data-wow-delay="100ms" data-wow-duration="700ms">';
 						while ( have_posts() ) : the_post();
 							 get_template_part( 'template-parts/category/post-loop', 'item', array( 'layout' => $layout, 'include-author-block' => 1 ) );
 						endwhile;
