@@ -14,7 +14,7 @@ get_header(); ?>
 						while ( have_posts() ) { the_post();
 							get_template_part( 'template-parts/loop-templates/content', 'page' );
 						}
-						echo '<div class="wow fadeIn" data-wow-duration="300ms">';
+						echo '<div class="wow fadeInUp" data-wow-duration="300ms">';
 							echo do_shortcode('[gravityform id="1" title="false" description="false" ajax="true"]');
 						echo '</div>';
 						?>
