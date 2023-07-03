@@ -80,6 +80,50 @@
             "ui": 1
         },
         {
+            "key": "field_64a2faed87488",
+            "label": "WOW Animation Speed",
+            "name": "wow_animation_speed",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": 10,
+            "prepend": "",
+            "append": "ms"
+        },
+        {
+            "key": "field_64a3011ad784b",
+            "label": "WOW Animation Offset",
+            "name": "wow_animation_offset",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "20",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 0,
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": 10,
+            "prepend": "",
+            "append": "px"
+        },
+        {
             "key": "field_622cb48cfe216",
             "label": "API",
             "name": "",
@@ -270,5 +314,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681315344
+    "modified": 1688404277
 }

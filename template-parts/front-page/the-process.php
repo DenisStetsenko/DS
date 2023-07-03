@@ -1,12 +1,12 @@
 <?php
-$the_process = get_field('the_process');
+$the_process 	= get_field('the_process');
 if ( $the_process ) : ?>
 
 	<section id="front-the-process" class="section-margin">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 mb-5 mb-lg-0">
-					<div class="left-side wow fadeIn" data-wow-duration="300ms">
+					<div class="left-side wow fadeIn" data-wow-duration="<?= wow_duration(); ?>">
 						<?php if ( $the_process['left_side']['section_title'] ) : ?>
 							<header class="section-title mb-4">
 								<h2 class=""><?= $the_process['left_side']['section_title']; ?></h2>
@@ -24,7 +24,7 @@ if ( $the_process ) : ?>
 					<?php if ( $the_process['the_process'] ) : ?>
 						<ul class="list-group">
 							<?php foreach ( $the_process['the_process'] as $item ) : ?>
-								<li class="list-group-item d-flex position-relative wow fadeInUp" data-wow-delay="100ms" data-wow-offset="40" data-wow-duration="300ms">
+								<li class="list-group-item d-flex position-relative wow fadeInUp" data-wow-delay="100ms" data-wow-offset="40" data-wow-duration="<?= wow_duration(); ?>">
 									<i class="icon"></i>
 									<div class="content font-secondary">
 										<h3 class="title mb-2"><?= $item['title']; ?></h3>

@@ -7,7 +7,7 @@
 	
 	<div class="offcanvas-body">
 		<?php if ( has_nav_menu( 'header-menu' ) ) : ?>
-		<nav id="navbar-offcanvas-nav" class="mt-5 mb-6" aria-label="<?php esc_attr_e( 'Primary Mobile Navigation', 'twentytwentyone-child' ); ?>">
+		<nav id="navbar-offcanvas-nav" class="mt-4 mb-6" aria-label="<?php esc_attr_e( 'Primary Mobile Navigation', 'twentytwentyone-child' ); ?>">
 			<?php
 			wp_nav_menu( array(
 				'theme_location'  => 'header-menu',

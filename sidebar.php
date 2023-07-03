@@ -7,7 +7,7 @@
 ?>
 
 <div id="right-sidebar" class="position-relative flex-grow-1">
-	<div class="sticky-top wow fadeInUp" data-wow-duration="300ms">
+	<div class="sticky-top wow fadeInUp" data-wow-duration="<?= wow_duration(); ?>">
 		<?php
 		if ( is_single() && 'post' == get_post_type() && is_page_template('single-comparison-template.php') && is_active_sidebar( 'comparison-sidebar' ) ) {
 			dynamic_sidebar( 'comparison-sidebar' );

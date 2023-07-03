@@ -13,7 +13,7 @@ get_header(); ?>
 						<?php while ( have_posts() ) { the_post(); ?>
 							<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-								<header id="page-header" class="text-center text-lg-start no-wow no-fadeIn" data-wow-delay="50ms" data-wow-duration="700ms">
+								<header id="page-header" class="text-center text-lg-start no-wow no-fadeIn" data-wow-delay="50ms" data-wow-duration="<?= wow_duration(); ?>">
 									<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 								</header><!-- .entry-header -->
 								
@@ -24,7 +24,7 @@ get_header(); ?>
 									</aside>
 								<?php endif; ?>
 								
-								<div class="entry-content mobile-content-sm-size no-wow no-fadeIn" data-wow-delay="100ms" data-wow-duration="700ms">
+								<div class="entry-content mobile-content-sm-size no-wow no-fadeIn" data-wow-delay="100ms" data-wow-duration="<?= wow_duration(); ?>">
 									<?php the_content();?>
 								</div><!-- .entry-content -->
 

@@ -3,7 +3,7 @@
  * Functions
  */
 
-//show_admin_bar(false);
+show_admin_bar(false);
 
 /**
  * Included Files
@@ -393,4 +393,28 @@ function retitle($match) {
 	$id = sanitize_title_with_dashes($title);
 	
 	return "<$h2 id='$id'>$title</$h2>";
+}
+
+/**
+ * Define WOW Duration
+ */
+function wow_duration(){
+	$wow_speed_default	 = '500ms';
+	$wow_animation_speed = get_field('wow_animation_speed', 'option');
+	
+	if ( isset($wow_animation_speed) ) $wow_speed_default = $wow_animation_speed.'ms';
+	
+	return $wow_speed_default;
+}
+
+/**
+ * Define WOW Duration
+ */
+function wow_offset(){
+	$wow_offset_default	 = '0';
+	$wow_animation_offset = get_field('wow_animation_offset', 'option');
+	
+	if ( isset($wow_animation_offset) ) $wow_offset_default = $wow_animation_offset;
+	
+	return $wow_offset_default;
 }
