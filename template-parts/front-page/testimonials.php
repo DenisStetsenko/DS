@@ -12,7 +12,7 @@ if ( $wp_query->have_posts() ) :
 	<section id="hero-testimonials" class="section-margin">
 		<div class="container">
 			
-			<header class="section-title text-center wow fadeInDown" data-wow-delay="50ms" data-wow-offset="60" data-wow-duration="700ms">
+			<header class="section-title text-center no-wow no-fadeInDown" data-wow-delay="50ms" data-wow-offset="60" data-wow-duration="700ms">
 				<h2 class=""><?php _e('Opinions Matter'); ?></h2>
 			</header>
 			
