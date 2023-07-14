@@ -26,7 +26,7 @@ if ( $the_process ) : ?>
 							<?php foreach ( $the_process['the_process'] as $item ) : ?>
 								<li class="list-group-item d-flex position-relative wow fadeInUp" data-wow-delay="100ms" data-wow-offset="40" data-wow-duration="<?= wow_duration(); ?>">
 									<i class="icon"></i>
-									<div class="content font-secondary">
+									<div class="content font-primary">
 										<h3 class="title mb-2"><?= $item['title']; ?></h3>
 										<?= $item['description']; ?>
 									</div>
