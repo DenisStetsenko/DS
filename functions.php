@@ -3,8 +3,6 @@
  * Functions
  */
 
-//show_admin_bar(false);
-
 /**
  * Included Files
  ***********************************************************************************************************************/
@@ -65,7 +63,7 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
 
     wp_enqueue_script('jquery');
 		
-    // Remove Gutenberg Block Library CSS from loading on the frontend
+    // Remove Gutenberg Block Library CSS from loading on the frontend (we'll use own styles)
     wp_dequeue_style( 'wp-block-library' );
     wp_dequeue_style( 'wp-block-library-theme' );
     wp_dequeue_style( 'wc-blocks-style' ); // Remove WooCommerce block CSS

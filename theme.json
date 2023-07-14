@@ -1,0 +1,117 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "settings": {
+    "layout": {
+      "contentSize": "856px",
+      "wideSize": "1300px",
+      "horizontalMargin": true
+    },
+    "border": {
+      "radius": true,
+      "color": true,
+      "style": true,
+      "width": true
+    },
+    "color": {
+      "defaultPalette": false,
+      "defaultGradients": false,
+      "palette": [
+        {
+          "slug": "primary",
+          "color": "#fdd11f",
+          "name": "Primary"
+        },
+        {
+          "slug": "primary-dark",
+          "color": "#f0c000",
+          "name": "Primary Dark"
+        },
+        {
+          "slug": "white",
+          "color": "#ffffff",
+          "name": "White"
+        },
+        {
+          "slug": "black",
+          "color": "#292929",
+          "name": "Black"
+        },
+        {
+          "slug": "gray",
+          "color": "#595959",
+          "name": "Gray"
+        },
+        {
+          "slug": "light-gray",
+          "color": "#f7f8f9",
+          "name": "Light Gray"
+        },
+        {
+          "slug": "border-gray",
+          "color": "#eaecee",
+          "name": "Border Gray"
+        }
+      ]
+    },
+    "typography": {
+      "customFontSize": true,
+      "fontFamilies": [
+        {
+          "fontFamily": "\"Lora\", serif",
+          "slug": "lora",
+          "name": "Lora"
+        },
+        {
+          "fontFamily": "\"Inter\", sans-serif",
+          "slug": "inter",
+          "name": "Inter"
+        }
+      ],
+      "fontSizes": [
+        {
+          "slug": "small",
+          "size": "0.875rem",
+          "name": "Small (14px)"
+        },
+        {
+          "slug": "medium",
+          "size": "1.125rem",
+          "name": "Medium (18px)"
+        },
+        {
+          "slug": "large",
+          "size": "2.25rem",
+          "name": "Large (36px)"
+        },
+        {
+          "slug": "x-large",
+          "size": "2.75rem",
+          "name": "Extra Large (44px)"
+        },
+        {
+          "slug": "huge",
+          "size": "3.375rem",
+          "name": "Huge (54px)"
+        }
+      ]
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true,
+      "blockGap": true,
+      "customSpacingSize": true,
+      "units": [ "px","rem" ]
+    }
+  },
+  "styles": {
+    "color": {
+      "text": "var(--wp--preset--color--black)"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--lora)",
+      "lineHeight": "1.65",
+      "fontSize": "20px"
+    }
+  }
+}

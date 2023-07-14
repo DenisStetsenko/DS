@@ -46,6 +46,12 @@
   .has-huge-font-size {
     @include font-size($h1-font-size);
   }
+  .has-inter-font-family{
+    font-family: $font-secondary !important;
+  }
+  .has-lora-font-family{
+    font-family: $font-primary !important;
+  }
 
   // Block Editor => Gallery
   .wp-block-gallery{
@@ -247,6 +253,12 @@
     &.is-style-default{
       width: 100%;
       max-width: rfs-value(250px);
+    }
+    &.has-primary-background-color{
+      border-top-color: $color-primary;
+    }
+    &.has-primary-dark-background-color{
+      border-top-color: $color-primary-dark;
     }
   }
 
