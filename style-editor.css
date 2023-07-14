@@ -38,9 +38,9 @@ figure {
 	font-weight: 600;
 }
 
-h1.wp-block-post-title{ font-size: 48px; }
-h2.wp-block-heading{ font-size: 36px; }
-h3.wp-block-heading{ font-size: 28px; }
+h1.wp-block-post-title{ font-size: 48px; line-height: 1.2 }
+h2.wp-block-heading{ font-size: 36px; line-height: 1.25 }
+h3.wp-block-heading{ font-size: 28px; line-height: 1.25 }
 
 .editor-rich-text ta, ta, .ta-editor-shortcode {
 	border: 2px dashed #5333ed !important;
