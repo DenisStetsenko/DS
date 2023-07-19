@@ -85,7 +85,7 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
 	  wp_enqueue_script( 'wow', 'https://cdn.jsdelivr.net/npm/wowjs@1.1.3/dist/wow.min.js', array( 'jquery' ), array(), false );
 	  wp_enqueue_script( 'js-call', get_theme_file_uri( 'assets/scripts/js-call.js' ), array(
 		  'wow'
-	  ), null, true );
+	  ), null, false );
 
 		if ( is_singular('post') ) :
 			wp_enqueue_script( 'gumshoe', get_theme_file_uri('assets/scripts/gumshoe.polyfills.min.js'), array(), array(), true );
