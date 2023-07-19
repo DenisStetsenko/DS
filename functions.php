@@ -386,7 +386,7 @@ function retitle($match) {
 	
 	$id = sanitize_title_with_dashes($title);
 	
-	return "<$h2 id='$id'>$title</$h2>";
+	return "<$h2 id='$id' data-heading>$title</$h2>";
 }
 
 /**
