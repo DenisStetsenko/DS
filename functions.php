@@ -82,10 +82,8 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
       ));
     endif;
 		
-	  wp_enqueue_script( 'wow', get_theme_file_uri( 'assets/scripts/wow.min.js' ), array( 'jquery' ), array(), true );
-		
+	  wp_enqueue_script( 'wow', 'https://cdn.jsdelivr.net/npm/wowjs@1.1.3/dist/wow.min.js', array( 'jquery' ), array(), false );
 	  wp_enqueue_script( 'js-call', get_theme_file_uri( 'assets/scripts/js-call.js' ), array(
-		  'jquery',
 		  'wow'
 	  ), null, true );
 
