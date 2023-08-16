@@ -1,9 +1,5 @@
 <?php
 /**
- * Functions
- */
-
-/**
  * Included Files
  ***********************************************************************************************************************/
 // Run Theme Setup Functions
@@ -68,7 +64,6 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
     wp_dequeue_style( 'wp-block-library-theme' );
     wp_dequeue_style( 'wc-blocks-style' ); // Remove WooCommerce block CSS
     wp_dequeue_style( 'classic-theme-styles' );
-    
 		
 	  // Fancybox (BS Replacement)
     // wp_enqueue_style('fancybox', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css', array(), array() );
@@ -82,8 +77,7 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
       ));
     endif;
 		
-	  wp_enqueue_script( 'wow', 'https://cdn.jsdelivr.net/npm/wowjs@1.1.3/dist/wow.min.js', array(), array(), false );
-	  wp_enqueue_script( 'js-call', get_theme_file_uri( 'assets/scripts/js-call.js' ), array( 'wow' ), array(), false );
+	  wp_enqueue_script( 'wow', get_theme_file_uri('assets/scripts/wow.min.js'), array(), array(), false );
 
 		if ( is_singular('post') ) :
 			wp_enqueue_script( 'gumshoe', get_theme_file_uri('assets/scripts/gumshoe.polyfills.min.js'), array(), array(), true );
@@ -286,8 +280,9 @@ function wp_ajax_live_search(){
 add_action('wp_ajax_wp_ajax_live_search_data_fetch' , 'wp_ajax_live_search');
 add_action('wp_ajax_nopriv_wp_ajax_live_search_data_fetch','wp_ajax_live_search');
 
+
 /**
- *
+ * Custom Table of Content based on "Easy Table of Contents" plugin
  */
 function cs_toc($atts){
 	global $post;
@@ -374,6 +369,7 @@ function cs_toc($atts){
 	return ob_get_clean();
 }
 add_shortcode('cs-toc', 'cs_toc');
+
 
 /**
  * Simple function to replace headings with id='title'

@@ -5,7 +5,6 @@ $author_url 	= get_the_author_meta( 'user_url', $author_id );
 $author_photo	= get_field('author_photo', 'user_'.$author_id );
 $post_date 		= get_the_date( 'M j, Y' );
 $post_m_date	= get_the_modified_date( 'M j, Y' );
-
 ?>
 <aside class="author-block-meta mb-4">
 	<div class="row align-items-center">

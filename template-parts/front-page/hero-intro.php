@@ -10,7 +10,7 @@
 				?>
 			</div>
 			<div class="col-lg-5 ps-lg-5 ps-xl-8 text-center text-lg-end">
-				<?php if ( has_post_thumbnail() ) the_post_thumbnail('full', array( 'loading' => 'eager', 'class' => 'img-fluid' )); ?>
+				<?php if ( has_post_thumbnail() ) the_post_thumbnail('full', array( 'loading' => 'eager', 'class' => 'img-fluid wow fadeIn' )); ?>
 			</div>
 		</div>
 	</div>

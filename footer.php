@@ -70,6 +70,12 @@
 <?php get_template_part('template-parts/popups/search-popup'); ?>
 <?php get_template_part('template-parts/popups/email-popup'); ?>
 
+<script>
+	window.onload = function () {
+		new WOW().init();
+	}
+</script>
+
 <?php wp_footer(); ?>
 </body>
 </html>
