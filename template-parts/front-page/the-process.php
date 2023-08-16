@@ -8,7 +8,7 @@ if ( $the_process ) : ?>
 				<div class="col-lg-6 mb-5 mb-lg-0">
 					<div class="left-side">
 						<?php if ( $the_process['left_side']['section_title'] ) : ?>
-							<header class="section-title mb-4">
+							<header class="section-title mb-5">
 								<h2 class=""><?= $the_process['left_side']['section_title']; ?></h2>
 							</header>
 						<?php endif; ?>

@@ -12,7 +12,7 @@ if ( $wp_query->have_posts() ) :
 	<section id="hero-testimonials" class="section-margin">
 		<div class="container">
 			
-			<header class="section-title text-center">
+			<header class="section-title text-center disable-highlight">
 				<h2><?php _e('Opinions Matter'); ?></h2>
 			</header>
 			

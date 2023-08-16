@@ -14,13 +14,8 @@ body.page-template-template-contact{
   }
 }
 #template-contact{
-
-  position: relative;
-  z-index: 1;
   background-position: bottom right;
-  article.hentry{
-    text-align: center;
-  }
+
   .entry-content{
     p br{
       @include media-breakpoint-down(sm){

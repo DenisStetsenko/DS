@@ -547,6 +547,25 @@ $slick-dot-color-active   : $color-black;
   }
 }
 
+@mixin heading-highlight($width : 13px, $left: 6px){
+  position: relative;
+  padding-left: rfs-value($left);
+  &:before {
+    content: '';
+    background: $color-primary;
+    width: rfs-value($width);
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: -1;
+    transform: translateY(-50%);
+    @include media-breakpoint-up(lg) {
+      width: rfs-value($width + 2);
+    }
+  }
+}
+
 /**
  * used on Header/Footer/Popups
  */

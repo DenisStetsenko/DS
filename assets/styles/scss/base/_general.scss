@@ -152,30 +152,40 @@ embed, iframe, object { max-width: 100%; }
 }
 
 header.section-title{
-  margin-top: $headings-top-negative-margin; // offset to have equal top/bottom paddings
-  margin-bottom: rfs-value(35px);
-  position: relative;
+  margin-bottom: rfs-value(30px);
+  @include media-breakpoint-up(md){
+    margin-bottom: rfs-value(40px);
+    margin-top: $headings-top-negative-margin; // offset to have equal top/bottom paddings
+  }
+  &:not(.text-center){
+    h2{
+      @include heading-highlight();
+    }
+  }
   h2{
     margin-bottom: 0;
-    @include bottom-highlight($height: 25%);
-    @include media-breakpoint-up(md){
-      @include bottom-highlight($height: 27%);
+    @include media-breakpoint-down(sm){
+      @include font-size(50px);
     }
   }
 }
 
 header#page-header{
-  margin-top: $headings-top-negative-margin; // offset to have equal top/bottom paddings
-  margin-bottom: rfs-value(28px);
+  margin-bottom: rfs-value(30px);
   @include media-breakpoint-up(md){
+    margin-top: $headings-top-negative-margin; // offset to have equal top/bottom paddings
     margin-bottom: rfs-value(40px);
+  }
+  &:not(.disable-highlight){
+    h1{
+      @include heading-highlight();
+    }
+  }
+  &.disable-highlight.text-center{
+    margin-bottom: rfs-fluid-value(20px);
   }
   h1{
     margin-bottom: 0;
-    @include bottom-highlight($bottom: 2px);
-    @include media-breakpoint-up(md){
-      @include bottom-highlight($bottom: 3px);
-    }
   }
 }
 

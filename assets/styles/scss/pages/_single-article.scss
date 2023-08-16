@@ -515,7 +515,9 @@
   // Related
   // ===================================================================================================================
   #related-posts {
-    margin-top: rfs-value(80px);
+    margin-top: rfs-value(96px);
+    padding-top: rfs-value(64px);
+    border-top: 1px solid $border-color;
   }
 
   // Sidebar
