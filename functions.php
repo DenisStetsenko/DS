@@ -77,14 +77,14 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
       ));
     endif;
 		
-	  wp_enqueue_script( 'wow', get_theme_file_uri('assets/scripts/wow.min.js'), array(), array(), false );
+	  wp_enqueue_script( 'wow', 'https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js', array(), array(), false );
 
 		if ( is_singular('post') ) :
 			wp_enqueue_script( 'gumshoe', get_theme_file_uri('assets/scripts/gumshoe.polyfills.min.js'), array(), array(), true );
 		endif;
 		
-    wp_enqueue_script( 'bootstrap', get_theme_file_uri('assets/scripts/bootstrap/bootstrap.min.js'), array('jquery'), array(), true );
-	  wp_register_script( 'slick', get_theme_file_uri('assets/scripts/slick.min.js'), array('jquery'), array(), true );
+    wp_enqueue_script( 'bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.min.js', array('jquery'), array(), true );
+	  wp_register_script( 'slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array('jquery'), array(), true );
 
     //wp_enqueue_style( 'main', get_theme_file_uri('assets/styles/css/main.css'), array(), time() );
     wp_enqueue_style( 'main-min', get_theme_file_uri('assets/styles/css/main.min.css'), array(), null );
