@@ -17,7 +17,10 @@ if ( $the_process ) : ?>
 								<?= $the_process['left_side']['content']; ?>
 							</div>
 						<?php endif; ?>
-						<?= $the_process['left_side']['image'] ? '<img class="img-fluid mx-auto d-none d-lg-block" src="'.$the_process['left_side']['image']['sizes']['medium_large'].'" loading="lazy" alt="'.$the_process['left_side']['image']['alt'].'">' : null ; ?>
+						<?= $the_process['left_side']['image'] ? '<figure class="image-container">
+																												<img class="loading-image img-fluid mx-auto d-none d-lg-block" src="'.$the_process['left_side']['image']['sizes']['medium_large'].'" loading="lazy" alt="'.$the_process['left_side']['image']['alt'].'">
+																												<figcaption class="placeholder"></figcaption>
+																											</figure>' : null ; ?>
 					</div>
 				</div>
 				<div class="col-lg-5 offset-lg-1 ps-lg-0">

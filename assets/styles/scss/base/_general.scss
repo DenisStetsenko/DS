@@ -197,3 +197,29 @@ header#page-header{
 .ls-lg{
   @include custom-letter-spacing();
 }
+
+.image-container{
+  position: relative;
+  .loading-image{
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity 1000ms linear;
+    transition: opacity 1000ms linear;
+    &.loaded{
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  .placeholder {
+    background-image: url('../../images/ajax-loader.gif');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
