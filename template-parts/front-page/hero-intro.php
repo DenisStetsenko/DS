@@ -1,7 +1,7 @@
 <div id="front-hero-intro" class="bg-light-gray">
 	<div class="container">
 		<div class="row align-items-center">
-			<div class="col-lg-7 mb-6 mb-lg-0 text-center text-lg-start wow fadeInLeft">
+			<div class="col-lg-7 mb-6 mb-lg-0 text-center text-lg-start">
 				<?php
 				while ( have_posts() ) {
 					the_post();
@@ -10,7 +10,7 @@
 				?>
 			</div>
 			<div class="col-lg-5 ps-lg-5 ps-xl-8 text-center text-lg-end">
-				<?php if ( has_post_thumbnail() ) the_post_thumbnail('full', array( 'loading' => 'eager', 'class' => 'img-fluid ' )); ?>
+				<?php if ( has_post_thumbnail() ) the_post_thumbnail('full', array( 'loading' => 'eager', 'class' => 'img-fluid' )); ?>
 			</div>
 		</div>
 	</div>
