@@ -1,17 +1,17 @@
 .entry-content{
-  --wp--preset--spacing--20 : rfs-value(5px);
-  --wp--preset--spacing--30 : rfs-value(10px);
-  --wp--preset--spacing--40 : rfs-value(15px);
-  --wp--preset--spacing--50 : rfs-value(20px);
-  --wp--preset--spacing--60 : rfs-value(25px);
-  --wp--preset--spacing--70 : rfs-value(30px);
-  --wp--preset--spacing--80 : rfs-value(35px);
+  --wp--preset--spacing--20: 1rem;
+  --wp--preset--spacing--30: 1.5rem;
+  --wp--preset--spacing--40: 2rem;
+  --wp--preset--spacing--50: 2.5rem;
+  --wp--preset--spacing--60: 3rem;
+  --wp--preset--spacing--70: 3.5rem;
+  --wp--preset--spacing--80: 4rem;
 
-  --wp--preset--spacing--x-small  : rfs-value(20px);
-  --wp--preset--spacing--small    : rfs-value(30px);
-  --wp--preset--spacing--medium   : rfs-value(40px);
-  --wp--preset--spacing--large    : rfs-value(60px);
-  --wp--preset--spacing--x-large  : rfs-value(80px);
+  --wp--preset--spacing--x-small  : 1.25rem;  // 20px
+  --wp--preset--spacing--small    : 1.875rem; // 30px
+  --wp--preset--spacing--medium   : 2.5rem;   // 40px
+  --wp--preset--spacing--large    : 3.75rem;  // 60px
+  --wp--preset--spacing--x-large  : 5rem;     // 80px
 
   // Block Editor => Image
   .wp-block-image{
@@ -252,11 +252,45 @@
       width: 100%;
       max-width: rfs-value(250px);
     }
+    &.is-style-dots{
+      background: none;
+      border: none;
+      text-align: center;
+      &:before{
+        color: currentColor;
+        content: "···";
+        font-size: 1.5em;
+        letter-spacing: 2em;
+        padding-left: 2em;
+      }
+    }
     &.has-primary-background-color{
+      color: $color-primary;
       border-top-color: $color-primary;
     }
     &.has-primary-dark-background-color{
+      color: $color-primary-dark;
       border-top-color: $color-primary-dark;
+    }
+    &.has-black-background-color{
+      color: $color-black;
+      border-top-color: $color-black;
+    }
+    &.has-white-background-color{
+      color: $color-white;
+      border-top-color: $color-white;
+    }
+    &.has-gray-background-color{
+      color: $color-gray;
+      border-top-color: $color-gray;
+    }
+    &.has-light-gray-background-color{
+      color: $color-light-gray;
+      border-top-color: $color-light-gray;
+    }
+    &.has-border-gray-background-color{
+      color: $color-border-gray;
+      border-top-color: $color-border-gray;
     }
   }
 
