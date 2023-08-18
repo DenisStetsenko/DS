@@ -22,16 +22,16 @@ if ( $args && ! empty($args['layout']) ) {
 			$layout = 'two-cols col-md-6';
 			break;
 		case '3-cols' :
-			$layout = 'three-cols col-md-6 col-lg-4';
+			$layout = 'three-cols col-md-6 col-xl-4';
 			break;
 		case '4-cols' :
-			$layout = 'four-cols col-md-6 col-lg-3';
+			$layout = 'four-cols col-md-6 col-xl-3';
 			break;
 		default:
-			$layout = 'col-md-6 col-lg-4';
+			$layout = 'col-md-6 col-xl-4';
 	}
 } else {
-	$layout = 'col-md-6 col-lg-4';
+	$layout = 'col-md-6 col-xl-4';
 }
 
 // Include Author / Date / Reading Time
@@ -88,7 +88,7 @@ $post_html_attrs .= $layout;
 ?>
 <div class="<?= $post_html_attrs; ?>">
 	<article class="post-loop-item rounded-3 position-relative border flex-grow-1 bg-white overflow-hidden">
-		<div class="bg rounded-top-3 d-block" style="background: url(<?= get_the_post_thumbnail_url() ? get_the_post_thumbnail_url(get_the_ID(), 'large') : 'https://place-hold.it/420x250'; ?>) no-repeat center/cover"></div>
+		<div class="bg rounded-top-3 d-block" style="background: url(<?= get_the_post_thumbnail_url() ? get_the_post_thumbnail_url(get_the_ID(), 'medium_large') : 'https://place-hold.it/420x250'; ?>) no-repeat center/cover"></div>
 		<div class="inner">
 			<?php
 			//if ( $main_term ) echo '<span class="category rounded bg-light-gray text-uppercase fw-bolder border font-secondary text-gray d-inline-block">' . get_cat_name($main_term) . '</span>';

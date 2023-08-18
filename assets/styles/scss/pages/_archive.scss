@@ -73,6 +73,9 @@ header#category-heading{
     .bg {
       position: relative;
       @include responsive-ratio-background(16, 9, true);
+      @include media-breakpoint-up(sm){
+        @include responsive-ratio-background(16, 11, true);
+      }
       &:after {
         content: "";
         -o-transition: opacity 0.4s ease;
