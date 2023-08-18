@@ -296,7 +296,7 @@
           max-width: calc(100% - 150px);
         }
         @include media-breakpoint-up(xl) {
-          max-width: calc(100% - 350px);
+          max-width: calc(100% - 400px);
         }
       }
 
@@ -304,17 +304,7 @@
         flex: 0 0 auto;
         width: 100%;
         @include media-breakpoint-up(xl) {
-          width: rfs-value(200px);
-        }
-
-        .btn {
-          width: 100%;
-          @include media-breakpoint-up(sm) {
-            max-width: calc(100% - 165px);
-          }
-          @include media-breakpoint-up(xl) {
-            max-width: 100%;
-          }
+          max-width: 250px;
         }
       }
 
