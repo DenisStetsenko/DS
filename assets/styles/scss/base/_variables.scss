@@ -142,8 +142,8 @@ $form-text-margin-top : 8px;
 
 /* Buttons Genera; */
 $btn-font-family      : $font-secondary;
-$btn-font-size        : 1.063rem;   // 17px
-$btn-font-size-sm     : 0.938rem;   // 15px
+$btn-font-size        : 1.125rem;   // 17px
+$btn-font-size-sm     : 1rem;   // 15px
 $btn-font-weight      : 600;
 $btn-line-height      : 1.1;
 $btn-white-space      : 'nowrap';
@@ -355,7 +355,7 @@ $slick-dot-color-active   : $color-black;
 }
 
 @mixin responsive-ratio-background($x,$y, $pseudo: false) {
-  $padding: unquote(( $y / $x ) * 100 + '%');
+  $padding: calc((#{$y} / #{$x}) * 100%);
   @if $pseudo {
     &:before {
       @include pseudo($pos: relative);
@@ -383,8 +383,6 @@ $slick-dot-color-active   : $color-black;
       font-size: $fs-font-size;
     }
     @else {
-      // If $fs-font-size is a key that exists in
-      // $fs-breakpoints, use the value
       @if map-has-key($fs-breakpoints, $fs-breakpoint) {
         $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
       }
@@ -396,7 +394,7 @@ $slick-dot-color-active   : $color-black;
 }
 
 @mixin custom-letter-spacing($custom-letter-spacing : 0.03rem){
-  letter-spacing: $custom-letter-spacing / 2;
+  letter-spacing: calc($custom-letter-spacing / 2);
   @include media-breakpoint-up(lg){
     letter-spacing: $custom-letter-spacing;
   }

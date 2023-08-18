@@ -4,8 +4,7 @@
   "settings": {
     "layout": {
       "contentSize": "856px",
-      "wideSize": "1300px",
-      "horizontalMargin": true
+      "wideSize": "1300px"
     },
     "border": {
       "radius": true,
@@ -101,7 +100,10 @@
       "padding": true,
       "blockGap": true,
       "customSpacingSize": true,
-      "units": [ "px","rem" ]
+      "units": [
+        "px",
+        "rem"
+      ]
     }
   },
   "styles": {
@@ -112,6 +114,80 @@
       "fontFamily": "var(--wp--preset--font-family--lora)",
       "lineHeight": "1.65",
       "fontSize": "20px"
+    },
+    "spacing": {
+      "padding": {
+        "top": "0",
+        "right": "30px",
+        "bottom": "0",
+        "left": "30px"
+      }
+    },
+    "elements": {
+      "button": {
+        "typography": {
+          "fontWeight": "600",
+          "fontSize": "1.125rem",
+          "lineHeight": "1.1",
+          "fontFamily": "var(--wp--preset--font-family--inter)"
+        },
+        "color": {
+          "background": "#fdd11f",
+          "text": "#292929"
+        },
+        "border": {
+          "radius": "25px",
+          "width": "0",
+          "style": "solid"
+        },
+        "spacing": {
+          "padding": {
+            "top": "15px",
+            "right": "40px",
+            "bottom": "15px",
+            "left": "40px"
+          }
+        }
+      },
+      "heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--inter)",
+          "fontWeight": "800"
+        },
+        "color": {
+          "text": "#292929"
+        }
+      },
+      "h1": {
+        "typography": {
+          "fontSize": "48px",
+          "lineHeight": "1.2"
+        }
+      },
+      "h2": {
+        "typography": {
+          "fontSize": "36px",
+          "lineHeight": "1.25"
+        },
+        "spacing": {
+          "margin": {
+            "top": "45px",
+            "bottom": "9px"
+          }
+        }
+      },
+      "h3": {
+        "typography": {
+          "fontSize": "28px",
+          "lineHeight": "1.25"
+        },
+        "spacing": {
+          "margin": {
+            "top": "45px",
+            "bottom": "9px"
+          }
+        }
+      }
     }
   }
 }

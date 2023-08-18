@@ -1,8 +1,10 @@
-h1, h2, h3, h4, h5 {
-	color: #292929;
-	font-family: 'Inter', sans-serif;
-	margin: 30px 0 5px 0;
-	font-weight: 800;
+.editor-rich-text ta,
+.ta-editor-shortcode {
+	border: 2px dashed #5333ed !important;
+	padding: 4px 10px;
+	font-weight: 700;
+	display: inline-block;
+	box-shadow: none;
 }
 
 p {
@@ -19,16 +21,7 @@ figure {
 }
 
 .wp-block-buttons {
-	font-family: 'Inter', sans-serif;
-}
-
-.wp-block-buttons .wp-block-button__link {
-	color: #292929;
-	background-color: #fdd11f;
-	padding: 15px 35px;
-	border-radius: 25px;
-	font-weight: 600;
-	line-height: 1.1 !important;
+	margin-block-end: 24px;
 }
 
 .wp-block a {
@@ -38,24 +31,22 @@ figure {
 	font-weight: 600;
 }
 
-h1.wp-block-post-title{ font-size: 48px; line-height: 1.2 }
-h2.wp-block-heading{ font-size: 36px; line-height: 1.25 }
-h3.wp-block-heading{ font-size: 28px; line-height: 1.25 }
-
-.editor-rich-text ta, ta, .ta-editor-shortcode {
-	border: 2px dashed #5333ed !important;
-	padding: 4px 10px;
-	font-weight: 700;
-	display: inline-block;
-	box-shadow: none;
-}
-
 /* TINY MCE */
 body.mce-content-body{
-		color: #292929;
-		font-family: 'Lora', serif;
-		font-size: 1.125rem;
-		line-height: 1.65;
+	color: #292929;
+	font-family: 'Lora', serif;
+	font-size: 1.125rem;
+	line-height: 1.65;
+}
+body.mce-content-body h1,
+body.mce-content-body h2,
+body.mce-content-body h3,
+body.mce-content-body h4,
+body.mce-content-body h5{
+	color: #292929;
+	font-family: 'Inter', sans-serif;
+	margin: 30px 0 5px 0;
+	font-weight: 800;
 }
 body.mce-content-body a:not(.btn){
     color: #292929;

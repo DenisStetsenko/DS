@@ -1,17 +1,17 @@
 .entry-content{
-  --wp--preset--spacing--20 : 5px;
-  --wp--preset--spacing--30 : 10px;
-  --wp--preset--spacing--40 : 15px;
-  --wp--preset--spacing--50 : 20px;
-  --wp--preset--spacing--60 : 25px;
-  --wp--preset--spacing--70 : 30px;
-  --wp--preset--spacing--80 : 35px;
+  --wp--preset--spacing--20 : rfs-value(5px);
+  --wp--preset--spacing--30 : rfs-value(10px);
+  --wp--preset--spacing--40 : rfs-value(15px);
+  --wp--preset--spacing--50 : rfs-value(20px);
+  --wp--preset--spacing--60 : rfs-value(25px);
+  --wp--preset--spacing--70 : rfs-value(30px);
+  --wp--preset--spacing--80 : rfs-value(35px);
 
-  --wp--preset--spacing--x-small  : 20px;
-  --wp--preset--spacing--small    : 30px;
-  --wp--preset--spacing--medium   : 40px;
-  --wp--preset--spacing--large    : 60px;
-  --wp--preset--spacing--x-large  : 80px;
+  --wp--preset--spacing--x-small  : rfs-value(20px);
+  --wp--preset--spacing--small    : rfs-value(30px);
+  --wp--preset--spacing--medium   : rfs-value(40px);
+  --wp--preset--spacing--large    : rfs-value(60px);
+  --wp--preset--spacing--x-large  : rfs-value(80px);
 
   // Block Editor => Image
   .wp-block-image{
@@ -28,9 +28,6 @@
   }
 
   // Block Editor => Heading
-  .wp-block-heading{
-
-  }
   .has-small-font-size {
     @include font-size($h5-font-size);
   }
@@ -120,6 +117,7 @@
     display: flex;
     flex-wrap: wrap;
     margin: $paragraph-margin-bottom 0 $paragraph-margin-bottom;
+    gap: 24px;
     &.is-content-justification-center{
       justify-content: center;
     }
