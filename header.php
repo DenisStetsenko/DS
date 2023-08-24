@@ -11,7 +11,6 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name='ir-site-verification-token' value='-890410088'>
   <link rel="profile" href="http://gmpg.org/xfn/11">
 	
 	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
