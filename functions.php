@@ -299,7 +299,7 @@ function cs_toc($atts){
 	
 	if ( $summary_list && array_filter($summary_list) ) :
 		echo '<div id="ez-toc-container" class="custom-ez-toc counter-hierarchy ez-toc-counter ez-toc-container-direction">
-						
+						<p class="ez-toc-title">Table of Contents</p>
 						<nav id="'.esc_html($atts['navid']).'">
 						<ul class="ez-toc-list ez-toc-list-level-1">';
 		
