@@ -148,7 +148,6 @@
       font-weight: 800;
       margin-bottom: rfs-value(15px);
       line-height: 1.25;
-      display: inline-block !important;
       @include font-size(36px);
 
       @include media-breakpoint-only(lg){
