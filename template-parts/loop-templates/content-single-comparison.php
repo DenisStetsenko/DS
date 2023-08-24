@@ -60,7 +60,7 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 					</div>
 					
 					<div class="d-flex align-items-center justify-content-end <?= $top_picks['preview'] ? 'column-link' : 'col-lg-4'; ?> text-lg-end mt-4 mt-xl-0">
-						<?= acf_link($top_picks['link'], 'btn btn-primary btn-sm btn-price affiliate-link w-100', 'nofollow noreferrer noopener external'); ?>
+						<?= acf_link($top_picks['link'], 'btn btn-primary btn-sm btn-price affiliate-link w-100', 'nofollow noopener external'); ?>
 					</div>
 					
 				</div>
@@ -99,7 +99,7 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 						<?= $summary_list_item['heading']['subtitle'] ? '<p class="subtitle mb-2 font-secondary text-black fw-bold text-uppercase fs-4 ls-lg">'.$summary_list_item['heading']['subtitle'].'</p>' 	: null; ?>
 						<h3 class="title m-0">
 							<span class="number"><?= $i; ?>.</span>
-							<a class="thirstylink" title="<?= esc_attr($summary_list_item['link']['title']); ?>" href="<?= $summary_list_item['link'] ? esc_url($summary_list_item['link']['url']) : '#'; ?>"<?= $summary_list_item['link'] && $summary_list_item['link']['target'] ? ' target="_blank" rel="nofollow noopener noreferrer external"' : ''; ?>><?= sanitize_text_field($summary_list_item['heading']['title']); ?></a>
+							<a class="thirstylink" title="<?= esc_attr($summary_list_item['link']['title']); ?>" href="<?= $summary_list_item['link'] ? esc_url($summary_list_item['link']['url']) : '#'; ?>"<?= $summary_list_item['link'] && $summary_list_item['link']['target'] ? ' target="_blank" rel="nofollow noopener external"' : ''; ?>><?= sanitize_text_field($summary_list_item['heading']['title']); ?></a>
 						</h3>
 					</header>
 					<!-- / PRODUCT HEADING -->
@@ -114,7 +114,7 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 					<!-- / PRODUCT BIG IMAGE -->
 
 					<!-- AFFILIATE URL BUTTON -->
-					<?= acf_link($summary_list_item['link'], 'btn btn-primary btn-price affiliate-link d-table mx-auto mt-6 mb-5', 'nofollow noreferrer noopener external'); ?>
+					<?= acf_link($summary_list_item['link'], 'btn btn-primary btn-price affiliate-link d-table mx-auto mt-6 mb-5', 'nofollow noopener external'); ?>
 					<!-- / AFFILIATE URL BUTTON -->
 
 					<!-- PRODUCT SUMMARY -->
@@ -162,7 +162,7 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 					<?php endif; ?>
 
 					<!-- AFFILIATE URL BUTTON -->
-					<?= acf_link($summary_list_item['link'], 'btn btn-primary btn-price affiliate-link d-table mx-auto mt-5', 'nofollow noreferrer noopener'); ?>
+					<?= acf_link($summary_list_item['link'], 'btn btn-primary btn-price affiliate-link d-table mx-auto mt-5', 'nofollow noopener'); ?>
 					<!-- / AFFILIATE URL BUTTON -->
 					
 				</section>

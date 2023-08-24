@@ -164,7 +164,7 @@ if ( ! class_exists( 'WP_Custom_Bootstrap_Navwalker' ) ) {
 
       $atts['target'] = ! empty( $item->target ) ? $item->target : '';
       if ( '_blank' === $item->target && empty( $item->xfn ) ) { // Thanks to LukaszJaro, see https://github.com/understrap/understrap/issues/973.
-        $atts['rel'] = 'noopener noreferrer';
+        $atts['rel'] = 'noopener';
       } else {
         $atts['rel'] = $item->xfn;
       }
