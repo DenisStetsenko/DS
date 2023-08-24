@@ -99,7 +99,13 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 						<?= $summary_list_item['heading']['subtitle'] ? '<p class="subtitle mb-2 font-secondary text-black fw-bold text-uppercase fs-4 ls-lg">'.$summary_list_item['heading']['subtitle'].'</p>' 	: null; ?>
 						<h3 class="title m-0">
 							<span class="number"><?= $i; ?>.</span>
-							<a class="thirstylink" title="<?= esc_attr($summary_list_item['link']['title']); ?>" href="<?= $summary_list_item['link'] ? esc_url($summary_list_item['link']['url']) : '#'; ?>"<?= $summary_list_item['link'] && $summary_list_item['link']['target'] ? ' target="_blank" rel="nofollow noopener external"' : ''; ?>><?= sanitize_text_field($summary_list_item['heading']['title']); ?></a>
+							<?php if ( $summary_list_item['link'] ) : ?>
+								<a class="affiliate-link" title="<?= esc_attr($summary_list_item['link']['title']); ?>" href="<?= esc_url($summary_list_item['link']['url']); ?>"<?= $summary_list_item['link']['target'] ? ' target="_blank" rel="nofollow noopener external"' : ''; ?>>
+									<?= sanitize_text_field($summary_list_item['heading']['title']); ?>
+								</a>
+							<?php else : ?>
+								<?= sanitize_text_field($summary_list_item['heading']['title']); ?>
+							<?php endif; ?>
 						</h3>
 					</header>
 					<!-- / PRODUCT HEADING -->
