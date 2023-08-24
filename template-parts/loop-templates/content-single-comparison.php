@@ -139,11 +139,11 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 							<?php if ( $summary_list_item['pros_and_cons']['cons'] ) : ?>
 								<div class="column cons">
 									<div class="heading fw-bold font-secondary text-center"><span><?php _e('Cons', 'wp-theme'); ?></span></div>
-									<div class="list cons-list list-unstyled m-0">
+									<ul class="list cons-list list-unstyled m-0">
 										<?php foreach ($summary_list_item['pros_and_cons']['cons'] as $list_item) : ?>
 											<li><span class="icon"></span><?= $list_item['list_item']; ?></li>
 										<?php endforeach; ?>
-									</div>
+									</ul>
 								</div>
 							<?php endif; ?>
 							
