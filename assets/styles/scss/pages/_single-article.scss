@@ -90,6 +90,7 @@
     border-bottom: 1px solid $color-border-gray;
 
     header.entry-header {
+      max-width: 910px;
       margin-top: rfs-value(-5px); // offset to have equal top/bottom paddings
 
       h1.entry-title {
