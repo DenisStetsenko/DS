@@ -111,6 +111,7 @@ header#category-heading{
       }
 
       .subtitle {
+        line-height: 1.5;
         @include font-size(16px);
       }
     }
