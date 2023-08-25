@@ -84,28 +84,31 @@
     @include entry-content-heading-styling();
   }
 
-  header.entry-header {
-    margin-top: rfs-value(-5px); // offset to have equal top/bottom paddings
+  .single-entry-heading{
     padding-bottom: 1.6rem;
     margin-bottom: 2rem;
     border-bottom: 1px solid $color-border-gray;
 
-    h1.entry-title {
-      line-height: 1.2;
-      position: relative;
-      padding-left: rfs-value(6px);
-      &:before {
-        content: '';
-        background: $color-primary;
-        width: rfs-value(13px);
-        height: 100%;
-        position: absolute;
-        left: 0;
-        top: 50%;
-        z-index: -1;
-        transform: translateY(-50%);
-        @include media-breakpoint-up(lg) {
-          width: rfs-value(15px);
+    header.entry-header {
+      margin-top: rfs-value(-5px); // offset to have equal top/bottom paddings
+
+      h1.entry-title {
+        line-height: 1.2;
+        position: relative;
+        padding-left: rfs-value(6px);
+        &:before {
+          content: '';
+          background: $color-primary;
+          width: rfs-value(13px);
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          z-index: -1;
+          transform: translateY(-50%);
+          @include media-breakpoint-up(lg) {
+            width: rfs-value(15px);
+          }
         }
       }
     }
