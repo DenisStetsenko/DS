@@ -91,7 +91,7 @@ header#masthead{
     font-family: $font-secondary;
     .nav-item{
       text-transform: uppercase;
-      @include custom-letter-spacing(0.03rem);
+      @include custom-letter-spacing(0.02rem);
       margin: rfs-value(0 22px);
       &.active{
         .nav-link{
