@@ -85,8 +85,8 @@
   }
 
   .single-entry-heading{
-    padding-bottom: 1.6rem;
-    margin-bottom: 2rem;
+    padding: rfs-fluid-value(50px) 0;
+    margin-bottom: rfs-fluid-value(50px);
     border-bottom: 1px solid $color-border-gray;
 
     header.entry-header {

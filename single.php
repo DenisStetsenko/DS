@@ -6,14 +6,18 @@
  */
 get_header(); ?>
 
-  <div id="single-article-template" class="post-review-layout main-area-padding">
+  <div id="single-article-template" class="post-review-layout main-area-padding pt-0">
 		<main id="main" class="site-main">
 
-			<div class="container">
+			<div class="single-entry-heading bg-light-gray">
+				<div class="container">
+					<?php get_template_part('template-parts/single-article/post-categories'); ?>
+					<?php get_template_part('template-parts/single-article/entry-header'); ?>
+				</div>
+			</div>
 			
-			  <?php get_template_part('template-parts/single-article/post-categories'); ?>
-			  <?php get_template_part('template-parts/single-article/entry-header'); ?>
-
+			<div class="container">
+				
 				<div class="row">
 					
 					<div class="col-lg-8">
