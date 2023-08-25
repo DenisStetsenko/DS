@@ -36,17 +36,22 @@ header#category-heading{
   .item {
     // 4 cols
     &.four-cols {
-      .entry-title{ @include font-size(20px); }
-      .subtitle { @include font-size(14px); }
+      .inner{
+        .entry-title{ @include font-size(24px); }
+        .subtitle { @include font-size(15px); }
+      }
     }
     // 3 cols
     &.three-cols{
-      .entry-title{ @include font-size(23px); }
-      .subtitle { @include font-size(15px); }
+      .inner{
+        .entry-title{ @include font-size(26px); }
+      }
     }
     // 2 cols
     &.two-cols{
-      .entry-title{ @include font-size(26px) }
+      .inner{
+        .entry-title{ @include font-size(26px) }
+      }
     }
 
     .article-author {
