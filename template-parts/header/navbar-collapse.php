@@ -23,7 +23,7 @@
     <?php
     	wp_nav_menu( array(
 				'theme_location'  => 'header-menu',
-				'container_class' => 'collapse navbar-collapse justify-content-center pe-10',
+				'container_class' => 'collapse navbar-collapse justify-content-center pe-xl-10',
 				'container_id'    => 'navbarNavDropdown',
 				'menu_class'      => 'navbar-nav ',
 				'fallback_cb'     => '',
