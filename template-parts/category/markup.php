@@ -14,18 +14,18 @@ if ( $show_category_sidebar ) $layout = '2-cols';
 				if ( is_category() ) {
 					$category = get_category(get_query_var('cat'));
 					if ( $category && ! is_wp_error($category) ) {
-						echo '<i class="icon icon-'.$category->slug.'"></i><span>'.get_the_archive_title().'</span>';
+						echo '<span>'.get_the_archive_title().'</span>';
 					}
 				}
 				elseif ( is_author() ) {
-					echo 'The Latest Articles by ' . nl2br(get_the_author_meta('first_name'));
+					echo '<span>The Latest Articles by ' . nl2br(get_the_author_meta('first_name')) . '</span>';
 				}
 				elseif ( is_home() ) {
-					echo 'The Latest Articles';
+					echo '<span>The Latest Articles</span>';
 				}
 				?>
 			</h1>
-			<?= is_category() && category_description() ? '<div class="cat-description">'. category_description() .'</div>' : ''; ?>
+			<?= is_category() && category_description() ? '<div class="cat-description ms-0">'. category_description() .'</div>' : ''; ?>
 		</header>
 		
 		<div class="row">
