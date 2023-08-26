@@ -69,28 +69,26 @@ header#category-heading{
           -webkit-transform: translateY(-4px) translate3d(0,0,0) translateZ(0);
           transform: translateY(-4px) translate3d(0,0,0) translateZ(0);
           box-shadow: 0 0.25rem 2.188rem 0 rgba(#d8d8d8,0.95), 0 0 0 transparent;
-        .bg {
-          &:after { opacity: 0.4; } // Todo: do we need it?
-        }
+        //.bg {
+        //  &:after { opacity: 0.4; } // Todo: do we need it?
+        //}
       }
     }
 
     .bg {
       position: relative;
       @include responsive-ratio-background(16, 9, true);
-      @include media-breakpoint-up(sm){
-        @include responsive-ratio-background(16, 11, true);
-      }
-      &:after {
-        content: "";
-        -o-transition: opacity 0.4s ease;
-        transition: opacity 0.4s ease;
-        -webkit-transition: opacity 0.4s ease;
-        -moz-transition: opacity 0.4s ease;
-        -ms-transition: opacity 0.4s ease;
-        @include full-cover();
-        @include gradient-y(transparent, rgba(0,0,0,.45), 60%, 100%);
-      }
+      border-bottom: 1px solid $color-border-gray;
+      //&:after {
+      //  content: "";
+      //  -o-transition: opacity 0.4s ease;
+      //  transition: opacity 0.4s ease;
+      //  -webkit-transition: opacity 0.4s ease;
+      //  -moz-transition: opacity 0.4s ease;
+      //  -ms-transition: opacity 0.4s ease;
+      //  @include full-cover();
+      //  @include gradient-y(transparent, rgba(0,0,0,.45), 60%, 100%);
+      //}
     }
 
     .inner{
