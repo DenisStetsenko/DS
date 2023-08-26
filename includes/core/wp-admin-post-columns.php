@@ -13,9 +13,9 @@ add_filter( "manage_post_posts_columns", function ( $columns ) {
 	return array_merge ( $columns, array (
 		'title'       => __ ('Title'),
 		'post-layout' => __ ('Layout'),
-		'author'      => __ ('Author'),
 		'categories'  => __ ('Categories'),
-		'date'        => __('Date')
+		'date'        => __('Date'),
+		'author'      => __ ('Author'),
 //	'designation' => __ ( 'Designation' ),
 //	'image'       => __ ( 'Image' ),
 	) );
@@ -42,8 +42,9 @@ add_action( "manage_post_posts_custom_column", function ( $column_name, $post_id
 
 
 add_action( 'admin_print_styles-edit.php', function() {
-	echo '<style>.fixed #author.column-author{width: 70px;}
-								 #post-layout{ width: 130px; text-align: center }
+	echo '<style>.fixed #author.column-author{ width: 70px; }
+							 .fixed #categories.column-categories{ width: 8% }
+							 .fixed #post-layout.column-post-layout{ width: 8%; text-align: center }
  								 #post-layout .column-thumb img{ max-width: 100%; height: auto }
  								 .post-layout.column-post-layout { text-align: center }
         </style>';
