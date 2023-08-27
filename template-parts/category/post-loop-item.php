@@ -46,7 +46,7 @@ if ( $args && ! empty($args['include-author-block']) && $args['include-author-bl
 	$post_m_date	= get_the_modified_date( 'M j, Y' );
 	$format_post_m_date = date("Y-m-d", strtotime($post_m_date));
 	
-	$author_block_html .= '<figure class="article-author font-secondary fs-5 mb-1 text-gray">';
+	$author_block_html .= '<figure class="article-author font-secondary fs-5 mt-3 mb-0 text-gray">';
 		$author_block_html .= '<figcaption>';
 	
 			$author_block_html .= '<ul class="list-inline mb-0">';
@@ -94,13 +94,11 @@ $post_html_attrs .= $layout;
 			//if ( $main_term ) echo '<span class="category rounded bg-light-gray text-uppercase fw-bolder border font-secondary text-gray d-inline-block">' . get_cat_name($main_term) . '</span>';
 			the_title( '<h3 class="entry-title mb-2">', '</h3>' );
 			
-			echo $author_block_html != '' ? $author_block_html : '';
-			
 			if ( $subtitle ) : ?>
 				<p class="subtitle font-secondary mb-0"><?= wp_strip_all_tags($subtitle); ?></p>
 			<?php endif;
 			
-			
+			echo $author_block_html != '' ? $author_block_html : '';
 			?>
 		</div>
 		<a title="<?php _e('Read the Article', 'wp-theme'); ?>" aria-label="<?php _e('Read the Article', 'wp-theme'); ?>"
