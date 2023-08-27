@@ -69,9 +69,6 @@ header#category-heading{
           -webkit-transform: translateY(-4px) translate3d(0,0,0) translateZ(0);
           transform: translateY(-4px) translate3d(0,0,0) translateZ(0);
           box-shadow: 0 0.25rem 2.188rem 0 rgba(#d8d8d8,0.95), 0 0 0 transparent;
-        //.bg {
-        //  &:after { opacity: 0.4; } // Todo: do we need it?
-        //}
       }
     }
 
@@ -79,22 +76,12 @@ header#category-heading{
       position: relative;
       @include responsive-ratio-background(16, 9, true);
       border-bottom: 1px solid $color-border-gray;
-      //&:after {
-      //  content: "";
-      //  -o-transition: opacity 0.4s ease;
-      //  transition: opacity 0.4s ease;
-      //  -webkit-transition: opacity 0.4s ease;
-      //  -moz-transition: opacity 0.4s ease;
-      //  -ms-transition: opacity 0.4s ease;
-      //  @include full-cover();
-      //  @include gradient-y(transparent, rgba(0,0,0,.45), 60%, 100%);
-      //}
     }
 
     .inner{
-      padding: rfs-value(26px);
+      padding: rfs-value(18px 20px 25px 20px);
       @include media-breakpoint-up(lg){
-        padding: rfs-value(28px 30px);
+        padding: rfs-value(18px 20px 25px 20px);
       }
       .category {
         padding: rfs-value(8px 12px 7px 12px);
