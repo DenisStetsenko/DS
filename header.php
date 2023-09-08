@@ -16,18 +16,6 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="<?= site_url( '/favicon/apple-touch-icon.png' ); ?>">
 	<link rel="icon" type="image/png" sizes="32x32" href="<?= site_url( '/favicon/favicon-32x32.png' ); ?>">
 	<link rel="icon" type="image/png" sizes="16x16" href="<?= site_url( '/favicon/favicon-16x16.png' ); ?>">
-
-	<link rel="preload" href="<?= get_theme_file_uri('assets/fonts/google-fonts/lora/Lora-Regular.woff2'); ?>" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="<?= get_theme_file_uri('assets/fonts/google-fonts/lora/Lora-Italic.woff2'); ?>" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="<?= get_theme_file_uri('assets/fonts/google-fonts/lora/Lora-Bold.woff2'); ?>" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="<?= get_theme_file_uri('assets/fonts/google-fonts/lora/Lora-BoldItalic.woff2'); ?>" as="font" type="font/woff2" crossorigin>
-	
-	<link rel="preload" href="<?= get_theme_file_uri('assets/fonts/google-fonts/inter/Inter-Light.woff2'); ?>" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="<?= get_theme_file_uri('assets/fonts/google-fonts/inter/Inter-Regular.woff2'); ?>" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="<?= get_theme_file_uri('assets/fonts/google-fonts/inter/Inter-Medium.woff2'); ?>" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="<?= get_theme_file_uri('assets/fonts/google-fonts/inter/Inter-SemiBold.woff2'); ?>" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="<?= get_theme_file_uri('assets/fonts/google-fonts/inter/Inter-Bold.woff2'); ?>" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="<?= get_theme_file_uri('assets/fonts/google-fonts/inter/Inter-ExtraBold.woff2'); ?>" as="font" type="font/woff2" crossorigin>
 	
 	<?php wp_head(); ?>
 </head>

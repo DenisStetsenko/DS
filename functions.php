@@ -115,7 +115,33 @@ if ( ! function_exists( 'wp_custom_customizer_custom_logo' ) ) {
 }
 add_action('customize_register', 'wp_custom_customizer_custom_logo');
 
+/**
+ * Preload Local Google Fonts
+ */
+if ( ! function_exists( 'wp_custom_preload_local_fonts' ) ) {
+	function wp_custom_preload_local_fonts() {
+		$fonts = [
+			'assets/fonts/lora/Lora-Regular.woff2',
+			'assets/fonts/lora/Lora-Italic.woff2',
+			'assets/fonts/lora/Lora-Bold.woff2',
+			'assets/fonts/lora/Lora-BoldItalic.woff2',
+			'assets/fonts/inter/Inter-Light.woff2',
+			'assets/fonts/inter/Inter-Regular.woff2',
+			'assets/fonts/inter/Inter-Medium.woff2',
+			'assets/fonts/inter/Inter-SemiBold.woff2',
+			'assets/fonts/inter/Inter-Bold.woff2',
+			'assets/fonts/inter/Inter-ExtraBold.woff2',
+		];
 
+		foreach ( $fonts as $font_url ) {
+			echo '<link rel="preload" href="'. get_theme_file_uri($font_url) .'" as="font" type="font/woff2" crossorigin>';
+		}
+		
+		
+		
+	}
+}
+add_action('wp_head', 'wp_custom_preload_local_fonts');
 
 /**
  * Ajax Load More
