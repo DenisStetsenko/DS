@@ -13,10 +13,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="profile" href="http://gmpg.org/xfn/11">
 	
-	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-	<link rel="manifest" href="/favicon/site.webmanifest">
+	<link rel="apple-touch-icon" sizes="180x180" href="<?= site_url( '/favicon/apple-touch-icon.png' ); ?>">
+	<link rel="icon" type="image/png" sizes="32x32" href="<?= site_url( '/favicon/favicon-32x32.png' ); ?>">
+	<link rel="icon" type="image/png" sizes="16x16" href="<?= site_url( '/favicon/favicon-16x16.png' ); ?>">
+	<!--<link rel="manifest" href="<?= site_url( '/favicon/site.webmanifest' ); ?>">-->
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
