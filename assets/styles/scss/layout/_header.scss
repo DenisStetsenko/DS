@@ -197,7 +197,7 @@ header#masthead{
     }
   }
   #navbar-offcanvas-nav{
-    font-weight: 700;
+    font-weight: $nav-link-font-weight;
     @include font-size(22px);
     letter-spacing: 0.03rem;
     ul{
