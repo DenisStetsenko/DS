@@ -28,7 +28,7 @@ get_header(); ?>
 						?>
 					</div>
 
-					<div class="col-lg-4 d-flex">
+					<div class="col-lg-4 d-none d-lg-flex">
 						<?php get_sidebar(); ?>
 					</div>
 
