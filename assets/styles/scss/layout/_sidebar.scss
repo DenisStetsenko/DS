@@ -32,13 +32,13 @@
     padding: rfs-value(30px 32px);
   }
   @include media-breakpoint-only(lg){
-    @include padding(20px);
+    @include padding(24px 20px 26px 20px);
   }
   @include media-breakpoint-only(xl){
-    @include padding(22px);
+    @include padding(26px 22px 28px 22px);
   }
   @include media-breakpoint-up(xxl){
-    @include padding(32px 28px)
+    @include padding(30px 28px 34px 28px)
   }
   &:not(:last-child){
     margin-bottom: rfs-value(32px);
