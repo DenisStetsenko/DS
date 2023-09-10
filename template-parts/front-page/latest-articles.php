@@ -9,7 +9,7 @@
 	if ( $wp_query->have_posts() ) : ?>
 	
 	<section id="front-latest-articles" class="section-margin">
-		<div class="container">
+		<div class="container-xl">
 			
 			<header class="section-title">
 				<h2><?php _e('Read The Latest', 'wp-theme'); ?></h2>

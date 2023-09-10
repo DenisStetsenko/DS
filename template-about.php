@@ -6,7 +6,7 @@ get_header(); ?>
 
 	<div id="template-about" class="main-area-padding">
 		<main id="main" class="site-main">
-			<div class="container">
+			<div class="container-xl">
 				<div class="row">
 
 					<div class="col-lg-8 mb-5 mb-lg-0">

@@ -62,6 +62,21 @@ $spacers: (
         10: $spacer * 5.5
 );
 
+$grid-gutter-width: 2rem; // 16px * 2 = 32px
+$gutters: (
+        0: 0,
+        1: $spacer * .25,
+        2: $spacer * .5,
+        3: $spacer,
+        4: $spacer * 1.5,
+        5: $spacer * 2.0,
+        6: $spacer * 2.5,
+        7: $spacer * 3.0,
+        8: $spacer * 3.5,
+        9: $spacer * 4.0,
+        10: $spacer * 4.5,
+);
+
 /*
  * Global Bootstrap Overrides
  ***********************************************************************************************************************/
@@ -257,19 +272,19 @@ $accordion-button-icon          : url("data:image/svg+xml,<svg xmlns='http://www
 $accordion-button-active-icon   : url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$color-black}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
 
 /* Card */
-$card-title-spacer-y: 10px;
+$card-title-spacer-y: 0.625rem;
 $card-border-radius : $border-radius;
 $card-border-width  : 0;
 
 $card-inner-border-radius : $border-radius;
-$card-spacer-y      : 30px;
-$card-spacer-x      : 30px;
+$card-spacer-y      : 1.875rem;
+$card-spacer-x      : 1.875rem;
 
 $card-cap-color     : $color-black;
 $card-cap-bg        : $color-white;
 $card-bg            : $color-white;
-$card-cap-padding-y : 20px;
-$card-cap-padding-x : 20px;
+$card-cap-padding-y : 1.25rem;
+$card-cap-padding-x : 1.25rem;
 
 /**
  * OFF-Canvas
@@ -277,8 +292,8 @@ $card-cap-padding-x : 20px;
 $offcanvas-bg-color           : white;
 $offcanvas-horizontal-width   : 300px;
 $offcanvas-border-width       : 0;
-$offcanvas-padding-x          : 25px;
-$offcanvas-padding-y          : 16px;
+$offcanvas-padding-x          : 1.25rem;
+$offcanvas-padding-y          : 0.75rem;
 $offcanvas-title-line-height  : 1.4;
 $btn-close-focus-shadow       : none;
 

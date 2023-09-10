@@ -6,7 +6,7 @@ if ( $show_category_sidebar ) $layout = '2-cols';
 ?>
 
 <div id="template-articles-archive" class="main-area-padding">
-	<div class="container">
+	<div class="container-xl">
 
 		<header id="category-heading">
 			<h1 class="category-title">

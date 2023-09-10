@@ -10,7 +10,7 @@ if ( $wp_query->have_posts() ) :
 	wp_enqueue_script('slick'); ?>
 	
 	<section id="hero-testimonials" class="section-margin">
-		<div class="container">
+		<div class="container-xl">
 			
 			<header class="section-title text-center disable-highlight">
 				<h2><?php _e('Opinions Matter'); ?></h2>

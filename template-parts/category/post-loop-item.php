@@ -22,7 +22,7 @@ if ( $args && ! empty($args['layout']) ) {
 			$layout = 'two-cols col-md-6';
 			break;
 		case '3-cols' :
-			$layout = 'three-cols col-md-6 col-xl-4';
+			$layout = 'three-cols col-sm-6 col-lg-4 col-xl-4';
 			break;
 		case '4-cols' :
 			$layout = 'four-cols col-md-6 col-xl-3';

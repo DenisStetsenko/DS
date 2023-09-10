@@ -7,7 +7,7 @@
 
 <nav id="main-nav" class="navbar navbar-expand-lg navbar-light">
 
-  <div class="container">
+  <div class="container-xl">
 
     <!-- Your site title as branding in the menu -->
 		<?php get_template_part('template-parts/header/site-branding'); ?>

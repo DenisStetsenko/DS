@@ -1,5 +1,5 @@
 <div id="front-hero-intro" class="bg-light-gray">
-	<div class="container">
+	<div class="container-xl">
 		<div class="row align-items-center">
 			<div class="col-lg-7 mb-6 mb-lg-0 text-center text-lg-start">
 				<?php

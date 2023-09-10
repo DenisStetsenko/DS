@@ -3,7 +3,7 @@ $the_process 	= get_field('the_process');
 if ( $the_process ) : ?>
 
 	<section id="front-the-process" class="section-margin">
-		<div class="container">
+		<div class="container-xl">
 			<div class="row">
 				<div class="col-lg-6 mb-5 mb-lg-0">
 					<div class="left-side">

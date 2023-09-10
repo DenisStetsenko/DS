@@ -513,9 +513,12 @@
   // Related
   // ===================================================================================================================
   #related-posts {
-    margin-top: rfs-value(96px);
+    margin-top: rfs-value(36px);
     padding-top: rfs-value(64px);
     border-top: 1px solid $border-color;
+    @include media-breakpoint-up(lg){
+      margin-top: rfs-value(96px);
+    }
   }
 
   // Sidebar

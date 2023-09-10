@@ -188,16 +188,18 @@ header#masthead{
     .offcanvas-title{
       @include font-size(24px);
       letter-spacing: 0.2rem;
-      @include bottom-highlight($height: 30%);
+    }
+    img{
+      max-height: 44px;
     }
     .btn-close{
 
     }
   }
   #navbar-offcanvas-nav{
-    font-weight: 600;
+    font-weight: 700;
     @include font-size(22px);
-    @include custom-letter-spacing(0.1rem);
+    letter-spacing: 0.03rem;
     ul{
       li{
         &:not(:last-child){

@@ -10,13 +10,13 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 			<div class="single-entry-heading bg-light-gray">
-				<div class="container">
+				<div class="container-xl">
 					<?php get_template_part('template-parts/single-article/post-categories'); ?>
 					<?php get_template_part('template-parts/single-article/entry-header'); ?>
 				</div>
 			</div>
 			
-			<div class="container">
+			<div class="container-xl">
 				
 				<div class="row">
 					

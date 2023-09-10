@@ -7,7 +7,7 @@
 </div><!-- #wrapper -->
 
 	<footer id="colophon" aria-label="Footer" class="footer site-footer border-top text-black font-secondary py-3 py-md-4 bg-light-gray">
-		<div class="container">
+		<div class="container-xl">
 	
 			<div class="row align-items-center">
 				<?php if ( has_nav_menu( 'footer-menu' ) ) { ?>

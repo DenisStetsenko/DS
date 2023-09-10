@@ -1,7 +1,9 @@
 <div id="navbarOffCanvas" class="offcanvas offcanvas-end d-lg-none" tabindex="-1"  aria-labelledby="navbarOffCanvasLabel">
 	
 	<div class="offcanvas-header">
-		<h5 class="offcanvas-title" id="navbarOffCanvasLabel">MENU</h5>
+		<h5 class="offcanvas-title" id="navbarOffCanvasLabel">
+			<img class="img-fluid" src="<?= get_theme_file_uri('assets/images/logo-short.svg'); ?>" alt="OffCanvas Logo Icon">
+		</h5>
 		<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 	</div>
 	
