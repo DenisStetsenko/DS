@@ -91,7 +91,7 @@ header#masthead{
     font-family: $font-secondary;
     .nav-item{
       text-transform: uppercase;
-      letter-spacing: 0.03rem;
+      letter-spacing: 0.06rem;
       margin: rfs-value(0 22px);
       &.active{
         .nav-link{
@@ -199,7 +199,7 @@ header#masthead{
   #navbar-offcanvas-nav{
     font-weight: $nav-link-font-weight;
     @include font-size(22px);
-    letter-spacing: 0.03rem;
+    letter-spacing: 0.06rem;
     ul{
       li{
         &:not(:last-child){
