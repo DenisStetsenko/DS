@@ -312,4 +312,24 @@
     }
   }
 
+  // Block Editor => Quote
+  .wp-block-quote{
+    @include font-size(30px);
+    font-style: italic;
+    margin: 30px 0;
+    border-left: 5px solid $color-border-gray;
+    padding: 10px 0 2px 30px;
+    p:last-child{
+      margin-bottom: 0;
+    }
+    cite{
+      color: #7d7b7b;
+      @include font-size(20px);
+      font-style: normal;
+      font-family: $font-secondary;
+      &::before {
+        content: "\2014\00A0"; // em dash, nbsp
+      }
+    }
+  }
 }
