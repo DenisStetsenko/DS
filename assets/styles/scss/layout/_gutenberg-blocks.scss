@@ -316,9 +316,10 @@
   .wp-block-quote{
     @include font-size(30px);
     font-style: italic;
-    margin: 30px 0;
+    @include margin(50px 0);
     border-left: 5px solid $color-border-gray;
-    padding: 10px 0 2px 30px;
+    padding: 10px 0 5px 30px;
+    line-height: 1.45;
     p{
       margin-bottom: 0;
     }
