@@ -12,7 +12,7 @@ if ( isset( $args['aria_label'] ) && ! empty( $args['aria_label'] ) ) {
 }
 ?>
 
-<form id="ajax-search-form" role="search" class="search-form rounded-4 bg-white" autocomplete="off" onsubmit="return false;"
+<form id="ajax-search-form" role="search" class="search-form rounded-2 bg-white" autocomplete="off" onsubmit="return false;"
 			action="#" <?php echo $aria_label; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped above. ?>>
   <label class="screen-reader-text" for="<?php echo $uid; ?>"><?php echo esc_html_x( 'Search for:', 'label', 'understrap' ); ?></label>
   <div class="input-group">
