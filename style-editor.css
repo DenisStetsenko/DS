@@ -29,6 +29,9 @@ figure {
 	text-decoration: none;
 	font-weight: 600;
 }
+.wp-block a.bigger:not(.btn){
+	font-size: 23px;
+}
 
 .block-editor-block-list__layout > li:not(:last-child){
 	margin-bottom: 16px;
