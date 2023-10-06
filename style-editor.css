@@ -55,12 +55,17 @@ body.mce-content-body h5{
 	margin: 30px 0 5px 0;
 	font-weight: 800;
 }
+body.mce-content-body a.bigger:not(.btn){
+	font-size: 23px;
+}
+
 body.mce-content-body a:not(.btn){
     color: #292929;
     border-bottom: 2px solid #fdd11f;
     text-decoration: none;
     font-weight: 600;
 }
+
 body.mce-content-body a.btn.btn-primary, a.btn.btn-primary:focus{
     color: #292929;
     background-color: #fdd11f;
