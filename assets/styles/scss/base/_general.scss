@@ -190,7 +190,7 @@ header#page-header{
   }
   &.mobile-content-sm-size{
     @include media-breakpoint-down(md){
-      @include font-size(17px);
+      @include font-size(18px);
       line-height: 1.65;
     }
   }

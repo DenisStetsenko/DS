@@ -77,6 +77,12 @@
   img {
     @include img-fluid();
   }
+  a.bigger{
+    @include font-size(20px);
+    @include media-breakpoint-up(md){
+      @include font-size(23px);
+    }
+  }
 }
 
 #single-article-template {
