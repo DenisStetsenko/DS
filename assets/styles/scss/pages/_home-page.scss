@@ -19,7 +19,8 @@
   }
   .entry-content{
     line-height: 1.55;
-    @include font-size(21px);
+    outline: none;
+    @include font-size(22px);
     @include media-breakpoint-only(sm){
       @include font-size(19px);
     }
