@@ -408,3 +408,11 @@ function retitle($match) {
 	
 	return "<$h2 id='$id' data-heading>$title</$h2>";
 }
+
+
+/**
+ * Filter if XML sitemap transient cache is enabled.
+ * https://rankmath.com/kb/exclude-sitemaps-from-caching/#transient-cache
+ * @param boolean $unsigned Enable cache or not, defaults to true
+ */
+add_filter( 'rank_math/sitemap/enable_caching', '__return_false');
