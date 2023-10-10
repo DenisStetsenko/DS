@@ -105,15 +105,15 @@ gulp.task('sass', function () {
       .pipe(production(rename({basename: 'main', suffix: '.min'})))
       .pipe(production(cssnano({ discardComments: { removeAll: true }, mergeLonghand: false, reduceIdents: false })))
       .pipe(gulp.dest(basePaths.css))
-      .pipe(development(browserSync.stream({ match: '**/*.css' })));
+      .pipe(production(browserSync.stream({ match: '**/*.css' })));
 });
 
 gulp.task('watch', function () {
 
   // Run browsersync only for DEV ENV
   if (current_env === development){
-    browserSync.init(browserSyncWatchFiles, browserSyncOptions);
   }
+    browserSync.init(browserSyncWatchFiles, browserSyncOptions);
 
   gulp.watch(basePaths.scss + '**/*.scss', gulp.series('sass'));
 

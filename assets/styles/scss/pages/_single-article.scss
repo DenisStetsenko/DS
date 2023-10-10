@@ -92,8 +92,8 @@
 
   .single-entry-heading{
     padding: rfs-fluid-value(50px) 0;
-    margin-bottom: rfs-fluid-value(50px);
     border-bottom: 1px solid $color-border-gray;
+    @include border-bottom-radius($border-radius-xl);
 
     header.entry-header {
       max-width: 910px;
@@ -123,6 +123,32 @@
         }
       }
     }
+  }
+
+  .rankmath-breadcrumb-container{
+    font-family: $font-secondary;
+    background-color: darken($color-light-gray, 4%);
+    border-bottom: 1px solid $color-border-gray;
+    padding: rfs-value(6px 0);
+    .rank-math-breadcrumb{
+      @include font-size(16px);
+      p{
+        margin: 0;
+      }
+      a{
+        text-decoration-color: $color-primary;
+        text-decoration-thickness: rfs-value(2px);
+        &:hover{
+          text-decoration: underline;
+          text-decoration-color: $color-primary;
+          text-decoration-thickness: rfs-value(2px);
+        }
+      }
+    }
+  }
+
+  .single-entry-body{
+    margin-top: rfs-fluid-value(50px);
   }
 
   // Author Block
@@ -172,7 +198,7 @@
         padding: rfs-value(7px 14px);
         @include transition();
         &:hover {
-          color: white;
+          color: $color-gray;
           background-color: $color-primary;
           border-color: $color-primary;
         }

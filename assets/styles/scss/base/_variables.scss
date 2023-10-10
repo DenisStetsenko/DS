@@ -11,9 +11,10 @@ $color-primary       : #fdd11f;  $primary    : $color-primary;
 $color-primary-light : #ffd941;
 $color-primary-dark  : #f0c000;
 
-$color-secondary     : #5333ed; $secondary  : $color-secondary;
+$color-secondary     : #3ba7fa; $secondary  : $color-secondary;
 
-$color-accent        : #5333ed;
+//$color-accent        : #5333ed;
+$color-accent        : $color-secondary;
 $color-gray          : #595959;
 
 $color-light-gray    : #f7f8f9;
@@ -124,6 +125,7 @@ $hr-border-color          : rgba(0, 0, 0, 0.5);
 $box-shadow               : 2px 3px 16px rgba(0, 0, 0, 0.1);
 $box-shadow-sm            : 0px 0px 15px rgba(0, 0, 0, 0.15);
 $box-shadow-lg            : 0px 0px 50px rgba(0, 0, 0, 0.08);
+$box-shadow-xl            : 4px 4px 50px 0px rgba(0, 0, 0, 0.08), 1px 1px 15px 0px rgba(0, 0, 0, 0.05);;
 
 /* Borders */
 $border-color             : $color-border-gray;

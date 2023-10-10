@@ -35,9 +35,6 @@ include get_theme_file_path('/includes/core/wp-bootstrap-icons.php');
 // Load WP Social Sare
 include get_theme_file_path('/includes/core/wp-social-share.php');
 
-// Load Yoast Breadcrumbs
-include get_theme_file_path('/includes/core/yoast-breadcrumbs-list.php');
-
 // Load Custom WP Metaboxes
 //include get_theme_file_path('/includes/core/wp-custom-metabox.php');
 
@@ -85,7 +82,7 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
 	  wp_register_script( 'slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array('jquery'), array(), true );
 
     //wp_enqueue_style( 'main', get_theme_file_uri('assets/styles/css/main.css'), array(), time() );
-    wp_enqueue_style( 'main-min', get_theme_file_uri('assets/styles/css/main.min.css'), array(), '1.3.4' );
+    wp_enqueue_style( 'main-min', get_theme_file_uri('assets/styles/css/main.min.css'), array(), time() );
 
   }
 }

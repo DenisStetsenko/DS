@@ -26,7 +26,9 @@
   }
 }
 
+$toc_black: #111;
 .widget {
+  box-shadow: $box-shadow-xl;
   padding: rfs-value(20px 22px);
   @include media-breakpoint-up(sm){
     padding: rfs-value(30px 32px);
@@ -182,21 +184,23 @@
         transition: color 300ms ease;
         &.active-parent{
           & > .ez-toc-link{
-            color: #000;
+            color: $toc_black;
+            font-weight: 500;
           }
         }
         &.active{
           & > .ez-toc-link{
-            color: #000;
+            color: $toc_black;
+            font-weight: 500;
             text-decoration: underline;
             text-decoration-color: $color-primary-dark;
             text-decoration-thickness: rfs-value(3px);
           }
         }
         .ez-toc-link{
-          color: #636363;
+          color: $color-gray;
           text-decoration: none;
-          font-weight: 500;
+          font-weight: 400;
           transition: color 300ms ease;
           &:before{
             width: rfs-value(16px);
@@ -220,7 +224,7 @@
             @include font-size(18px);
           }
           &:hover{
-            color: #000;
+            color: $toc_black;
             text-decoration: underline;
             text-decoration-color: $color-primary-dark;
             text-decoration-thickness: rfs-value(3px);
@@ -244,7 +248,7 @@
               @include font-size(16px);
             }
             &:hover{
-              color: #000;
+              color: $toc_black;
               text-decoration: underline;
               text-decoration-color: $color-primary-dark;
               text-decoration-thickness: rfs-value(2px);

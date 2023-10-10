@@ -183,7 +183,7 @@ function acf_reading_time() {
 		}
 	}
 	
-	$readingtime = ceil( $total_word_count / 260 );
+	$readingtime = ceil( $total_word_count / 320 ); // 200-240 for regular reader.
 	
 	if ( $readingtime <= 1 ) { // If the reading time is equal to or less than 1
 		$timer = " min";
@@ -221,7 +221,7 @@ function wp_reading_time() {
 		// get total words count
 		$total_word_count = $total_word_count + str_word_count( strip_tags( $the_content ) );
 		
-		$readingtime = ceil( $total_word_count / 260 );
+		$readingtime = ceil( $total_word_count / 320 ); // 200-240 for regular reader.
 		
 		if ( $readingtime <= 1 ) { // If the reading time is equal to or less than 1
 			$timer = " min";
