@@ -70,23 +70,6 @@
 <?php get_template_part('template-parts/popups/search-popup'); ?>
 <?php get_template_part('template-parts/popups/email-popup'); ?>
 
-<script>
-	// document.addEventListener('DOMContentLoaded', function() {
-	// 	const imageContainers = document.querySelectorAll('.image-container');
-	//
-	// 	imageContainers.forEach(container => {
-	// 		const image 			= container.querySelector('.loading-image');
-	// 		const placeholder = container.querySelector('.placeholder');
-	//
-	// 		if ( image.complete && image.naturalHeight !== 0 ) {
-	// 			image.classList.add('loaded');
-	// 			placeholder.style.display = 'none';
-	// 		}
-  //
-	// 	});
-	// });
-</script>
-
 <?php wp_footer(); ?>
 </body>
 </html>
