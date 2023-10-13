@@ -55,11 +55,7 @@
     },
     "typography": {
       "customFontSize": true,
-      "fontStyle": true,
-      "fontWeight": true,
-      "letterSpacing": true,
-      "lineHeight": true,
-      "textTransform": true,
+	  "lineHeight": true,
       "fontFamilies": [
         {
           "fontFamily": "\"Lora\", serif",
