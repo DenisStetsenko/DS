@@ -206,10 +206,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "http:\/\/www.network.com",
+                    "maxlength": "",
+                    "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": "",
                     "parent_repeater": "field_550fdf33dc121"
                 }
             ]
@@ -270,5 +270,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1692205709
+    "modified": 1697118917
 }
