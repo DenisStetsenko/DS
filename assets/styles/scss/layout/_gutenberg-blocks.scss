@@ -54,6 +54,23 @@
     :where([style*=border-width]) {
       border-style: solid;
     }
+    &.aligncenter{
+      text-align: center;
+    }
+    &.alignright{
+      @include media-breakpoint-up(lg){
+        float: right;
+        margin-inline-start: 2em;
+        margin-inline-end: 0;
+      }
+    }
+    &.alignleft{
+      @include media-breakpoint-up(lg){
+        float: left;
+        margin-inline-start: 0;
+        margin-inline-end: 2em;
+      }
+    }
     img{
       @include img-fluid()
     }
