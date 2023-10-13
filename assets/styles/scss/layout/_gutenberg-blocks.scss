@@ -13,6 +13,40 @@
   --wp--preset--spacing--large    : 3.75rem;  // 60px
   --wp--preset--spacing--x-large  : 5rem;     // 80px
 
+  --wp--preset--color--primary      : #fdd11f;
+  --wp--preset--color--primary-dark : #f0c000;
+  --wp--preset--color--secondary    : #3ba7fa;
+  --wp--preset--color--white        : #ffffff;
+  --wp--preset--color--black        : #292929;
+  --wp--preset--color--gray         : #595959;
+  --wp--preset--color--light-gray   : #f7f8f9;
+  --wp--preset--color--border-gray  : #eaecee;
+
+  .has-primary-border-color {
+    border-color: var(--wp--preset--color--primary);
+  }
+  .has-primary-dark-border-color {
+    border-color: var(--wp--preset--color--primary-dark);
+  }
+  .has-secondary-border-color {
+    border-color: var(--wp--preset--color--secondary);
+  }
+  .has-white-border-color {
+    border-color: var(--wp--preset--color--white);
+  }
+  .has-black-border-color {
+    border-color: var(--wp--preset--color--black);
+  }
+  .has-gray-border-color {
+    border-color: var(--wp--preset--color--gray);
+  }
+  .has-light-gray-border-color {
+    border-color: var(--wp--preset--color--light-gray);
+  }
+  .has-border-gray-border-color {
+    border-color: var(--wp--preset--color--border-gray);
+  }
+
   // Block Editor => Image
   .wp-block-image{
     margin: $paragraph-margin-bottom 0 $paragraph-margin-bottom;
