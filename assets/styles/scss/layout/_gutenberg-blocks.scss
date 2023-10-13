@@ -16,10 +16,9 @@
   // Block Editor => Image
   .wp-block-image{
     margin: $paragraph-margin-bottom 0 $paragraph-margin-bottom;
-    &.has-custom-border{
-      img{
-        //border-style: solid;
-      }
+
+    :where([style*=border-width]) {
+      border-style: solid;
     }
     img{
       @include img-fluid()
