@@ -62,9 +62,6 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
     wp_dequeue_style( 'wc-blocks-style' ); // Remove WooCommerce block CSS
     wp_dequeue_style( 'classic-theme-styles' );
 		
-	  // Fancybox (BS Replacement)
-    // wp_enqueue_style('fancybox', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css', array(), array() );
-    // wp_enqueue_script('fancybox', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js', array('jquery'), array(), true );
 
     if ( is_home() || is_archive() ) :
       wp_enqueue_script( 'ajax-pagination',  get_theme_file_uri('assets/scripts/ajax-load-more.js'), array( 'jquery' ), null, true );
@@ -75,14 +72,18 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
     endif;
 		
 		if ( is_singular('post') ) :
-			wp_enqueue_script( 'gumshoe', 'https://cdnjs.cloudflare.com/ajax/libs/gumshoe/5.1.1/gumshoe.min.js', array(), array(), false );
+			wp_enqueue_script( 'gumshoe', 'https://cdnjs.cloudflare.com/ajax/libs/gumshoe/5.1.1/gumshoe.min.js', array(), array(), false ); // load in <head>
+			
+			// Fancybox (BS Replacement)
+			wp_enqueue_style('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.24/fancybox/fancybox.min.css', array(), array() );
+			wp_enqueue_script('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.24/fancybox/fancybox.umd.js', array(), array(), false ); // load in <head>
 		endif;
 		
     wp_enqueue_script( 'bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.min.js', array('jquery'), array(), true );
 	  wp_register_script( 'slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array('jquery'), array(), true );
 
     //wp_enqueue_style( 'main', get_theme_file_uri('assets/styles/css/main.css'), array(), time() );
-    wp_enqueue_style( 'main-min', get_theme_file_uri('assets/styles/css/main.min.css'), array(), '1.4.5' );
+    wp_enqueue_style( 'main-min', get_theme_file_uri('assets/styles/css/main.min.css'), array(), '1.4.6' );
 
   }
 }
