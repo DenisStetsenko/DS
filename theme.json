@@ -81,13 +81,13 @@
         },
         {
           "slug": "large",
-          "size": "2.25rem",
-          "name": "Large (36px)"
+          "size": "2rem",
+          "name": "Large (32px)"
         },
         {
           "slug": "x-large",
-          "size": "2.75rem",
-          "name": "Extra Large (44px)"
+          "size": "2.5rem",
+          "name": "Extra Large (40px)"
         },
         {
           "slug": "huge",
@@ -174,7 +174,7 @@
       },
       "h2": {
         "typography": {
-          "fontSize": "44px",
+          "fontSize": "40px",
           "lineHeight": "1.25"
         },
         "spacing": {
@@ -186,7 +186,7 @@
       },
       "h3": {
         "typography": {
-          "fontSize": "36px",
+          "fontSize": "32px",
           "lineHeight": "1.25"
         },
         "spacing": {

@@ -87,7 +87,7 @@ $headings-top-negative-margin : -0.313rem;
 
 $body-bg                  : $color-white;
 $body-color               : $color-black;
-$border-width             : 1px;
+$border-width             : 0.0625rem; // 1px
 $border-style             : solid;
 $font-family-base         : $font-primary;
 $font-size-base           : 1.25rem;
@@ -119,32 +119,32 @@ $bs-chevron-double-down-icon   : url("data:image/svg+xml, <svg xmlns='http://www
 $paragraph-margin-bottom  : 1.25rem;
 $blockquote-font-size     : $font-size-base;
 $blockquote-footer-color  : $color-black;
-$hr-margin-y              : 50px;
+$hr-margin-y              : 3.125rem; // 50px
 $hr-border-color          : rgba(0, 0, 0, 0.5);
 
-$box-shadow               : 2px 3px 16px rgba(0, 0, 0, 0.1);
-$box-shadow-sm            : 0px 0px 15px rgba(0, 0, 0, 0.15);
-$box-shadow-lg            : 0px 0px 50px rgba(0, 0, 0, 0.08);
-$box-shadow-xl            : 4px 4px 50px 0px rgba(0, 0, 0, 0.08), 1px 1px 15px 0px rgba(0, 0, 0, 0.05);;
+$box-shadow               : 0.125rem 0.1875rem 1rem rgba(0, 0, 0, 0.1);
+$box-shadow-sm            : 0rem 0rem 0.9375rem rgba(0, 0, 0, 0.15);
+$box-shadow-lg            : 0rem 0rem 3.125rem rgba(0, 0, 0, 0.08);
+$box-shadow-xl            : 0.25rem 0.25rem 3.125rem 0rem rgba(0, 0, 0, 0.08), 0.0625rem 0.0625rem 0.9375rem 0rem rgba(0, 0, 0, 0.05);;
 
 /* Borders */
 $border-color             : $color-border-gray;
 
-$border-radius-sm         : 5px; // rounded-1
-$border-radius            : 15px; // rounded-2
-$border-radius-lg         : 20px; // rounded-3
-$border-radius-xl         : 25px; // rounded-4
-$border-radius-xxl        : 50px; // rounded-5
+$border-radius-sm         : 0.3125rem; // rounded-1 5px
+$border-radius            : 0.9375rem; // rounded-2 15px
+$border-radius-lg         : 1.25rem; // rounded-3 20px
+$border-radius-xl         : 1.5625rem; // rounded-4 25px
+$border-radius-xxl        : 3.125rem; // rounded-5 50px
 
 /* Forms */
 $input-box-shadow       : none;
 $input-focus-box-shadow : none;
-$input-border-width     : 1px;
+$input-border-width     : 0.0625rem;
 $input-border-color     : $color-black;
 $input-border-radius    : $border-radius-xl;
 
-$input-padding-y        : 10px;
-$input-padding-x        : 25px;
+$input-padding-y        : 0.625rem;
+$input-padding-x        : 1.5625rem;
 $input-font-family      : $font-secondary;
 $input-font-size        : 1rem;
 $input-bg               : $color-white;
@@ -187,7 +187,7 @@ $btn-link-disabled-color : lighten($color-black, 65%);
 $list-group-bg    : transparent;
 $list-group-color : inherit;
 $list-group-item-padding-x : 0;
-$list-group-item-padding-y : 7px;
+$list-group-item-padding-y : 0.4375rem;
 $list-group-border-width   : 0;
 
 /* Links */
@@ -201,12 +201,12 @@ $headings-color         : $color-black;
 $headings-font-family   : $font-secondary;
 $headings-font-weight   : 800;
 $headings-line-height   : 1.25;
-$headings-margin-bottom : 20px;
+$headings-margin-bottom : 1.25rem;
 
 /* H1-H6 Responsive */
 $h1-font-size : 54px;
-$h2-font-size : 44px;
-$h3-font-size : 36px;
+$h2-font-size : 40px;
+$h3-font-size : 32px;
 
 $h4-font-size : 18px;
 $h5-font-size : 14px;
