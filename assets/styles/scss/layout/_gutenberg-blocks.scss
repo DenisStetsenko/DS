@@ -82,7 +82,7 @@
     }
   }
 
-  // Block Editor => Heading
+  // Block Editor Font Sizes
   .has-small-font-size {
     @include font-size($h5-font-size);
   }
@@ -103,6 +103,13 @@
   }
   .has-lora-font-family{
     font-family: $font-primary !important;
+  }
+
+  // Block Editor => Heading
+  .wp-block-heading{
+    @include media-breakpoint-down(sm){
+      br{ display: none }
+    }
   }
 
   // Block Editor => Gallery
