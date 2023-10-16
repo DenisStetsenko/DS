@@ -55,6 +55,28 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
   function wp_custom_scripts_and_styles(){
 
     wp_enqueue_script('jquery');
+	  wp_add_inline_script( 'jquery',
+			'jQuery.event.special.touchstart = {
+				setup: function (_, ns, handle) {
+					this.addEventListener("touchstart", handle, {passive: !ns.includes("noPreventDefault")});
+				}
+			};
+			jQuery.event.special.touchmove = {
+				setup: function (_, ns, handle) {
+					this.addEventListener("touchmove", handle, {passive: !ns.includes("noPreventDefault")});
+				}
+			};
+			jQuery.event.special.wheel = {
+				setup: function (_, ns, handle) {
+					this.addEventListener("wheel", handle, {passive: true});
+				}
+			};
+			jQuery.event.special.mousewheel = {
+				setup: function (_, ns, handle) {
+					this.addEventListener("mousewheel", handle, {passive: true});
+				}
+			};'
+	  );
 		
     // Remove Gutenberg Block Library CSS from loading on the frontend (we'll use own styles)
     wp_dequeue_style( 'wp-block-library' );
@@ -73,10 +95,31 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
 		
 		if ( is_singular('post') ) :
 			wp_enqueue_script( 'gumshoe', 'https://cdnjs.cloudflare.com/ajax/libs/gumshoe/5.1.1/gumshoe.min.js', array(), null, true ); // load in <footer>
-			
-			// Fancybox (BS Replacement)
+			wp_add_inline_script( 'gumshoe',
+				'document.addEventListener("DOMContentLoaded", () => {
+					const header = document.querySelector("#masthead");
+					const spy = new Gumshoe("#right-sidebar #ez-toc-container > nav a", {
+						nested			: true,
+						nestedClass	: "active-parent",
+						reflow			: false,
+						offset: function () {
+								return header.getBoundingClientRect().height + 65;
+						}
+					});
+				});'
+			);
+		
+		
+			// Fancybox Init
 			wp_enqueue_style('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/4.0.31/fancybox.min.css', null, array() );
-			wp_enqueue_script('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/4.0.31/fancybox.umd.min.js', array(), null, true ); // load in <footer>
+			wp_enqueue_script('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/4.0.31/fancybox.umd.min.js', array(), null, true );
+			wp_add_inline_script( 'fancybox',
+				'document.addEventListener("DOMContentLoaded", () => {
+					Fancybox.bind("[data-fancybox], .entry-content a[href$=\"png\"], .entry-content a[href$=\"jpg\"]", {
+						infinite: false
+					});
+				});'
+			);
 		endif;
 		
     wp_enqueue_script( 'bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.min.js', array('jquery'), null, true );
@@ -88,65 +131,6 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
   }
 }
 add_action('wp_enqueue_scripts', 'wp_custom_scripts_and_styles' );
-
-
-/**
- * Enquire scripts below closing </body> tag
- * @return void
- ***********************************************************************************************************************/
-function print_custom_footer_js_call_script_in_footer() {
-	if ( is_singular('post') ) : ?>
-		<script data-cfasync="false" data-wpfc-render="false">
-			document.addEventListener("DOMContentLoaded", () => {
-				/**
-				 * https://www.jsdelivr.com/package/npm/gumshoejs
-				 */
-				const header = document.querySelector('#masthead');
-				const spy = new Gumshoe('#right-sidebar #ez-toc-container > nav a', {
-						nested			: true,
-						nestedClass	: 'active-parent',
-						reflow			: false,
-						offset: function () {
-								return header.getBoundingClientRect().height + 65;
-						}
-				});
-
-				/**
-				 * Trigger Fancybox
-				 */
-				Fancybox.bind("[data-fancybox], .entry-content a[href$=\"png\"], .entry-content a[href$=\"jpg\"]", {
-						infinite: false
-				});
-			});
-		</script>
-	<?php endif; ?>
-	<!-- Fix to: Does not use passive listeners to improve scrolling performance -->
-	<script data-cfasync="false" data-wpfc-render="false">
-		jQuery.event.special.touchstart = {
-			setup: function (_, ns, handle) {
-				this.addEventListener("touchstart", handle, {passive: !ns.includes("noPreventDefault")});
-			}
-		};
-		jQuery.event.special.touchmove = {
-			setup: function (_, ns, handle) {
-				this.addEventListener("touchmove", handle, {passive: !ns.includes("noPreventDefault")});
-			}
-		};
-		jQuery.event.special.wheel = {
-			setup: function (_, ns, handle) {
-				this.addEventListener("wheel", handle, {passive: true});
-			}
-		};
-		jQuery.event.special.mousewheel = {
-			setup: function (_, ns, handle) {
-				this.addEventListener("mousewheel", handle, {passive: true});
-			}
-		};
-	</script>
-	<!-- / Fix to: Does not use passive listeners to improve scrolling performance -->
-	<?php
-}
-add_action( 'wp_footer', 'print_custom_footer_js_call_script_in_footer', 1000 );
 
 /**
  * Custom Logos for Light background
