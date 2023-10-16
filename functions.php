@@ -55,7 +55,8 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
   function wp_custom_scripts_and_styles(){
 
     wp_enqueue_script('jquery');
-	  wp_add_inline_script( 'jquery',
+	  // Fix to: Does not use passive listeners to improve scrolling performance
+		wp_add_inline_script( 'jquery',
 			'jQuery.event.special.touchstart = {
 				setup: function (_, ns, handle) {
 					this.addEventListener("touchstart", handle, {passive: !ns.includes("noPreventDefault")});
@@ -77,6 +78,7 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
 				}
 			};'
 	  );
+		// END OF Fix to: Does not use passive listeners to improve scrolling performance
 		
     // Remove Gutenberg Block Library CSS from loading on the frontend (we'll use own styles)
     wp_dequeue_style( 'wp-block-library' );
