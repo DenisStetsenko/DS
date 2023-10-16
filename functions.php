@@ -83,7 +83,7 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
 	  wp_register_script( 'slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array('jquery'), null, true );
 
     //wp_enqueue_style( 'main', get_theme_file_uri('assets/styles/css/main.css'), array(), time() );
-    wp_enqueue_style( 'main-min', get_theme_file_uri('assets/styles/css/main.min.css'), array(), '1.5.5' );
+    wp_enqueue_style( 'main-min', get_theme_file_uri('assets/styles/css/main.min.css'), array(), '1.5.6' );
 
   }
 }
@@ -96,32 +96,32 @@ add_action('wp_enqueue_scripts', 'wp_custom_scripts_and_styles' );
  ***********************************************************************************************************************/
 function print_custom_footer_js_call_script_in_footer() {
 	if ( is_singular('post') ) : ?>
-		<script data-cfasync="false">
-        document.addEventListener("DOMContentLoaded", () => {
-            /**
-             * https://www.jsdelivr.com/package/npm/gumshoejs
-             */
-            const header = document.querySelector('#masthead');
-            const spy = new Gumshoe('#right-sidebar #ez-toc-container > nav a', {
-                nested			: true,
-                nestedClass	: 'active-parent',
-                reflow			: false,
-                offset: function () {
-                    return header.getBoundingClientRect().height + 65;
-                }
-            });
+		<script data-cfasync="false" data-wpfc-render="false">
+			document.addEventListener("DOMContentLoaded", () => {
+				/**
+				 * https://www.jsdelivr.com/package/npm/gumshoejs
+				 */
+				const header = document.querySelector('#masthead');
+				const spy = new Gumshoe('#right-sidebar #ez-toc-container > nav a', {
+						nested			: true,
+						nestedClass	: 'active-parent',
+						reflow			: false,
+						offset: function () {
+								return header.getBoundingClientRect().height + 65;
+						}
+				});
 
-            /**
-             * Trigger Fancybox
-             */
-            Fancybox.bind("[data-fancybox], .entry-content a[href$=\"png\"], .entry-content a[href$=\"jpg\"]", {
-                infinite: false
-            });
-        });
+				/**
+				 * Trigger Fancybox
+				 */
+				Fancybox.bind("[data-fancybox], .entry-content a[href$=\"png\"], .entry-content a[href$=\"jpg\"]", {
+						infinite: false
+				});
+			});
 		</script>
 	<?php endif; ?>
 	<!-- Fix to: Does not use passive listeners to improve scrolling performance -->
-	<script data-cfasync="false">
+	<script data-cfasync="false" data-wpfc-render="false">
 		jQuery.event.special.touchstart = {
 			setup: function (_, ns, handle) {
 				this.addEventListener("touchstart", handle, {passive: !ns.includes("noPreventDefault")});

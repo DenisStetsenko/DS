@@ -36,7 +36,7 @@
 </div><!-- #page we need this extra closing tag here -->
 
 <!-- Animate read progress on scroll -->
-<script data-cfasync="false">
+<script data-cfasync="false" data-wpfc-render="false">
 	let progressScroll = () => {
 		let docElem = document.documentElement,
 				docBody = document.body,
