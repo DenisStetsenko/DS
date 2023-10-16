@@ -35,44 +35,18 @@
 
 </div><!-- #page we need this extra closing tag here -->
 
-
-<script>
-    let progressScroll = () => {
-			let docElem = document.documentElement,
-					docBody = document.body,
-					scrollTop = docElem['scrollTop'] || docBody['scrollTop'],
-					scrollBottom = (docElem['scrollHeight'] || docBody['scrollHeight']) - window.innerHeight,
-					scrollPercent = scrollTop / scrollBottom * 100 + '%';
-			document.getElementById("progress-bar").style.setProperty("--scrollAmount", scrollPercent);
-    }
-    document.addEventListener('scroll', progressScroll);
+<!-- Animate read progress on scroll -->
+<script data-cfasync="false">
+	let progressScroll = () => {
+		let docElem = document.documentElement,
+				docBody = document.body,
+				scrollTop = docElem['scrollTop'] || docBody['scrollTop'],
+				scrollBottom = (docElem['scrollHeight'] || docBody['scrollHeight']) - window.innerHeight,
+				scrollPercent = scrollTop / scrollBottom * 100 + '%';
+		document.getElementById("progress-bar").style.setProperty("--scrollAmount", scrollPercent);
+	}
+	document.addEventListener('scroll', progressScroll);
 </script>
-
-<?php if ( is_singular('post') ) : ?>
-	<script>
-		document.addEventListener("DOMContentLoaded", () => {
-			/**
-			 * https://www.jsdelivr.com/package/npm/gumshoejs
-			 */
-			const header = document.querySelector('#masthead');
-			const spy = new Gumshoe('#right-sidebar #ez-toc-container > nav a', {
-				nested			: true,
-				nestedClass	: 'active-parent',
-				reflow			: false,
-				offset: function () {
-						return header.getBoundingClientRect().height + 65;
-				}
-			});
-
-			/**
-			 * Trigger Fancybox
-			 */
-			Fancybox.bind("[data-fancybox], .entry-content a[href$=\"png\"], .entry-content a[href$=\"jpg\"]", {
-				infinite: false
-			});
-		});
-	</script>
-<?php endif; ?>
 
 <?php get_template_part('template-parts/popups/search-popup'); ?>
 <?php get_template_part('template-parts/popups/email-popup'); ?>

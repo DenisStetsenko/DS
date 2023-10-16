@@ -8,7 +8,7 @@
 	</div>
 </div>
 <?php $ajax_nonce = wp_create_nonce( "wp-denstetsenko-key" ); ?>
-<script>
+<script data-cfasync="false">
 	const searchModal 				= document.getElementById('searchModal');
 	const searchModalForm			= document.getElementById('ajax-search-form');
 	const searchModalInput 		= document.getElementById('the-s-1');
@@ -24,10 +24,10 @@
   })
   function wp_ajax_live_search(el){
 		(function($) {
-			var $searchResultsContainer = $('#ajax-search-results');
-			var inputTypeChars 					= $(el).val().length;
-			var message									= $searchResultsContainer.data('message');
-			var error										= $searchResultsContainer.data('error');
+			let $searchResultsContainer = $('#ajax-search-results');
+			let inputTypeChars 					= $(el).val().length;
+			let message									= $searchResultsContainer.data('message');
+			let error										= $searchResultsContainer.data('error');
 			
 			if ( inputTypeChars > 1 ) {
 				$.ajax({
@@ -42,9 +42,6 @@
 						security  : '<?php echo $ajax_nonce; ?>'
 					},
 					error: function (xhr, ajaxOptions, thrownError) {
-						// console.log(xhr.status);
-						// console.log(xhr.responseText);
-						// console.log(thrownError);
 						$searchResultsContainer.html('<li class="list-item font-secondary text-danger text-center">'+ error +'</li>').addClass('ajax-search-active');
 					},
 					success: function( result ) {
