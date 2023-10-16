@@ -146,7 +146,7 @@ function print_custom_footer_js_call_script_in_footer() {
 	<!-- / Fix to: Does not use passive listeners to improve scrolling performance -->
 	<?php
 }
-add_action( 'wp_footer', 'print_custom_footer_js_call_script_in_footer', 999 );
+add_action( 'wp_footer', 'print_custom_footer_js_call_script_in_footer', 1000 );
 
 /**
  * Custom Logos for Light background
