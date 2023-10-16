@@ -119,7 +119,32 @@ function print_custom_footer_js_call_script_in_footer() {
             });
         });
 		</script>
-	<?php endif;
+	<?php endif; ?>
+	<!-- Fix to: Does not use passive listeners to improve scrolling performance -->
+	<script data-cfasync="false">
+		jQuery.event.special.touchstart = {
+			setup: function (_, ns, handle) {
+				this.addEventListener("touchstart", handle, {passive: !ns.includes("noPreventDefault")});
+			}
+		};
+		jQuery.event.special.touchmove = {
+			setup: function (_, ns, handle) {
+				this.addEventListener("touchmove", handle, {passive: !ns.includes("noPreventDefault")});
+			}
+		};
+		jQuery.event.special.wheel = {
+			setup: function (_, ns, handle) {
+				this.addEventListener("wheel", handle, {passive: true});
+			}
+		};
+		jQuery.event.special.mousewheel = {
+			setup: function (_, ns, handle) {
+				this.addEventListener("mousewheel", handle, {passive: true});
+			}
+		};
+	</script>
+	<!-- / Fix to: Does not use passive listeners to improve scrolling performance -->
+	<?php
 }
 add_action( 'wp_footer', 'print_custom_footer_js_call_script_in_footer', 999 );
 
