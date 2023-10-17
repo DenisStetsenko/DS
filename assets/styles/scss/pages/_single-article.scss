@@ -272,17 +272,9 @@
     }
   }
 
-  .post-footer-content {
-    border-top: 1px solid $color-border-gray;
-    margin-top: rfs-value(50px);
-    padding-top: rfs-value(35px);
-  }
-
   // Product Summary [TOP PICKS]
   // ===================================================================================================================
   .product-summary-wrapper {
-    margin-top: rfs-value(35px);
-    margin-bottom: rfs-value(50px);
 
     .top-picks {
       &:not(:last-child) {
@@ -299,18 +291,19 @@
       &.best {
         .column-preview {
           border-color: $color-primary-dark;
-          border-width: 1px;
+          border-width: rfs-value(2px);
           &:after {
             content: "";
             background-image: url("../../images/certificate.svg");
-            background-size: rfs-value(30px 30px);
+            background-size: contain;
+            background-repeat: no-repeat;
             position: absolute;
-            bottom: rfs-value(-13px);
+            top: rfs-value(-15px);
             left: 50%;
-            margin-left: rfs-value(-15px);
+            margin-left: rfs-value(-20px);
             z-index: 2;
-            width: rfs-value(30px);
-            height: rfs-value(30px);
+            width: rfs-value(40px);
+            height: rfs-value(40px);
           }
         }
       }
@@ -336,7 +329,7 @@
           max-width: calc(100% - 150px);
         }
         @include media-breakpoint-up(xl) {
-          max-width: calc(100% - 400px);
+          max-width: calc(100% - 320px);
         }
       }
 
@@ -344,7 +337,7 @@
         flex: 0 0 auto;
         width: 100%;
         @include media-breakpoint-up(xl) {
-          max-width: 250px;
+          max-width: 170px;
         }
       }
 
@@ -386,7 +379,7 @@
 
   // MAIN CONTENT AREA
   // ===================================================================================================================
-  .entry-content-main {
+  .product-card {
 
     .product-heading {
       .subtitle {
@@ -413,133 +406,110 @@
       }
     }
 
-    .product-card {
-      &:not(:last-child) {
-        padding-bottom: rfs-value(50px);
-        margin-bottom: rfs-value(50px);
-        border-bottom: 1px solid $border-color;
-      }
-
-      .post-thumbnail {
-        min-height: rfs-value(250px);
-        border: 1px solid $color-border-gray;
-        @include media-breakpoint-up(sm) {
-          min-height: rfs-value(300px);
-        }
-
-        &.best {
-          position: relative;
-          border-width: 2px;
-          border-color: $color-primary-dark;
-
-          &:after {
-            content: "";
-            background-image: url("../../images/certificate.svg");
-            background-size: rfs-value(40px 40px);
-            position: absolute;
-            top: rfs-value(13px);
-            right: rfs-value(8px);
-            z-index: 2;
-            width: rfs-value(40px);
-            height: rfs-value(40px);
-          }
-        }
-
-        .figure-img {
-          max-height: rfs-value(300px);
-          @include media-breakpoint-up(sm) {
-            max-height: rfs-value(350px);
-          }
-        }
-      }
-
-      .btn.affiliate-link {
-        min-width: rfs-value(260px);
-        @include font-size(20px);
-      }
-
-      .pros-and-cons {
-
-        .column {
-          @include media-breakpoint-up(sm) {
-            flex-basis: 0;
-            flex-grow: 1;
-          }
-
-          &.pros {
-            @include media-breakpoint-up(sm) {
-              border-right: 1px solid $color-border-gray;
-            }
-          }
-
-          .heading {
-            background-color: $color-light-gray;
-            padding: rfs-value(12px 25px);
-            border-bottom: 1px solid $color-border-gray;
-          }
-
-          .list {
-            @include font-size(16px);
-            font-weight: 400;
-            padding: rfs-value(25px 22px);
-
-            &.pros-list {
-              .icon {
-                background-image: escape-svg($bs-check-icon);
-              }
-            }
-
-            &.cons-list {
-              .icon {
-                background-image: escape-svg($bs-close-icon);
-              }
-            }
-
-            li {
-              line-height: 1.3;
-              margin: rfs-value(0 0 15px 0);
-              padding-left: rfs-value(27px);
-
-              .icon {
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: rfs-value(25px);
-                width: rfs-value(18px);
-                height: rfs-value(20px);
-                padding: 0;
-                display: inline-block;
-                margin-right: $breadcrumb-item-padding-x;
-                vertical-align: bottom;
-                margin-left: rfs-value(-27px);
-              }
-
-              &:last-child {
-                margin-bottom: 0;
-              }
-            }
-          }
-        }
-      }
-    }
-
-  }
-
-
-  // Accordion
-  // ===================================================================================================================
-  #accordionFooter {
-    .accordion-item {
+    .post-thumbnail {
+      min-height: rfs-value(250px);
       border: 1px solid $color-border-gray;
-
-      &:not(:last-child) {
-        margin-bottom: rfs-value(20px);
+      @include media-breakpoint-up(sm) {
+        min-height: rfs-value(300px);
       }
 
-      .accordion-button {
-        @include font-size(22px);
+      &.best {
+        position: relative;
+        border-width: rfs-value(5px);
+        border-color: $color-primary-dark;
+
+        &:after {
+          content: "";
+          background-image: url("../../images/certificate.svg");
+          background-size: rfs-value(40px 40px);
+          position: absolute;
+          top: rfs-value(13px);
+          right: rfs-value(8px);
+          z-index: 2;
+          width: rfs-value(40px);
+          height: rfs-value(40px);
+        }
+      }
+
+      .figure-img {
+        max-height: rfs-value(300px);
+        @include media-breakpoint-up(sm) {
+          max-height: rfs-value(350px);
+        }
+      }
+    }
+
+    .btn.affiliate-link {
+      min-width: rfs-value(260px);
+      @include font-size(20px);
+    }
+
+  }
+
+
+  .pros-and-cons {
+
+    .column {
+      @include media-breakpoint-up(sm) {
+        flex-basis: 0;
+        flex-grow: 1;
+      }
+
+      &.pros {
+        @include media-breakpoint-up(sm) {
+          border-right: 1px solid $color-border-gray;
+        }
+      }
+
+      .heading {
+        background-color: $color-light-gray;
+        padding: rfs-value(12px 25px);
+        border-bottom: 1px solid $color-border-gray;
+      }
+
+      .list {
+        @include font-size(16px);
+        font-weight: 400;
+        padding: rfs-value(25px 22px);
+
+        &.pros-list {
+          .icon {
+            background-image: escape-svg($bs-check-icon);
+          }
+        }
+
+        &.cons-list {
+          .icon {
+            background-image: escape-svg($bs-close-icon);
+          }
+        }
+
+        li {
+          line-height: 1.3;
+          margin: rfs-value(0 0 15px 0);
+          padding-left: rfs-value(27px);
+
+          .icon {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: rfs-value(25px);
+            width: rfs-value(18px);
+            height: rfs-value(20px);
+            padding: 0;
+            display: inline-block;
+            margin-right: $breadcrumb-item-padding-x;
+            vertical-align: bottom;
+            margin-left: rfs-value(-27px);
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
       }
     }
   }
+
 
 
   // Related

@@ -11,7 +11,8 @@ $color-primary       : #fdd11f;  $primary    : $color-primary;
 $color-primary-light : #ffd941;
 $color-primary-dark  : #f0c000;
 
-$color-secondary     : #3ba7fa; $secondary  : $color-secondary;
+$color-secondary        : #3ba7fa; $secondary  : $color-secondary;
+$color-secondary-light  : #a9daff;
 
 //$color-accent        : #5333ed;
 $color-accent        : $color-secondary;
@@ -33,11 +34,12 @@ $theme-colors: (
 );
 
 $custom-colors: (
-    "accent"        : $color-accent,
-    "gray"          : $color-gray,
-    "light-gray"    : $color-light-gray,
-    "primary-light" : $color-primary-light,
-    "primary-dark"  : $color-primary-dark,
+    "accent"          : $color-accent,
+    "gray"            : $color-gray,
+    "light-gray"      : $color-light-gray,
+    "primary-light"   : $color-primary-light,
+    "primary-dark"    : $color-primary-dark,
+    "secondary-light" : $color-secondary-light,
 );
 
 // Merge 'Custom Colors' into 'Theme Colors' maps
@@ -113,7 +115,7 @@ $bs-timer-icon                 : url("data:image/svg+xml, <svg xmlns='http://www
 $bs-arrow-left-circle-icon     : url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#{$color-black}' class='bi bi-arrow-left-circle' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z'/></svg>");
 $bs-arrow-left-circle-icon-h   : url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#{$color-primary-dark}' class='bi bi-arrow-left-circle' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z'/></svg>");
 $bs-check-circle-icon          : url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#{$color-black}' class='bi bi-check-circle' viewBox='0 0 16 16'><path d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/><path d='M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z'/></svg>");
-$bs-chevron-double-down-icon   : url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-double-down' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/><path fill-rule='evenodd' d='M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+$bs-chevron-double-down-icon   : url("data:image/svg+xml, <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#3ba7fa' class='bi bi-chevron-double-down' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/><path fill-rule='evenodd' d='M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
 
 /* Paragraph */
 $paragraph-margin-bottom  : 1.25rem;
@@ -157,7 +159,7 @@ $input-focus-border-color : $color-primary;
 $form-text-font-size  : 0.85rem;
 $form-text-margin-top : 8px;
 
-/* Buttons Genera; */
+/* Buttons General */
 $btn-font-family      : $font-secondary;
 $btn-font-size        : 1.125rem;   // 17px
 $btn-font-size-sm     : 1rem;   // 15px
@@ -247,23 +249,24 @@ $navbar-light-toggler-icon-bg-hover : url("data:image/svg+xml,<svg xmlns='http:/
 /**
  * Accordion
  ***********************************************************************************************************************/
-//$accordion-button-padding-y : 20px;
-//$accordion-button-padding-x : 27px;
-$accordion-bg             : white;
-$accordion-border-width   : 0;
-$accordion-border-radius  : $border-radius;
-//$accordion-body-padding-y : 15px;
-//$accordion-body-padding-x : 27px;
+$accordion-bg               : white;
+$accordion-border-width     : 0.0625rem;
+$accordion-border-radius    : $border-radius;
+$accordion-button-padding-x : 1.25rem;
+$accordion-button-padding-y : 1rem;
+$accordion-body-padding-y   : 1.25rem;
+$accordion-body-padding-x   : 1.25rem;
 
 // Normal
 $accordion-button-color : $color-gray;
-$accordion-button-bg    : $color-light-gray;
+$accordion-button-bg    : lighten(#f8f9fa, 1%);
+$accordion-border-color : $color-secondary-light;
 
 // Active
 $accordion-button-active-color        : $color-black;
 $accordion-button-active-bg           : $color-white;
 $accordion-button-focus-border-color  : transparent;
-//$accordion-button-focus-box-shadow    : none;
+$accordion-button-focus-box-shadow    : none;
 
 //
 //$accordion-icon-color           : $color-primary;
@@ -275,10 +278,10 @@ $accordion-button-active-icon   : url("data:image/svg+xml,<svg xmlns='http://www
 
 /* Card */
 $card-title-spacer-y: 0.625rem;
-$card-border-radius : $border-radius;
+$card-border-radius : $border-radius-sm;
 $card-border-width  : 0;
 
-$card-inner-border-radius : $border-radius;
+$card-inner-border-radius : $border-radius-sm;
 $card-spacer-y      : 1.875rem;
 $card-spacer-x      : 1.875rem;
 
@@ -411,7 +414,7 @@ $slick-dot-color-active   : $color-black;
 }
 
 @mixin custom-letter-spacing($custom-letter-spacing : 0.03rem){
-  letter-spacing: calc($custom-letter-spacing / 2);
+  letter-spacing: 0.02rem;
   @include media-breakpoint-up(lg){
     letter-spacing: $custom-letter-spacing;
   }

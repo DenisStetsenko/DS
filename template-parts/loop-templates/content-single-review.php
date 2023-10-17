@@ -24,7 +24,5 @@ get_template_part('template-parts/single-article/affiliate-disclosure');
 			<?php the_content(); ?>
 		</div>
 	</div>
-
-	<?php get_template_part( 'template-parts/single-article/entry-footer' ); ?>
 	
 </article><!-- #post-## -->

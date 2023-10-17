@@ -20,29 +20,25 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 	
 }
 
-
 /**
- * INLINE SVG
- ***********************************************************************************************************************/
-if ( ! function_exists( 'wp_custom_svg_icon' ) ) {
-	function wp_custom_svg_icon( $icon ) {
-		if ( $icon ) {
-			if ( strpos( $icon, '.svg' ) !== false ) {
-				
-				$ch = curl_init();
-				curl_setopt( $ch, CURLOPT_URL, $icon );
-				curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
-				$data = curl_exec( $ch );
-				curl_close( $ch );
-				
-				return $data;
-				
-			} else {
-				return '<img src="' . $icon . '" alt="" />';
-			}
-		}
-	}
+ * Register ACF Blocks
+ * @return void
+ */
+function wp_custom_acf_register_acf_blocks() {
+	/**
+	 * We register our block's with WordPress's handy
+	 * register_block_type();
+	 * text, media, design, widgets, theme, embed
+	 * @link https://developer.wordpress.org/reference/functions/register_block_type/
+	 * https://www.advancedcustomfields.com/resources/acf-blocks-key-concepts/#block-variables-or-parameters-for-callbacks-in-php
+	 */
+	register_block_type( __DIR__ . '/blocks/faqs' );
+	register_block_type( __DIR__ . '/blocks/top-products' );
+	register_block_type( __DIR__ . '/blocks/product-card' );
+	register_block_type( __DIR__ . '/blocks/pros-cons' );
+	
 }
+add_action( 'init', 'wp_custom_acf_register_acf_blocks' );
 
 /**
  * ACF BUTTON
@@ -59,7 +55,6 @@ if ( ! function_exists( 'acf_link' ) ) {
 		return $link;
 	}
 }
-
 
 /**
  * ACF JSON settings
@@ -151,77 +146,40 @@ add_filter( 'get_avatar', 'wp_custom_change_avatar', 10, 5 );
  * ACF Reading time calculator
  * Thanks to: https://nicklewis.dev/how-to-create-a-reading-timer-from-acf-pro-flexible-content/
  */
-function acf_reading_time() {
-	
-	$the_post_ID      = get_the_ID();
-	$total_word_count = 0; // Establish the total word count
-	
-	$post        = get_post( $the_post_ID ); // specific post
-	$the_content = apply_filters( 'the_content', $post->post_content );
-	
-	
-	// get total words count from default content
-	if ( '' !== $the_content ) {
-		$total_word_count = $total_word_count + str_word_count( strip_tags( $the_content ) );
-	}
-	
-	
-	// Replace 'flexible_content' with your custom field
-	$all_fields = get_field( 'summary_list', $the_post_ID, true ); // Get the flexible content meta field name
-	if ( $all_fields ) {
-		foreach ( $all_fields as $field ) { // Loop the flexible content fields
-			foreach ( $field as $key => $value ) { // Loop the fields by $key => $value
-				
-				// skip everything except main content
-				if ( $key !== 'content' ) {
-					continue;
+if ( ! function_exists( 'acf_reading_time' ) ) {
+	function acf_reading_time() {
+		
+		$the_post_ID      = get_the_ID();
+		$total_word_count = 0; // Establish the total word count
+		
+		$post        = get_post( $the_post_ID ); // specific post
+		$the_content = apply_filters( 'the_content', $post->post_content );
+		
+		
+		// get total words count from default content
+		if ( '' !== $the_content ) {
+			$total_word_count = $total_word_count + str_word_count( strip_tags( $the_content ) );
+		}
+		
+		
+		// Replace 'flexible_content' with your custom field
+		$all_fields = get_field( 'summary_list', $the_post_ID, true ); // Get the flexible content meta field name
+		if ( $all_fields ) {
+			foreach ( $all_fields as $field ) { // Loop the flexible content fields
+				foreach ( $field as $key => $value ) { // Loop the fields by $key => $value
+					
+					// skip everything except main content
+					if ( $key !== 'content' ) {
+						continue;
+					}
+					
+					// get total words count
+					$total_word_count = $total_word_count + str_word_count( strip_tags( $value ) );
 				}
-				
-				// get total words count
-				$total_word_count = $total_word_count + str_word_count( strip_tags( $value ) );
 			}
 		}
-	}
-	
-	$readingtime = ceil( $total_word_count / 320 ); // 200-240 for regular reader.
-	
-	if ( $readingtime <= 1 ) { // If the reading time is equal to or less than 1
-		$timer = " min";
-	} else {
-		$timer = " mins";
-	}
-	
-	if ( $readingtime == 0 ) { // if the reading time equals 0 then change it to 1
-		$totalreadingtime = '<span class="total-reading-time">0 '.$timer.' read</span>';
-	} else {
-		$totalreadingtime = '<span class="total-reading-time">'. $readingtime . $timer . ' read</span>';
-	}
-	
-	return $totalreadingtime;
-}
-
-add_shortcode( 'acf-reading-time', 'acf_reading_time' );
-
-
-/**
- * ACF Reading time calculator
- * Thanks to: https://nicklewis.dev/how-to-create-a-reading-timer-from-acf-pro-flexible-content/
- */
-function wp_reading_time() {
-	
-	$the_post_ID      = get_the_ID();
-	$total_word_count = 0; // Establish the total word count
-	
-	$post        = get_post( $the_post_ID ); // specific post
-	$the_content = apply_filters( 'the_content', $post->post_content );
-	
-	// make sure the content is not empty
-	if ( '' !== $the_content ) {
 		
-		// get total words count
-		$total_word_count = $total_word_count + str_word_count( strip_tags( $the_content ) );
-		
-		$readingtime = ceil( $total_word_count / 320 ); // 200-240 for regular reader.
+		$readingtime = ceil( $total_word_count / 260 ); // 200-240 for regular reader.
 		
 		if ( $readingtime <= 1 ) { // If the reading time is equal to or less than 1
 			$timer = " min";
@@ -238,5 +196,44 @@ function wp_reading_time() {
 		return $totalreadingtime;
 	}
 }
+add_shortcode( 'acf-reading-time', 'acf_reading_time' );
 
+
+/**
+ * ACF Reading time calculator
+ * Thanks to: https://nicklewis.dev/how-to-create-a-reading-timer-from-acf-pro-flexible-content/
+ */
+if ( ! function_exists( 'wp_reading_time' ) ) {
+	function wp_reading_time() {
+		
+		$the_post_ID      = get_the_ID();
+		$total_word_count = 0; // Establish the total word count
+		
+		$post        = get_post( $the_post_ID ); // specific post
+		$the_content = apply_filters( 'the_content', $post->post_content );
+		
+		// make sure the content is not empty
+		if ( '' !== $the_content ) {
+			
+			// get total words count
+			$total_word_count = $total_word_count + str_word_count( strip_tags( $the_content ) );
+			
+			$readingtime = ceil( $total_word_count / 260 ); // 200-240 for regular reader.
+			
+			if ( $readingtime <= 1 ) { // If the reading time is equal to or less than 1
+				$timer = " min";
+			} else {
+				$timer = " mins";
+			}
+			
+			if ( $readingtime == 0 ) { // if the reading time equals 0 then change it to 1
+				$totalreadingtime = '<span class="total-reading-time">0 '.$timer.' read</span>';
+			} else {
+				$totalreadingtime = '<span class="total-reading-time">'. $readingtime . $timer . ' read</span>';
+			}
+			
+			return $totalreadingtime;
+		}
+	}
+}
 add_shortcode( 'wp-reading-time', 'wp_reading_time' );

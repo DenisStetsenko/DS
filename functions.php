@@ -182,6 +182,38 @@ if ( ! function_exists( 'wp_custom_preload_local_fonts' ) ) {
 }
 add_action('wp_head', 'wp_custom_preload_local_fonts');
 
+
+/**
+ * INLINE SVG
+ ***********************************************************************************************************************/
+if ( ! function_exists( 'wp_custom_svg_icon' ) ) {
+	function wp_custom_svg_icon( $icon ) {
+		if ( $icon ) {
+			if ( strpos( $icon, '.svg' ) !== false ) {
+				
+				$ch = curl_init();
+				curl_setopt($ch, CURLOPT_URL, $icon);
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+				curl_setopt($ch, CURLOPT_REFERER, $_SERVER['REQUEST_URI']);
+				$svg 			= curl_exec($ch);
+				$httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+				
+				curl_close($ch);
+				
+				if ( $httpcode == 200 ) {
+					return $svg;
+				} else {
+					echo '<img class="img-fluid" src="'.$icon.'" alt="icon" />';
+				}
+				
+			} else {
+				return '<img src="' . $icon . '" alt="icon" />';
+			}
+		}
+	}
+}
+
+
 /**
  * Ajax Load More
  ***********************************************************************************************************************/
@@ -357,7 +389,6 @@ function cs_toc($atts){
 	$the_content 				= get_post_field('post_content', $post->ID);
 	$summary_list 			= get_field('summary_list', $post->ID);
 	$product_list_intro = get_field('product_list_intro', $post->ID);
-	$footer_content 		= get_field('footer_content', $post->ID);
 	
 	ob_start();
 	
@@ -410,18 +441,6 @@ function cs_toc($atts){
 							<?php $i++; endforeach;
 							
 						endif;
-		
-						// Footer Content
-						if ( $footer_content['content'] ) :
-							preg_match_all('#<h2.*?>(.*?)</h2>#i',$footer_content['content'], $footer_content_H2);
-							
-							foreach ($footer_content_H2[1] as $h2) : ?>
-								<li class="ez-toc-page-1 ez-toc-heading-level-2">
-									<a class="ez-toc-link ez-toc-heading-1" href="#<?= sanitize_title_with_dashes($h2); ?>" title="<?= $h2; ?>"><?= $h2; ?></a>
-								</li>
-							<?php endforeach;
-						
-						endif;
 						
 						
 		echo 	 '</ul>
@@ -462,3 +481,20 @@ add_filter( 'rank_math/sitemap/enable_caching', '__return_false');
  * Use this filter to remove Rank Math integration from the Gutenberg Sidebar and add old meta boxes below the content area.
  */
 add_filter( 'rank_math/gutenberg/enabled', '__return_false' );
+
+
+/**
+ * Filter code to remove noopener rel from external links.
+ */
+add_filter( 'rank_math/noopener', '__return_false');
+
+/**
+ * TOC: Exclude by selector
+ */
+add_filter( 'ez_toc_exclude_by_selector', function( $selectors ) {
+	$selectors['class'] 		= '.ez-toc-exclude';
+	$selectors['acf-faqs'] 	= '.acf-faqs';
+	$selectors['wp-block-acf-faqs'] 	= '.wp-block-acf-faqs';
+	$selectors['wp-block-acf-accordion'] 	= '.wp-block-acf-accordion';
+	return $selectors;
+});

@@ -1,0 +1,18 @@
+{
+  "name": "acf/pros-cons",
+  "title": "Pros Cons",
+  "description": "Pros & Cons block that uses ACF fields.",
+  "category": "widgets",
+  "icon": "image-flip-horizontal",
+  "keywords": ["pros", "cons"],
+  "acf": {
+    "mode": "auto",
+    "renderTemplate": "pros-cons.php"
+  },
+  "supports": {
+    "anchor": false,
+    "align": false,
+    "align_text": false,
+    "multiple": true
+  }
+}

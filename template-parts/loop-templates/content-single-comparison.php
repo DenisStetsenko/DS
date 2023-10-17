@@ -10,8 +10,6 @@ get_template_part('template-parts/single-article/author-block');
 get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-	
-	<?php // get_template_part('template-parts/single-article/post-thumbnail')?>
 
 	<div class="content-widget widget rounded-3 font-secondary fs-4 bg-light-gray border p-4 d-lg-none mb-4">
 		<?php echo do_shortcode('[cs-toc navid="ez-toc-nav-mobile"]'); ?>
@@ -43,7 +41,7 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 
 					<div class="d-flex <?= $top_picks['preview'] ? 'column-description' : 'col-lg-8'; ?>">
 						<?php if ( $top_picks['heading'] ) : ?>
-							<div class="top-picks-heading font-secondary flex-grow-1 ps-1 pe-1 ps-sm-3 pe-sm-0 pe-xl-3 py-2 d-flex flex-column justify-content-between">
+							<div class="top-picks-heading font-secondary flex-grow-1 ps-1 pe-1 ps-sm-4 pe-sm-0 pe-xl-4 py-2 d-flex flex-column justify-content-between">
 								<div class="top">
 									<?= $top_picks['heading']['subtitle'] ? '<p class="subtitle mb-0 font-secondary fs-6 fw-bolder text-gray text-uppercase">'.$top_picks['heading']['subtitle'].'</p>' 	: null; ?>
 									<?= $top_picks['heading']['title'] 		? '<p class="title fs-4 fw-bold mb-2">'.$top_picks['heading']['title'].'</p>' 	: null; ?>
@@ -96,8 +94,8 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 					
 					<!-- PRODUCT HEADING -->
 					<header <?= $summary_list_item['heading']['title'] ? 'id="try-'. sanitize_title_with_dashes($summary_list_item['heading']['title']) .'"' : ''; ?> class="product-heading mb-4">
-						<?= $summary_list_item['heading']['subtitle'] ? '<p class="subtitle mb-2 font-secondary text-black fw-bold text-uppercase fs-4 ls-lg">'.$summary_list_item['heading']['subtitle'].'</p>' 	: null; ?>
-						<h3 class="title m-0">
+						<?= $summary_list_item['heading']['subtitle'] ? '<p class="subtitle mb-3 font-secondary text-black fw-bold text-uppercase fs-4 ls-lg">'.$summary_list_item['heading']['subtitle'].'</p>' 	: null; ?>
+						<h2 class="title m-0">
 							<span class="number"><?= $i; ?>.</span>
 							<?php if ( $summary_list_item['link'] ) : ?>
 								<a class="affiliate-link" title="<?= esc_attr($summary_list_item['link']['title']); ?>" href="<?= esc_url($summary_list_item['link']['url']); ?>"<?= $summary_list_item['link']['target'] ? ' target="_blank" rel="nofollow noopener external"' : ''; ?>>
@@ -106,7 +104,7 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 							<?php else : ?>
 								<?= sanitize_text_field($summary_list_item['heading']['title']); ?>
 							<?php endif; ?>
-						</h3>
+						</h2>
 					</header>
 					<!-- / PRODUCT HEADING -->
 					
@@ -176,7 +174,5 @@ get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 			<?php $i++; endforeach; ?>
 		</div>
 	<?php endif; ?>
-	
-	<?php get_template_part( 'template-parts/single-article/entry-footer' ); ?>
 	
 </article><!-- #post-## -->
