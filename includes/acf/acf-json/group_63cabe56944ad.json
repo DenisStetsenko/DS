@@ -1,10 +1,10 @@
 {
     "key": "group_63cabe56944ad",
-    "title": "Single Post Footer",
+    "title": "Post Footer",
     "fields": [
         {
             "key": "field_63caabf6fd6c5",
-            "label": "Footer Content",
+            "label": "",
             "name": "footer_content",
             "aria-label": "",
             "type": "group",
@@ -20,7 +20,7 @@
             "sub_fields": [
                 {
                     "key": "field_63caac0afd6c6",
-                    "label": "Display Footer Content",
+                    "label": "Display Additional Footer Content",
                     "name": "show_footer_content",
                     "aria-label": "",
                     "type": "true_false",
@@ -152,14 +152,14 @@
             }
         ]
     ],
-    "menu_order": 3,
+    "menu_order": 5,
     "position": "normal",
-    "style": "seamless",
+    "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683887326
+    "modified": 1697486220
 }
