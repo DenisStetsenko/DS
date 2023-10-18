@@ -5,15 +5,30 @@ $top_products = get_field('top_products');
 // Support custom "anchor" values.
 $anchor = "";
 if ( ! empty( $block['anchor'] ) ) {
-	$anchor = 'id="' . esc_attr( $block['anchor'] ) . '"';
+	$anchor = 'id='.esc_attr( $block['anchor'] );
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
 $class_name = 'wp-block-acf-top-products-list product-summary-wrapper overflow-hidden rounded-3 bg-light-gray border py-4 px-4';
 if ( ! empty( $block['className'] ) )   $class_name .= ' ' . $block['className'];
 
+// Set Custom Margin & Bottom adjustments
+$margin				= '';
+$marginTop 		= '';
+$marginBottom = '';
+
+if (isset($block['style']['spacing']['margin']['top'])) {
+	$marginTop = $block['style']['spacing']['margin']['top'];
+	$margin .= 'margin-top:' . get_spacing_value($marginTop) . ';';
+}
+
+if (isset($block['style']['spacing']['margin']['bottom'])) {
+	$marginBottom = $block['style']['spacing']['margin']['bottom'];
+	$margin .= 'margin-bottom:' . get_spacing_value($marginBottom) . ';';
+}
+
 if ( ! empty( $top_products && array_filter($top_products) ) ) { ?>
-	<div <?= esc_attr( $anchor ); ?> class="<?= esc_attr( $class_name ); ?>">
+	<div <?= esc_attr( $anchor ); ?> class="<?= esc_attr( $class_name ); ?>" style="<?= esc_attr( $margin ); ?>">
 		<?php
 		foreach ( $top_products as $key => $product ) :
 			$first = $key === array_key_first($top_products);

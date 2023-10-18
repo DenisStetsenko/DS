@@ -13,7 +13,21 @@ if ( ! empty( $block['anchor'] ) ) {
 $class_name = 'wp-block-acf-accordion accordion font-secondary';
 if ( ! empty( $block['className'] ) )   $class_name .= ' ' . $block['className'];
 //if ( ! empty( $block['align'] ) )       $class_name .= ' align' . $block['align'];
-?><div id="<?= esc_attr( $anchor ); ?>" class="<?= esc_attr( $class_name ); ?>">
+
+$margin				= '';
+$marginTop 		= '';
+$marginBottom = '';
+
+if (isset($block['style']['spacing']['margin']['top'])) {
+	$marginTop = $block['style']['spacing']['margin']['top'];
+	$margin .= 'margin-top:' . get_spacing_value($marginTop) . ';';
+}
+
+if (isset($block['style']['spacing']['margin']['bottom'])) {
+	$marginBottom = $block['style']['spacing']['margin']['bottom'];
+	$margin .= 'margin-bottom:' . get_spacing_value($marginBottom) . ';';
+}
+?><div id="<?= esc_attr( $anchor ); ?>" class="<?= esc_attr( $class_name ); ?>" style="<?= esc_attr( $margin ); ?>">
 	
 	<?php
 	$uniqueID = acf_uniqid("faq");
@@ -22,13 +36,16 @@ if ( ! empty( $block['className'] ) )   $class_name .= ' ' . $block['className']
 		$active 	= $key === array_key_first($faqs);
 		$field_id = $uniqueID. '-' . $i;
 		?>
+		
 		<div class="accordion-item rounded overflow-hidden">
-			<h3 itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question"
-					class="accordion-header ez-toc-exclude m-0" id="heading-<?= $field_id; ?>">
-				<button itemprop="name" class="accordion-button fw-bold <?= $active ? '' : 'collapsed'; ?>" type="button"
-								data-bs-toggle="collapse" data-bs-target="#collapse-<?= $field_id; ?>"
-								aria-expanded="<?= $active ? 'true' : 'false'; ?>" aria-controls="collapse-<?= $field_id; ?>"><?= wp_strip_all_tags($item['question']); ?></button>
-			</h3>
+			
+			<h3 class="accordion-header accordion-button ez-toc-exclude m-0" id="heading-<?= $field_id; ?>"
+					itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question"
+					data-bs-toggle="collapse"
+					data-bs-target="#collapse-<?= $field_id; ?>"
+					aria-expanded="<?= $active ? 'true' : 'false'; ?>"
+					aria-controls="collapse-<?= $field_id; ?>"
+			><?= wp_strip_all_tags($item['question']); ?></h3>
 
 			<div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"
 					 id="collapse-<?= $field_id; ?>" class="accordion-collapse collapse <?= $active ? 'show' : ''; ?>"

@@ -13,6 +13,9 @@
     "anchor": true,
     "align": false,
     "align_text": false,
-    "multiple": false
+    "multiple": false,
+    "spacing": {
+      "margin": [ "top", "bottom"]
+    }
   }
 }

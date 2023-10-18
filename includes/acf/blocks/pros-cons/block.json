@@ -10,9 +10,12 @@
     "renderTemplate": "pros-cons.php"
   },
   "supports": {
-    "anchor": false,
+    "anchor": true,
     "align": false,
     "align_text": false,
-    "multiple": true
+    "multiple": true,
+    "spacing": {
+      "margin": [ "top", "bottom"]
+    }
   }
 }

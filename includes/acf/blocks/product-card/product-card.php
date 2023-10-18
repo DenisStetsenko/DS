@@ -7,11 +7,19 @@ $best 								= $product_card_heading['mark_as_best'];
 $best_label 					= $best ? 'best' : '';
 $excluded_from_toc 		= $product_card_heading['exclude_from_toc'] ? ' ez-toc-exclude' : '';
 
-// Support custom "anchor" values.
-if ( ! empty( $block['anchor'] ) ) {
-	$anchor = esc_attr( $block['anchor'] );
-} else {
-	$anchor = acf_uniqid("acf-product-card");
+// Set Custom Margin & Bottom adjustments
+$margin				= '';
+$marginTop 		= '';
+$marginBottom = '';
+
+if (isset($block['style']['spacing']['margin']['top'])) {
+	$marginTop = $block['style']['spacing']['margin']['top'];
+	$margin .= 'margin-top:' . get_spacing_value($marginTop) . ';';
+}
+
+if (isset($block['style']['spacing']['margin']['bottom'])) {
+	$marginBottom = $block['style']['spacing']['margin']['bottom'];
+	$margin .= 'margin-bottom:' . get_spacing_value($marginBottom) . ';';
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
@@ -20,7 +28,7 @@ if ( ! empty( $block['className'] ) )   $class_name .= ' ' . $block['className']
 
 if ( ! empty( $product_card_heading && array_filter($product_card_heading) ) ) { ?>
 	
-	<div class="<?= esc_attr( $class_name ); ?>">
+	<div class="<?= esc_attr( $class_name ); ?>" style="<?= esc_attr( $margin ); ?>">
 		<!-- PRODUCT HEADING -->
 		<?php
 		$number_data 						= '';

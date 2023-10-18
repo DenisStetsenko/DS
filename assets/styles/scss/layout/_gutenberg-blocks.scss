@@ -418,6 +418,10 @@
         @include font-size(24px);
         border-color: transparent;
         box-shadow: none;
+        cursor: pointer;
+        &[aria-expanded="false"]:hover{
+          color: $color-secondary;
+        }
       }
       .accordion-body{
         .entry-content{
