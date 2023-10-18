@@ -26,7 +26,7 @@ if (isset($block['style']['spacing']['margin']['bottom'])) {
 $class_name = 'wp-block-acf-product-card-item product-card';
 if ( ! empty( $block['className'] ) )   $class_name .= ' ' . $block['className'];
 
-if ( ! empty( $product_card_heading && array_filter($product_card_heading) ) ) { ?>
+if ( ! empty( $product_card_heading['title'] && array_filter($product_card_heading) ) ) { ?>
 	
 	<div class="<?= esc_attr( $class_name ); ?>" style="<?= esc_attr( $margin ); ?>">
 		<!-- PRODUCT HEADING -->
@@ -70,6 +70,9 @@ if ( ! empty( $product_card_heading && array_filter($product_card_heading) ) ) {
 		<!-- / PRODUCT BIG IMAGE -->
 	</div>
 
-<?php } else {
-	echo '<pre class="text-center">PRODUCT CARD</pre>';
-}
+<?php } else { ?>
+	<p class="text-center" style="font-family: var(--wp--preset--font-family--inter);font-weight:700;padding: 20px;flex-basis: 0;flex-grow: 1;margin: 0;background: var(--wp--preset--color--pale-pink);">
+		PRODUCT CARD IS EMPTY!<br>
+		CLICK TO ADD CONTENT
+	</p>
+<?php }

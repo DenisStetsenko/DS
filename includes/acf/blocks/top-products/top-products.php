@@ -71,6 +71,9 @@ if ( ! empty( $top_products && array_filter($top_products) ) ) { ?>
 			
 			<?php endforeach; ?>
 	</div>
-<?php } else {
-	echo '<pre class="text-center">TOP PRODUCTS LIST</pre>';
-}
+<?php } else { ?>
+	<p class="text-center" style="font-family: var(--wp--preset--font-family--inter);font-weight:700;padding: 20px;flex-basis: 0;flex-grow: 1;margin: 0;">
+		TOP PRODUCTS LIST IS EMPTY!<br>
+		CLICK TO ADD CONTENT
+	</p>
+<?php }

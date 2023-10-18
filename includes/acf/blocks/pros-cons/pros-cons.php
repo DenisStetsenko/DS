@@ -27,11 +27,11 @@ if (isset($block['style']['spacing']['margin']['bottom'])) {
 	$marginBottom = $block['style']['spacing']['margin']['bottom'];
 	$margin .= 'margin-bottom:' . get_spacing_value($marginBottom) . ';';
 }
+?><div <?= esc_attr( $anchor ); ?> class="<?= esc_attr( $class_name ); ?>" style="<?= esc_attr( $margin ); ?>">
 
-if ( $pros_and_cons && array_filter($pros_and_cons) ) : ?>
-	<div <?= esc_attr( $anchor ); ?> class="<?= esc_attr( $class_name ); ?>" style="<?= esc_attr( $margin ); ?>">
+	<?php if ( $pros_and_cons && array_filter($pros_and_cons) ) : ?>
 		
-		<?php if ( $pros_and_cons['pros'] ) : ?>
+		<?php if ( $pros_and_cons['pros'] ) { ?>
 			<div class="column pros">
 				<div class="heading fw-bold font-secondary text-center"><span><?php _e('Pros', 'wp-theme'); ?></span></div>
 				<ul class="list pros-list list-unstyled m-0">
@@ -40,9 +40,9 @@ if ( $pros_and_cons && array_filter($pros_and_cons) ) : ?>
 					<?php endforeach; ?>
 				</ul>
 			</div>
-		<?php endif; ?>
-		
-		<?php if ( $pros_and_cons['cons'] ) : ?>
+		<?php } ?>
+	
+		<?php if ( $pros_and_cons['cons'] ) { ?>
 			<div class="column cons">
 				<div class="heading fw-bold font-secondary text-center"><span><?php _e('Cons', 'wp-theme'); ?></span></div>
 				<ul class="list cons-list list-unstyled m-0">
@@ -51,7 +51,13 @@ if ( $pros_and_cons && array_filter($pros_and_cons) ) : ?>
 					<?php endforeach; ?>
 				</ul>
 			</div>
-		<?php endif; ?>
-		
-	</div>
-<?php endif; ?>
+		<?php } ?>
+	
+	<?php else : ?>
+		<p class="text-center" style="font-family: var(--wp--preset--font-family--inter);font-weight:700;padding: 20px;flex-basis: 0;flex-grow: 1;margin: 0;background: var(--wp--preset--color--pale-pink);">
+			PROS & CONS LIST IS EMPTY!<br>
+			CLICK TO ADD CONTENT
+		</p>
+	<?php endif; ?>
+	
+</div>
