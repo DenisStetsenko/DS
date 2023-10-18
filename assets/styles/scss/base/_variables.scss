@@ -94,13 +94,16 @@ $border-style             : solid;
 $font-family-base         : $font-primary;
 $font-size-base           : 1.25rem;
 $brand-primary            : $color-primary;
-$line-height-base         : 1.725;
 $list-inline-padding      : 0.875rem;
 
 $font-weight-lighter      : 300;
 $font-weight-base         : 400;
 $font-weight-bolder       : 600;
 $font-weight-bold         : 700;
+
+$line-height-sm   : 1.25;
+$line-height-base : 1.725;
+$line-height-lg   : 2;
 
 $breadcrumb-active-color  : $color-gray;
 

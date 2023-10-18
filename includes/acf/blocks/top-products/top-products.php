@@ -9,7 +9,7 @@ if ( ! empty( $block['anchor'] ) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$class_name = 'wp-block-acf-top-products-list product-summary-wrapper overflow-hidden rounded-3 bg-light-gray border py-4 px-4 my-5';
+$class_name = 'wp-block-acf-top-products-list product-summary-wrapper overflow-hidden rounded-3 bg-light-gray border py-4 px-4';
 if ( ! empty( $block['className'] ) )   $class_name .= ' ' . $block['className'];
 
 if ( ! empty( $top_products && array_filter($top_products) ) ) { ?>
@@ -29,8 +29,8 @@ if ( ! empty( $top_products && array_filter($top_products) ) ) { ?>
 					<?php if ( $product['heading'] ) : ?>
 						<div class="top-picks-heading font-secondary flex-grow-1 ps-1 pe-1 ps-sm-4 pe-sm-0 pe-xl-4 py-2 d-flex flex-column justify-content-between">
 							<div class="top">
-								<?= $product['heading']['subtitle']     ? '<p class="subtitle mb-1 font-secondary fs-6 fw-bolder text-gray text-uppercase">'.wp_strip_all_tags($product['heading']['subtitle']).'</p>' 	: null; ?>
-								<?= $product['heading']['title'] 		    ? '<p class="title fs-4 fw-bold mb-2">'.wp_strip_all_tags($product['heading']['title']).'</p>' 	: null; ?>
+								<?= $product['heading']['subtitle']     ? '<p class="subtitle lh-sm font-secondary fs-6 fw-bolder text-gray text-uppercase">'.wp_strip_all_tags($product['heading']['subtitle']).'</p>' 	: null; ?>
+								<?= $product['heading']['title'] 		    ? '<p class="title fw-bold mb-2">'.wp_strip_all_tags($product['heading']['title']).'</p>' 	: null; ?>
 								<?= $product['heading']['description'] 	? '<p class="description fs-5 mb-2">'.wp_kses_post($product['heading']['description']).'</p>' 	: null; ?>
 							</div>
 							<div class="bottom lh-sm">
@@ -48,8 +48,8 @@ if ( ! empty( $top_products && array_filter($top_products) ) ) { ?>
 					<?php endif; ?>
 				</div>
 				
-				<div class="d-flex align-items-center justify-content-end <?= $product['logo'] ? 'column-link' : 'col-lg-4'; ?> text-lg-end mt-4 mt-xl-0">
-					<?= acf_link($product['link'], 'btn btn-primary btn-sm btn-price affiliate-link w-100'); ?>
+				<div class="d-flex align-items-center justify-content-start justify-content-xl-end <?= $product['logo'] ? 'column-link' : 'col-lg-4'; ?> text-lg-end mt-4 mt-xl-0">
+					<?= acf_link($product['link'], 'btn btn-primary btn-sm affiliate-link', 'nofollow sponsored'); ?>
 				</div>
 			
 			</div>

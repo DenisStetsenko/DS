@@ -1,13 +1,13 @@
 {
-    "key": "group_652d93ff4d530",
-    "title": "Subtitle",
+    "key": "group_652fafba2c7ce",
+    "title": "Custom Title Width",
     "fields": [
         {
-            "key": "field_652d93ff59bd0",
-            "label": "",
-            "name": "subtitle",
+            "key": "field_652faf4d5230e",
+            "label": "Custom Title Width",
+            "name": "custom_title_width",
             "aria-label": "",
-            "type": "text",
+            "type": "number",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -17,10 +17,12 @@
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
+            "min": "",
+            "max": "",
             "placeholder": "",
+            "step": 10,
             "prepend": "",
-            "append": ""
+            "append": "px"
         }
     ],
     "location": [
@@ -32,8 +34,8 @@
             }
         ]
     ],
-    "menu_order": 0,
-    "position": "acf_after_title",
+    "menu_order": 10,
+    "position": "side",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
@@ -41,5 +43,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697486057
+    "modified": 1697624852
 }

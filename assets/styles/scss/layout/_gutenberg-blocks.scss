@@ -404,7 +404,8 @@
 
   // Block Editor => FAQs
   .wp-block-acf-accordion{
-    margin: rfs-value(25px 0);
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
     .accordion-item {
       border-top: 1px solid var(--bs-accordion-border-color);
       //border: 1px solid $color-secondary;
@@ -417,6 +418,246 @@
         border-color: transparent;
         box-shadow: none;
       }
+    }
+  }
+
+  // Block Editor => TOP Products
+  // ===================================================================================================================
+  .wp-block-acf-top-products-list{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    .top-picks {
+      &:not(:last-child) {
+        &:after {
+          content: '';
+          display: block;
+          width: 100%;
+          border-bottom: 1px solid $color-border-gray;
+          margin-bottom: rfs-value(20px);
+          padding-bottom: rfs-value(20px);
+        }
+      }
+
+      &.best {
+        .column-preview {
+          border-color: $color-primary-dark;
+          border-width: rfs-value(2px);
+          &:after {
+            content: "";
+            background-image: url("../../images/certificate.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: rfs-value(-15px);
+            left: 50%;
+            margin-left: rfs-value(-20px);
+            z-index: 2;
+            width: rfs-value(40px);
+            height: rfs-value(40px);
+          }
+        }
+      }
+
+      .column-preview {
+        flex: 0 0 auto;
+        min-height: rfs-value(115px);
+        border: 1px solid $color-border-gray;
+        width: 100%;
+        @include media-breakpoint-up(sm) {
+          max-width: rfs-value(150px);
+          min-height: rfs-value(90px);
+        }
+        @include media-breakpoint-up(xl) {
+          max-width: rfs-value(150px);
+        }
+      }
+
+      .column-description {
+        flex: 0 0 auto;
+        width: 100%;
+        @include media-breakpoint-up(sm) {
+          max-width: calc(100% - 150px);
+        }
+        @include media-breakpoint-up(xl) {
+          max-width: calc(100% - 320px);
+        }
+      }
+
+      .column-link {
+        flex: 0 0 auto;
+        width: 100%;
+        @include media-breakpoint-up(xl) {
+          max-width: 170px;
+          .btn{
+            min-width: 100%;
+          }
+        }
+        .btn{
+          @include media-breakpoint-up(xl){
+          }
+        }
+      }
+
+      .top-picks-heading {
+        .subtitle {
+          @include custom-letter-spacing();
+          margin-bottom: rfs-value(5px);
+        }
+
+        .title {
+          line-height: 1.4;
+          margin-bottom: rfs-value(2px);
+        }
+
+        .more {
+          @include font-size(15px);
+          color: $color-black;
+          transition: color 300ms ease;
+          &:hover {
+            text-decoration: underline;
+            text-decoration-color: $color-primary-dark;
+            text-decoration-thickness: rfs-value(2px);
+          }
+
+          i {
+            margin-right: rfs-value(2px);
+            background-image: escape-svg($bs-chevron-double-down-icon);
+            width: rfs-value(14px);
+            height: rfs-value(14px);
+            background-size: contain;
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: rfs-value(-2px);
+          }
+        }
+      }
+    }
+  }
+
+  // Block Editor => Pros & Cons
+  // ===================================================================================================================
+  .wp-block-pros-and-cons{
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    .column {
+      @include media-breakpoint-up(sm) {
+        flex-basis: 0;
+        flex-grow: 1;
+      }
+
+      &.pros {
+        @include media-breakpoint-up(sm) {
+          border-right: 1px solid $color-border-gray;
+        }
+      }
+
+      .heading {
+        background-color: $color-light-gray;
+        padding: rfs-value(12px 25px);
+        border-bottom: 1px solid $color-border-gray;
+      }
+
+      .list {
+        @include font-size(16px);
+        font-weight: 400;
+        padding: rfs-value(25px 22px);
+
+        &.pros-list {
+          .icon {
+            background-image: escape-svg($bs-check-icon);
+          }
+        }
+
+        &.cons-list {
+          .icon {
+            background-image: escape-svg($bs-close-icon);
+          }
+        }
+
+        li {
+          line-height: 1.4;
+          margin: rfs-value(0 0 15px 0);
+          padding-left: rfs-value(27px);
+
+          .icon {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: rfs-value(25px);
+            width: rfs-value(18px);
+            height: rfs-value(20px);
+            padding: 0;
+            display: inline-block;
+            margin-right: $breadcrumb-item-padding-x;
+            vertical-align: text-bottom;
+            margin-left: rfs-value(-27px);
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+
+  // Block Editor => Product Card
+  // ===================================================================================================================
+  .wp-block-acf-product-card-item{
+    margin-top: 3rem;
+    margin-bottom: 0;
+    .product-heading {
+
+      .title {
+        &:before{
+          content: attr(data-number);
+          background-color: $color-primary;
+          padding-left: rfs-value(10px);
+          padding-right: rfs-value(7px);
+          margin-right: rfs-value(10px);
+          font-style: normal;
+        }
+
+        a {
+          transition: color 300ms ease;
+          &:hover {
+            text-decoration: underline;
+            text-decoration-color: $color-primary-dark;
+            text-decoration-thickness: rfs-value(3px);
+          }
+        }
+      }
+    }
+
+    .post-thumbnail {
+      border: 1px solid $color-border-gray;
+      min-height: rfs-value(200px);
+      @include media-breakpoint-up(sm) {
+        min-height: rfs-value(250px);
+      }
+      & + .figure-caption{
+        margin-top: -1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      &.best {
+        position: relative;
+        border-width: rfs-value(5px);
+        border-color: $color-primary-dark;
+
+        &:after {
+          content: "";
+          background-image: url("../../images/certificate.svg");
+          background-size: rfs-value(40px 40px);
+          position: absolute;
+          top: rfs-value(13px);
+          right: rfs-value(8px);
+          width: rfs-value(40px);
+          height: rfs-value(40px);
+          z-index: 2;
+        }
+      }
+
     }
   }
 

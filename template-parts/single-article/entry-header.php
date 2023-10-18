@@ -1,4 +1,11 @@
-<header class="entry-header">
+<?php
+$custom_title_width = get_field('custom_title_width');
+$title_width = '910';
+if ( $custom_title_width ) {
+	$title_width = $custom_title_width;
+}
+?>
+<header class="entry-header" style="--title-width: <?= $title_width; ?>px">
 	<?php the_title('<h1 class="entry-title mb-2"><span>', '</span></h1>'); ?>
 	<?php
 	$subtitle = get_field( 'subtitle' );

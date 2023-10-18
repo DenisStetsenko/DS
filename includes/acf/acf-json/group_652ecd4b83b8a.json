@@ -28,7 +28,27 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "18",
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "ui": 1
+                },
+                {
+                    "key": "field_652fa1ee6cb33",
+                    "label": "Exclude from Table of Contents",
+                    "name": "exclude_from_toc",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -48,7 +68,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "82",
+                        "width": "100",
                         "class": "",
                         "id": ""
                     },
@@ -166,5 +186,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697572643
+    "modified": 1697620495
 }

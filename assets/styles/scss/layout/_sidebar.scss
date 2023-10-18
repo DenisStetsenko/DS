@@ -150,8 +150,7 @@ $toc_black: #111;
       font-weight: 800;
       margin-bottom: rfs-value(15px);
       line-height: 1.25;
-      @include font-size(36px);
-
+      @include font-size(34px);
       @include media-breakpoint-only(lg){
         @include font-size(25px);
       }
@@ -168,6 +167,9 @@ $toc_black: #111;
       padding: 0;
       direction: ltr;
       //counter-reset: item;
+      &.ez-toc-list-level-1{
+        margin: rfs-value(0 0 0 5px);
+      }
       li a::before {
         //content: counters(item, ".", decimal) ". ";
         display: inline-block;

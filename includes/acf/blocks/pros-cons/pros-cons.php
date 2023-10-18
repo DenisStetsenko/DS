@@ -10,7 +10,7 @@ if ( ! empty( $block['anchor'] ) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$class_name = 'wp-block-pros-and-cons pros-and-cons d-sm-flex flex-wrap mt-6 mb-7 rounded border overflow-hidden font-secondary my-5';
+$class_name = 'wp-block-pros-and-cons pros-and-cons d-sm-flex flex-wrap rounded border overflow-hidden font-secondary';
 if ( ! empty( $block['className'] ) )   $class_name .= ' ' . $block['className'];
 
 if ( $pros_and_cons && array_filter($pros_and_cons) ) : ?>

@@ -48,7 +48,7 @@ if ( ! function_exists( 'acf_link' ) ) {
 	function acf_link( $acf_field = null, $class = 'btn', $rel = 'nofollow' ) {
 		$link = '';
 		if ( $acf_field ) {
-			( $target = $acf_field['target'] ) ? $target = 'target="_blank" rel="'.$rel.'"' : $target = '';
+			$target = $acf_field['target'] ? 'target="_blank" rel="' . $rel . '"' : '';
 			$link = '<a class="' . $class . '" href="' . esc_url( $acf_field['url'] ) . '" ' . $target . '>' . wp_strip_all_tags( $acf_field['title'] ) . '</a>';
 		}
 		

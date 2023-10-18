@@ -40,7 +40,7 @@
  * Single Article Template
  */
 @mixin entry-content-heading-styling() {
-  h2, h3, h4 {
+  h2:not(.title), h3, h4 {
     margin: rfs-value(45px 0 9px);
     &:first-child {
       margin-top: 0;
@@ -54,7 +54,7 @@
   h4{
     @include font-size(28px);
   }
-  ul > li, ol > li {
+  ul:not(.list) > li, ol:not(.list) > li {
     margin-bottom: rfs-value(16px);
     line-height: 1.65;
 
@@ -74,7 +74,7 @@
       margin-top: rfs-value(7px);
     }
   }
-  img {
+  img:not(.figure-img) {
     @include img-fluid();
   }
   a.bigger{
@@ -86,9 +86,6 @@
 }
 
 #single-article-template {
-  .entry-content-headings-styling {
-    @include entry-content-heading-styling();
-  }
 
   .single-entry-heading{
     padding: rfs-fluid-value(50px) 0;
@@ -96,7 +93,7 @@
     @include border-bottom-radius($border-radius-xl);
 
     header.entry-header {
-      max-width: 910px;
+      max-width: var(--title-width);
       margin-top: rfs-value(-5px); // offset to have equal top/bottom paddings
 
       h1.entry-title {
@@ -149,6 +146,11 @@
 
   .single-entry-body{
     margin-top: rfs-fluid-value(50px);
+    @include media-breakpoint-down(lg){
+      .container-xl{
+        max-width: 800px;
+      }
+    }
   }
 
   // Author Block
@@ -179,6 +181,7 @@
       }
     }
   }
+
 
   // Post Categories
   // ===================================================================================================================
@@ -220,7 +223,7 @@
   }
 
 
-  // Intro
+  // MAIN COPY
   // ===================================================================================================================
   .post-thumbnail {
     .figure-img {
@@ -228,21 +231,14 @@
     }
   }
 
-  .intro-content {
-    &.product-list-intro {
-      border-top: 1px solid $color-border-gray;
-      border-bottom: 1px solid $color-border-gray;
-      margin: rfs-value(50px 0);
-      padding: rfs-value(35px 0);
-    }
-    &.final-thoughts{
-      border-top: 1px solid $color-border-gray;
-      margin-top: rfs-value(50px);
-      padding-top: rfs-value(35px);
-    }
+  .entry-content {
+    // General Copy
+    @include entry-content-heading-styling();
+  }
+
+  .hero-content {
 
     .entry-content {
-      @include entry-content-heading-styling();
 
       // comment form shortcode
       .wpd-inline-shortcode {
@@ -264,252 +260,13 @@
         @include link-hover-effect();
       }
 
-      .btn {
+      .btn:not(.btn-sm) {
         min-width: rfs-value(200px);
         text-align: center;
       }
 
     }
   }
-
-  // Product Summary [TOP PICKS]
-  // ===================================================================================================================
-  .product-summary-wrapper {
-
-    .top-picks {
-      &:not(:last-child) {
-        &:after {
-          content: '';
-          display: block;
-          width: 100%;
-          border-bottom: 1px solid $color-border-gray;
-          margin-bottom: rfs-value(20px);
-          padding-bottom: rfs-value(20px);
-        }
-      }
-
-      &.best {
-        .column-preview {
-          border-color: $color-primary-dark;
-          border-width: rfs-value(2px);
-          &:after {
-            content: "";
-            background-image: url("../../images/certificate.svg");
-            background-size: contain;
-            background-repeat: no-repeat;
-            position: absolute;
-            top: rfs-value(-15px);
-            left: 50%;
-            margin-left: rfs-value(-20px);
-            z-index: 2;
-            width: rfs-value(40px);
-            height: rfs-value(40px);
-          }
-        }
-      }
-
-      .column-preview {
-        flex: 0 0 auto;
-        min-height: rfs-value(115px);
-        border: 1px solid $color-border-gray;
-        width: 100%;
-        @include media-breakpoint-up(sm) {
-          max-width: rfs-value(150px);
-          min-height: rfs-value(90px);
-        }
-        @include media-breakpoint-up(xl) {
-          max-width: rfs-value(150px);
-        }
-      }
-
-      .column-description {
-        flex: 0 0 auto;
-        width: 100%;
-        @include media-breakpoint-up(sm) {
-          max-width: calc(100% - 150px);
-        }
-        @include media-breakpoint-up(xl) {
-          max-width: calc(100% - 320px);
-        }
-      }
-
-      .column-link {
-        flex: 0 0 auto;
-        width: 100%;
-        @include media-breakpoint-up(xl) {
-          max-width: 170px;
-        }
-      }
-
-      .top-picks-heading {
-        .subtitle {
-          @include custom-letter-spacing();
-        }
-
-        .title {
-          line-height: 1.4;
-          margin-bottom: rfs-value(2px);
-        }
-
-        .more {
-          @include font-size(15px);
-          color: $color-black;
-          transition: color 300ms ease;
-          &:hover {
-            text-decoration: underline;
-            text-decoration-color: $color-primary-dark;
-            text-decoration-thickness: rfs-value(2px);
-          }
-
-          i {
-            margin-right: rfs-value(2px);
-            background-image: escape-svg($bs-chevron-double-down-icon);
-            width: rfs-value(14px);
-            height: rfs-value(14px);
-            background-size: contain;
-            display: inline-block;
-            vertical-align: middle;
-            margin-top: rfs-value(-2px);
-          }
-        }
-      }
-    }
-  }
-
-
-  // MAIN CONTENT AREA
-  // ===================================================================================================================
-  .product-card {
-
-    .product-heading {
-      .subtitle {
-        line-height: 1.2;
-      }
-
-      .title {
-        .number {
-          font-style: normal;
-          background-color: $color-primary;
-          padding-left: rfs-value(10px);
-          padding-right: rfs-value(7px);
-          margin-right: rfs-value(10px);
-        }
-
-        a {
-          transition: color 300ms ease;
-          &:hover {
-            text-decoration: underline;
-            text-decoration-color: $color-primary-dark;
-            text-decoration-thickness: rfs-value(3px);
-          }
-        }
-      }
-    }
-
-    .post-thumbnail {
-      min-height: rfs-value(250px);
-      border: 1px solid $color-border-gray;
-      @include media-breakpoint-up(sm) {
-        min-height: rfs-value(300px);
-      }
-
-      &.best {
-        position: relative;
-        border-width: rfs-value(5px);
-        border-color: $color-primary-dark;
-
-        &:after {
-          content: "";
-          background-image: url("../../images/certificate.svg");
-          background-size: rfs-value(40px 40px);
-          position: absolute;
-          top: rfs-value(13px);
-          right: rfs-value(8px);
-          z-index: 2;
-          width: rfs-value(40px);
-          height: rfs-value(40px);
-        }
-      }
-
-      .figure-img {
-        max-height: rfs-value(300px);
-        @include media-breakpoint-up(sm) {
-          max-height: rfs-value(350px);
-        }
-      }
-    }
-
-    .btn.affiliate-link {
-      min-width: rfs-value(260px);
-      @include font-size(20px);
-    }
-
-  }
-
-
-  .pros-and-cons {
-
-    .column {
-      @include media-breakpoint-up(sm) {
-        flex-basis: 0;
-        flex-grow: 1;
-      }
-
-      &.pros {
-        @include media-breakpoint-up(sm) {
-          border-right: 1px solid $color-border-gray;
-        }
-      }
-
-      .heading {
-        background-color: $color-light-gray;
-        padding: rfs-value(12px 25px);
-        border-bottom: 1px solid $color-border-gray;
-      }
-
-      .list {
-        @include font-size(16px);
-        font-weight: 400;
-        padding: rfs-value(25px 22px);
-
-        &.pros-list {
-          .icon {
-            background-image: escape-svg($bs-check-icon);
-          }
-        }
-
-        &.cons-list {
-          .icon {
-            background-image: escape-svg($bs-close-icon);
-          }
-        }
-
-        li {
-          line-height: 1.3;
-          margin: rfs-value(0 0 15px 0);
-          padding-left: rfs-value(27px);
-
-          .icon {
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: rfs-value(25px);
-            width: rfs-value(18px);
-            height: rfs-value(20px);
-            padding: 0;
-            display: inline-block;
-            margin-right: $breadcrumb-item-padding-x;
-            vertical-align: bottom;
-            margin-left: rfs-value(-27px);
-          }
-
-          &:last-child {
-            margin-bottom: 0;
-          }
-        }
-      }
-    }
-  }
-
 
 
   // Related

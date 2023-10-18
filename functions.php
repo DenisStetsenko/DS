@@ -493,8 +493,8 @@ add_filter( 'rank_math/noopener', '__return_false');
  */
 add_filter( 'ez_toc_exclude_by_selector', function( $selectors ) {
 	$selectors['class'] 		= '.ez-toc-exclude';
-	$selectors['acf-faqs'] 	= '.acf-faqs';
-	$selectors['wp-block-acf-faqs'] 	= '.wp-block-acf-faqs';
-	$selectors['wp-block-acf-accordion'] 	= '.wp-block-acf-accordion';
+//	$selectors['acf-faqs'] 	= '.acf-faqs';
+//	$selectors['wp-block-acf-faqs'] 	= '.wp-block-acf-faqs';
+//	$selectors['wp-block-acf-accordion'] 	= '.wp-block-acf-accordion';
 	return $selectors;
 });
