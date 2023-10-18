@@ -1,7 +1,7 @@
 ta,
 .ta-editor-shortcode {
 	box-shadow: none;
-	color: #292929;
+	color: var(--wp--preset--color--black);
 	font-weight: 600;
 	border-bottom: 3px solid #30b2a6;
 }
@@ -14,8 +14,12 @@ p {
 	margin-block-start: 40px !important;
 	margin-block-end:  40px !important;
 }
+.wp-block-separator:not(.has-background){
+	border-color: var(--wp--preset--color--border-gray);
+}
+
 .wp-block-spacer {
-	background-color: #f7f8f9;
+	background-color: var(--wp--preset--color--light-gray);
 }
 
 figure {
@@ -27,8 +31,8 @@ figure {
 }
 
 .wp-block a:not(.more):not(.btn):not(.button):not(.button-primary):not(.acf-icon):not(.link-url):not(.affiliate-link) {
-	color: #292929;
-	border-bottom: 2px solid #fdd11f;
+	color: var(--wp--preset--color--black);
+	border-bottom: 2px solid var(--wp--preset--color--primary);
 	text-decoration: none;
 	font-weight: 600;
 }
@@ -81,7 +85,7 @@ figure {
 	margin-top: 1rem;
 }
 .wp-block-acf-product-card .post-thumbnail {
-	border: 1px solid #eaecee;
+	border: 1px solid var(--wp--preset--color--border-gray);
 	border-radius: 15px;
 	margin-bottom: 2rem;
 	width: 100%;
@@ -129,7 +133,7 @@ figure {
 	display: -ms-flexbox;
 	display: flex;
 	border-radius: 15px;
-	border: 1px solid #eaecee;
+	border: 1px solid var(--wp--preset--color--border-gray);
 	overflow: hidden;
 }
 .wp-block-acf-pros-cons .wp-block-pros-and-cons .column{
@@ -142,12 +146,12 @@ figure {
 	flex-grow: 1;
 }
 .wp-block-acf-pros-cons .wp-block-pros-and-cons .column.pros{
-	border-right: 1px solid #eaecee;
+	border-right: 1px solid var(--wp--preset--color--border-gray);
 }
 .wp-block-acf-pros-cons .wp-block-pros-and-cons .column .heading{
-	background-color: #f7f8f9;
+	background-color: var(--wp--preset--color--light-gray);
 	padding: 0.75rem 1.5625rem;
-	border-bottom: 1px solid #eaecee;
+	border-bottom: 1px solid var(--wp--preset--color--border-gray);
 	font-family: var(--wp--preset--font-family--inter);
 	font-weight: 700;
 }
@@ -195,8 +199,8 @@ figure {
 /* Top Products */
 /* ------------------------------------------------------------------------------------------------------------------- */
 .wp-block-acf-top-products{
-	background-color: #f7f8f9;
-	border: 1px solid #eaecee;
+	background-color: var(--wp--preset--color--light-gray);
+	border: 1px solid var(--wp--preset--color--border-gray);
 	border-radius: 15px;
 	padding: 20px;
 	box-sizing: border-box;
@@ -222,7 +226,7 @@ figure {
 	-webkit-flex: 0 0 auto;
 	-ms-flex: 0 0 auto;
 	flex: 0 0 auto;
-	border: 1px solid #eaecee;
+	border: 1px solid var(--wp--preset--color--border-gray);
 	width: 100%;
 	max-width: 9.375rem;
 	min-height: 5.625rem;

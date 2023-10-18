@@ -13,9 +13,6 @@ if ( ! empty( $block['anchor'] ) ) {
 $class_name = 'wp-block-acf-accordion accordion font-secondary';
 if ( ! empty( $block['className'] ) )   $class_name .= ' ' . $block['className'];
 //if ( ! empty( $block['align'] ) )       $class_name .= ' align' . $block['align'];
-
-// Get Block ID
-//$blockID = $block['id'];
 ?><div id="<?= esc_attr( $anchor ); ?>" class="<?= esc_attr( $class_name ); ?>">
 	
 	<?php
