@@ -230,10 +230,10 @@ $toc_black: #111;
 
       // 2nd Level
       .ez-toc-list-level-3{
-        margin-left: rfs-value(20px);
+        margin-left: rfs-value(10px);
         margin-top: rfs-value(5px);
-        //list-style: none;
-        list-style: disc;
+        list-style: none;
+        //list-style: disc;
         line-height: 1.4;
         &.offset-top{
           margin-top: rfs-value(-5px);
