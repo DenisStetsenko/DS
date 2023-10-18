@@ -1,6 +1,8 @@
 <?php
 // ACF: FAQs
-$faqs = get_field( 'faqs' );
+$faqs 						= get_field( 'faqs' );
+$exclude_from_toc = get_field( 'exclude_from_toc' );
+$excluded_class 	= $exclude_from_toc ? 'ez-toc-exclude' : '';
 
 // Support custom "anchor" values.
 if ( ! empty( $block['anchor'] ) ) {
@@ -13,6 +15,9 @@ if ( ! empty( $block['anchor'] ) ) {
 $class_name = 'wp-block-acf-accordion accordion font-secondary';
 if ( ! empty( $block['className'] ) )   $class_name .= ' ' . $block['className'];
 //if ( ! empty( $block['align'] ) )       $class_name .= ' align' . $block['align'];
+
+$loop_item_class_name = 'accordion-header accordion-button m-0';
+if ( ! empty( $excluded_class) )   $loop_item_class_name .= ' ' . $excluded_class;
 
 $margin				= '';
 $marginTop 		= '';
@@ -39,7 +44,7 @@ if (isset($block['style']['spacing']['margin']['bottom'])) {
 		
 		<div class="accordion-item rounded overflow-hidden">
 			
-			<h3 class="accordion-header accordion-button ez-toc-exclude m-0" id="heading-<?= $field_id; ?>"
+			<h3 id="heading-<?= $field_id; ?>" class="<?= esc_attr($loop_item_class_name); ?>"
 					itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question"
 					data-bs-toggle="collapse"
 					data-bs-target="#collapse-<?= $field_id; ?>"

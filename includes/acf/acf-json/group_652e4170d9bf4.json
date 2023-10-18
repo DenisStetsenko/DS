@@ -3,6 +3,26 @@
     "title": "ACF: Block FAQ",
     "fields": [
         {
+            "key": "field_65300062aa7d3",
+            "label": "Exclude from Table of Contents?",
+            "name": "exclude_from_toc",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_652e45e50c9d1",
             "label": "Frequently Asked Questions",
             "name": "faqs",
@@ -87,5 +107,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697554346
+    "modified": 1697644692
 }
