@@ -27,7 +27,7 @@ if ( ! empty( $block['className'] ) )   $class_name .= ' ' . $block['className']
 		?>
 		<div class="accordion-item rounded overflow-hidden">
 			<h3 itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question"
-					class="accordion-header m-0" id="heading-<?= $field_id; ?>">
+					class="accordion-header ez-toc-exclude m-0" id="heading-<?= $field_id; ?>">
 				<button itemprop="name" class="accordion-button fw-bold <?= $active ? '' : 'collapsed'; ?>" type="button"
 								data-bs-toggle="collapse" data-bs-target="#collapse-<?= $field_id; ?>"
 								aria-expanded="<?= $active ? 'true' : 'false'; ?>" aria-controls="collapse-<?= $field_id; ?>"><?= wp_strip_all_tags($item['question']); ?></button>
