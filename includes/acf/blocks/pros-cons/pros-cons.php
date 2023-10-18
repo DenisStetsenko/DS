@@ -2,7 +2,6 @@
 // ACF: Pros & Cons
 $pros_and_cons = get_field('pros_and_cons');
 
-
 // Support custom "anchor" values.
 $anchor = "";
 if ( ! empty( $block['anchor'] ) ) {
@@ -29,7 +28,7 @@ if (isset($block['style']['spacing']['margin']['bottom'])) {
 }
 ?><div <?= esc_attr( $anchor ); ?> class="<?= esc_attr( $class_name ); ?>" style="<?= esc_attr( $margin ); ?>">
 
-	<?php if ( $pros_and_cons && array_filter($pros_and_cons) ) : ?>
+	<?php if ( isset($pros_and_cons) && array_filter($pros_and_cons) ) : ?>
 		
 		<?php if ( $pros_and_cons['pros'] ) { ?>
 			<div class="column pros">
