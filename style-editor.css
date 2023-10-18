@@ -26,7 +26,7 @@ figure {
 	margin-block-end: 24px;
 }
 
-.wp-block a:not(.button):not(.button-primary):not(.acf-icon):not(.link-url) {
+.wp-block a:not(.more):not(.btn):not(.button):not(.button-primary):not(.acf-icon):not(.link-url):not(.affiliate-link) {
 	color: #292929;
 	border-bottom: 2px solid #fdd11f;
 	text-decoration: none;
@@ -45,11 +45,80 @@ figure {
 }
 
 /* Product Card */
+/* ------------------------------------------------------------------------------------------------------------------- */
 .wp-block-acf-product-card{
-
+	margin-block-start: 40px !important;
+	margin-block-end:  40px !important;
 }
-
+.wp-block-acf-product-card .product-heading{
+	margin-bottom: 1.5rem;
+}
+.wp-block-acf-product-card .product-heading .title{
+	margin: 0;
+}
+.wp-block-acf-product-card .product-heading .title a{
+	color: var(--wp--preset--color--black);
+	text-decoration: none;
+}
+.wp-block-acf-product-card .product-heading .title:before {
+	content: attr(data-number);
+	background-color: var(--wp--preset--color--primary);
+	padding-left: 0.625rem;
+	padding-right: 0.4375rem;
+	margin-right: 0.625rem;
+	font-style: normal;
+}
+.wp-block-acf-product-card .product-heading .subtitle{
+	color: var(--wp--preset--color--black);
+	margin-bottom: 0;
+	letter-spacing: .03rem;
+	text-transform: uppercase;
+	font-family: var(--wp--preset--font-family--inter);
+	line-height: 1.25;
+	font-weight: 700;
+	font-size: 1.125rem;
+	padding: 0;
+	margin-top: 1rem;
+}
+.wp-block-acf-product-card .post-thumbnail {
+	border: 1px solid #eaecee;
+	border-radius: 15px;
+	margin-bottom: 2rem;
+	width: 100%;
+	overflow: hidden;
+}
+.wp-block-acf-product-card .post-thumbnail img{
+	margin-bottom: 0;
+	width: 100%;
+	display: block;
+	max-height: 500px; /* for better UX */
+}
+.wp-block-acf-product-card .post-thumbnail +.figure-caption {
+	margin-top: -1rem;
+	margin-bottom: 1.5rem;
+	font-family: var(--wp--preset--font-family--inter);
+	color: var(--wp--preset--color--gray);
+	font-style: italic;
+	font-size: 14px;
+}
+.wp-block-acf-product-card .post-thumbnail.best {
+	position: relative;
+	border-width: 0.3125rem;
+	border-color: var(--wp--preset--color--primary);
+}
+.wp-block-acf-product-card .post-thumbnail.best:after {
+	content: "";
+	background-image: url(./assets/images/certificate.svg);
+	background-size: 2.5rem 2.5rem;
+	position: absolute;
+	top: 0.8125rem;
+	right: 0.5rem;
+	width: 2.5rem;
+	height: 2.5rem;
+	z-index: 2;
+}
 /* Pros & Cons */
+/* ------------------------------------------------------------------------------------------------------------------- */
 .wp-block-acf-pros-cons{
 	margin-block-start: 40px !important;
 	margin-block-end:  40px !important;
@@ -124,6 +193,7 @@ figure {
 }
 
 /* Top Products */
+/* ------------------------------------------------------------------------------------------------------------------- */
 .wp-block-acf-top-products{
 	background-color: #f7f8f9;
 	border: 1px solid #eaecee;
@@ -131,8 +201,119 @@ figure {
 	padding: 20px;
 	box-sizing: border-box;
 }
+.wp-block-acf-top-products .top-picks{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+.wp-block-acf-top-products .top-picks:not(:last-child){
+	margin-bottom: 25px;
+}
+.wp-block-acf-top-products .top-picks .column-preview{
+	-webkit-box-flex: 0;
+	-webkit-flex: 0 0 auto;
+	-ms-flex: 0 0 auto;
+	flex: 0 0 auto;
+	border: 1px solid #eaecee;
+	width: 100%;
+	max-width: 9.375rem;
+	min-height: 5.625rem;
+}
+.wp-block-acf-top-products .top-picks .column-preview{
+	height: auto;
+	border-radius: 15px;
+	background-color: white;
+	padding: 10px;
+	max-width: 9.375rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.wp-block-acf-top-products .top-picks.best .column-preview{
+	border-color: var(--wp--preset--color--primary);
+	border-width: 0.125rem;
+	position: relative;
+}
+.wp-block-acf-top-products .top-picks.best .column-preview:after {
+	content: "";
+	background-image: url(./assets/images/certificate.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: -0.9375rem;
+	left: 50%;
+	margin-left: -1.25rem;
+	z-index: 2;
+	width: 2.5rem;
+	height: 2.5rem;
+}
+
+.wp-block-acf-top-products .top-picks .column-description{
+	-webkit-box-flex: 0;
+	-webkit-flex: 0 0 auto;
+	-ms-flex: 0 0 auto;
+	flex: 0 0 auto;
+	width: 100%;
+	max-width: calc(100% - 320px);
+}
+.wp-block-acf-top-products .top-picks .column-description .top-picks-heading{
+	padding: 8px 24px;
+}
+.wp-block-acf-top-products .top-picks .column-description .top-picks-heading .subtitle{
+	font-family: var(--wp--preset--font-family--inter);
+	font-size: 12px;
+	font-weight: 600;
+	padding-left: 0;
+	margin-bottom: 8px;
+	text-transform: uppercase;
+}
+.wp-block-acf-top-products .top-picks .column-description .top-picks-heading .title{
+	font-family: var(--wp--preset--font-family--inter);
+	font-size: 20px;
+	font-weight: 800;
+	margin-bottom: 10px;
+}
+.wp-block-acf-top-products .top-picks .column-description .top-picks-heading .description{
+	font-family: var(--wp--preset--font-family--inter);
+	font-size: .875rem;
+	margin-bottom: 10px;
+}
+.wp-block-acf-top-products .top-picks .column-description .top-picks-heading .more{
+	font-size: 14px;
+	text-decoration: none;
+	font-family: var(--wp--preset--font-family--inter);
+}
+.wp-block-acf-top-products .top-picks .column-link{
+	-webkit-box-flex: 0;
+	-webkit-flex: 0 0 auto;
+	-ms-flex: 0 0 auto;
+	flex: 0 0 auto;
+	width: 100%;
+	max-width: 140px;
+	display: flex;
+	align-items: center;
+}
+.wp-block-acf-top-products .top-picks .column-link .btn-primary{
+	color: var(--wp--preset--color--black);
+	background-color: var(--wp--preset--color--primary);
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 16px;
+	padding: 10px 30px;
+	border-radius: 20px;
+	font-family: var(--wp--preset--font-family--inter);
+}
 
 /* Accordion */
+/* ------------------------------------------------------------------------------------------------------------------- */
 .wp-block-acf-accordion{
 	border: 1px solid #a9daff;
 	border-radius: 10px;
@@ -141,7 +322,7 @@ figure {
 }
 .wp-block-acf-accordion .accordion-item{
 	padding: 20px;
-	background: #f9fafa;
+	background: #fbfcfc;
 }
 .wp-block-acf-accordion .accordion-item:not(:last-child){
 	border-bottom: 1px solid #a9daff;
@@ -150,6 +331,7 @@ figure {
 	margin-top: 0;
 	font-family: var(--wp--preset--font-family--inter);
 	font-weight: 700;
+	font-size: 24px;
 }
 .wp-block-acf-accordion .accordion-item .accordion-header .accordion-button{
 	border: none;
@@ -158,7 +340,7 @@ figure {
 }
 .wp-block-acf-accordion .accordion-item .accordion-body{
 	font-family: var(--wp--preset--font-family--inter);
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 400;
 }
 .wp-block-acf-accordion .accordion-item .accordion-body .entry-content p:last-child{
@@ -166,6 +348,7 @@ figure {
 }
 
 /* TINY MCE */
+/* ------------------------------------------------------------------------------------------------------------------- */
 body.mce-content-body{
 	color: #292929;
 	font-family: 'Lora', serif;

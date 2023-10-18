@@ -37,7 +37,7 @@ if ( ! empty( $block['className'] ) )   $class_name .= ' ' . $block['className']
 					 id="collapse-<?= $field_id; ?>" class="accordion-collapse collapse <?= $active ? 'show' : ''; ?>"
 					 aria-labelledby="heading-<?= $field_id; ?>" data-bs-parent="#<?= esc_attr( $anchor ); ?>">
 				<div class="accordion-body pt-0">
-					<?= $item['answer'] ? '<div class="entry-content fs-4 font-secondary" itemprop="text">' . wp_kses_post($item['answer']) . '</div>' : null; ?>
+					<?= $item['answer'] ? '<div class="entry-content font-secondary" itemprop="text">' . wp_kses_post($item['answer']) . '</div>' : null; ?>
 				</div>
 			</div>
 			

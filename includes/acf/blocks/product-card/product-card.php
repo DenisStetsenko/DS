@@ -5,7 +5,7 @@ $product_card_image   = get_field('hero_image');
 $product_card_link   	= get_field('affilate_link');
 $best 								= $product_card_heading['mark_as_best'];
 $best_label 					= $best ? 'best' : '';
-$excluded_from_toc 		= $product_card_heading['exclude_from_toc'] ? 'ez-toc-exclude' : '';
+$excluded_from_toc 		= $product_card_heading['exclude_from_toc'] ? ' ez-toc-exclude' : '';
 
 // Support custom "anchor" values.
 if ( ! empty( $block['anchor'] ) ) {
@@ -38,7 +38,7 @@ if ( ! empty( $product_card_heading && array_filter($product_card_heading) ) ) {
 				$product_title = $original_product_title;
 			}
 			
-			echo "<$title_tag class=\"title m-0 $excluded_from_toc\" $number_data>";
+			echo "<$title_tag class=\"title m-0$excluded_from_toc\" $number_data>";
 				
 				if ( $product_card_link ) {
 					$link_target = $product_card_link['target'] ? 'target="_blank" rel="nofollow sponsored"' : '';

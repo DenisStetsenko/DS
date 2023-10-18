@@ -402,6 +402,7 @@
     }
   }
 
+
   // Block Editor => FAQs
   .wp-block-acf-accordion{
     margin-top: 2.5rem;
@@ -418,8 +419,17 @@
         border-color: transparent;
         box-shadow: none;
       }
+      .accordion-body{
+        .entry-content{
+          @include font-size(16px);
+          @include media-breakpoint-up(md){
+            @include font-size($h4-font-size);
+          }
+        }
+      }
     }
   }
+
 
   // Block Editor => TOP Products
   // ===================================================================================================================
@@ -533,6 +543,7 @@
       }
     }
   }
+
 
   // Block Editor => Pros & Cons
   // ===================================================================================================================

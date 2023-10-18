@@ -52,7 +52,7 @@
                             "label": "List Item",
                             "name": "list_item",
                             "aria-label": "",
-                            "type": "text",
+                            "type": "textarea",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -63,9 +63,9 @@
                             },
                             "default_value": "",
                             "maxlength": "",
+                            "rows": 2,
                             "placeholder": "",
-                            "prepend": "",
-                            "append": "",
+                            "new_lines": "br",
                             "parent_repeater": "field_652eea9ca53bd"
                         }
                     ]
@@ -97,7 +97,7 @@
                             "label": "List Item",
                             "name": "list_item",
                             "aria-label": "",
-                            "type": "text",
+                            "type": "textarea",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -108,9 +108,9 @@
                             },
                             "default_value": "",
                             "maxlength": "",
+                            "rows": 2,
                             "placeholder": "",
-                            "prepend": "",
-                            "append": "",
+                            "new_lines": "br",
                             "parent_repeater": "field_652eea9ca53bf"
                         }
                     ]
@@ -136,5 +136,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697573831
+    "modified": 1697629979
 }
