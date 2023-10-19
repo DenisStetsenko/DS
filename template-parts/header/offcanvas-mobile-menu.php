@@ -2,7 +2,9 @@
 	
 	<div class="offcanvas-header">
 		<h5 class="offcanvas-title" id="navbarOffCanvasLabel">
-			<img class="img-fluid" src="<?= get_theme_file_uri('assets/images/logo-short.svg'); ?>" alt="OffCanvas Logo Icon">
+			<img class="img-fluid"
+					 loading="lazy" width="52" height="44"
+					 src="<?= get_theme_file_uri('assets/images/logo-short.svg'); ?>" alt="OffCanvas Logo Icon">
 		</h5>
 		<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 	</div>
