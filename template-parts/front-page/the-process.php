@@ -17,15 +17,18 @@ if ( $the_process ) : ?>
 								<?= $the_process['left_side']['content']; ?>
 							</div>
 						<?php endif; ?>
-						<?= $the_process['left_side']['image'] ? '<figure class="image-container">
-																												<img class="loading-image img-fluid mx-auto d-none d-lg-block" src="'.$the_process['left_side']['image']['sizes']['medium_large'].'" loading="lazy" alt="'.$the_process['left_side']['image']['alt'].'">
-																												<figcaption class="placeholder"></figcaption>
+						<?= $the_process['left_side']['image'] ? '<figure class="image-container mb-0">
+																												<img 	width="'. esc_attr($the_process['left_side']['image']['width']).'"
+																															height="'. esc_attr($the_process['left_side']['image']['height']).'"
+																															class="loading-image img-fluid mx-auto d-none d-lg-block"
+																															src="'.$the_process['left_side']['image']['sizes']['medium_large'].'"
+																															loading="lazy" alt="'.$the_process['left_side']['image']['alt'].'">
 																											</figure>' : null ; ?>
 					</div>
 				</div>
-				<div class="col-lg-5 offset-lg-1 ps-lg-0">
+				<div class="col-lg-5 offset-lg-1 ps-lg-0 text-center">
 					<?php if ( $the_process['the_process'] ) : ?>
-						<ul class="list-group">
+						<ul class="list-group text-start">
 							<?php foreach ( $the_process['the_process'] as $item ) : ?>
 								<li class="list-group-item d-flex position-relative">
 									<i class="icon"></i>
@@ -37,7 +40,11 @@ if ( $the_process ) : ?>
 							<?php endforeach; ?>
 						</ul>
 					<?php endif; ?>
-					<?= $the_process['left_side']['image'] ? '<img class="img-fluid mx-auto d-lg-none mt-6" src="'.$the_process['left_side']['image']['sizes']['medium_large'].'" loading="lazy" alt="'.$the_process['left_side']['image']['alt'].'">' : null ; ?>
+					<?= $the_process['left_side']['image'] ? '<img width="'. esc_attr($the_process['left_side']['image']['width']).'"
+																												 height="'. esc_attr($the_process['left_side']['image']['height']).'"
+																												 class="img-fluid mx-auto d-lg-none mt-6"
+																												 src="'.$the_process['left_side']['image']['sizes']['medium_large'].'"
+																												 loading="lazy" alt="'.$the_process['left_side']['image']['alt'].'">' : null ; ?>
 				</div>
 			</div>
 			

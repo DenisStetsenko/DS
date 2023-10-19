@@ -22,7 +22,6 @@
 					 class="widget rounded-3 font-secondary bg-light-gray border fs-4 widget_media_image d-none d-lg-block">
 				<figure class="image-container">
 					<?php the_post_thumbnail('full', array( 'loading' => 'eager', 'class' => 'loading-image img-fluid image' )); ?>
-					<figcaption class="placeholder"></figcaption>
 				</figure>
 			</aside>
 		<?php endif;

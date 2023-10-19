@@ -12,7 +12,6 @@
 			<div class="col-lg-5 ps-lg-5 ps-xl-8 text-center text-lg-end">
 				<figure class="image-container">
 					<?php if ( has_post_thumbnail() ) the_post_thumbnail('full', array( 'loading' => 'eager', 'class' => 'loading-image img-fluid' )); ?>
-					<figcaption class="placeholder"></figcaption>
 				</figure>
 			</div>
 		</div>
