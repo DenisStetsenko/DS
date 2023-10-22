@@ -427,13 +427,6 @@ $slick-dot-color-active   : $color-black;
   list-style: none;
   padding-left: rfs-value(18px);
   margin: 0 0 $paragraph-margin-bottom 0;
-  & > li > strong{
-    font-family: $font-secondary;
-    @include font-size(20px);
-    @include media-breakpoint-up(md){
-      @include font-size(22px);
-    }
-  }
   li{
     margin-bottom: $paragraph-margin-bottom;
     &:last-child{
