@@ -54,7 +54,7 @@
   h4{
     @include font-size(28px);
   }
-  ul:not(.list) > li, ol:not(.list) > li {
+  ul:not(.list):not(.wp-block-list) > li, ol:not(.list):not(.wp-block-list) > li {
     margin-bottom: rfs-value(16px);
     line-height: 1.65;
 
@@ -77,10 +77,10 @@
   img:not(.figure-img) {
     @include img-fluid();
   }
-  a.bigger{
+  .bigger{
     @include font-size(20px);
     @include media-breakpoint-up(md){
-      @include font-size(23px);
+      @include font-size(22px);
     }
   }
 }

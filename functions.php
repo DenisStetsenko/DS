@@ -495,3 +495,19 @@ add_filter( 'ez_toc_exclude_by_selector', function( $selectors ) {
 	$selectors['class'] = '.ez-toc-exclude';
 	return $selectors;
 });
+
+/**
+ * Add "wp-block-list" to the default List Block
+ * Should not be necessary in future version of WP:
+ * @see https://github.com/WordPress/gutenberg/issues/12420
+ * @see https://github.com/WordPress/gutenberg/pull/42269
+ */
+add_filter( 'render_block', function( $block_content, $block ) {
+	if ( 'core/list' === $block['blockName'] ) {
+		$block_content = new WP_HTML_Tag_Processor( $block_content );
+		$block_content->next_tag(); /* first tag should always be ul or ol */
+		$block_content->add_class( 'wp-block-list' );
+		$block_content->get_updated_html();
+	}
+	return $block_content;
+}, 10, 2 );

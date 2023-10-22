@@ -47,6 +47,45 @@
     border-color: var(--wp--preset--color--border-gray);
   }
 
+  // Block Editor Font Sizes
+  .has-small-font-size {
+    @include font-size($h5-font-size);
+  }
+  .has-medium-font-size {
+    @include font-size($h4-font-size);
+  }
+  .has-large-font-size {
+    @include font-size($h3-font-size);
+  }
+  .has-x-large-font-size {
+    @include font-size($h2-font-size);
+  }
+  .has-huge-font-size {
+    @include font-size($h1-font-size);
+  }
+  .has-inter-font-family{
+    font-family: $font-secondary !important;
+  }
+  .has-lora-font-family{
+    font-family: $font-primary !important;
+  }
+
+  // Block Editor => List (ul)
+  ul.wp-block-list{
+    @include custom-list-styling();
+  }
+
+  ol.wp-block-list{
+    li{
+      margin-bottom: rfs-value(20px);
+      line-height: 1.65;
+      &:last-child { margin-bottom: 0; }
+    }
+    & > li > a.bigger{
+      font-family: $font-secondary;
+    }
+  }
+
   // Block Editor => Image
   .wp-block-image{
     margin: $paragraph-margin-bottom 0 $paragraph-margin-bottom;
@@ -80,29 +119,6 @@
       @include font-size($h6-font-size);
       margin-top: rfs-value(5px);
     }
-  }
-
-  // Block Editor Font Sizes
-  .has-small-font-size {
-    @include font-size($h5-font-size);
-  }
-  .has-medium-font-size {
-    @include font-size($h4-font-size);
-  }
-  .has-large-font-size {
-    @include font-size($h3-font-size);
-  }
-  .has-x-large-font-size {
-    @include font-size($h2-font-size);
-  }
-  .has-huge-font-size {
-    @include font-size($h1-font-size);
-  }
-  .has-inter-font-family{
-    font-family: $font-secondary !important;
-  }
-  .has-lora-font-family{
-    font-family: $font-primary !important;
   }
 
   // Block Editor => Heading
@@ -401,7 +417,6 @@
       }
     }
   }
-
 
   // Block Editor => FAQs
   .wp-block-acf-accordion{
