@@ -84,6 +84,13 @@
     & > li > a.bigger{
       font-family: $font-secondary;
     }
+    & > li > strong {
+      font-family: $font-secondary;
+      @include font-size(20px);
+      @include media-breakpoint-up(md){
+        @include font-size(22px);
+      }
+    }
   }
 
   // Block Editor => Image
