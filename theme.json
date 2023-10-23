@@ -288,8 +288,8 @@
         },
         "spacing": {
           "margin": {
-            "top": "45px",
-            "bottom": "16px"
+            "top": "50px",
+            "bottom": "20px"
           }
         }
       },
@@ -300,8 +300,8 @@
         },
         "spacing": {
           "margin": {
-            "top": "45px",
-            "bottom": "16px"
+            "top": "50px",
+            "bottom": "20px"
           }
         }
       },
@@ -312,8 +312,8 @@
         },
         "spacing": {
           "margin": {
-            "top": "45px",
-            "bottom": "16px"
+            "top": "50px",
+            "bottom": "20px"
           }
         }
       },
