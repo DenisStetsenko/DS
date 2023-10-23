@@ -6,9 +6,15 @@ ta,
 	border-bottom: 3px solid #30b2a6;
 }
 
-.acf-block-body .acf-link a.button {
+.acf-block-body .acf-link a.button{
 	font-family: var(--wp--preset--font-family--inter);
 	font-weight: 500;
+}
+.acf-block-body .acf-link a.link-url{
+	color: #2271b1;
+	font-family: var(--wp--preset--font-family--inter);
+	font-weight: 400;
+	border: none;
 }
 
 /* Block Quote custom styles */
