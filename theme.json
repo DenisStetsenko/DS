@@ -305,6 +305,18 @@
           }
         }
       },
+      "h4": {
+        "typography": {
+          "fontSize": "28px",
+          "lineHeight": "1.25"
+        },
+        "spacing": {
+          "margin": {
+            "top": "45px",
+            "bottom": "16px"
+          }
+        }
+      },
       "link": {
         "border": {
           "color" : "var(--wp--preset--color--primary)",
