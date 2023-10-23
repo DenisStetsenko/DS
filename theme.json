@@ -283,7 +283,7 @@
       },
       "h2": {
         "typography": {
-          "fontSize": "38px",
+          "fontSize": "34px",
           "lineHeight": "1.25"
         },
         "spacing": {
@@ -295,7 +295,7 @@
       },
       "h3": {
         "typography": {
-          "fontSize": "32px",
+          "fontSize": "30px",
           "lineHeight": "1.25"
         },
         "spacing": {
