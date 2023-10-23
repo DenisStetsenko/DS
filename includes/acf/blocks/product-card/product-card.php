@@ -2,7 +2,7 @@
 // ACF: Product Card
 $product_card_heading = get_field('heading');
 $product_card_image   = get_field('hero_image');
-$product_card_link   	= get_field('affilate_link');
+$product_card_link   	= get_field('affiliate_link');
 $best 								= $product_card_heading['mark_as_best'];
 $best_label 					= $best ? 'best' : '';
 $excluded_from_toc 		= $product_card_heading['exclude_from_toc'] ? ' ez-toc-exclude' : '';

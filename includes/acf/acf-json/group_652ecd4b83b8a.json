@@ -153,8 +153,8 @@
         },
         {
             "key": "field_652ecf288e40c",
-            "label": "Affilate Link",
-            "name": "affilate_link",
+            "label": "Affiliate Link",
+            "name": "affiliate_link",
             "aria-label": "",
             "type": "link",
             "instructions": "",
@@ -186,5 +186,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697646721
+    "modified": 1698083016
 }
