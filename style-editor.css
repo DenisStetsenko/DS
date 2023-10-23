@@ -6,6 +6,11 @@ ta,
 	border-bottom: 3px solid #30b2a6;
 }
 
+.acf-block-body .acf-link a.button {
+	font-family: var(--wp--preset--font-family--inter);
+	font-weight: 500;
+}
+
 /* Block Quote custom styles */
 /* ------------------------------------------------------------------------------------------------------------------- */
 .wp-block-quote .wp-block-quote__citation{
