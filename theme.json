@@ -125,8 +125,8 @@
     },
     "typography": {
       "fontFamily": "var(--wp--preset--font-family--lora)",
-      "lineHeight": "1.65",
-      "fontSize": "20px"
+      "lineHeight": "1.725",
+      "fontSize": "19px"
     },
     "spacing": {
       "padding": {
