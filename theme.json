@@ -22,6 +22,11 @@
           "name": "Primary"
         },
         {
+          "slug": "secondary",
+          "color": "#3ba7fa",
+          "name": "Secondary"
+        },
+        {
           "slug": "primary-dark",
           "color": "#f0c000",
           "name": "Primary Dark"
@@ -55,7 +60,7 @@
     },
     "typography": {
       "customFontSize": true,
-	  "lineHeight": true,
+      "lineHeight": true,
       "fontFamilies": [
         {
           "fontFamily": "\"Lora\", serif",
@@ -131,6 +136,51 @@
         "left": "30px"
       }
     },
+    "blocks": {
+      "core/paragraph": {
+        "spacing": {
+          "margin": {
+            "top": "0",
+            "right": "0",
+            "bottom": "1.25rem",
+            "left": "0"
+          }
+        }
+      },
+      "core/image": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--inter)"
+        },
+        "spacing": {
+          "margin": {
+            "top": "1.5rem",
+            "right": "0",
+            "bottom": "1.5rem",
+            "left": "0"
+          }
+        }
+      },
+      "core/quote": {
+        "typography": {
+          "fontSize": "1.875rem",
+          "lineHeight": "1.46"
+        },
+        "spacing": {
+          "padding": {
+            "top": "10px",
+            "right": "0",
+            "bottom": "5px",
+            "left": "30px"
+          }
+        },
+        "border":{
+          "radius": "0",
+          "style": "solid",
+          "width": "0 0 0 5px",
+          "color": "var(--wp--preset--color--border-gray)"
+        }
+      }
+    },
     "elements": {
       "button": {
         "typography": {
@@ -164,6 +214,11 @@
         },
         "color": {
           "text": "#292929"
+        },
+        "spacing": {
+          "margin": {
+            "bottom": "10px"
+          }
         }
       },
       "h1": {
@@ -193,6 +248,31 @@
           "margin": {
             "top": "45px",
             "bottom": "9px"
+          }
+        }
+      },
+      "link": {
+        "border": {
+          "color" : "var(--wp--preset--color--primary)",
+          "style" : "solid",
+          "width" : "0 0 2px 0"
+        },
+        "color": {
+          "text": "var(--wp--preset--color--black)"
+        },
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--lora)",
+          "fontWeight": "700",
+          "textDecoration": "none"
+        },
+        ":hover": {
+          "color": {
+            "text": "var(--wp--preset--color--black)"
+          },
+          "border": {
+            "color" : "var(--wp--preset--color--secondary)",
+            "style" : "solid",
+            "width" : "0 0 2px 0"
           }
         }
       }

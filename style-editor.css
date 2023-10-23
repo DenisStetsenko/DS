@@ -6,10 +6,15 @@ ta,
 	border-bottom: 3px solid #30b2a6;
 }
 
-p {
-	margin-top: 0;
-	margin-bottom: 1.25rem;
-}
+/*p {*/
+/*	margin-top: 0;*/
+/*	margin-bottom: 1.25rem;*/
+/*}*/
+
+/*figure {*/
+/*	font-family: 'Inter', sans-serif;*/
+/*}*/
+
 .wp-block-separator{
 	margin-block-start: 40px !important;
 	margin-block-end:  40px !important;
@@ -22,30 +27,35 @@ p {
 	background-color: var(--wp--preset--color--light-gray);
 }
 
-figure {
-	font-family: 'Inter', sans-serif;
-}
-
 .wp-block-buttons {
 	margin-block-end: 24px;
 }
 
-.wp-block a:not(.more):not(.btn):not(.button):not(.button-primary):not(.acf-icon):not(.link-url):not(.affiliate-link) {
-	color: var(--wp--preset--color--black);
-	border-bottom: 2px solid var(--wp--preset--color--primary);
-	text-decoration: none;
-	font-weight: 600;
-}
-.wp-block a.bigger:not(.btn):not(.button){
-	font-size: 23px;
-}
-
-.block-editor-block-list__layout > li:not(:last-child){
-	margin-bottom: 16px;
-}
-
 .block-editor-block-list__layout .block-editor-block-list__block{
-	margin-block-end: 24px;
+	/*margin-block-end: 24px;*/
+}
+
+/* Block Quote */
+/* ------------------------------------------------------------------------------------------------------------------- */
+.wp-block-quote .wp-block-quote__citation{
+	font-size: 20px;
+	color: #7d7b7b;
+	font-family: var(--wp--preset--font-family--inter);
+}
+.wp-block-quote .wp-block-quote__citation:before {
+    content: "— ";
+}
+
+/* Block List */
+/* ------------------------------------------------------------------------------------------------------------------- */
+.wp-block-list > li > div > strong,
+.wp-block-list > li > div > a >strong{
+	font-family: var(--wp--preset--font-family--inter);
+	font-size: 22px;
+	font-weight: 700;
+}
+.wp-block-list > li:not(:last-child){
+	margin-bottom: 16px;
 }
 
 /* Product Card */
