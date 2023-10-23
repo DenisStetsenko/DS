@@ -51,6 +51,8 @@ ta,
 }
 .wp-block-acf-product-card .product-heading .title a{
 	color: var(--wp--preset--color--black);
+	font-family: var(--wp--preset--font-family--inter);
+	font-weight: 800;
 	text-decoration: none;
 }
 .wp-block-acf-product-card .product-heading .title:before {
