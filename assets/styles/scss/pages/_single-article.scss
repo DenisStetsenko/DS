@@ -179,55 +179,61 @@
 
   // MAIN COPY
   // ===================================================================================================================
+
   .post-thumbnail {
     .figure-img {
       margin-bottom: 0;
     }
   }
 
-  .entry-content {
-    h2:not(.title), h3, h4 {
-      margin: rfs-value(50px 0 20px);
-      &:first-child {
-        margin-top: 0;
-      }
-    }
-    h2 {
-      & + h3 {
-        margin-top: rfs-value(10px);
-      }
-    }
-    h4{
-      @include font-size(26px);
-    }
-    ul:not(.list):not(.wp-block-list) > li, ol:not(.list):not(.wp-block-list) > li {
-      margin-bottom: rfs-value(16px);
-      line-height: 1.65;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-    figure {
-      img {
-        @include img-fluid();
-      }
-
-      figcaption {
-        color: $color-gray;
-        font-family: $font-secondary;
-        @include font-size(14px);
-        margin-top: rfs-value(7px);
-      }
-    }
-    img:not(.figure-img) {
-      @include img-fluid();
-    }
-  }
-
   .hero-content {
 
+    .narrow-content{
+      max-width: rfs-value(730px);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     .entry-content {
+
+      // general styling
+      h2:not(.title), h3, h4 {
+        margin: rfs-value(50px 0 20px);
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+      h2 {
+        & + h3 {
+          margin-top: rfs-value(10px);
+        }
+      }
+      h4{
+        @include font-size(26px);
+      }
+      ul:not(.list):not(.wp-block-list) > li, ol:not(.list):not(.wp-block-list) > li {
+        margin-bottom: rfs-value(16px);
+        line-height: 1.65;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      figure {
+        img {
+          @include img-fluid();
+        }
+
+        figcaption {
+          color: $color-gray;
+          font-family: $font-secondary;
+          @include font-size(14px);
+          margin-top: rfs-value(7px);
+        }
+      }
+      img:not(.figure-img) {
+        @include img-fluid();
+      }
 
       // comment form shortcode
       .wpd-inline-shortcode {
