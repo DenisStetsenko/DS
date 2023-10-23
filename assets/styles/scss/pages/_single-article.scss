@@ -198,7 +198,7 @@
       }
     }
     h4{
-      @include font-size(28px);
+      @include font-size(26px);
     }
     ul:not(.list):not(.wp-block-list) > li, ol:not(.list):not(.wp-block-list) > li {
       margin-bottom: rfs-value(16px);

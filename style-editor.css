@@ -22,7 +22,7 @@ ta,
 .wp-block-list > li > div > strong,
 .wp-block-list > li > div > a >strong{
 	font-family: var(--wp--preset--font-family--inter);
-	font-size: 21px;
+	font-size: 20px;
 	font-weight: 700;
 }
 

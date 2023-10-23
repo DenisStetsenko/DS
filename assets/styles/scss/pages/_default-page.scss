@@ -20,6 +20,10 @@
       font-weight: 700;
     }
 
+    h4{
+      @include font-size(26px);
+    }
+
     ul > li, ol > li {
       margin-bottom: rfs-value(11px);
       line-height: 1.65;

@@ -76,9 +76,6 @@
     & > li > a > strong{
       font-family: $font-secondary;
       @include font-size(20px);
-      @include media-breakpoint-up(md){
-        @include font-size(21px);
-      }
     }
   }
   ul.wp-block-list{
