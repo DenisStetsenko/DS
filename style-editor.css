@@ -6,36 +6,7 @@ ta,
 	border-bottom: 3px solid #30b2a6;
 }
 
-/*p {*/
-/*	margin-top: 0;*/
-/*	margin-bottom: 1.25rem;*/
-/*}*/
-
-/*figure {*/
-/*	font-family: 'Inter', sans-serif;*/
-/*}*/
-
-.wp-block-separator{
-	margin-block-start: 40px !important;
-	margin-block-end:  40px !important;
-}
-.wp-block-separator:not(.has-background){
-	border-color: var(--wp--preset--color--border-gray);
-}
-
-.wp-block-spacer {
-	background-color: var(--wp--preset--color--light-gray);
-}
-
-.wp-block-buttons {
-	margin-block-end: 24px;
-}
-
-.block-editor-block-list__layout .block-editor-block-list__block{
-	/*margin-block-end: 24px;*/
-}
-
-/* Block Quote */
+/* Block Quote custom styles */
 /* ------------------------------------------------------------------------------------------------------------------- */
 .wp-block-quote .wp-block-quote__citation{
 	font-size: 20px;
@@ -46,16 +17,13 @@ ta,
     content: "— ";
 }
 
-/* Block List */
+/* Block List custom styles */
 /* ------------------------------------------------------------------------------------------------------------------- */
 .wp-block-list > li > div > strong,
 .wp-block-list > li > div > a >strong{
 	font-family: var(--wp--preset--font-family--inter);
 	font-size: 22px;
 	font-weight: 700;
-}
-.wp-block-list > li:not(:last-child){
-	margin-bottom: 16px;
 }
 
 /* Product Card */
@@ -360,6 +328,8 @@ ta,
 .wp-block-acf-accordion .accordion-item .accordion-body .entry-content p:last-child{
 	margin-bottom: 0;
 }
+
+
 
 /* TINY MCE */
 /* ------------------------------------------------------------------------------------------------------------------- */
