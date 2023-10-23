@@ -289,7 +289,7 @@
         "spacing": {
           "margin": {
             "top": "45px",
-            "bottom": "9px"
+            "bottom": "16px"
           }
         }
       },
@@ -301,7 +301,7 @@
         "spacing": {
           "margin": {
             "top": "45px",
-            "bottom": "9px"
+            "bottom": "16px"
           }
         }
       },

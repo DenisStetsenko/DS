@@ -41,7 +41,7 @@
  */
 @mixin entry-content-heading-styling() {
   h2:not(.title), h3, h4 {
-    margin: rfs-value(45px 0 10px);
+    margin: rfs-value(45px 0 16px);
     &:first-child {
       margin-top: 0;
     }
