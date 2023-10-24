@@ -6,11 +6,13 @@ ta,
 	border-bottom: 3px solid #30b2a6;
 }
 
-.acf-block-body .acf-link a.button{
+.acf-block-body .acf-link a.button,
+.acf-block-body .acf-input .acf-button{
 	font-family: var(--wp--preset--font-family--inter);
 	font-weight: 500;
 }
-.acf-block-body .acf-link a.button:hover{
+.acf-block-body .acf-link a.button:hover,
+.acf-block-body .acf-input .acf-button:hover{
 	border-width: 1px;
 	border-style: solid;
 }
@@ -70,7 +72,7 @@ ta,
 	background-color: var(--wp--preset--color--primary);
 	padding-left: 0.625rem;
 	padding-right: 0.4375rem;
-	margin-right: 0.625rem;
+	margin-right: 5px;
 	font-style: normal;
 	display: inline-block;
 }
