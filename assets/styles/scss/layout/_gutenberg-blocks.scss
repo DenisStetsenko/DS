@@ -76,6 +76,7 @@
     & > li > a > strong{
       font-family: $font-secondary;
       @include font-size(20px);
+      font-weight: 600;
     }
   }
   ul.wp-block-list{
@@ -83,6 +84,7 @@
   }
 
   ol.wp-block-list{
+    padding-left: rfs-value(25px);
     li{
       margin-bottom: rfs-value(20px);
       line-height: 1.65;
