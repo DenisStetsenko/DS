@@ -7,8 +7,7 @@
 get_template_part('template-parts/single-article/author-block');
 
 // Affiliate Disclosure
-get_template_part('template-parts/single-article/affiliate-disclosure');
-?>
+get_template_part('template-parts/single-article/affiliate-disclosure'); ?>
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 	
@@ -16,7 +15,7 @@ get_template_part('template-parts/single-article/affiliate-disclosure');
 	
 	<div class="hero-content review-summary">
 		
-		<div class="content-widget widget rounded-3 font-secondary fs-4 bg-light-gray border p-4 d-lg-none mb-4">
+		<div class="content-widget widget rounded-3 font-secondary fs-4 bg-light-gray border py-5 px-4 d-lg-none mb-4">
 			<?php echo do_shortcode('[ez-toc]'); ?>
 		</div>
 

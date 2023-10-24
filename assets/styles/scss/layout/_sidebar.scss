@@ -146,7 +146,7 @@ $toc_black: #111;
     margin-bottom: rfs-value(-5px);
     box-shadow: none;
     .ez-toc-title-container{
-      margin-bottom: rfs-value(25px);
+      margin-bottom: rfs-value(20px);
       .ez-toc-title{
         color: $color-black;
         font-weight: 800;
@@ -192,7 +192,7 @@ $toc_black: #111;
           }
         }
         .ez-toc-link{
-          color: $color-gray;
+          color: $color-black;
           text-decoration: none;
           font-weight: 400;
           transition: color 300ms ease;
@@ -225,7 +225,6 @@ $toc_black: #111;
         margin-left: rfs-value(10px);
         margin-top: rfs-value(5px);
         list-style: none;
-        //list-style: disc;
         line-height: 1.4;
         &.offset-top{
           margin-top: rfs-value(-5px);
@@ -233,7 +232,7 @@ $toc_black: #111;
         li{
           .ez-toc-link{
             font-weight: 400;
-            @include font-size(15px);
+            @include font-size(16px);
             &:hover{
               color: $toc_black;
               text-decoration: underline;
