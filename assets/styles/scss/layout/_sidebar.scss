@@ -151,6 +151,7 @@ $toc_black: #111;
         color: $color-black;
         font-weight: 800;
         line-height: 1.25;
+        margin-bottom: 0;
         @include font-size(34px);
         @include media-breakpoint-only(lg){
           @include font-size(25px);
