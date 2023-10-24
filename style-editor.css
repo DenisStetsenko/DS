@@ -10,6 +10,10 @@ ta,
 	font-family: var(--wp--preset--font-family--inter);
 	font-weight: 500;
 }
+.acf-block-body .acf-link a.button:hover{
+	border-width: 1px;
+	border-style: solid;
+}
 .acf-block-body .acf-link a.link-url{
 	color: #2271b1;
 	font-family: var(--wp--preset--font-family--inter);
@@ -54,15 +58,28 @@ ta,
 	font-family: var(--wp--preset--font-family--inter);
 	font-weight: 800;
 	text-decoration: none;
+	border: none;
 }
-.wp-block-acf-product-card .product-heading .title:before {
-	content: attr(data-number);
+.wp-block-acf-product-card .product-heading .title a:hover{
+	text-decoration: underline;
+	text-decoration-color: var(--wp--preset--color--primary);
+	text-decoration-thickness: 4px;
+}
+
+.wp-block-acf-product-card .product-heading .title .number {
 	background-color: var(--wp--preset--color--primary);
 	padding-left: 0.625rem;
 	padding-right: 0.4375rem;
 	margin-right: 0.625rem;
 	font-style: normal;
+	display: inline-block;
 }
+.wp-block-acf-product-card .product-heading .title a:hover .number {
+	text-decoration: none;
+	text-decoration-color: var(--wp--preset--color--primary);
+	text-decoration-thickness: 0;
+}
+
 .wp-block-acf-product-card .product-heading .subtitle{
 	color: var(--wp--preset--color--black);
 	margin-bottom: 0;

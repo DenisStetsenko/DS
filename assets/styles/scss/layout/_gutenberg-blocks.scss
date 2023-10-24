@@ -643,21 +643,25 @@
     .product-heading {
 
       .title {
-        &:before{
-          content: attr(data-number);
+        .number{
           background-color: $color-primary;
           padding-left: rfs-value(10px);
           padding-right: rfs-value(7px);
           margin-right: rfs-value(10px);
           font-style: normal;
+          display: inline-block;
         }
-
         a {
           transition: color 300ms ease;
           &:hover {
             text-decoration: underline;
-            text-decoration-color: $color-primary-dark;
-            text-decoration-thickness: rfs-value(3px);
+            text-decoration-color: $color-primary;
+            text-decoration-thickness: rfs-value(4px);
+            .number{
+              text-decoration: none;
+              text-decoration-color: $color-primary;
+              text-decoration-thickness: 0;
+            }
           }
         }
       }

@@ -40,8 +40,10 @@ if ( ! empty( $product_card_heading['title'] && array_filter($product_card_headi
 			if ( preg_match('/^\d+\./', $original_product_title) ) {
 				$product_title 	= preg_replace('/^\d+\.\s*/', '', $original_product_title); // Use preg_replace to remove the number and dot from the beginning of the string.
 				$number 				= trim(preg_replace('/^(\d+\.\s*).*/', '$1', $original_product_title)); // Use preg_replace to keep only the number and dot at the beginning of the string.
-				//echo $number ? '<span class="number">'. $number .'</span>' : "";
+				
 				$number_data = "data-number=\"$number\"";
+				$product_title = '<span class="number">'. $number . '</span> ' . $product_title;
+				
 			} else {
 				$product_title = $original_product_title;
 			}
@@ -50,9 +52,10 @@ if ( ! empty( $product_card_heading['title'] && array_filter($product_card_headi
 				
 				if ( $product_card_link ) {
 					$link_target = $product_card_link['target'] ? 'target="_blank" rel="nofollow sponsored"' : '';
-					echo '<a class="affiliate-link" href="'. esc_url($product_card_link['url']) .'" '.$link_target.'>'. sanitize_text_field($product_title) . '</a>';
-				} else {
-					echo sanitize_text_field($product_title);
+					echo '<a class="affiliate-link" href="'. esc_url($product_card_link['url']) .'" '.$link_target.'>'. $product_title . '</a>';
+				}
+				else {
+					echo $product_title;
 				}
 				
 			echo "</$title_tag>";
