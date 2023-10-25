@@ -29,7 +29,6 @@ if ( ! empty( $block['className'] ) )   $class_name .= ' ' . $block['className']
 if ( ! empty( $product_card_heading['title'] && array_filter($product_card_heading) ) ) { ?>
 	
 	<div class="<?= esc_attr( $class_name ); ?>" style="<?= esc_attr( $margin ); ?>">
-		<!-- PRODUCT HEADING -->
 		<?php
 		$title_tag 							= $product_card_heading['title_tag'];
 		$original_product_title = $product_card_heading['title']; ?>
@@ -58,16 +57,12 @@ if ( ! empty( $product_card_heading['title'] && array_filter($product_card_headi
 			echo "</$title_tag>";
 			echo $product_card_heading['subtitle'] ? '<p class="subtitle mt-3 font-secondary text-black fw-bold text-uppercase fs-4 lh-sm ls-lg">'. $product_card_heading['subtitle'].'</p>' 	: null; ?>
 		</header>
-		<!-- / PRODUCT HEADING -->
-		
-		<!-- PRODUCT BIG IMAGE -->
 		<?php if ( $product_card_image ) {
 			echo '<figure class="post-thumbnail figure rounded w-100 mb-5 '.$best_label.'">';
 			echo '<img class="figure-img img-fluid rounded w-100" src="'. esc_url($product_card_image['url']) .'" loading="lazy" alt="'. esc_attr($product_card_image['alt']) .'">';
 			echo '</figure>';
 			echo $product_card_image['caption'] ? '<figcaption class="figure-caption font-secondary text-gray fs-5 fst-italic text-center">' . esc_attr($product_card_image['caption']) . '</figcaption>' : '';
 		} ?>
-		<!-- / PRODUCT BIG IMAGE -->
 	</div>
 
 <?php } else { ?>
