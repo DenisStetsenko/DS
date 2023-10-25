@@ -200,7 +200,7 @@
   .wp-block-buttons{
     display: flex;
     flex-wrap: wrap;
-    margin: $paragraph-margin-bottom 0 $paragraph-margin-bottom;
+    margin: rfs-fluid-value(2rem 0);
     gap: 24px;
     &.is-content-justification-center{
       justify-content: center;
