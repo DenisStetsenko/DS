@@ -40,7 +40,7 @@ ta,
 .wp-block-list > li > div > a >strong{
 	font-family: var(--wp--preset--font-family--inter);
 	font-size: 20px;
-	font-weight: 700;
+	font-weight: 600;
 }
 
 /* Product Card */

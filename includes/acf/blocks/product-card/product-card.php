@@ -31,7 +31,6 @@ if ( ! empty( $product_card_heading['title'] && array_filter($product_card_headi
 	<div class="<?= esc_attr( $class_name ); ?>" style="<?= esc_attr( $margin ); ?>">
 		<!-- PRODUCT HEADING -->
 		<?php
-		$number_data 						= '';
 		$title_tag 							= $product_card_heading['title_tag'];
 		$original_product_title = $product_card_heading['title']; ?>
 		<header class="product-heading mb-4">
@@ -40,15 +39,13 @@ if ( ! empty( $product_card_heading['title'] && array_filter($product_card_headi
 			if ( preg_match('/^\d+\./', $original_product_title) ) {
 				$product_title 	= preg_replace('/^\d+\.\s*/', '', $original_product_title); // Use preg_replace to remove the number and dot from the beginning of the string.
 				$number 				= trim(preg_replace('/^(\d+\.\s*).*/', '$1', $original_product_title)); // Use preg_replace to keep only the number and dot at the beginning of the string.
-				
-				$number_data = "data-number=\"$number\"";
 				$product_title = '<span class="number">'. $number . '</span> ' . $product_title;
 				
 			} else {
 				$product_title = $original_product_title;
 			}
 			
-			echo "<$title_tag class=\"title m-0$excluded_from_toc\" $number_data>";
+			echo "<$title_tag class=\"title m-0$excluded_from_toc\">";
 				
 				if ( $product_card_link ) {
 					$link_target = $product_card_link['target'] ? 'target="_blank" rel="nofollow sponsored"' : '';
@@ -66,7 +63,7 @@ if ( ! empty( $product_card_heading['title'] && array_filter($product_card_headi
 		<!-- PRODUCT BIG IMAGE -->
 		<?php if ( $product_card_image ) {
 			echo '<figure class="post-thumbnail figure rounded w-100 mb-5 '.$best_label.'">';
-			echo '<img class="figure-img img-fluid rounded w-100" src="'. $product_card_image['sizes']['large'] .'" loading="lazy" alt="'. esc_attr($product_card_image['alt']) .'">';
+			echo '<img class="figure-img img-fluid rounded w-100" src="'. esc_url($product_card_image['url']) .'" loading="lazy" alt="'. esc_attr($product_card_image['alt']) .'">';
 			echo '</figure>';
 			echo $product_card_image['caption'] ? '<figcaption class="figure-caption font-secondary text-gray fs-5 fst-italic text-center">' . esc_attr($product_card_image['caption']) . '</figcaption>' : '';
 		} ?>
