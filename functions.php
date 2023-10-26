@@ -511,3 +511,27 @@ add_filter( 'render_block', function( $block_content, $block ) {
 	}
 	return $block_content;
 }, 10, 2 );
+
+
+/**
+ * Stop adding rel=noreferrer to links that open in a new tab
+ */ 
+// add_filter( 'the_content', function($content) { 
+//   $replace = array(" noreferrer" => "" ,
+// 				   "noreferrer " => ""
+// 				  );
+//   $new_content = strtr($content, $replace);
+//   return $new_content;
+// });
+
+
+/**
+ * Prevent Affiliate Links From Getting Indexed In Search Engines
+ * https://thirstyaffiliates.com/knowledgebase/how-to-prevent-affiliate-links-from-getting-indexed-in-search-engines
+ * Add ‘noindex’ to HTTP headers on redirect
+ * @return void
+ */
+function ta_add_noindex_headers() {
+	header( 'X-Robots-Tag: noindex, nofollow' );
+}
+add_action( 'ta_before_link_redirect' , 'ta_add_noindex_headers' );
