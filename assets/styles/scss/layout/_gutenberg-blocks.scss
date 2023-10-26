@@ -326,13 +326,11 @@
 
   // Block Editor => Separator
   .wp-block-separator{
-    opacity: 1;
-    border-top-color: $color-border-gray;
-    margin-left: auto;
-    margin-right: auto;
     &:not(.is-style-wide):not(.is-style-dots){
       width: auto;
-      max-width: rfs-value(250px);
+      max-width: rfs-value(150px);
+      margin-left: auto;
+      margin-right: auto;
     }
     &.is-style-wide{
       width: 100%;
@@ -340,14 +338,17 @@
     }
     &.is-style-default{
       width: auto;
-      max-width: rfs-value(250px);
+      max-width: rfs-value(150px);
+      margin-left: auto;
+      margin-right: auto;
     }
     &.is-style-dots{
       background: none;
       border: none;
       text-align: center;
+      margin: 2.7rem 0;
       &:before{
-        color: currentColor;
+        color: $color-secondary;
         content: "···";
         font-size: 1.5em;
         letter-spacing: 2em;

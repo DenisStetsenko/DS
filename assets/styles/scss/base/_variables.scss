@@ -124,8 +124,12 @@ $bs-chevron-double-down-icon   : url("data:image/svg+xml, <svg xmlns='http://www
 $paragraph-margin-bottom  : 1.25rem;
 $blockquote-font-size     : $font-size-base;
 $blockquote-footer-color  : $color-black;
+
 $hr-margin-y              : 3.125rem; // 50px
-$hr-border-color          : rgba(0, 0, 0, 0.5);
+$hr-border-color          : $color-border-gray;
+$hr-border-width          : 2px;
+$hr-color                 : inherit;
+$hr-opacity               : 1;
 
 $box-shadow               : 0.125rem 0.1875rem 1rem rgba(0, 0, 0, 0.1);
 $box-shadow-sm            : 0rem 0rem 0.9375rem rgba(0, 0, 0, 0.15);
