@@ -179,13 +179,11 @@ $toc_black: #111;
         &.active-parent{
           & > .ez-toc-link{
             color: $toc_black;
-            font-weight: 500;
           }
         }
         &.active{
           & > .ez-toc-link{
             color: $toc_black;
-            font-weight: 500;
             text-decoration: underline;
             text-decoration-color: $color-primary-dark;
             text-decoration-thickness: rfs-value(3px);
@@ -211,6 +209,7 @@ $toc_black: #111;
         }
         .ez-toc-link{
           @include font-size(17px);
+          font-weight: 500;
           &:hover{
             color: $toc_black;
             text-decoration: underline;
