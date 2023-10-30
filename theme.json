@@ -220,7 +220,7 @@
       },
       "core/quote": {
         "typography": {
-          "fontSize": "1.875rem",
+          "fontSize": "1.625rem",
           "lineHeight": "1.46"
         },
         "spacing": {
@@ -241,7 +241,7 @@
           "radius": "0",
           "style": "solid",
           "width": "0 0 0 5px",
-          "color": "var(--wp--preset--color--border-gray)"
+          "color": "var(--wp--preset--color--secondary)"
         }
       }
     },

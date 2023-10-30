@@ -412,10 +412,10 @@
 
   // Block Editor => Quote
   .wp-block-quote{
-    @include font-size(30px);
     font-style: italic;
+    @include font-size(26px);
     @include margin(50px 0);
-    border-left: rfs-value(5px solid $color-border-gray);
+    border-left: rfs-value(5px solid $color-secondary);
     padding: rfs-value(10px 0 5px 30px);
     line-height: 1.45;
     p{
