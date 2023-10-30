@@ -72,6 +72,8 @@
 
   // Block Editor => List (ul)
   .wp-block-list{
+    margin-top: $paragraph-margin-bottom;
+    margin-bottom: $paragraph-margin-bottom;
     & > li > strong,
     & > li > a > strong{
       font-family: $font-secondary;
