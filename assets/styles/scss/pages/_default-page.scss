@@ -1,7 +1,7 @@
 #default-page-wrapper {
   .entry-content {
 
-    h2, h3 {
+    h2 {
       margin: rfs-value(50px 0 20px);
       &:first-child {
         margin-top: 0;
@@ -16,12 +16,13 @@
     }
 
     h3 {
-      @include font-size(25px);
-      font-weight: 700;
+      @include font-size(26px);
+      margin: rfs-value(45px 0 16px);
     }
 
     h4{
-      @include font-size(26px);
+      @include font-size(21px);
+      margin: rfs-value(40px 0 12px);
     }
 
     ul > li, ol > li {
@@ -37,6 +38,10 @@
       @include link-hover-effect();
     }
 
+    p strong{
+      font-weight: 600;
+    }
+
     figure {
       img {
         @include img-fluid();
@@ -49,7 +54,8 @@
         margin-top: rfs-value(7px);
       }
     }
-    img {
+
+    img:not(.figure-img) {
       @include img-fluid();
     }
 
