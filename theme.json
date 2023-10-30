@@ -150,9 +150,9 @@
       "core/separator": {
         "spacing": {
           "margin": {
-            "top": "3.125rem",
+            "top": "4rem",
             "right": "0",
-            "bottom": "3.125rem",
+            "bottom": "4rem",
             "left": "0"
           }
         },

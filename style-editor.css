@@ -46,8 +46,8 @@ ta,
 /* Product Card */
 /* ------------------------------------------------------------------------------------------------------------------- */
 .wp-block-acf-product-card{
-	margin-block-start: 40px !important;
-	margin-block-end:  40px !important;
+	margin-block-start: 4rem;
+	margin-block-end:  40px;
 }
 .wp-block-acf-product-card .product-heading{
 	margin-bottom: 1.5rem;
