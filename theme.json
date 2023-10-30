@@ -354,7 +354,7 @@
         },
         "typography": {
           "fontFamily": "var(--wp--preset--font-family--lora)",
-          "fontWeight": "700",
+          "fontWeight": "600",
           "textDecoration": "none"
         },
         ":hover": {
