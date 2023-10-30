@@ -209,6 +209,13 @@
             "bottom": "1.5rem",
             "left": "0"
           }
+        },
+        "variations": {
+          "rounded": {
+            "border": {
+              "radius": "0.9375rem"
+            }
+          }
         }
       },
       "core/quote": {

@@ -116,6 +116,11 @@
         margin-inline-end: 2em;
       }
     }
+    &.is-style-rounded{
+      img{
+        border-radius: $border-radius;
+      }
+    }
     img{
       @include img-fluid()
     }
@@ -397,7 +402,7 @@
       caption-side: bottom;
       td, th {
         word-break: normal;
-        border: 1px solid $color-gray;
+        border: rfs-value(1px solid $color-gray);
         padding: 0.5em;
       }
     }
@@ -670,7 +675,7 @@
     }
 
     .post-thumbnail {
-      border: 1px solid $color-border-gray;
+      border: rfs-value(1px solid $color-border-gray);
       min-height: rfs-value(200px);
       @include media-breakpoint-up(sm) {
         min-height: rfs-value(250px);
