@@ -239,6 +239,9 @@
       img:not(.figure-img) {
         @include img-fluid();
       }
+      p strong{
+        font-weight: 600;
+      }
 
       // comment form shortcode
       .wpd-inline-shortcode {
