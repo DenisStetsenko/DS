@@ -23,6 +23,11 @@ ta,
 	border: none;
 }
 
+.wp-block-paragraph b,
+.wp-block-paragraph strong {
+	font-weight: 600;
+}
+
 /* Block Quote custom styles */
 /* ------------------------------------------------------------------------------------------------------------------- */
 .wp-block-quote .wp-block-quote__citation{
