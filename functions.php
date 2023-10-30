@@ -535,3 +535,19 @@ function ta_add_noindex_headers() {
 	header( 'X-Robots-Tag: noindex, nofollow' );
 }
 add_action( 'ta_before_link_redirect' , 'ta_add_noindex_headers' );
+
+
+/**
+ * thirstylink change Cloacked URL column width
+ * @return void
+ */
+function thirstylink_cloaked_url_column_width() {
+	$current_screen = get_current_screen();
+	
+	if ($current_screen && $current_screen->post_type === 'thirstylink') {
+		echo '<style>
+						#cloaked_url.manage-column { width: 30% }
+					</style>';
+	}
+}
+add_action('admin_head', 'thirstylink_cloaked_url_column_width');
