@@ -92,7 +92,7 @@ $post_html_attrs .= $layout;
 		<div class="inner">
 			<?php
 			//if ( $main_term ) echo '<span class="category rounded bg-light-gray text-uppercase fw-bolder border font-secondary text-gray d-inline-block">' . get_cat_name($main_term) . '</span>';
-			the_title( '<h3 class="entry-title fw-bold mb-2">', '</h3>' );
+			the_title( '<h3 class="entry-title mb-2">', '</h3>' );
 			
 			if ( $subtitle ) : ?>
 				<p class="subtitle font-secondary mb-0"><?= wp_strip_all_tags($subtitle); ?></p>

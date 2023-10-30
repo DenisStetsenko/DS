@@ -16,7 +16,7 @@ $class_name = 'wp-block-acf-accordion accordion font-secondary';
 if ( ! empty( $block['className'] ) )   $class_name .= ' ' . $block['className'];
 //if ( ! empty( $block['align'] ) )       $class_name .= ' align' . $block['align'];
 
-$loop_item_class_name = 'accordion-header accordion-button m-0';
+$loop_item_class_name = 'accordion-header accordion-button m-0 fw-bolder';
 if ( ! empty( $excluded_class) )   $loop_item_class_name .= ' ' . $excluded_class;
 
 $margin				= '';

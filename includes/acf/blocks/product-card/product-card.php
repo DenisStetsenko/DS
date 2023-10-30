@@ -55,7 +55,7 @@ if ( ! empty( $product_card_heading['title'] && array_filter($product_card_headi
 				}
 				
 			echo "</$title_tag>";
-			echo $product_card_heading['subtitle'] ? '<p class="subtitle mt-3 font-secondary text-black fw-bold text-uppercase fs-4 lh-sm ls-lg">'. $product_card_heading['subtitle'].'</p>' 	: null; ?>
+			echo $product_card_heading['subtitle'] ? '<p class="subtitle mt-3 font-secondary text-black fw-bolder text-uppercase fs-4 lh-sm ls-lg">'. $product_card_heading['subtitle'].'</p>' 	: null; ?>
 		</header>
 		<?php if ( $product_card_image ) {
 			echo '<figure class="post-thumbnail figure rounded w-100 mb-5 '.$best_label.'">';

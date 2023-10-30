@@ -39,6 +39,7 @@
       }
     }
     h1{
+      font-weight: 800;
       @include media-breakpoint-down(sm){
         @include font-size(48px);
       }

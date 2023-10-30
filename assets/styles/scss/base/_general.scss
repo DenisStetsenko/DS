@@ -159,6 +159,7 @@ header.section-title{
   }
   h2{
     margin-bottom: 0;
+    font-weight: 800;
     @include media-breakpoint-down(sm){
       @include font-size(50px);
     }
@@ -180,6 +181,7 @@ header#page-header{
     margin-bottom: rfs-fluid-value(20px);
   }
   h1{
+    font-weight: 800;
     margin-bottom: 0;
   }
 }

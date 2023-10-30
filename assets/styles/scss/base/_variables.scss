@@ -125,7 +125,7 @@ $paragraph-margin-bottom  : 1.25rem;
 $blockquote-font-size     : $font-size-base;
 $blockquote-footer-color  : $color-black;
 
-$hr-margin-y              : 3.125rem; // 50px
+$hr-margin-y              : 4rem; // 64px
 $hr-border-color          : $color-border-gray;
 $hr-border-width          : 2px;
 $hr-color                 : inherit;
@@ -208,7 +208,7 @@ $link-hover-decoration  : none;
 /* H1-H6 */
 $headings-color         : $color-black;
 $headings-font-family   : $font-secondary;
-$headings-font-weight   : 800;
+$headings-font-weight   : 700;
 $headings-line-height   : 1.25;
 $headings-margin-bottom : 1.25rem;
 
@@ -561,7 +561,7 @@ $slick-dot-color-active   : $color-black;
   }
 }
 
-@mixin heading-highlight($width : 13px, $left: 6px){
+@mixin heading-highlight($width : 9px, $left: 6px){
   position: relative;
   padding-left: rfs-value($left);
   &:before {

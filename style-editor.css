@@ -58,7 +58,7 @@ ta,
 .wp-block-acf-product-card .product-heading .title a{
 	color: var(--wp--preset--color--black);
 	font-family: var(--wp--preset--font-family--inter);
-	font-weight: 800;
+	font-weight: 700;
 	text-decoration: none;
 	border: none;
 }
@@ -292,7 +292,7 @@ ta,
 .wp-block-acf-top-products .top-picks .column-description .top-picks-heading .title{
 	font-family: var(--wp--preset--font-family--inter);
 	font-size: 20px;
-	font-weight: 800;
+	font-weight: 700;
 	margin-bottom: 10px;
 }
 .wp-block-acf-top-products .top-picks .column-description .top-picks-heading .description{
@@ -344,8 +344,9 @@ ta,
 .wp-block-acf-accordion .accordion-item .accordion-header{
 	margin-top: 0;
 	font-family: var(--wp--preset--font-family--inter);
-	font-weight: 700;
+	font-weight: 600;
 	font-size: 24px;
+	margin-bottom: 10px;
 }
 .wp-block-acf-accordion .accordion-item .accordion-header .accordion-button{
 	border: none;
