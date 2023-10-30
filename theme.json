@@ -81,8 +81,8 @@
         },
         {
           "slug": "medium",
-          "size": "1.125rem",
-          "name": "Medium (18px)"
+          "size": "1.5rem",
+          "name": "Medium (24px)"
         },
         {
           "slug": "large",
@@ -320,7 +320,7 @@
       },
       "h4": {
         "typography": {
-          "fontSize": "26px",
+          "fontSize": "24px",
           "lineHeight": "1.25",
           "fontWeight": "700"
         },
