@@ -98,17 +98,17 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
 		if ( is_singular('post') ) :
 			wp_enqueue_script( 'gumshoe', 'https://cdnjs.cloudflare.com/ajax/libs/gumshoe/5.1.1/gumshoe.min.js', array(), null, true ); // load in <footer>
 			wp_add_inline_script( 'gumshoe',
-				'document.addEventListener("DOMContentLoaded", () => {
-					const header = document.querySelector("#masthead");
-					const spy = new Gumshoe("#right-sidebar #ez-toc-container > nav a", {
-						nested			: true,
-						nestedClass	: "active-parent",
-						reflow			: false,
+				"document.addEventListener('DOMContentLoaded', () => {
+					const header 	= document.querySelector('#masthead');
+					const spy 		= new Gumshoe('#right-sidebar #ez-toc-container > nav a', {
+						nested	: true,
+						nestedClass	: 'active-parent',
+						reflow	: false,
 						offset: function () {
-								return header.getBoundingClientRect().height + 65;
+							return header.getBoundingClientRect().height + 65;
 						}
 					});
-				});'
+				});"
 			);
 		
 		
@@ -116,11 +116,11 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
 			wp_enqueue_style('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/4.0.31/fancybox.min.css', null, array() );
 			wp_enqueue_script('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/4.0.31/fancybox.umd.min.js', array(), null, true );
 			wp_add_inline_script( 'fancybox',
-				'document.addEventListener("DOMContentLoaded", () => {
-					Fancybox.bind("[data-fancybox], .entry-content a[href$=\"png\"], .entry-content a[href$=\"jpg\"]", {
+				"document.addEventListener('DOMContentLoaded', () => {
+					Fancybox.bind('[data-fancybox], .entry-content a[href$=\"png\"], .entry-content a[href$=\"jpg\"]', {
 						infinite: false
 					});
-				});'
+				});"
 			);
 		endif;
 		
@@ -128,7 +128,7 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
 	  wp_register_script( 'slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array('jquery'), null, true );
 
     //wp_enqueue_style( 'main', get_theme_file_uri('assets/styles/css/main.css'), array(), time() );
-    wp_enqueue_style( 'main-min', get_theme_file_uri('assets/styles/css/main.min.css'), array(), '1.8.8' );
+    wp_enqueue_style( 'main-min', get_theme_file_uri('assets/styles/css/main.min.css'), array(), '1.8.9' );
 
   }
 }

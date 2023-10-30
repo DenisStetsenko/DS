@@ -94,7 +94,7 @@
 
   // Block Editor => Image
   .wp-block-image{
-    margin: $paragraph-margin-bottom 0 $paragraph-margin-bottom;
+    margin: 1.5rem 0;
 
     :where([style*=border-width]) {
       border-style: solid;
