@@ -612,7 +612,7 @@ $slick-dot-color-active   : $color-black;
 }
 
 @mixin link-hover-effect(){
-  font-weight: 700;
+  font-weight: 600;
   position: relative;
   text-decoration: none;
   z-index: 1;
