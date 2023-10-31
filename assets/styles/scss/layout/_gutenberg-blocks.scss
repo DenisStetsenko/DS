@@ -21,7 +21,39 @@
   --wp--preset--color--gray         : #595959;
   --wp--preset--color--light-gray   : #f7f8f9;
   --wp--preset--color--border-gray  : #eaecee;
+  --wp--preset--color--success      : #36c384;
+  --wp--preset--color--danger       : #EB5757;
 
+  --wp--preset--font-family--inter  : "Inter", sans-serif;
+  --wp--preset--font-family--lora   : "Lora", serif;
+
+  // Initial Colors
+  .has-black-color{
+    color: var(--wp--preset--color--black);
+  }
+  .has-white-color{
+    color: var(--wp--preset--color--white);
+  }
+  .has-primary-color{
+    color: var(--wp--preset--color--primary);
+  }
+  .has-secondary-color{
+    color: var(--wp--preset--color--secondary);
+  }
+  .has-success-color{
+    color: var(--wp--preset--color--success);
+  }
+  .has-danger-color{
+    color: var(--wp--preset--color--danger);
+  }
+  .has-gray-color{
+    color: var(--wp--preset--color--gray);
+  }
+  .has-light-gray-color{
+    color: var(--wp--preset--color--light-gray);
+  }
+
+  // Border Color
   .has-primary-border-color {
     border-color: var(--wp--preset--color--primary);
   }
@@ -45,6 +77,14 @@
   }
   .has-border-gray-border-color {
     border-color: var(--wp--preset--color--border-gray);
+  }
+
+  // Font Family
+  .has-inter-font-family{
+    font-family: var(--wp--preset--font-family--inter);
+  }
+  .has-lora-font-family{
+    font-family: var(--wp--preset--font-family--lora);
   }
 
   // Block Editor Font Sizes
