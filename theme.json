@@ -176,9 +176,12 @@
         }
       },
       "core/list": {
+        "typography": {
+          "lineHeight": "1.65"
+        },
         "spacing": {
           "margin": {
-            "top": "0",
+            "top": "1.25rem",
             "right": "0",
             "bottom": "1.25rem",
             "left": "0"
