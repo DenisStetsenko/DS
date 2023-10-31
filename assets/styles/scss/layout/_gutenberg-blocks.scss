@@ -113,6 +113,17 @@
     font-family: var(--wp--preset--font-family--lora);
   }
 
+  // Align
+  .has-text-align-left{
+    text-align: left;
+  }
+  .has-text-align-center{
+    text-align: center;
+  }
+  .has-text-align-right{
+    text-align: right;
+  }
+
   // Block Editor Font Sizes
   .has-small-font-size {
     @include font-size($h5-font-size);
