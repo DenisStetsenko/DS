@@ -163,10 +163,12 @@
       @include custom-list-styling();
     }
     &.pros{
-      @include custom-list-styling($color-success);
+      outline: "pros";
+      @include custom-list-styling($color: $color-success);
     }
     &.cons{
-      @include custom-list-styling($color-danger);
+      outline: "cons";
+      @include custom-list-styling($color: $color-danger);
     }
   }
 
