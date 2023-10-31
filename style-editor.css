@@ -3,7 +3,7 @@ ta,
 	box-shadow: none;
 	color: var(--wp--preset--color--black);
 	font-weight: 600;
-	border-bottom: 3px solid #30b2a6;
+	border-bottom: 2px solid #30b2a6;
 }
 
 .acf-block-body .acf-link a.button,
@@ -21,11 +21,6 @@ ta,
 	font-family: var(--wp--preset--font-family--inter);
 	font-weight: 400;
 	border: none;
-}
-
-.wp-block-paragraph b,
-.wp-block-paragraph strong {
-	font-weight: 600;
 }
 
 /* Block Quote custom styles */
