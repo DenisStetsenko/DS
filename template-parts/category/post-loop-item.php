@@ -38,13 +38,13 @@ if ( $args && ! empty($args['layout']) ) {
 $author_block_html = '';
 if ( $args && ! empty($args['include-author-block']) && $args['include-author-block'] == 1 ) {
 	
-	$author_id 	 	= get_post_field( 'post_author' );
-	$author_name 	= get_the_author_meta( 'display_name', $author_id );
+	$author_id 	 			= get_post_field( 'post_author' );
+	$author_name 			= get_the_author_meta( 'display_name', $author_id );
 	$post_date 				= get_the_date( 'M j, Y' );
 	$format_post_date = date("Y-m-d", strtotime($post_date));
 	
-	$post_m_date	= get_the_modified_date( 'M j, Y' );
-	$format_post_m_date = date("Y-m-d", strtotime($post_m_date));
+//	$post_m_date				= get_the_modified_date( 'M j, Y' );
+//	$format_post_m_date = date("Y-m-d", strtotime($post_m_date));
 	
 	$author_block_html .= '<figure class="article-author font-secondary fs-5 mt-3 mb-0 text-gray">';
 		$author_block_html .= '<figcaption>';
@@ -57,11 +57,11 @@ if ( $args && ! empty($args['include-author-block']) && $args['include-author-bl
 				$author_block_html .= is_page_template('single-review-template.php') ? do_shortcode('[wp-reading-time]') : do_shortcode('[acf-reading-time]');
 			$author_block_html .= '</li>';
 			
-			if ( get_the_modified_date() != get_the_date() ) :
-				$author_block_html .=	'<li class="list-inline-item dateModified"><time datetime="'. $format_post_m_date .'" itemprop="dateModified">'. sprintf( __( '%s', 'wp-theme' ), $post_m_date ) .'</time></li>';
-			else :
-				$author_block_html .=	'<li class="list-inline-item datePublished"><time datetime="'. $format_post_date .'" itemprop="datePublished">'. sprintf( __( '%s', 'wp-theme' ), $post_date ) .'</time></li>';
-			endif;
+//		if ( get_the_modified_date() != get_the_date() ) :
+//			$author_block_html .=	'<li class="list-inline-item dateModified"><time datetime="'. $format_post_m_date .'" itemprop="dateModified">'. sprintf( __( '%s', 'wp-theme' ), $post_m_date ) .'</time></li>';
+//		else :
+//		endif;
+			$author_block_html .=	'<li class="list-inline-item datePublished"><time datetime="'. $format_post_date .'" itemprop="datePublished">'. sprintf( __( '%s', 'wp-theme' ), $post_date ) .'</time></li>';
 	
 			$author_block_html .= '</ul>';
 			
@@ -71,14 +71,18 @@ if ( $args && ! empty($args['include-author-block']) && $args['include-author-bl
 
 
 // DEFINE POST MAIN CATEGORY
-$yoast_wpseo_primary_category = get_post_meta( get_the_ID(), '_yoast_wpseo_primary_category', true );
-if ( $yoast_wpseo_primary_category ) {
-	$main_term = $yoast_wpseo_primary_category;
-} elseif ( $post_category = wp_get_post_categories( get_the_ID() ) ) {
-	$main_term = $post_category[0];
-} else {
-	$main_term = false;
-}
+//$yoast_wpseo_primary_category = (int) get_post_meta( get_the_ID(), '_yoast_wpseo_primary_category', true );
+//$rank_math_primary_category 	= (int) get_post_meta( get_the_ID(), 'rank_math_primary_category', true );
+//
+//if ( $yoast_wpseo_primary_category ) {
+//	$main_term = $yoast_wpseo_primary_category;
+//} elseif ( $rank_math_primary_category ) {
+//	$main_term = $rank_math_primary_category;
+//} elseif ( $post_category = wp_get_post_categories( get_the_ID() ) ) {
+//	$main_term = $post_category[0];
+//} else {
+//	$main_term = false;
+//}
 
 // GENERATE POST CLASS LIST
 $post_html_attrs = 'item ';
