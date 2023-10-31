@@ -53,6 +53,32 @@
     color: var(--wp--preset--color--light-gray);
   }
 
+// Initial Colors
+  .has-black-background-color{
+    color: var(--wp--preset--color--black);
+  }
+  .has-white-background-color{
+    color: var(--wp--preset--color--white);
+  }
+  .has-primary-background-color{
+    color: var(--wp--preset--color--primary);
+  }
+  .has-secondary-background-color{
+    color: var(--wp--preset--color--secondary);
+  }
+  .has-success-background-color{
+    color: var(--wp--preset--color--success);
+  }
+  .has-danger-background-color{
+    color: var(--wp--preset--color--danger);
+  }
+  .has-gray-background-color{
+    color: var(--wp--preset--color--gray);
+  }
+  .has-light-gray-background-color{
+    color: var(--wp--preset--color--light-gray);
+  }
+
   // Border Color
   .has-primary-border-color {
     border-color: var(--wp--preset--color--primary);
