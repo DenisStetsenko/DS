@@ -159,16 +159,16 @@
     }
   }
   ul.wp-block-list{
-    &:not(.pros),&:not(.cons){
-      @include custom-list-styling();
-    }
+    @include custom-list-styling();
     &.pros{
-      outline: "pros";
-      @include custom-list-styling($color: $color-success);
+      li:before{
+        color: $color-success;
+      }
     }
     &.cons{
-      outline: "cons";
-      @include custom-list-styling($color: $color-danger);
+      li:before{
+        color: $color-danger;
+      }
     }
   }
 
