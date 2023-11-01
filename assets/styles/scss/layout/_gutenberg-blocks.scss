@@ -482,9 +482,9 @@
   // Block Editor => Table
   .wp-block-table{
     font-family: $font-secondary;
-    margin: $paragraph-margin-bottom 0 $paragraph-margin-bottom;
+    margin: 1.5rem 0;
     overflow-x: auto;
-    @include font-size($h4-font-size);
+    @include font-size(16px);
     table {
       border-collapse: collapse;
       width: 100%;

@@ -91,18 +91,18 @@
         },
         {
           "slug": "medium",
-          "size": "1.5rem",
-          "name": "Medium (24px)"
+          "size": "1.375rem",
+          "name": "Medium (22px)"
         },
         {
           "slug": "large",
-          "size": "2rem",
-          "name": "Large (32px)"
+          "size": "1.625rem",
+          "name": "Large (26px)"
         },
         {
           "slug": "x-large",
-          "size": "2.375rem",
-          "name": "Extra Large (38px)"
+          "size": "2rem",
+          "name": "Extra Large (32px)"
         },
         {
           "slug": "huge",
@@ -231,6 +231,12 @@
           }
         }
       },
+      "core/table": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--inter)",
+          "fontSize": "1rem"
+        }
+      },
       "core/quote": {
         "typography": {
           "fontSize": "1.625rem",
@@ -307,7 +313,7 @@
       },
       "h2": {
         "typography": {
-          "fontSize": "34px",
+          "fontSize": "32px",
           "lineHeight": "1.25",
           "fontWeight": "700"
         },
@@ -326,7 +332,7 @@
       },
       "h3": {
         "typography": {
-          "fontSize": "30px",
+          "fontSize": "26px",
           "lineHeight": "1.25",
           "fontWeight": "700"
         },
@@ -345,7 +351,7 @@
       },
       "h4": {
         "typography": {
-          "fontSize": "24px",
+          "fontSize": "22px",
           "lineHeight": "1.25",
           "fontWeight": "700"
         },

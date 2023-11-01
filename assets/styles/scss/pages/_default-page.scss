@@ -9,19 +9,17 @@
     }
 
     h2 {
-      @include font-size(30px);
       & + h3 {
         margin-top: rfs-value(10px);
       }
     }
 
     h3 {
-      @include font-size(26px);
       margin: rfs-value(45px 0 16px);
     }
 
     h4{
-      @include font-size(21px);
+      @include font-size(22px);
       margin: rfs-value(40px 0 12px);
     }
 
