@@ -235,6 +235,19 @@
         "typography": {
           "fontFamily": "var(--wp--preset--font-family--inter)",
           "fontSize": "1rem"
+        },
+        "border" : {
+          "color" : "var(--wp--preset--color--border-gray)",
+          "style": "solid",
+          "width": "1px"
+        },
+        "spacing": {
+          "margin": {
+            "top": "1rem",
+            "right": "0",
+            "bottom": "1.25rem",
+            "left": "0"
+          }
         }
       },
       "core/quote": {

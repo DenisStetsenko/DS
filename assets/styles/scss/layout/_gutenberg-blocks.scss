@@ -484,17 +484,59 @@
     font-family: $font-secondary;
     margin: 1.5rem 0;
     overflow-x: auto;
-    @include font-size(16px);
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      caption-side: bottom;
-      td, th {
-        word-break: normal;
-        border: rfs-value(1px solid $color-gray);
-        padding: 0.5em;
-      }
+
+    @include media-breakpoint-down(sm){
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
     }
+    table{
+      color: $table-color;
+      vertical-align: $table-cell-vertical-align;
+      border-color: $table-border-color;
+      width: 100%;
+      min-width: 400px;
+      @include font-size(16px);
+      @include media-breakpoint-down(md){
+        @include font-size(15px);
+      }
+      @include media-breakpoint-down(sm){
+        @include font-size(14px);
+        min-width: 380px;
+      }
+      & > :not(caption) > * > * {
+        padding: $table-cell-padding-y $table-cell-padding-x;
+        background-color: $table-bg;
+        border-bottom-width: $table-border-width;
+        box-shadow: inset 0 0 0 9999px $table-accent-bg;
+      }
+      // .table-bordered
+      & > :not(caption) > * {
+        border-width: $table-border-width 0;
+        & > * {
+          border-width: 0 $table-border-width;
+        }
+      }
+      // end of .table-bordered
+      & > thead {
+        vertical-align: inherit;
+        background-color: $color-light-gray;
+      }
+      & > tbody { vertical-align: inherit; }
+      & > tfoot{
+        background-color: $color-light-gray;
+      }
+      td strong{ font-weight: 600; }
+    }
+    //table {
+    //  border-collapse: collapse;
+    //  width: 100%;
+    //  caption-side: bottom;
+    //  td, th {
+    //    word-break: normal;
+    //    border: rfs-value(1px solid $color-gray);
+    //    padding: 0.5em;
+    //  }
+    //}
   }
 
   // Block Editor => Quote
