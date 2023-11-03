@@ -1,5 +1,4 @@
 <?php
-
 if ( ! function_exists( 'wp_custom_theme_add_my_tc_button' ) ) {
   function wp_custom_theme_add_my_tc_button() {
 
