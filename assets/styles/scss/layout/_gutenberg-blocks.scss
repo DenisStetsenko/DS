@@ -807,10 +807,10 @@
 
     .post-thumbnail {
       border: rfs-value(1px solid $color-border-gray);
-      min-height: rfs-value(200px);
-      @include media-breakpoint-up(sm) {
-        min-height: rfs-value(250px);
-      }
+      //min-height: rfs-value(200px);
+      //@include media-breakpoint-up(sm) {
+      //  min-height: rfs-value(250px);
+      //}
       & + .figure-caption{
         margin-top: -1rem;
         margin-bottom: 1.5rem;

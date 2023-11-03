@@ -20,8 +20,10 @@ if ( $wp_query->have_posts() ) :
 				<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 					<div class="slick-slide">
 						<div class="testimonials-loop-card rounded-3 position-relative border bg-light-gray text-center">
-							<div class="entry-content fst-italic"><?php the_content(); ?></div>
-							<h2 class="name mt-3 ls-lg mb-0"><?php the_title(); ?></h2>
+							<figure class="entry-content fst-italic m-0">
+								<?php the_content(); ?>
+								<figcaption class="name mt-3 ls-lg mb-0 font-secondary fst-normal"><?php the_title(); ?></figcaption>
+							</figure>
 						</div>
 					</div>
 				<?php endwhile; ?>

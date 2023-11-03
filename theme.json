@@ -106,8 +106,8 @@
         },
         {
           "slug": "huge",
-          "size": "3.125rem",
-          "name": "Huge (50px)"
+          "size": "2.75rem",
+          "name": "Huge (44px)"
         }
       ]
     },
