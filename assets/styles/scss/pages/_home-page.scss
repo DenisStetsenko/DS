@@ -110,14 +110,9 @@
 
     }
     .content{
-      line-height: 1.55;
       padding-left: rfs-value(22px);
-      @include font-size(18px);
-      @include media-breakpoint-up(md){
-        @include font-size(19px);
-      }
       @include media-breakpoint-only(lg){
-        @include font-size(17px);
+        @include font-size(18px);
       }
       @include media-breakpoint-up(lg){
         padding-left: rfs-value(25px);

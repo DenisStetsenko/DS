@@ -32,7 +32,7 @@ if ( $the_process ) : ?>
 							<?php foreach ( $the_process['the_process'] as $item ) : ?>
 								<li class="list-group-item d-flex position-relative">
 									<i class="icon"></i>
-									<div class="content font-primary">
+									<div class="content mobile-content-sm-size font-primary">
 										<h3 class="title mb-2"><?= $item['title']; ?></h3>
 										<?= $item['description']; ?>
 									</div>
