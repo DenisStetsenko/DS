@@ -633,10 +633,10 @@
         flex: 0 0 auto;
         width: 100%;
         @include media-breakpoint-up(sm) {
-          max-width: calc(100% - 150px);
+          max-width: calc(100% - 9.375rem); // 150px
         }
         @include media-breakpoint-up(xl) {
-          max-width: calc(100% - 320px);
+          max-width: calc(100% - 21.875rem); // 350px
         }
       }
 
@@ -644,14 +644,15 @@
         flex: 0 0 auto;
         width: 100%;
         @include media-breakpoint-up(xl) {
-          max-width: rfs-value(170px);
+          max-width: rfs-value(200px);
           .btn{
             min-width: 100%;
+            padding: rfs-value(11px 6px);
+            @include font-size(15px);
           }
         }
         .btn{
-          @include media-breakpoint-up(xl){
-          }
+          cursor: pointer;
         }
       }
 
