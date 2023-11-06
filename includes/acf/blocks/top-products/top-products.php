@@ -37,7 +37,7 @@ if ( ! empty( $top_products && array_filter($top_products) ) ) { ?>
 			<div class="top-picks d-flex flex-wrap justify-content-between <?= $first ? 'best' : ''; ?>">
 				
 				<?= $product['logo'] ? '<div class="column-preview rounded-2 bg-white d-flex align-items-center justify-content-center py-2 px-2 position-relative mb-4 mb-sm-0">
-																					<img class="img-fluid" src="'.$product['logo']['sizes']['top-picks-thumbnail'].'" loading="lazy" alt="'. $alt_top . '">
+																					<img class="img-fluid" src="'.$product['logo']['sizes']['thumbnail'].'" loading="lazy" alt="'. $alt_top . '">
 																			 </div>' : null ; ?>
 				
 				<div class="d-flex <?= $product['logo'] ? 'column-description' : 'col-lg-8'; ?>">
