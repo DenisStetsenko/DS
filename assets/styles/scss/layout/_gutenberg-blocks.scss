@@ -632,7 +632,13 @@
         @include media-breakpoint-up(sm) {
           max-width: calc(100% - 9.375rem); // 150px
         }
-        @include media-breakpoint-up(md) {
+        @include media-breakpoint-only(md) {
+          max-width: calc(100% - 21.875rem); // 350px
+        }
+        @include media-breakpoint-only(lg) {
+          max-width: calc(100% - 20rem);
+        }
+        @include media-breakpoint-up(xl) {
           max-width: calc(100% - 21.875rem); // 350px
         }
       }
@@ -641,13 +647,22 @@
         flex: 0 0 auto;
         width: 100%;
         @include media-breakpoint-up(md) {
-          max-width: rfs-value(200px);
           .btn{
             min-width: 100%;
             padding: rfs-value(11px 6px);
             @include font-size(15px);
           }
         }
+        @include media-breakpoint-only(md) {
+          max-width: rfs-value(200px);
+        }
+        @include media-breakpoint-only(lg) {
+          max-width: rfs-value(170px);
+        }
+        @include media-breakpoint-up(xl) {
+          max-width: rfs-value(200px);
+        }
+
         .btn{
           cursor: pointer;
         }

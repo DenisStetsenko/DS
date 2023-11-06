@@ -42,7 +42,7 @@ if ( ! empty( $top_products && array_filter($top_products) ) ) { ?>
 				
 				<div class="d-flex <?= $product['logo'] ? 'column-description' : 'col-lg-8'; ?>">
 					<?php if ( $product['heading'] ) : ?>
-						<div class="top-picks-heading font-secondary flex-grow-1 ps-1 pe-1 ps-sm-4 pe-sm-0 pe-lg-4 py-2 d-flex flex-column justify-content-between">
+						<div class="top-picks-heading font-secondary flex-grow-1 ps-1 pe-1 ps-sm-4 pe-sm-0 ps-md-3 pe-lg-3 pe-xl-4 py-2 d-flex flex-column justify-content-between">
 							<div class="top">
 								<?= $product['heading']['subtitle']     ? '<p class="subtitle lh-sm font-secondary fs-6 fw-bolder text-gray text-uppercase">'.wp_strip_all_tags($product['heading']['subtitle']).'</p>' 	: null; ?>
 								<?= $product['heading']['title'] 		    ? '<p class="title fw-bold mb-2">'.wp_strip_all_tags($product['heading']['title']).'</p>' 	: null; ?>
