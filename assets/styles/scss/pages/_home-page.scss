@@ -111,6 +111,10 @@
     }
     .content{
       padding-left: rfs-value(22px);
+      @include media-breakpoint-down(md){
+        @include font-size(17px);
+        line-height: 1.65;
+      }
       @include media-breakpoint-only(lg){
         @include font-size(18px);
       }
