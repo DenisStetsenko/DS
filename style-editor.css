@@ -277,7 +277,7 @@ ta,
 	border-radius: 15px;
 	background-color: white;
 	padding: 10px;
-	max-width: 9.375rem;
+	max-width: 150px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -307,10 +307,10 @@ ta,
 	-ms-flex: 0 0 auto;
 	flex: 0 0 auto;
 	width: 100%;
-	max-width: calc(100% - 320px);
+	max-width: calc(100% - 345px);
 }
 .wp-block-acf-top-products .top-picks .column-description .top-picks-heading{
-	padding: 8px 24px;
+	padding: 8px 20px;
 }
 .wp-block-acf-top-products .top-picks .column-description .top-picks-heading .subtitle{
 	font-family: var(--wp--preset--font-family--inter);
@@ -342,7 +342,7 @@ ta,
 	-ms-flex: 0 0 auto;
 	flex: 0 0 auto;
 	width: 100%;
-	max-width: 140px;
+	max-width: 170px;
 	display: flex;
 	align-items: center;
 }
@@ -351,10 +351,12 @@ ta,
 	background-color: var(--wp--preset--color--primary);
 	text-decoration: none;
 	font-weight: 600;
-	font-size: 16px;
-	padding: 10px 30px;
-	border-radius: 20px;
+	font-size: 15px;
+	padding: 11px 6px;
+	border-radius: 50px;
 	font-family: var(--wp--preset--font-family--inter);
+	width: 100%;
+	text-align: center;
 }
 
 /* Accordion */
@@ -442,3 +444,10 @@ body.mce-content-body a.btn.btn-primary, a.btn.btn-primary:focus{
 body.mce-content-body h1{ font-size: 36px }
 body.mce-content-body h2{ font-size: 30px }
 body.mce-content-body h3{ font-size: 26px }
+
+
+@media (min-width: 576px){
+	.text-sm-start {
+		text-align: left!important;
+	}	
+}
