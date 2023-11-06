@@ -253,9 +253,6 @@
         }
       }
     }
-    &.columns-1{
-
-    }
     .wp-block-image{
       margin: 0;
       align-self: inherit;
@@ -527,21 +524,11 @@
       }
       td strong{ font-weight: 600; }
     }
-    //table {
-    //  border-collapse: collapse;
-    //  width: 100%;
-    //  caption-side: bottom;
-    //  td, th {
-    //    word-break: normal;
-    //    border: rfs-value(1px solid $color-gray);
-    //    padding: 0.5em;
-    //  }
-    //}
   }
 
   // Block Editor => Quote
   .wp-block-quote{
-    @include font-size(26px);
+    @include font-size($h3-font-size);
     @include margin(50px 0);
     border-left: rfs-value(5px solid $color-secondary);
     padding: rfs-value(10px 0 5px 30px);
