@@ -42,7 +42,9 @@ if ( ! empty( $top_products && array_filter($top_products) ) ) { ?>
 				
 				<div class="d-flex <?= $product['logo'] ? 'column-description' : 'col-lg-8'; ?>">
 					<?php if ( $product['heading'] ) : ?>
-						<div class="top-picks-heading font-secondary flex-grow-1 ps-1 pe-1 ps-sm-4 pe-sm-0 ps-md-3 pe-lg-3 pe-xl-4 py-2 d-flex flex-column justify-content-between">
+						<div class="top-picks-heading font-secondary d-flex
+												flex-grow-1 flex-column justify-content-between text-center text-sm-start
+												px-3 py-sm-2 px-md-4 px-lg-3 px-xl-4">
 							<div class="top">
 								<?= $product['heading']['subtitle']     ? '<p class="subtitle lh-sm font-secondary fs-6 fw-bolder text-gray text-uppercase">'.wp_strip_all_tags($product['heading']['subtitle']).'</p>' 	: null; ?>
 								<?= $product['heading']['title'] 		    ? '<p class="title fw-bold mb-2">'.wp_strip_all_tags($product['heading']['title']).'</p>' 	: null; ?>
@@ -63,7 +65,7 @@ if ( ! empty( $top_products && array_filter($top_products) ) ) { ?>
 					<?php endif; ?>
 				</div>
 				
-				<div class="d-flex align-items-center justify-content-start justify-content-xl-end <?= $product['logo'] ? 'column-link' : 'col-lg-4'; ?> text-lg-end mt-4 mt-xl-0">
+				<div class="d-flex align-items-center justify-content-center justify-content-sm-start justify-content-xl-end <?= $product['logo'] ? 'column-link' : 'col-lg-4'; ?> text-lg-end mt-4 mt-xl-0">
 					<?= acf_link($product['link'], 'btn btn-primary btn-sm affiliate-link', 'nofollow sponsored'); ?>
 				</div>
 			
