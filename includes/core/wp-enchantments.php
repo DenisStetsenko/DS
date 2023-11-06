@@ -8,10 +8,23 @@ if ( ! function_exists( 'wp_custom_theme_style_for_pages' ) ) {
     $screen = get_current_screen();
     if ($screen->post_type == 'page') {
       echo '<style>
+	  		  #the-list tr.level-0 { background-color: #fff !important; }
+			  #the-list tr.level-0 > th, #the-list tr.level-0 > td { border-bottom: 1pt solid #c3c4c7; }
+	  		  #the-list tr.level-0.status-draft { background-color: #fffaf2 !important; }
+			  #the-list tr.level-0.status-draft td.title .row-title{ color: #000; }
               #the-list tr.level-0 td.title .row-title{ color: #024e7d; letter-spacing: 0.2px; }
               #the-list tr.level-1 td.title .row-title{ font-weight: 400; }
               #the-list tr.level-2 td.title .row-title{ font-weight: 400; color: #405d89; font-size: 95% !important; }
               #the-list tr.level-3 td.title .row-title{ font-weight: 400; color: }
+            </style>';
+    }
+	elseif ($screen->post_type == 'post') {
+      echo '<style>
+	  		  #the-list tr.level-0 { background-color: #fff !important; }
+			  #the-list tr.level-0 > th, #the-list tr.level-0 > td { border-bottom: 1pt solid #c3c4c7; }
+			  #the-list tr.level-0.status-draft { background-color: #fffaf2 !important; }
+			  #the-list tr.level-0.status-draft td.title .row-title{ color: #000; }
+			  
             </style>';
     }
   }
