@@ -624,9 +624,6 @@
           max-width: rfs-value(150px);
           min-height: rfs-value(90px);
         }
-        @include media-breakpoint-up(xl) {
-          max-width: rfs-value(150px);
-        }
       }
 
       .column-description {
@@ -635,7 +632,7 @@
         @include media-breakpoint-up(sm) {
           max-width: calc(100% - 9.375rem); // 150px
         }
-        @include media-breakpoint-up(xl) {
+        @include media-breakpoint-up(lg) {
           max-width: calc(100% - 21.875rem); // 350px
         }
       }
@@ -643,7 +640,7 @@
       .column-link {
         flex: 0 0 auto;
         width: 100%;
-        @include media-breakpoint-up(xl) {
+        @include media-breakpoint-up(lg) {
           max-width: rfs-value(200px);
           .btn{
             min-width: 100%;
