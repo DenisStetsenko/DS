@@ -107,15 +107,10 @@
       display: inline-block;
       flex: rfs-value(0 0 40px);
       background-color: white;
-
     }
     .content{
       padding-left: rfs-value(22px);
-      @include media-breakpoint-down(md){
-        @include font-size(17px);
-        line-height: 1.65;
-      }
-      @include media-breakpoint-only(lg){
+      @include media-breakpoint-down(lg){
         @include font-size(18px);
       }
       @include media-breakpoint-up(lg){

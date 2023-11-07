@@ -245,6 +245,8 @@ ta,
 	border-radius: 15px;
 	padding: 20px;
 	box-sizing: border-box;
+	margin-block-start: 24px;
+	margin-block-end: 24px;
 }
 .wp-block-acf-top-products .top-picks{
 	display: -webkit-box;
@@ -255,9 +257,10 @@ ta,
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 	-webkit-box-pack: justify;
-	-webkit-justify-content: space-between;
-	-ms-flex-pack: justify;
-	justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
 }
 .wp-block-acf-top-products .top-picks:not(:last-child){
 	margin-bottom: 25px;
@@ -277,7 +280,7 @@ ta,
 	border-radius: 15px;
 	background-color: white;
 	padding: 10px;
-	max-width: 150px;
+	max-width: 145px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -302,57 +305,56 @@ ta,
 }
 
 .wp-block-acf-top-products .top-picks .column-description{
-	-webkit-box-flex: 0;
-	-webkit-flex: 0 0 auto;
-	-ms-flex: 0 0 auto;
-	flex: 0 0 auto;
-	width: 100%;
-	max-width: calc(100% - 345px);
+	padding-right: 170px;
+	position: relative;
 }
 .wp-block-acf-top-products .top-picks .column-description .top-picks-heading{
-	padding: 8px 20px;
+	padding: 1px 0 1px 20px;
 }
 .wp-block-acf-top-products .top-picks .column-description .top-picks-heading .subtitle{
 	font-family: var(--wp--preset--font-family--inter);
 	font-size: 12px;
 	font-weight: 600;
 	padding-left: 0;
-	margin-bottom: 8px;
+	margin-bottom: 3px;
 	text-transform: uppercase;
 }
 .wp-block-acf-top-products .top-picks .column-description .top-picks-heading .title{
 	font-family: var(--wp--preset--font-family--inter);
 	font-size: 20px;
 	font-weight: 700;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 .wp-block-acf-top-products .top-picks .column-description .top-picks-heading .description{
+	color: var(--wp--preset--color--black);
 	font-family: var(--wp--preset--font-family--inter);
 	font-size: .875rem;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 .wp-block-acf-top-products .top-picks .column-description .top-picks-heading .more{
 	font-size: 14px;
 	text-decoration: none;
 	font-family: var(--wp--preset--font-family--inter);
 }
-.wp-block-acf-top-products .top-picks .column-link{
-	-webkit-box-flex: 0;
-	-webkit-flex: 0 0 auto;
-	-ms-flex: 0 0 auto;
-	flex: 0 0 auto;
+.wp-block-acf-top-products .top-picks .middle{
+	position: absolute;
 	width: 100%;
-	max-width: 170px;
+	max-width: 160px;
+	right: 0;
+	left: auto;
+	top: 0;
+	bottom: 0;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 }
-.wp-block-acf-top-products .top-picks .column-link .btn-primary{
+.wp-block-acf-top-products .top-picks .middle .btn-primary{
 	color: var(--wp--preset--color--black);
 	background-color: var(--wp--preset--color--primary);
 	text-decoration: none;
 	font-weight: 600;
 	font-size: 15px;
-	padding: 11px 6px;
+	padding: 8px 6px;
 	border-radius: 50px;
 	font-family: var(--wp--preset--font-family--inter);
 	width: 100%;
@@ -449,5 +451,19 @@ body.mce-content-body h3{ font-size: 26px }
 @media (min-width: 576px){
 	.text-sm-start {
 		text-align: left!important;
-	}	
+	}
+	.col-sm-3 {
+		-webkit-box-flex: 0;
+		-webkit-flex: 0 0 auto;
+		-ms-flex: 0 0 auto;
+		flex: 0 0 auto;
+		width: 25%;
+	}
+	.col-sm-9 {
+		-webkit-box-flex: 0;
+		-webkit-flex: 0 0 auto;
+		-ms-flex: 0 0 auto;
+		flex: 0 0 auto;
+		width: 75%;
+	}
 }

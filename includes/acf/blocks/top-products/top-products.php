@@ -34,41 +34,47 @@ if ( ! empty( $top_products && array_filter($top_products) ) ) { ?>
 			$first = $key === array_key_first($top_products);
 			$product['logo'] && $product['logo']['alt'] ? $alt_top = $product['logo']['alt'] : $alt_top = $product['heading']['title'];
 			?>
-			<div class="top-picks d-flex flex-wrap justify-content-between <?= $first ? 'best' : ''; ?>">
+			<div class="top-picks row align-items-md-center <?= $first ? 'best' : ''; ?>">
 				
-				<?= $product['logo'] ? '<div class="column-preview rounded-2 bg-white d-flex align-items-center justify-content-center py-2 px-2 position-relative mb-4 mb-sm-0">
-																					<img class="img-fluid" src="'.$product['logo']['sizes']['thumbnail'].'" loading="lazy" alt="'. $alt_top . '">
-																			 </div>' : null ; ?>
-				
-				<div class="d-flex <?= $product['logo'] ? 'column-description' : 'col-lg-8'; ?>">
-					<?php if ( $product['heading'] ) : ?>
-						<div class="top-picks-heading font-secondary d-flex
-												flex-grow-1 flex-column justify-content-between text-center text-sm-start
-												px-3 py-sm-2 px-md-4 px-lg-3 px-xl-4">
-							<div class="top">
-								<?= $product['heading']['subtitle']     ? '<p class="subtitle lh-sm font-secondary fs-6 fw-bolder text-gray text-uppercase">'.wp_strip_all_tags($product['heading']['subtitle']).'</p>' 	: null; ?>
-								<?= $product['heading']['title'] 		    ? '<p class="title fw-bold mb-2">'.wp_strip_all_tags($product['heading']['title']).'</p>' 	: null; ?>
-								<?= $product['heading']['description'] 	? '<p class="description fs-5 mb-2">'.wp_kses_post($product['heading']['description']).'</p>' 	: null; ?>
-							</div>
-							<div class="bottom lh-sm">
-								<?php if ( $product['heading']['title'] && ! empty($product['review_link']) ) : ?>
-									<a class="more" href="<?= esc_url($product['review_link']['url']); ?>">
-										<i class="icon-down"></i><?= esc_attr($product['review_link']['title']); ?>
-									</a>
-								<?php else : ?>
-									<a class="more" href="<?php the_permalink(); ?>#<?= sanitize_title_with_dashes($product['heading']['title']); ?>">
-										<i class="icon-down"></i><?php _e('Jump to Review', 'wp-theme'); ?>
-									</a>
-								<?php endif; ?>
-							</div>
-						</div>
-					<?php endif; ?>
+				<div class="col-sm-3">
+					<?= $product['logo'] ? '<div class="column-preview rounded-2 bg-white d-flex align-items-center justify-content-center py-2 px-2 position-relative">
+																						<img class="img-fluid product-logo" src="'.$product['logo']['sizes']['top-picks-thumbnail'].'" loading="lazy" alt="'. esc_attr($alt_top) . '">
+																				 </div>' : null ; ?>
 				</div>
 				
-				<div class="d-flex align-items-center justify-content-center justify-content-sm-start justify-content-xl-end <?= $product['logo'] ? 'column-link' : 'col-lg-4'; ?> text-lg-end mt-4 mt-xl-0">
-					<?= acf_link($product['link'], 'btn btn-primary btn-sm affiliate-link', 'nofollow sponsored'); ?>
+				<div class="col-sm-9 ps-2">
+					
+					<div class="column-description position-relative">
+						<?php if ( $product['heading'] ) : ?>
+							<div class="top-picks-heading font-secondary text-center text-sm-start mt-4 px-4 mt-sm-0 px-sm-0">
+								<div class="top pt-1 pt-md-0">
+									<?= $product['heading']['subtitle']     ? '<p class="subtitle lh-sm font-secondary fs-6 fw-bolder text-gray text-uppercase">'.wp_strip_all_tags($product['heading']['subtitle']).'</p>' 	: null; ?>
+									<?= $product['heading']['title'] 		    ? '<p class="title fw-bold mb-2">'.wp_strip_all_tags($product['heading']['title']).'</p>' 	: null; ?>
+									<?= $product['heading']['description'] 	? '<p class="description mb-2">'.wp_kses_post($product['heading']['description']).'</p>' 	: null; ?>
+								</div>
+								
+								<div class="middle d-flex align-items-center justify-content-center my-3 my-sm-0">
+									<?= acf_link($product['link'], 'btn btn-primary btn-sm affiliate-link', 'nofollow sponsored'); ?>
+								</div>
+								
+								<div class="bottom lh-sm">
+									<?php if ( $product['heading']['title'] && ! empty($product['review_link']) ) : ?>
+										<a class="more" href="<?= esc_url($product['review_link']['url']); ?>">
+											<i class="icon-down"></i><?= esc_attr($product['review_link']['title']); ?>
+										</a>
+									<?php else : ?>
+										<a class="more fw-medium" href="<?php the_permalink(); ?>#<?= sanitize_title_with_dashes($product['heading']['title']); ?>">
+											<i class="icon-down"></i><?php _e('Jump to Review', 'wp-theme'); ?>
+										</a>
+									<?php endif; ?>
+								</div>
+								
+							</div>
+						<?php endif; ?>
+					</div>
+					
 				</div>
-			
+				
 			</div>
 			
 			<?php endforeach; ?>
