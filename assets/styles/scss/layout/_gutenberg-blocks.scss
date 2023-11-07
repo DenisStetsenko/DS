@@ -500,6 +500,9 @@
         @include font-size(14px);
         min-width: 380px;
       }
+      &.has-fixed-layout{
+        table-layout: fixed;
+      }
       & > :not(caption) > * > * {
         padding: $table-cell-padding-y $table-cell-padding-x;
         background-color: $table-bg;
