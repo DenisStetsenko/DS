@@ -113,7 +113,7 @@
                             "name": "description",
                             "aria-label": "",
                             "type": "textarea",
-                            "instructions": "",
+                            "instructions": "*Keep it short. 100 characters max.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -123,7 +123,7 @@
                             },
                             "default_value": "",
                             "maxlength": "",
-                            "rows": 4,
+                            "rows": 2,
                             "placeholder": "",
                             "new_lines": "br"
                         }
@@ -184,5 +184,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697646738
+    "modified": 1699358710
 }
