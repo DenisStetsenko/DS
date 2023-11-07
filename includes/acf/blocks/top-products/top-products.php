@@ -54,7 +54,7 @@ if ( ! empty( $top_products && array_filter($top_products) ) ) { ?>
 								</div>
 								
 								<div class="middle d-flex align-items-center justify-content-center my-3 my-sm-0">
-									<?= acf_link($product['link'], 'btn btn-primary btn-sm affiliate-link', 'nofollow sponsored'); ?>
+									<?= acf_link($product['link'], 'btn btn-primary btn-sm affiliate-link fw-medium', 'nofollow sponsored'); ?>
 								</div>
 								
 								<div class="bottom lh-sm">
