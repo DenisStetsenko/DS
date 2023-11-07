@@ -617,6 +617,14 @@
 
       .column-preview {
         border: rfs-value(1px solid $color-border-gray);
+        @include media-breakpoint-down(sm){
+          max-width: rfs-value(200px);
+          margin-left: auto;
+          margin-right: auto;
+          .product-logo{
+            max-height: rfs-value(100px);
+          }
+        }
       }
 
       .column-description {

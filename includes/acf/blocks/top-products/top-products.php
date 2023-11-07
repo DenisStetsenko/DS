@@ -9,7 +9,7 @@ if ( ! empty( $block['anchor'] ) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$class_name = 'wp-block-acf-top-products-list product-summary-wrapper overflow-hidden rounded-3 bg-light-gray border py-4 px-4';
+$class_name = 'wp-block-acf-top-products-list product-summary-wrapper overflow-hidden rounded-3 bg-light-gray border py-5 py-sm-4 px-4';
 if ( ! empty( $block['className'] ) )   $class_name .= ' ' . $block['className'];
 
 // Set Custom Margin & Bottom adjustments
@@ -38,7 +38,7 @@ if ( ! empty( $top_products && array_filter($top_products) ) ) { ?>
 				
 				<div class="col-sm-3">
 					<?= $product['logo'] ? '<div class="column-preview rounded-2 bg-white d-flex align-items-center justify-content-center py-2 px-2 position-relative">
-																						<img class="img-fluid product-logo" src="'.$product['logo']['sizes']['top-picks-thumbnail'].'" loading="lazy" alt="'. esc_attr($alt_top) . '">
+																						<img class="img-fluid product-logo" src="'.$product['logo']['sizes']['medium'].'" loading="lazy" alt="'. esc_attr($alt_top) . '">
 																				 </div>' : null ; ?>
 				</div>
 				
