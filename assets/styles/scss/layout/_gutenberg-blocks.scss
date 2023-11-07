@@ -664,6 +664,7 @@
             max-width: rfs-value(170px);
           }
           .btn{
+            letter-spacing: 0;
             @include font-size(15px);
             padding: rfs-value(10px 20px);
             min-width: rfs-value(200px);
