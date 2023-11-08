@@ -383,6 +383,7 @@
       },
       "h5": {
         "typography": {
+          "fontSize": "20px",
           "lineHeight": "1.25",
           "fontWeight": "700"
         },
