@@ -1,4 +1,6 @@
 {
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
   "name": "acf/pros-cons",
   "title": "Pros and Cons",
   "description": "Pros & Cons block that uses ACF fields.",
