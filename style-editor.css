@@ -49,7 +49,7 @@ ta,
 	vertical-align: inherit;
 	background-color: var(--wp--preset--color--light-gray);
 }
-.wp-block-table table thead th{
+.wp-block-table table thead th:not([class^="has-text-align"]){
 	text-align: start;
 }
 .wp-block-table table td strong,
