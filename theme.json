@@ -178,9 +178,9 @@
       "core/buttons": {
         "spacing": {
           "margin": {
-            "top": "1.5rem",
+            "top": "2rem",
             "right": "0",
-            "bottom": "1.5rem",
+            "bottom": "2rem",
             "left": "0"
           }
         }
