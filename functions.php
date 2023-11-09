@@ -96,20 +96,20 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
     endif;
 		
 		if ( is_singular('post') ) :
-			wp_enqueue_script( 'gumshoe', 'https://cdnjs.cloudflare.com/ajax/libs/gumshoe/5.1.1/gumshoe.min.js', array(), null, true ); // load in <footer>
-			wp_add_inline_script( 'gumshoe',
-				"document.addEventListener('DOMContentLoaded', () => {
-					const header 	= document.querySelector('#masthead');
-					const spy 		= new Gumshoe('#right-sidebar #ez-toc-container > nav a', {
-						nested	: true,
-						nestedClass	: 'active-parent',
-						reflow	: false,
-						offset: function () {
-							return header.getBoundingClientRect().height + 65;
-						}
-					});
-				});"
-			);
+//			wp_enqueue_script( 'gumshoe', 'https://cdnjs.cloudflare.com/ajax/libs/gumshoe/5.1.1/gumshoe.min.js', array(), null, true ); // load in <footer>
+//			wp_add_inline_script( 'gumshoe',
+//				"document.addEventListener('DOMContentLoaded', () => {
+//					const header 	= document.querySelector('#masthead');
+//					const spy 		= new Gumshoe('#right-sidebar #ez-toc-container > nav a', {
+//						nested	: true,
+//						nestedClass	: 'active-parent',
+//						reflow	: false,
+//						offset: function () {
+//							return header.getBoundingClientRect().height + 65;
+//						}
+//					});
+//				});"
+//			);
 		
 		
 			// Fancybox Init
@@ -165,6 +165,10 @@ if ( ! function_exists( 'wp_custom_preload_local_fonts' ) ) {
 		$fonts = [
 			'assets/fonts/lora/Lora-Regular.woff2',
 			'assets/fonts/lora/Lora-Italic.woff2',
+			'assets/fonts/lora/Lora-Medium.woff2',
+			'assets/fonts/lora/Lora-MediumItalic.woff2',
+			'assets/fonts/lora/Lora-SemiBold.woff2',
+			'assets/fonts/lora/Lora-SemiBoldItalic.woff2',
 			'assets/fonts/lora/Lora-Bold.woff2',
 			'assets/fonts/lora/Lora-BoldItalic.woff2',
 			'assets/fonts/inter/Inter-Light.woff2',
@@ -511,18 +515,6 @@ add_filter( 'render_block', function( $block_content, $block ) {
 	}
 	return $block_content;
 }, 10, 2 );
-
-
-/**
- * Stop adding rel=noreferrer to links that open in a new tab
- */ 
-// add_filter( 'the_content', function($content) { 
-//   $replace = array(" noreferrer" => "" ,
-// 				   "noreferrer " => ""
-// 				  );
-//   $new_content = strtr($content, $replace);
-//   return $new_content;
-// });
 
 
 /**
