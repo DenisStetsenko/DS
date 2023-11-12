@@ -1,12 +1,13 @@
 <?php
 $custom_title_width = get_field('custom_title_width');
-$title_width = '910';
-if ( $custom_title_width ) {
-	$title_width = $custom_title_width;
+if ( $custom_title_width && $custom_title_width != '-1' ) {
+	$title_width = $custom_title_width . 'px';
+} else {
+	$title_width = '100%';
 }
 ?>
-<header class="entry-header" style="--title-width: <?= $title_width; ?>px">
-	<?php the_title('<h1 class="entry-title mb-2"><span>', '</span></h1>'); ?>
+<div class="entry-header" style="--title-width: <?= $title_width; ?>">
+	<?php the_title('<h1 class="entry-title mb-0"><span>', '</span></h1>'); ?>
 	<?php
 	$subtitle = get_field( 'subtitle' );
 	if ( ! $subtitle && has_excerpt() ) {
@@ -15,6 +16,6 @@ if ( $custom_title_width ) {
 		$subtitle = $excerpt;
 	}
 	if ( $subtitle ) : ?>
-		<p class="subtitle font-secondary mb-0 fw-lighter"><?= wp_strip_all_tags($subtitle); ?></p>
+		<p class="subtitle font-secondary mb-0 fw-normal mt-3"><?= wp_strip_all_tags($subtitle); ?></p>
 	<?php endif; ?>
-</header>
+</div>

@@ -1,10 +1,10 @@
 <main id="main" class="site-main">
-	
-	<div class="single-entry-heading bg-light-gray">
-		<div class="container-xl">
+
+	<header class="hero-header bg-light-gray border-bottom rounded-bottom-4 d-flex align-items-center">
+		<div class="container-xl text-center">
 			<?php get_template_part('template-parts/single-article/entry-header'); ?>
 		</div>
-	</div>
+	</header>
 	
 	<?php get_template_part('template-parts/single-article/breadcrumbs'); ?>
 	

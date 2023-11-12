@@ -1,32 +1,34 @@
 <?php
 $show_category_sidebar = get_field('show_category_sidebar', 'option');
 $layout = '3-cols';
-if ( $show_category_sidebar ) $layout = '2-cols';
+if ( $show_category_sidebar ) $layout = '2-cols'; ?>
 
-?>
+
+<header class="hero-header bg-light-gray border-bottom rounded-bottom-4 d-flex align-items-center">
+	<div class="container-xl text-center">
+		<h1 class="category-title">
+			<?php
+			if ( is_category() ) {
+				$category = get_category(get_query_var('cat'));
+				if ( $category && ! is_wp_error($category) ) {
+					echo '<span>'.get_the_archive_title().'</span>';
+				}
+			}
+			elseif ( is_author() ) {
+				echo '<span>The Latest Articles by ' . nl2br(get_the_author_meta('first_name')) . '</span>';
+			}
+			elseif ( is_home() ) {
+				echo '<span>The Latest Articles</span>';
+			}
+			?>
+		</h1>
+		<?= is_category() && category_description() ? '<div class="cat-description fs-4">'. category_description() .'</div>' : ''; ?>
+		<?= is_home() ? '<div class="cat-description fs-4">'. wp_kses_post( get_post_field( 'post_content', get_option( 'page_for_posts' ) ) ) .'</div>' : ''; ?>
+	</div>
+</header>
 
 <div id="template-articles-archive" class="main-area-padding">
 	<div class="container-xl">
-
-		<header id="category-heading">
-			<h1 class="category-title">
-				<?php
-				if ( is_category() ) {
-					$category = get_category(get_query_var('cat'));
-					if ( $category && ! is_wp_error($category) ) {
-						echo '<span>'.get_the_archive_title().'</span>';
-					}
-				}
-				elseif ( is_author() ) {
-					echo '<span>The Latest Articles by ' . nl2br(get_the_author_meta('first_name')) . '</span>';
-				}
-				elseif ( is_home() ) {
-					echo '<span>The Latest Articles</span>';
-				}
-				?>
-			</h1>
-			<?= is_category() && category_description() ? '<div class="cat-description ms-0">'. category_description() .'</div>' : ''; ?>
-		</header>
 		
 		<div class="row">
 			

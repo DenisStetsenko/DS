@@ -41,39 +41,17 @@
  */
 #single-article-template {
 
-  .single-entry-heading{
-    padding: rfs-fluid-value(50px) 0;
-    border-bottom: 1px solid $color-border-gray;
-    @include border-bottom-radius($border-radius-xl);
-
-    header.entry-header {
+  .hero-header{
+    .entry-header{
       max-width: var(--title-width);
-      margin-top: rfs-value(-5px); // offset to have equal top/bottom paddings
-
+      margin-left: auto;
+      margin-right: auto;
       h1.entry-title {
-        line-height: 1.2;
-        position: relative;
-        padding-left: rfs-value(6px);
         font-weight: 800;
-        @include font-size(54px);
-        span{
-          position: relative;
-          z-index: 1;
-        }
-        &:before {
-          content: '';
-          background: $color-primary;
-          width: rfs-value(13px);
-          height: 100%;
-          position: absolute;
-          left: 0;
-          top: 50%;
-          z-index: 0;
-          transform: translateY(-50%);
-          @include media-breakpoint-up(lg) {
-            width: rfs-value(15px);
-          }
-        }
+        @include font-size(48px);
+      }
+      .subtitle{
+        @include font-size(22px);
       }
     }
   }

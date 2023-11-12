@@ -20,7 +20,7 @@
             "min": "",
             "max": "",
             "placeholder": "",
-            "step": 10,
+            "step": 1,
             "prepend": "",
             "append": "px"
         }
@@ -43,5 +43,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697624852
+    "modified": 1699809751
 }

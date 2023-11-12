@@ -1,17 +1,9 @@
 /**
  * Archive Heading
  */
-header#category-heading{
-  margin-top: $headings-top-negative-margin; // offset to have equal top/bottom paddings
-  margin-bottom: rfs-value(45px);
-  @include media-breakpoint-up(md){
-    margin-bottom: rfs-value(55px);
-  }
-  &:not(.disable-highlight){
-    h1, .category-title{
-      @include heading-highlight();
-    }
-  }
+.hero-header{
+  min-height: rfs-value(210px);
+  padding: 50px 0;
   h1, .category-title{
     margin-bottom: 0;
     font-weight: 800;
