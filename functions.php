@@ -521,3 +521,12 @@ function thirstylink_cloaked_url_column_width() {
 	}
 }
 add_action('admin_head', 'thirstylink_cloaked_url_column_width');
+
+
+/**
+ * remove noreferrer on the frontend, but will still show in the editor
+ */
+add_filter('the_content', function ($content){
+	$replace = array(" noreferrer" => "" ,"noreferrer " => "");
+	return strtr($content, $replace);
+}, 99);
