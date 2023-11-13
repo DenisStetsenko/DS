@@ -86,7 +86,6 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
     wp_dequeue_style( 'wc-blocks-style' ); // Remove WooCommerce block CSS
     wp_dequeue_style( 'classic-theme-styles' );
 		
-
     if ( is_home() || is_archive() ) :
       wp_enqueue_script( 'ajax-pagination',  get_theme_file_uri('assets/scripts/ajax-load-more.js'), array( 'jquery' ), null, true );
       wp_localize_script( 'ajax-pagination', 'ajaxPagination', array(
@@ -129,7 +128,6 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
 
     //wp_enqueue_style( 'main', get_theme_file_uri('assets/styles/css/main.css'), array(), time() );
     wp_enqueue_style( 'main-min', get_theme_file_uri('assets/styles/css/main.min.css'), array(), '2.0.28' );
-
   }
 }
 add_action('wp_enqueue_scripts', 'wp_custom_scripts_and_styles' );

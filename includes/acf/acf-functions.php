@@ -55,7 +55,7 @@ function get_spacing_value( $spacing_value ) {
  * Usage: acf_link(get_field('button'), 'extra-class-name');
  ************************************************************************************************************************/
 if ( ! function_exists( 'acf_link' ) ) {
-	function acf_link( $acf_field = null, $class = 'btn', $rel = 'nofollow' ) {
+	function acf_link( $acf_field = null, $class = 'btn', $rel = 'noopener' ) {
 		$link = '';
 		if ( $acf_field ) {
 			$target = $acf_field['target'] ? 'target="_blank" rel="' . $rel . '"' : '';
