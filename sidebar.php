@@ -19,13 +19,12 @@
 			
 			if ( has_post_thumbnail() ) : ?>
 			<aside id="media-image" role="region" aria-label="Sidebar Element"
-					 class="widget rounded-3 font-secondary bg-light-gray border fs-4 widget_media_image d-none d-lg-block">
+					 class="widget widget_media_image d-none d-lg-block">
 				<figure class="image-container">
 					<?php the_post_thumbnail('full', array( 'loading' => 'eager', 'class' => 'loading-image img-fluid image' )); ?>
 				</figure>
 			</aside>
 		<?php endif;
-			
 			dynamic_sidebar( 'about-page-sidebar' );
 		}
 		elseif ( 'page' == get_post_type() && is_active_sidebar( 'page-sidebar' ) ) {
