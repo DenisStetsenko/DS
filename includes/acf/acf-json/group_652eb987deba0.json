@@ -151,7 +151,7 @@
                     "label": "Affiliate Link rel=\"\"",
                     "name": "affiliate_link_rel",
                     "aria-label": "",
-                    "type": "text",
+                    "type": "select",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -160,11 +160,18 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "sponsored",
-                    "prepend": "",
-                    "append": "",
+                    "choices": {
+                        "sponsored": "sponsored",
+                        "nofollow": "nofollow",
+                        "noreferrer": "noreferrer"
+                    },
+                    "default_value": [],
+                    "return_format": "value",
+                    "multiple": 1,
+                    "allow_null": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "placeholder": "",
                     "parent_repeater": "field_652eb9e8197b4"
                 },
                 {
@@ -205,5 +212,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699896324
+    "modified": 1699902088
 }

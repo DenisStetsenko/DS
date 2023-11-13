@@ -55,8 +55,12 @@ if ( ! empty( $top_products && array_filter($top_products) ) ) { ?>
 								
 								<div class="middle d-flex align-items-center justify-content-center my-3 my-sm-0">
 									<?php
-									$rel = $product['affiliate_link_rel'] ? : 'noopener';
-									echo acf_link($product['link'], 'btn btn-primary btn-sm affiliate-link fw-medium', $rel);
+									if ( is_array($product['affiliate_link_rel']) && ! empty($product['affiliate_link_rel']) ) {
+										$link_rel = implode(' ', $product['affiliate_link_rel']);
+									} else {
+										$link_rel = 'noopener';
+									}
+									echo acf_link($product['link'], 'btn btn-primary btn-sm affiliate-link fw-medium', $link_rel);
 									?>
 								</div>
 								

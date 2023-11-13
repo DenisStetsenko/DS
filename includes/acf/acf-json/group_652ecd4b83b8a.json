@@ -161,11 +161,38 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "60",
                 "class": "",
                 "id": ""
             },
             "return_format": "array"
+        },
+        {
+            "key": "field_65526ecb153b5",
+            "label": "Affiliate Link rel=\"\"",
+            "name": "affiliate_link_rel",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "sponsored": "sponsored",
+                "nofollow": "nofollow",
+                "noreferrer": "noreferrer"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "multiple": 1,
+            "allow_null": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": ""
         }
     ],
     "location": [
@@ -186,5 +213,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698083016
+    "modified": 1699901726
 }

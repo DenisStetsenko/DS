@@ -1,11 +1,12 @@
 <?php
 // ACF: Product Card
-$product_card_heading = get_field('heading');
-$product_card_image   = get_field('hero_image');
-$product_card_link   	= get_field('affiliate_link');
-$best 								= $product_card_heading['mark_as_best'];
-$best_label 					= $best ? 'best' : '';
-$excluded_from_toc 		= $product_card_heading['exclude_from_toc'] ? ' ez-toc-exclude' : '';
+$product_card_heading 	= get_field('heading');
+$product_card_image   	= get_field('hero_image');
+$product_card_link   		= get_field('affiliate_link');
+$product_card_link_rel	= get_field('affiliate_link_rel');
+$best 									= $product_card_heading['mark_as_best'];
+$best_label 						= $best ? 'best' : '';
+$excluded_from_toc 			= $product_card_heading['exclude_from_toc'] ? ' ez-toc-exclude' : '';
 
 // Set Custom Margin & Bottom adjustments
 $margin				= '';
@@ -47,8 +48,13 @@ if ( ! empty( $product_card_heading['title'] && array_filter($product_card_headi
 			echo "<$title_tag class=\"title m-0$excluded_from_toc\">";
 				
 				if ( $product_card_link ) {
-					$link_target = $product_card_link['target'] ? 'target="_blank" rel="nofollow sponsored"' : '';
-					echo '<a class="affiliate-link" href="'. esc_url($product_card_link['url']) .'" '.$link_target.'>'. $product_title . '</a>';
+					if ( is_array($product_card_link_rel) && ! empty($product_card_link_rel) ) {
+						$link_rel = implode(' ', $product_card_link_rel);
+					} else {
+						$link_rel = 'noopener';
+					}
+					$link_target = $product_card_link['target'] ? 'target="_blank"' : '';
+					echo '<a class="affiliate-link" href="'. esc_url($product_card_link['url']) .'" '.$link_target.' rel="'.$link_rel.'">'. $product_title . '</a>';
 				}
 				else {
 					echo $product_title;
