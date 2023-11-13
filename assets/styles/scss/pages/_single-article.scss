@@ -47,11 +47,9 @@
       margin-left: auto;
       margin-right: auto;
       h1.entry-title {
-        font-weight: 800;
-        @include font-size(48px);
-      }
-      .subtitle{
-        @include font-size(22px);
+        @include media-breakpoint-up(md){
+          @include font-size(48px);
+        }
       }
     }
   }

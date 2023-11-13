@@ -2,8 +2,11 @@
  * Archive Heading
  */
 .hero-header{
-  min-height: rfs-value(210px);
-  padding: 50px 0;
+  padding: rfs-value(35px 0);
+  @include media-breakpoint-up(md){
+    min-height: rfs-value(210px);
+    padding: rfs-value(50px 0);
+  }
   h1, .category-title{
     margin-bottom: 0;
     font-weight: 800;
@@ -13,10 +16,20 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: rfs-value(15px);
+    @include font-size(17px);
+    @include media-breakpoint-up(md){
+      @include font-size(18px);
+    }
     p{
       &:last-child{
         margin-bottom: 0;
       }
+    }
+  }
+  .subtitle{
+    @include font-size(17px);
+    @include media-breakpoint-up(md){
+      @include font-size(22px);
     }
   }
 }

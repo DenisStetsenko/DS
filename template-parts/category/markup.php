@@ -22,8 +22,8 @@ if ( $show_category_sidebar ) $layout = '2-cols'; ?>
 			}
 			?>
 		</h1>
-		<?= is_category() && category_description() ? '<div class="cat-description font-secondary fs-4">'. category_description() .'</div>' : ''; ?>
-		<?= is_home() ? '<div class="cat-description font-secondary fs-4">'. wp_kses_post( get_post_field( 'post_content', get_option( 'page_for_posts' ) ) ) .'</div>' : ''; ?>
+		<?= is_category() && category_description() ? '<div class="cat-description font-secondary">'. category_description() .'</div>' : ''; ?>
+		<?= is_home() ? '<div class="cat-description font-secondary">'. wp_kses_post( get_post_field( 'post_content', get_option( 'page_for_posts' ) ) ) .'</div>' : ''; ?>
 	</div>
 </header>
 
