@@ -1,3 +1,4 @@
+<?php if ( ! is_404() ) : ?>
 <div id="searchModal" class="modal fade" tabindex="-1" aria-hidden="true">
 	<div class="modal-dialog modal-md">
 		<div class="modal-content">
@@ -7,13 +8,15 @@
 		</div>
 	</div>
 </div>
+<?php endif; ?>
 <?php $ajax_nonce = wp_create_nonce( "wp-denstetsenko-key" ); ?>
-<script data-cfasync="false">
+<script data-cfasync="false" data-wpfc-render=”false”>
 	const searchModal 				= document.getElementById('searchModal');
 	const searchModalForm			= document.getElementById('ajax-search-form');
 	const searchModalInput 		= document.getElementById('the-s-1');
 	const searchModalResults	= document.getElementById('ajax-search-results');
 	
+	<?php if ( ! is_404() ) : ?>
 	searchModal.addEventListener('shown.bs.modal', event => {
       searchModalInput.focus()
 	});
@@ -22,6 +25,7 @@
       searchModalForm.reset();
       searchModalResults.classList.remove("ajax-search-active");
   })
+	<?php endif; ?>
   function wp_ajax_live_search(el){
 		(function($) {
 			let $searchResultsContainer = $('#ajax-search-results');
