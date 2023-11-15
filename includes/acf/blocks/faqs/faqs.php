@@ -45,14 +45,13 @@ if (isset($block['style']['spacing']['margin']['bottom'])) {
 		<div class="accordion-item rounded overflow-hidden">
 			
 			<h3 id="heading-<?= $field_id; ?>" class="<?= esc_attr($loop_item_class_name); ?>"
-					itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question"
+					itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"
 					data-bs-toggle="collapse"
 					data-bs-target="#collapse-<?= $field_id; ?>"
 					aria-expanded="<?= $active ? 'true' : 'false'; ?>"
-					aria-controls="collapse-<?= $field_id; ?>"
-			><?= wp_strip_all_tags($item['question']); ?></h3>
+					aria-controls="collapse-<?= $field_id; ?>"><span itemprop="name"><?= wp_strip_all_tags($item['question']); ?></span></h3>
 
-			<div itemscope="" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"
+			<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"
 					 id="collapse-<?= $field_id; ?>" class="accordion-collapse collapse <?= $active ? 'show' : ''; ?>"
 					 aria-labelledby="heading-<?= $field_id; ?>" data-bs-parent="#<?= esc_attr( $anchor ); ?>">
 				<div class="accordion-body pt-0">

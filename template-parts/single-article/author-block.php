@@ -18,9 +18,9 @@ $post_m_date	= get_the_modified_date( 'M j, Y' );
 							<li class="list-heading">
 								<?php
 									if ( $author_url != '' ) {
-										printf( __( '<cite class="fst-normal author-name fw-medium"><a href="%s">%s</a></cite>', 'wp-theme' ), $author_url, get_the_author_meta('display_name', $author_id) );
+										printf( __( '<cite class="fst-normal author-name fw-medium" itemprop="author" itemscope itemtype="https://schema.org/Person"><a itemprop="url" href="%s"><span itemprop="name">%s</span></a></cite>', 'wp-theme' ), $author_url, get_the_author_meta('display_name', $author_id) );
 									} else {
-										printf( __( '<cite class="fst-normal author-name fw-medium">%s</cite>', 'wp-theme' ), get_the_author_meta('display_name', $author_id) );
+										printf( __( '<cite class="fst-normal author-name fw-medium" itemprop="author" itemscope itemtype="https://schema.org/Person">%s</cite>', 'wp-theme' ), get_the_author_meta('display_name', $author_id) );
 									}
 									?>
 							</li>
@@ -29,9 +29,9 @@ $post_m_date	= get_the_modified_date( 'M j, Y' );
 							</li>
 							<li class="list-inline-item">
 								<?php if( get_the_modified_date() != get_the_date() ) : ?>
-									<time datetime="<?= $post_m_date; ?>" itemprop="dateModified"><?php printf( __( 'Updated on: %s', 'wp-theme' ), $post_m_date ); ?></time>
+									<time itemprop="dateModified" content="<?= get_the_modified_time('Y-m-d\TH:i:sP'); ?>"><?php printf( __( 'Updated on: %s', 'wp-theme' ), $post_m_date ); ?></time>
 								<?php else : ?>
-									<time datetime="<?= $post_date; ?>" itemprop="datePublished"><?php printf( __( 'Published on: %s', 'wp-theme' ), $post_date ); ?></time>
+									<time itemprop="datePublished" content="<?= get_post_time('Y-m-d\TH:i:sP'); ?>"><?php printf( __( 'Published on: %s', 'wp-theme' ), $post_date ); ?></time>
 								<?php endif; ?>
 							</li>
 						</ul>
