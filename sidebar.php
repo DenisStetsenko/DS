@@ -19,7 +19,7 @@
 			
 			if ( has_post_thumbnail() ) : ?>
 			<aside id="media-image" role="region" aria-label="Sidebar Element"
-					 class="widget widget_media_image d-none d-lg-block">
+					 class="widget widget_media_image border d-none d-lg-block">
 				<figure class="image-container">
 					<?php the_post_thumbnail('full', array( 'loading' => 'eager', 'class' => 'loading-image img-fluid image' )); ?>
 				</figure>
