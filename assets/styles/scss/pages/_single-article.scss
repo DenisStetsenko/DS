@@ -65,13 +65,7 @@
         margin: 0;
       }
       a{
-        text-decoration-color: $color-primary;
-        text-decoration-thickness: rfs-value(2px);
-        &:hover{
-          text-decoration: underline;
-          text-decoration-color: $color-primary;
-          text-decoration-thickness: rfs-value(2px);
-        }
+        @include text-decoration-underline();
       }
     }
   }
@@ -88,13 +82,41 @@
   // Author Block
   // ===================================================================================================================
   .author-block-meta {
-    ul:not(.social-share-icons) {
-      li {
-        cite {
-          a {
-            color: $color-gray;
-            &:hover {
-              color: $color-primary;
+
+    .article-author{
+      .list-heading{
+        margin-bottom: rfs-value(1px);
+        .author-name{
+          @include font-size(15px);
+          a{
+            color: $color-black;
+            @include text-decoration-underline();
+          }
+        }
+      }
+      li.list-inline-item{
+        @include media-breakpoint-down(xl){
+          @include font-size(13px);
+        }
+        @include media-breakpoint-only(lg) {
+          margin-right: rfs-value(4px);
+        }
+        @include media-breakpoint-down(sm){
+          display: block;
+        }
+        &:not(:last-child){
+          &:after{
+            content: "";
+            width: 4px;
+            height: 4px;
+            border-radius: 100%;
+            background-color: $color-gray;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: rfs-value(6px);
+            margin-top: rfs-value(-2px);
+            @include media-breakpoint-down(sm){
+              display: none;
             }
           }
         }
@@ -102,13 +124,29 @@
     }
 
     .social-share-icons {
+      @include font-size(14px);
+      margin-top: 4px;
+      margin-bottom: 0;
+      @include media-breakpoint-up(lg){
+        margin-top: -3px;
+      }
+      @include media-breakpoint-down(xl){
+        @include font-size(13px);
+      }
       @include media-breakpoint-down(md) {
         padding-left: rfs-value(67px);
       }
-
-      li.list-inline-item {
-        @include media-breakpoint-only(lg) {
-          margin-right: rfs-value(8px);
+      .list-inline-item {
+        margin-right: rfs-value(9px);
+        @include media-breakpoint-only(lg){
+          margin-right: rfs-value(7px);
+        }
+        &.list-heading{
+          margin-right: 7px;
+          @include media-breakpoint-up(lg){
+            margin-bottom: 3px;
+            display: block;
+          }
         }
       }
     }

@@ -108,12 +108,7 @@
         margin: rfs-value(5px 0);
         a{
           color: $color-black;
-          transition: color 300ms ease;
-          &:hover{
-            text-decoration: underline;
-            text-decoration-color: $color-primary-dark;
-            text-decoration-thickness: rfs-value(2px);
-          }
+          @include text-decoration-underline();
         }
       }
     }

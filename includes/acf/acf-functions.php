@@ -189,18 +189,27 @@ if ( ! function_exists( 'acf_reading_time' ) ) {
 			}
 		}
 		
-		$readingtime = ceil( $total_word_count / 260 ); // 200-240 for regular reader.
+		$readingtime = ceil( $total_word_count / 230 ); // 200-240 for regular reader.
 		
 		if ( $readingtime <= 1 ) { // If the reading time is equal to or less than 1
-			$timer = " min";
+			$timer = " minute";
 		} else {
-			$timer = " mins";
+			$timer = " minutes";
 		}
 		
 		if ( $readingtime == 0 ) { // if the reading time equals 0 then change it to 1
-			$totalreadingtime = '<span class="total-reading-time">0 '.$timer.' read</span>';
-		} else {
-			$totalreadingtime = '<span class="total-reading-time">'. $readingtime . $timer . ' read</span>';
+			if ( is_singular('post') ) {
+				$totalreadingtime = '<span class="total-reading-time">Reading time: 0 '.$timer.'</span>';
+			} else {
+				$totalreadingtime = '<span class="total-reading-time">0 '.$timer.' read</span>';
+			}
+		}
+		else {
+			if ( is_singular('post') ) {
+				$totalreadingtime = '<span class="total-reading-time">Reading time: '. $readingtime . $timer . '</span>';
+			} else {
+				$totalreadingtime = '<span class="total-reading-time">'. $readingtime . $timer . ' read</span>';
+			}
 		}
 		
 		return $totalreadingtime;
@@ -228,18 +237,27 @@ if ( ! function_exists( 'wp_reading_time' ) ) {
 			// get total words count
 			$total_word_count = $total_word_count + str_word_count( strip_tags( $the_content ) );
 			
-			$readingtime = ceil( $total_word_count / 260 ); // 200-240 for regular reader.
+			$readingtime = ceil( $total_word_count / 230 ); // 200-240 for regular reader.
 			
 			if ( $readingtime <= 1 ) { // If the reading time is equal to or less than 1
-				$timer = " min";
+				$timer = " minute";
 			} else {
-				$timer = " mins";
+				$timer = " minutes";
 			}
 			
 			if ( $readingtime == 0 ) { // if the reading time equals 0 then change it to 1
-				$totalreadingtime = '<span class="total-reading-time">0 '.$timer.' read</span>';
-			} else {
-				$totalreadingtime = '<span class="total-reading-time">'. $readingtime . $timer . ' read</span>';
+				if ( is_singular('post') ) {
+					$totalreadingtime = '<span class="total-reading-time">Reading time: 0 '.$timer.'</span>';
+				} else {
+					$totalreadingtime = '<span class="total-reading-time">0 '.$timer.' read</span>';
+				}
+			}
+			else {
+				if ( is_singular('post') ) {
+					$totalreadingtime = '<span class="total-reading-time">Reading time: '. $readingtime . $timer . '</span>';
+				} else {
+					$totalreadingtime = '<span class="total-reading-time">'. $readingtime . $timer . ' read</span>';
+				}
 			}
 			
 			return $totalreadingtime;

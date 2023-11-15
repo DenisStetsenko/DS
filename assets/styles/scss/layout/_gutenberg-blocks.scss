@@ -694,12 +694,7 @@
           .more {
             @include font-size(15px);
             color: $color-black;
-            transition: color 300ms ease;
-            &:hover {
-              text-decoration: underline;
-              text-decoration-color: $color-primary-dark;
-              text-decoration-thickness: rfs-value(2px);
-            }
+            @include text-decoration-underline();
 
             i {
               margin-right: rfs-value(2px);
@@ -804,10 +799,8 @@
         }
         a {
           transition: color 300ms ease;
+          @include text-decoration-underline($color-primary, 4px);
           &:hover {
-            text-decoration: underline;
-            text-decoration-color: $color-primary;
-            text-decoration-thickness: rfs-value(4px);
             .number{
               text-decoration: none;
               text-decoration-color: $color-primary;
