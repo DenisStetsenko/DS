@@ -350,7 +350,7 @@ function wp_ajax_live_search(){
 	$args['post_status']    = 'publish';
 	$args['order']          = 'DESC';
 	$args['orderby']        = 'date';
-	$args['posts_per_page'] = -1;
+	$args['posts_per_page'] = 7;
 	$args['s']              = sanitize_text_field( $_POST['keyword'] );
 	
 	$wp_query = new WP_Query($args);
