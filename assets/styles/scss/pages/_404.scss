@@ -7,15 +7,20 @@ body.error404{
     #ajax-search-results {
       @include font-size(16px);
       &.ajax-search-active{
-        padding: rfs-value(15px 20px 15px 40px);
-        background: $color-light-gray;
-        border-radius: $border-radius;
-        border: 1px solid $color-border-gray;
-        list-style: circle;
+        &:not(.ajax-search-error){
+          background: $color-light-gray;
+          border-radius: $border-radius;
+          border: 1px solid $color-border-gray;
+          list-style: circle;
+          padding: rfs-value(15px 20px 15px 40px);
+        }
       }
       li{
         &:not(:last-child){
           margin-bottom: rfs-value(3px);
+        }
+        &.text-danger{
+          margin-top: rfs-value(6px);
         }
         a{
           text-decoration: none;

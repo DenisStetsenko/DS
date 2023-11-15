@@ -46,23 +46,30 @@
 						security  : '<?php echo $ajax_nonce; ?>'
 					},
 					error: function (xhr, ajaxOptions, thrownError) {
-						$searchResultsContainer.html('<li class="list-item font-secondary text-danger text-center">'+ error +'</li>').addClass('ajax-search-active');
+						$searchResultsContainer.html('<li class="list-item font-secondary text-danger text-center text-danger dd">'+ error +'</li>').addClass('ajax-search-active');
 					},
 					success: function( result ) {
 						if ( result.success ) {
 							let $searchResults = $(result.data.html);
-							$searchResultsContainer
-								.css({ opacity: 0 })
-								.addClass('ajax-search-active')
-								.html( $searchResults )
-								.animate({ opacity: 1 }, 200);
+								
+							if ( result.data.found > 0 ) {
+								$searchResultsContainer
+									.css({ opacity: 0 })
+									.removeClass('ajax-search-error')
+									.addClass('ajax-search-active')
+									.html( $searchResults )
+									.animate({ opacity: 1 }, 200);
+							} else {
+								$searchResultsContainer.removeClass('ajax-search-active').addClass('ajax-search-error').html( $searchResults );
+							}
+                
 						} else {
-							$searchResultsContainer.html('<li class="list-item font-secondary text-danger text-center">'+ error +'</li>').addClass('ajax-search-active');
+							$searchResultsContainer.removeClass('ajax-search-active').addClass('ajax-search-error').html('<li class="list-item font-secondary text-danger text-center ss">'+ error +'</li>');
 						}
 					}
 				});
 			} else {
-				$searchResultsContainer.html('<li class="list-item font-secondary text-center">' + message + '</li>');
+				$searchResultsContainer.addClass('ajax-search-error').html('<li class="list-item font-secondary text-center text-danger bb">' + message + '</li>');
 			}
 			
 			return false;

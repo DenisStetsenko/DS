@@ -127,7 +127,7 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
 	  wp_register_script( 'slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array('jquery'), null, true );
 
     //wp_enqueue_style( 'main', get_theme_file_uri('assets/styles/css/main.css'), array(), time() );
-    wp_enqueue_style( 'main-min', get_theme_file_uri('assets/styles/css/main.min.css'), array(), '2.0.32' );
+    wp_enqueue_style( 'main-min', get_theme_file_uri('assets/styles/css/main.min.css'), array(), '2.0.33' );
   }
 }
 add_action('wp_enqueue_scripts', 'wp_custom_scripts_and_styles' );
@@ -357,18 +357,21 @@ function wp_ajax_live_search(){
 	
 	ob_start();
 	
+	$foundCount = $wp_query->found_posts;
+	
 	if ( $wp_query->have_posts() ) :
 		while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 			<li class="list-item font-secondary"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></li>
 		<?php endwhile;
 	else : ?>
-	<li class="list-item font-secondary text-center"><?php _e('Sorry, nothing was found.', 'wp-theme') ?></li>
+		<li class="list-item font-secondary text-center text-danger"><?php _e('Sorry, nothing was found.', 'wp-theme') ?></li>
 	<?php endif;
 	
 	wp_reset_query();
 	
 	$response = array(
-		'html' => ob_get_clean(),
+		'found'	=> $foundCount,
+		'html' 	=> ob_get_clean(),
 	);
 	
 	wp_send_json_success($response);

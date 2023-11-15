@@ -97,12 +97,14 @@
       }
     }
     #ajax-search-results{
-      padding: $input-padding-y $input-padding-x;
-      display: none;
       @include font-size(16px);
-      &.ajax-search-active{
+      &.ajax-search-active, &.ajax-search-error{
+        padding: $input-padding-y $input-padding-x;
         border-top: 2px solid $color-border-gray;
-        display: block;
+      }
+      &:not(.ajax-search-error){
+        list-style: circle;
+        padding-left: rfs-value(40px);
       }
       li{
         margin: rfs-value(5px 0);
