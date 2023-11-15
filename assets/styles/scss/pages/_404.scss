@@ -7,17 +7,23 @@ body.error404{
     #ajax-search-results {
       @include font-size(16px);
       &.ajax-search-active{
-        padding: rfs-value(15px 20px 15px 20px);
+        padding: rfs-value(15px 20px 15px 40px);
         background: $color-light-gray;
         border-radius: $border-radius;
         border: 1px solid $color-border-gray;
+        list-style: circle;
       }
-      li a{
-        text-decoration: none;
-        font-weight: 500;
-        border: none;
-        box-shadow: none;
-        @include text-decoration-underline();
+      li{
+        &:not(:last-child){
+          margin-bottom: rfs-value(3px);
+        }
+        a{
+          text-decoration: none;
+          font-weight: 500;
+          border: none;
+          box-shadow: none;
+          @include text-decoration-underline();
+        }
       }
     }
   }
