@@ -1,6 +1,7 @@
 <?php
 /**
  * Included Files
+ * testing gitlab plugin
  ***********************************************************************************************************************/
 // Run Theme Setup Functions
 include get_theme_file_path('/includes/core/theme-setup.php');
