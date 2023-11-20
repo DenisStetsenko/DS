@@ -1,7 +1,6 @@
 <?php
 /**
  * Included Files
- * testing gitlab plugin
  ***********************************************************************************************************************/
 // Run Theme Setup Functions
 include get_theme_file_path('/includes/core/theme-setup.php');
@@ -35,9 +34,6 @@ include get_theme_file_path('/includes/core/wp-bootstrap-icons.php');
 
 // Load WP Social Sare
 include get_theme_file_path('/includes/core/wp-social-share.php');
-
-// Load Custom WP Metaboxes
-//include get_theme_file_path('/includes/core/wp-custom-metabox.php');
 
 // Load Custom Post Types
 include get_theme_file_path('/includes/core/custom-post-types.php');
