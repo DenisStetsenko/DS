@@ -176,17 +176,6 @@ if ( ! function_exists( 'wp_custom_cc_mime_types' ) ) {
 }
 add_filter('upload_mimes', 'wp_custom_cc_mime_types');
 
-
-/**
- * Remove type="text/javascript" | type="text/css"
- ***********************************************************************************************************************/
-add_action('init', function(){ ob_start("prefix_output_callback"); });
-add_action('shutdown', function(){ ob_end_flush(); });
-
-function prefix_output_callback($buffer) {
-	return preg_replace( "%[ ]type=[\'\"]text\/(javascript|css)[\'\"]%", '', $buffer );
-}
-
 /**
  * remove the inline style width from the figure element?
  */

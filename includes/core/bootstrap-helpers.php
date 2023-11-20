@@ -39,7 +39,7 @@ add_filter('embed_oembed_html', 'wp_custom_theme_embed_handler_html', 100, 4);
  * Custom gallery format (using Bootstrap v5 grid)
  ***********************************************************************************************************************/
 add_filter('post_gallery', 'wp_custom_gallery_grid', 10, 3);
-function wp_custom_gallery_grid($output = '', $attrs, $instance) {
+function wp_custom_gallery_grid($output, $attrs, $instance) {
 
   $attrs = array_merge(array('columns' => 3), $attrs);
   // echo '<pre>' . print_r($attrs, true) . '</pre>'; // Check what is inside the array.
