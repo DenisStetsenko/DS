@@ -1,4 +1,19 @@
 /**
+ * Progress Bar
+ */
+#progress-bar-container{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  #progress-bar {
+    --scrollAmount: 0%;
+    background-image: linear-gradient(120deg, $color-primary 0%, $color-primary 100%);
+    width: var(--scrollAmount);
+    height: rfs-value(3px);
+  }
+}
+
+/**
  * Breadcrumbs
  */
 #nav-yoast-breadcrumb{
@@ -34,23 +49,6 @@
         }
       }
     }
-  }
-}
-
-/**
- * Progress Bar
- */
-#progress-bar-container{
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  #progress-bar {
-    --scrollAmount: 0%;
-
-    background-image: linear-gradient(120deg, $color-primary 0%, $color-primary 100%);
-    width: var(--scrollAmount);
-
-    height: rfs-value(3px);
   }
 }
 
@@ -147,8 +145,8 @@ header#masthead{
       &.mail{
         a{
           svg{
-            width: rfs-value(25px);
-            height: rfs-value(25px);
+            width: rfs-value(26px);
+            height: rfs-value(26px);
           }
         }
       }
@@ -160,6 +158,7 @@ header#masthead{
         display: block;
         position: relative;
         transition: opacity 300ms ease;
+        outline: none;
         &:hover{
           .hover{ opacity: 1; z-index: 1; visibility: visible }
           .normal{ opacity: 0; z-index: -1; visibility: hidden  }
