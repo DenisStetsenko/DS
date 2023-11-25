@@ -534,9 +534,9 @@
     @include font-size($h3-font-size);
     @include margin(50px 0);
     border-left: rfs-value(5px solid $color-secondary);
-    padding: rfs-value(10px 0 5px 30px);
-    line-height: 1.55;
-    p{
+    padding: rfs-value(0 0 0 30px);
+    line-height: 1.6;
+    p:last-child{
       margin-bottom: 0;
     }
     cite{

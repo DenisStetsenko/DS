@@ -263,9 +263,9 @@
             "left": "0"
           },
           "padding": {
-            "top": "10px",
+            "top": "0",
             "right": "0",
-            "bottom": "5px",
+            "bottom": "0",
             "left": "30px"
           }
         },
