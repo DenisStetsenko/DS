@@ -32,6 +32,7 @@ ta,
 	font-family: var(--wp--preset--font-family--inter);
 }
 .wp-block-image .wp-element-caption a{
+	font-family: var(--wp--preset--font-family--inter);
 	font-weight: 500;
 	transition: color .3s ease;
 	-webkit-transition: color .3s ease;
