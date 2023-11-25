@@ -248,12 +248,18 @@
         img {
           @include img-fluid();
         }
-
         figcaption {
           color: $color-gray;
           font-family: $font-secondary;
           @include font-size(14px);
           margin-top: rfs-value(7px);
+          &.wp-element-caption{
+            text-align: end;
+            a{
+              font-weight: 500;
+              @include text-decoration-underline();
+            }
+          }
         }
       }
       img:not(.figure-img) {
