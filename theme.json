@@ -410,7 +410,6 @@
           "text": "var(--wp--preset--color--black)"
         },
         "typography": {
-          "fontFamily": "var(--wp--preset--font-family--lora)",
           "fontWeight": "600",
           "textDecoration": "none"
         },
