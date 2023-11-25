@@ -137,28 +137,27 @@ header#masthead{
 
   #search-subscribe-area{
     li{
-      vertical-align: middle;
-      line-height: rfs-value(28px);
+      //vertical-align: middle;
+      //line-height: rfs-value(28px);
       &:not(:last-child){
         margin-right: rfs-value(20px);
       }
       &.mail{
         a{
           svg{
-            width: rfs-value(26px);
-            height: rfs-value(26px);
+            width: rfs-value(25px);
+            height: rfs-value(25px);
           }
         }
       }
       a{
         color: $color-black;
-        width: rfs-value(25px);
-        height: rfs-value(30px);
+        width: rfs-value(26px);
+        height: rfs-value(28px);
         overflow: hidden;
         display: block;
         position: relative;
         transition: opacity 300ms ease;
-        outline: none;
         &:hover{
           .hover{ opacity: 1; z-index: 1; visibility: visible }
           .normal{ opacity: 0; z-index: -1; visibility: hidden  }
