@@ -228,7 +228,7 @@ ta,
 .wp-block-acf-pros-cons .wp-block-pros-and-cons .column .entry-content{
 	font-size: 1.0625rem;
 	font-weight: 400;
-	padding: 20px;
+	padding: 25px;
 	font-family: var(--wp--preset--font-family--inter);
 }
 .wp-block-acf-pros-cons .wp-block-pros-and-cons .column .entry-content ul{
@@ -237,6 +237,9 @@ ta,
 }
 .wp-block-acf-pros-cons .wp-block-pros-and-cons .column .entry-content ul:last-child{
 	margin-bottom: 0;
+}
+.wp-block-acf-pros-cons .wp-block-pros-and-cons .column .entry-content ul:first-child{
+	margin-top: 0;
 }
 .wp-block-acf-pros-cons .wp-block-pros-and-cons .column .entry-content ul li{
 	line-height: 1.6;
