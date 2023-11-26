@@ -32,7 +32,7 @@ if (isset($block['style']['spacing']['margin']['bottom'])) {
 		
 		<?php if ( $pros_and_cons['pros'] ) { ?>
 			<div class="column pros border border-2 border-success rounded-top border-bottom-0">
-				<div class="heading fw-bold font-secondary bg-success text-white"><span><?php _e('Pros', 'wp-theme'); ?></span></div>
+				<div class="heading fw-bold font-secondary bg-success text-white border-bottom-0"><span><?php _e('Pros', 'wp-theme'); ?></span></div>
 				<ul class="list pros-list list-unstyled m-0">
 					<?php foreach ($pros_and_cons['pros'] as $list_item) : ?>
 						<li><span class="icon"></span><?= $list_item['list_item']; ?></li>
@@ -43,7 +43,7 @@ if (isset($block['style']['spacing']['margin']['bottom'])) {
 	
 		<?php if ( $pros_and_cons['cons'] ) { ?>
 			<div class="column cons border border-2 border-danger rounded-bottom">
-				<div class="heading fw-bold font-secondary bg-danger text-white"><span><?php _e('Cons', 'wp-theme'); ?></span></div>
+				<div class="heading fw-bold font-secondary bg-danger text-white border-bottom-0"><span><?php _e('Cons', 'wp-theme'); ?></span></div>
 				<ul class="list cons-list list-unstyled m-0">
 					<?php foreach ($pros_and_cons['cons'] as $list_item) : ?>
 						<li><span class="icon"></span><?= $list_item['list_item']; ?></li>
