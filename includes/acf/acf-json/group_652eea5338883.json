@@ -20,7 +20,7 @@
             "sub_fields": [
                 {
                     "key": "field_65637fba80234",
-                    "label": "Heading",
+                    "label": "Pros Heading",
                     "name": "pros_heading",
                     "aria-label": "",
                     "type": "text",
@@ -37,51 +37,6 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": ""
-                },
-                {
-                    "key": "field_652eea9ca53bd",
-                    "label": "Pros",
-                    "name": "pros",
-                    "aria-label": "",
-                    "type": "repeater",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "layout": "block",
-                    "pagination": 0,
-                    "min": 0,
-                    "max": 0,
-                    "collapsed": "",
-                    "button_label": "Add New",
-                    "rows_per_page": 20,
-                    "sub_fields": [
-                        {
-                            "key": "field_652eea9ca53be",
-                            "label": "",
-                            "name": "list_item",
-                            "aria-label": "",
-                            "type": "textarea",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "rows": 3,
-                            "placeholder": "",
-                            "new_lines": "br",
-                            "parent_repeater": "field_652eea9ca53bd"
-                        }
-                    ]
                 },
                 {
                     "key": "field_65637d1f110fd",
@@ -105,7 +60,7 @@
                 },
                 {
                     "key": "field_65637fcc80235",
-                    "label": "Heading",
+                    "label": "Cons Heading",
                     "name": "cons_heading",
                     "aria-label": "",
                     "type": "text",
@@ -122,51 +77,6 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": ""
-                },
-                {
-                    "key": "field_652eea9ca53bf",
-                    "label": "Cons",
-                    "name": "cons",
-                    "aria-label": "",
-                    "type": "repeater",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "layout": "block",
-                    "pagination": 0,
-                    "min": 0,
-                    "max": 0,
-                    "collapsed": "",
-                    "button_label": "Add New",
-                    "rows_per_page": 20,
-                    "sub_fields": [
-                        {
-                            "key": "field_652eea9ca53c0",
-                            "label": "",
-                            "name": "list_item",
-                            "aria-label": "",
-                            "type": "textarea",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "rows": 3,
-                            "placeholder": "",
-                            "new_lines": "br",
-                            "parent_repeater": "field_652eea9ca53bf"
-                        }
-                    ]
                 },
                 {
                     "key": "field_65637d33110fe",
@@ -209,5 +119,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701019719
+    "modified": 1701025353
 }
