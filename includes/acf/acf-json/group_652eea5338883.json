@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_652eea9ca53bc",
-            "label": "Pros and Cons List",
+            "label": "",
             "name": "pros_and_cons",
             "aria-label": "",
             "type": "group",
@@ -16,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "table",
+            "layout": "row",
             "sub_fields": [
                 {
                     "key": "field_652eea9ca53bd",
@@ -28,11 +28,11 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "50",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "layout": "table",
+                    "layout": "block",
                     "pagination": 0,
                     "min": 0,
                     "max": 0,
@@ -42,7 +42,7 @@
                     "sub_fields": [
                         {
                             "key": "field_652eea9ca53be",
-                            "label": "List Item",
+                            "label": "",
                             "name": "list_item",
                             "aria-label": "",
                             "type": "textarea",
@@ -56,7 +56,7 @@
                             },
                             "default_value": "",
                             "maxlength": "",
-                            "rows": 2,
+                            "rows": 3,
                             "placeholder": "",
                             "new_lines": "br",
                             "parent_repeater": "field_652eea9ca53bd"
@@ -73,11 +73,11 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "50",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "layout": "table",
+                    "layout": "block",
                     "pagination": 0,
                     "min": 0,
                     "max": 0,
@@ -87,7 +87,7 @@
                     "sub_fields": [
                         {
                             "key": "field_652eea9ca53c0",
-                            "label": "List Item",
+                            "label": "",
                             "name": "list_item",
                             "aria-label": "",
                             "type": "textarea",
@@ -101,7 +101,7 @@
                             },
                             "default_value": "",
                             "maxlength": "",
-                            "rows": 2,
+                            "rows": 3,
                             "placeholder": "",
                             "new_lines": "br",
                             "parent_repeater": "field_652eea9ca53bf"
@@ -129,5 +129,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697648440
+    "modified": 1701016453
 }

@@ -738,7 +738,7 @@
       }
 
       .list {
-        @include font-size(16px);
+        @include font-size(17px);
         font-weight: 400;
         padding: rfs-value(25px 22px);
 
@@ -755,7 +755,7 @@
         }
 
         li {
-          line-height: 1.4;
+          line-height: 1.55;
           margin: rfs-value(0 0 15px 0);
           padding-left: rfs-value(27px);
 
