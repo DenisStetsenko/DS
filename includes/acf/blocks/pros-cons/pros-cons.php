@@ -35,21 +35,11 @@ if (isset($block['style']['spacing']['margin']['bottom'])) {
 	
 		<div class="column pros border border-2 border-success rounded overflow-hidden">
 			<div class="heading fw-bold font-secondary bg-success text-white"><span><?= $prosHeading; ?></span></div>
-			<ul class="list pros-list list-unstyled m-0">
-				<?php foreach ($pros_and_cons['pros'] as $list_item) : ?>
-					<li><span class="icon"></span><?= $list_item['list_item']; ?></li>
-				<?php endforeach; ?>
-			</ul>
 			<?= $pros_and_cons['pros_content'] ? '<div class="entry-content pros-content">' . wp_kses_post($pros_and_cons['pros_content']) . '</div>' : null; ?>
 		</div>
 		
 		<div class="column cons border border-2 border-danger rounded overflow-hidden">
 			<div class="heading fw-bold font-secondary bg-danger text-white"><span><?= $consHeading; ?></span></div>
-			<ul class="list cons-list list-unstyled m-0">
-				<?php foreach ($pros_and_cons['cons'] as $list_item) : ?>
-					<li><span class="icon"></span><?= $list_item['list_item']; ?></li>
-				<?php endforeach; ?>
-			</ul>
 			<?= $pros_and_cons['cons_content'] ? '<div class="entry-content cons-content">' . wp_kses_post($pros_and_cons['cons_content']) . '</div>' : null; ?>
 		</div>
 		

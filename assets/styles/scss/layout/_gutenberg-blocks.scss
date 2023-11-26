@@ -731,7 +731,7 @@
       .entry-content{
         @include font-size(17px);
         font-weight: 400;
-        padding: rfs-value(25px 22px);
+        padding: rfs-value(27px 25px);
         line-height: 1.6;
         &.pros-content{
           ul li:before{ background-image: escape-svg($bs-check-icon); }
@@ -769,49 +769,6 @@
         }
       }
 
-      // Deprecated
-      // ================
-      .list {
-        @include font-size(17px);
-        font-weight: 400;
-        padding: rfs-value(25px 22px);
-
-        &.pros-list {
-          .icon {
-            background-image: escape-svg($bs-check-icon);
-          }
-        }
-
-        &.cons-list {
-          .icon {
-            background-image: escape-svg($bs-close-icon);
-          }
-        }
-
-        li {
-          line-height: 1.55;
-          margin: rfs-value(0 0 15px 0);
-          padding-left: rfs-value(27px);
-
-          .icon {
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: rfs-value(25px);
-            width: rfs-value(18px);
-            height: rfs-value(20px);
-            padding: 0;
-            display: inline-block;
-            margin-right: $breadcrumb-item-padding-x;
-            vertical-align: text-bottom;
-            margin-left: rfs-value(-27px);
-          }
-
-          &:last-child {
-            margin-bottom: 0;
-          }
-        }
-      }
-      // ================
     }
   }
 
