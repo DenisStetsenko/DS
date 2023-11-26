@@ -236,10 +236,11 @@
         @include font-size(20px);
         margin: rfs-value(40px 0 12px);
       }
-      ul:not(.list):not(.wp-block-list) > li, ol:not(.list):not(.wp-block-list) > li {
+      ul:not(.list):not(.wp-block-pros-and-cons):not(.wp-block-list) > li,
+      ol:not(.list):not(.wp-block-pros-and-cons):not(.wp-block-list) > li {
         margin-bottom: rfs-value(16px);
         line-height: 1.65;
-
+        outline: none;
         &:last-child {
           margin-bottom: 0;
         }

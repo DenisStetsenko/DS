@@ -196,33 +196,80 @@ ta,
 	margin-block-end:  40px !important;
 }
 .wp-block-acf-pros-cons .wp-block-pros-and-cons{
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	border-radius: 15px;
-	border: 1px solid var(--wp--preset--color--border-gray);
 	overflow: hidden;
 }
 .wp-block-acf-pros-cons .wp-block-pros-and-cons .column{
-	-webkit-flex-basis: 0;
-	-ms-flex-preferred-size: 0;
-	flex-basis: 0;
-	-webkit-box-flex: 1;
-	-webkit-flex-grow: 1;
-	-ms-flex-positive: 1;
-	flex-grow: 1;
+	border-radius: 15px;
+	overflow: hidden;
+}
+.wp-block-acf-pros-cons .wp-block-pros-and-cons .column:not(:last-child){
+	margin-bottom: 40px;
 }
 .wp-block-acf-pros-cons .wp-block-pros-and-cons .column.pros{
-	border-right: 1px solid var(--wp--preset--color--border-gray);
+	border: 2px solid var(--wp--preset--color--success);
+}
+.wp-block-acf-pros-cons .wp-block-pros-and-cons .column.cons{
+	border-radius: 15px;
+	border: 2px solid var(--wp--preset--color--danger);
 }
 .wp-block-acf-pros-cons .wp-block-pros-and-cons .column .heading{
-	background-color: var(--wp--preset--color--light-gray);
+	color: #fff;
 	padding: 0.75rem 1.5625rem;
-	border-bottom: 1px solid var(--wp--preset--color--border-gray);
 	font-family: var(--wp--preset--font-family--inter);
 	font-weight: 700;
 }
+.wp-block-acf-pros-cons .wp-block-pros-and-cons .column.pros .heading{
+	background-color: var(--wp--preset--color--success);
+}
+.wp-block-acf-pros-cons .wp-block-pros-and-cons .column.cons .heading{
+	background-color: var(--wp--preset--color--danger);
+}
+
+.wp-block-acf-pros-cons .wp-block-pros-and-cons .column .entry-content{
+	font-size: 1.0625rem;
+	font-weight: 400;
+	padding: 20px;
+	font-family: var(--wp--preset--font-family--inter);
+}
+.wp-block-acf-pros-cons .wp-block-pros-and-cons .column .entry-content ul{
+	list-style: none;
+	padding-left: 0;
+}
+.wp-block-acf-pros-cons .wp-block-pros-and-cons .column .entry-content ul:last-child{
+	margin-bottom: 0;
+}
+.wp-block-acf-pros-cons .wp-block-pros-and-cons .column .entry-content ul li{
+	line-height: 1.6;
+	list-style: none;
+	padding: 0 0 0 23px;
+	margin: 0 0 1rem 0;
+	position: relative;
+}
+.wp-block-acf-pros-cons .wp-block-pros-and-cons .column .entry-content ul li:last-child{
+	margin-bottom: 0;
+}
+.wp-block-acf-pros-cons .wp-block-pros-and-cons .column .entry-content ul li:before{
+	content: "";
+	padding: 0;
+	display: inline-block;
+	margin-right: 11px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.wp-block-acf-pros-cons .wp-block-pros-and-cons .column .entry-content.pros-content ul li:before{
+	content: "✓";
+	color: var(--wp--preset--color--success);
+}
+.wp-block-acf-pros-cons .wp-block-pros-and-cons .column .entry-content.cons-content ul li:before{
+	content: "✕";
+	color: var(--wp--preset--color--danger);
+}
+.wp-block-acf-pros-cons .wp-block-pros-and-cons .column .entry-content ul li:last-child{
+	margin-bottom: 0;
+}
+
+
 .wp-block-acf-pros-cons .wp-block-pros-and-cons .column .list{
 	font-size: 1rem;
 	font-weight: 400;

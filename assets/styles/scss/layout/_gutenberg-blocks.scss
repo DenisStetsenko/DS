@@ -158,6 +158,7 @@
       font-weight: 600;
     }
   }
+
   ul.wp-block-list{
     @include custom-list-styling();
     &.pros{
@@ -720,23 +721,56 @@
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
     .column {
-      @include media-breakpoint-up(sm) {
-        flex-basis: 0;
-        flex-grow: 1;
+      &:not(:last-child){
+        margin-bottom: 2.5rem;
+      }
+      .heading {
+        padding: rfs-value(12px 25px);
       }
 
-      &.pros {
-        @include media-breakpoint-up(sm) {
-          border-right: 1px solid $color-border-gray;
+      .entry-content{
+        @include font-size(17px);
+        font-weight: 400;
+        padding: rfs-value(25px 22px);
+        line-height: 1.6;
+        &.pros-content{
+          ul li:before{ background-image: escape-svg($bs-check-icon); }
+        }
+        &.cons-content{
+          ul li:before{ background-image: escape-svg($bs-close-icon); }
+        }
+        ul{
+          padding-left: 0;
+          list-style: none;
+          &:last-child{
+            margin-bottom: 0;
+          }
+          li{
+            margin: rfs-value(0 0 15px 0);
+            padding-left: rfs-value(27px);
+            line-height: inherit;
+            &:last-child{
+              margin-bottom: 0;
+            }
+            &:before{
+              content: "";
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: rfs-value(25px);
+              width: rfs-value(18px);
+              height: rfs-value(20px);
+              padding: 0;
+              display: inline-block;
+              margin-right: $breadcrumb-item-padding-x;
+              vertical-align: text-bottom;
+              margin-left: rfs-value(-27px);
+            }
+          }
         }
       }
 
-      .heading {
-        background-color: $color-light-gray;
-        padding: rfs-value(12px 25px);
-        border-bottom: 1px solid $color-border-gray;
-      }
-
+      // Deprecated
+      // ================
       .list {
         @include font-size(17px);
         font-weight: 400;
@@ -777,6 +811,7 @@
           }
         }
       }
+      // ================
     }
   }
 

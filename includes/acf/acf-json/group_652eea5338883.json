@@ -16,8 +16,28 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "row",
+            "layout": "block",
             "sub_fields": [
+                {
+                    "key": "field_65637fba80234",
+                    "label": "Heading",
+                    "name": "pros_heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "*Overwrites the default \"Pros\" heading",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
                 {
                     "key": "field_652eea9ca53bd",
                     "label": "Pros",
@@ -64,6 +84,46 @@
                     ]
                 },
                 {
+                    "key": "field_65637d1f110fd",
+                    "label": "Pros",
+                    "name": "pros_content",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 0,
+                    "delay": 0
+                },
+                {
+                    "key": "field_65637fcc80235",
+                    "label": "Heading",
+                    "name": "cons_heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "*Overwrites the default \"Cons\" heading",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
                     "key": "field_652eea9ca53bf",
                     "label": "Cons",
                     "name": "cons",
@@ -107,6 +167,26 @@
                             "parent_repeater": "field_652eea9ca53bf"
                         }
                     ]
+                },
+                {
+                    "key": "field_65637d33110fe",
+                    "label": "Cons",
+                    "name": "cons_content",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 0,
+                    "delay": 0
                 }
             ]
         }
@@ -129,5 +209,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701016453
+    "modified": 1701019719
 }

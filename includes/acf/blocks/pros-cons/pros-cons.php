@@ -9,7 +9,7 @@ if ( ! empty( $block['anchor'] ) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$class_name = 'wp-block-pros-and-cons pros-and-cons rounded overflow-hidden font-secondary';
+$class_name = 'wp-block-pros-and-cons pros-and-cons overflow-hidden font-secondary';
 if ( ! empty( $block['className'] ) )   $class_name .= ' ' . $block['className'];
 
 // Set Custom Margin & Bottom adjustments
@@ -28,29 +28,31 @@ if (isset($block['style']['spacing']['margin']['bottom'])) {
 }
 ?><div <?= esc_attr( $anchor ); ?> class="<?= esc_attr( $class_name ); ?>" style="<?= esc_attr( $margin ); ?>">
 
-	<?php if ( isset($pros_and_cons) && array_filter($pros_and_cons) ) : ?>
-		
-		<?php if ( $pros_and_cons['pros'] ) { ?>
-			<div class="column pros border border-2 border-success rounded-top border-bottom-0">
-				<div class="heading fw-bold font-secondary bg-success text-white border-bottom-0"><span><?php _e('Pros', 'wp-theme'); ?></span></div>
-				<ul class="list pros-list list-unstyled m-0">
-					<?php foreach ($pros_and_cons['pros'] as $list_item) : ?>
-						<li><span class="icon"></span><?= $list_item['list_item']; ?></li>
-					<?php endforeach; ?>
-				</ul>
-			</div>
-		<?php } ?>
+	<?php if ( isset($pros_and_cons) && array_filter($pros_and_cons) ) :
+		$prosHeading = $pros_and_cons['pros_heading'] ? : __('Pros', 'wp-theme');
+		$consHeading = $pros_and_cons['cons_heading'] ? : __('Cons', 'wp-theme');
+		?>
 	
-		<?php if ( $pros_and_cons['cons'] ) { ?>
-			<div class="column cons border border-2 border-danger rounded-bottom">
-				<div class="heading fw-bold font-secondary bg-danger text-white border-bottom-0"><span><?php _e('Cons', 'wp-theme'); ?></span></div>
-				<ul class="list cons-list list-unstyled m-0">
-					<?php foreach ($pros_and_cons['cons'] as $list_item) : ?>
-						<li><span class="icon"></span><?= $list_item['list_item']; ?></li>
-					<?php endforeach; ?>
-				</ul>
-			</div>
-		<?php } ?>
+		<div class="column pros border border-2 border-success rounded overflow-hidden">
+			<div class="heading fw-bold font-secondary bg-success text-white"><span><?= $prosHeading; ?></span></div>
+			<ul class="list pros-list list-unstyled m-0">
+				<?php foreach ($pros_and_cons['pros'] as $list_item) : ?>
+					<li><span class="icon"></span><?= $list_item['list_item']; ?></li>
+				<?php endforeach; ?>
+			</ul>
+			<?= $pros_and_cons['pros_content'] ? '<div class="entry-content pros-content">' . wp_kses_post($pros_and_cons['pros_content']) . '</div>' : null; ?>
+		</div>
+		
+		<div class="column cons border border-2 border-danger rounded overflow-hidden">
+			<div class="heading fw-bold font-secondary bg-danger text-white"><span><?= $consHeading; ?></span></div>
+			<ul class="list cons-list list-unstyled m-0">
+				<?php foreach ($pros_and_cons['cons'] as $list_item) : ?>
+					<li><span class="icon"></span><?= $list_item['list_item']; ?></li>
+				<?php endforeach; ?>
+			</ul>
+			<?= $pros_and_cons['cons_content'] ? '<div class="entry-content cons-content">' . wp_kses_post($pros_and_cons['cons_content']) . '</div>' : null; ?>
+		</div>
+		
 	
 	<?php else : ?>
 		<p class="text-center" style="font-family: var(--wp--preset--font-family--inter);font-weight:700;padding: 20px;flex-basis: 0;flex-grow: 1;margin: 0;background: var(--wp--preset--color--pale-pink);">
