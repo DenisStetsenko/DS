@@ -366,7 +366,7 @@
         "typography": {
           "fontSize": "22px",
           "lineHeight": "1.25",
-          "fontWeight": "700"
+          "fontWeight": "600"
         },
         "spacing": {
           "margin": {
