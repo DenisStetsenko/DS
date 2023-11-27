@@ -723,11 +723,13 @@
         margin-bottom: 2.5rem;
       }
       .heading {
-        padding: rfs-value(12px 25px);
+        @include font-size(22px);
+        padding: rfs-value(14px 26px);
+        @include border-top-radius(9px);
       }
 
       .entry-content{
-        @include font-size(17px);
+        @include font-size(18px);
         font-weight: 400;
         padding: rfs-value(27px 25px);
         line-height: 1.6;
