@@ -151,7 +151,6 @@
   .wp-block-list{
     margin-top: $paragraph-margin-bottom;
     margin-bottom: $paragraph-margin-bottom;
-    line-height: 1.65;
     & > li > strong,
     & > li > a > strong{
       font-family: $font-secondary;
@@ -175,7 +174,6 @@
 
   ol.wp-block-list{
     padding-left: rfs-value(25px);
-    line-height: 1.65;
     li{
       margin-bottom: rfs-value(20px);
       &:last-child { margin-bottom: 0; }

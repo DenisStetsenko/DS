@@ -366,12 +366,12 @@
         "typography": {
           "fontSize": "22px",
           "lineHeight": "1.25",
-          "fontWeight": "600"
+          "fontWeight": "700"
         },
         "spacing": {
           "margin": {
             "top": "2.5rem",
-            "bottom": "0.75rem"
+            "bottom": "0.625rem"
           },
           "padding": {
             "top": "0",
@@ -390,7 +390,7 @@
         "spacing": {
           "margin": {
             "top": "2.5rem",
-            "bottom": "0.75rem"
+            "bottom": "0.625rem"
           },
           "padding": {
             "top": "0",
