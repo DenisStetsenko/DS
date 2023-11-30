@@ -48,7 +48,7 @@
       margin-right: auto;
       h1.entry-title {
         @include media-breakpoint-up(md){
-          @include font-size(48px);
+          @include font-size(52px);
         }
       }
     }
