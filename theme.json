@@ -319,14 +319,14 @@
       },
       "h1": {
         "typography": {
-          "fontSize": "44px",
+          "fontSize": "2.75rem",
           "lineHeight": "1.2",
           "fontWeight": "800"
         }
       },
       "h2": {
         "typography": {
-          "fontSize": "32px",
+          "fontSize": "2rem",
           "lineHeight": "1.25",
           "fontWeight": "700"
         },
@@ -345,7 +345,7 @@
       },
       "h3": {
         "typography": {
-          "fontSize": "26px",
+          "fontSize": "1.625rem",
           "lineHeight": "1.25",
           "fontWeight": "700"
         },
@@ -364,7 +364,7 @@
       },
       "h4": {
         "typography": {
-          "fontSize": "22px",
+          "fontSize": "1.375rem",
           "lineHeight": "1.25",
           "fontWeight": "700"
         },
@@ -383,7 +383,7 @@
       },
       "h5": {
         "typography": {
-          "fontSize": "20px",
+          "fontSize": "1.25rem",
           "lineHeight": "1.25",
           "fontWeight": "700"
         },
