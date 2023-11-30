@@ -439,7 +439,7 @@ $slick-dot-color-active   : $color-black;
   padding-left: rfs-value(18px);
   margin: $paragraph-margin-bottom 0 $paragraph-margin-bottom 0.125rem;
   li{
-    margin-bottom: rfs-value(20px);
+    margin-bottom: rfs-value(25px);
     &:last-child{ margin-bottom: 0; }
     &:before {
       content: "•";

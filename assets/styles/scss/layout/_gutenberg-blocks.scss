@@ -174,7 +174,7 @@
     margin: $paragraph-margin-bottom 0 $paragraph-margin-bottom 0.125rem;
     padding-left: rfs-value(25px);
     li{
-      margin-bottom: rfs-value(20px);
+      margin-bottom: rfs-value(25px);
       &:last-child { margin-bottom: 0; }
     }
   }
@@ -530,7 +530,7 @@
   // Block Editor => Quote
   .wp-block-quote{
     @include font-size($h3-font-size);
-    @include margin(50px 0);
+    @include margin(50px 10px);
     border-left: rfs-value(5px solid $color-secondary);
     padding: rfs-value(0 0 0 30px);
     line-height: 1.6;
