@@ -171,10 +171,10 @@
   }
 
   ol.wp-block-list{
-    margin: $paragraph-margin-bottom 0 $paragraph-margin-bottom 0.125rem;
+    margin: rfs-value(26px 0 26px 2px);
     padding-left: rfs-value(25px);
     li{
-      margin-bottom: rfs-value(25px);
+      margin-bottom: rfs-value(22px);
       &:last-child { margin-bottom: 0; }
     }
   }

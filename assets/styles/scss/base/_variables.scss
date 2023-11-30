@@ -437,9 +437,9 @@ $slick-dot-color-active   : $color-black;
 @mixin custom-list-styling($color: $color-secondary){
   list-style: none;
   padding-left: rfs-value(18px);
-  margin: $paragraph-margin-bottom 0 $paragraph-margin-bottom 0.125rem;
+  margin: rfs-value(26px 0 26px 2px);
   li{
-    margin-bottom: rfs-value(25px);
+    margin-bottom: rfs-value(22px);
     &:last-child{ margin-bottom: 0; }
     &:before {
       content: "•";
