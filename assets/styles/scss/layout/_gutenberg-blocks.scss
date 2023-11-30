@@ -168,6 +168,27 @@
         color: $color-danger;
       }
     }
+    &.check{
+      padding-left: 0;
+      li{
+        padding-left: rfs-value(27px);
+        &:before{
+          content: "";
+          color: transparent;
+          background-image: escape-svg($bs-check-icon);
+          background-position: 50%;
+          background-repeat: no-repeat;
+          background-size: rfs-value(25px);
+          width: rfs-value(18px);
+          height: rfs-value(20px);
+          padding: 0;
+          display: inline-block;
+          margin-right: rfs-value(8px);
+          vertical-align: text-bottom;
+          margin-left: rfs-value(-26px);
+        }
+      }
+    }
   }
 
   ol.wp-block-list{
@@ -762,7 +783,7 @@
               display: inline-block;
               margin-right: $breadcrumb-item-padding-x;
               vertical-align: text-bottom;
-              margin-left: rfs-value(-27px);
+              margin-left: rfs-value(-26px);
             }
           }
         }
