@@ -135,7 +135,7 @@
     },
     "typography": {
       "fontFamily": "var(--wp--preset--font-family--lora)",
-      "lineHeight": "1.725",
+      "lineHeight": "1.65",
       "fontSize": "1.1875rem"
     },
     "spacing": {
@@ -253,7 +253,7 @@
       "core/quote": {
         "typography": {
           "fontSize": "1.625rem",
-          "lineHeight": "1.6"
+          "lineHeight": "1.65"
         },
         "spacing": {
           "margin": {
