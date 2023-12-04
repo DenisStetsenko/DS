@@ -553,7 +553,7 @@
   .wp-block-quote{
     @include font-size($h3-font-size);
     @include margin(50px 10px);
-    border-left: rfs-value(5px solid $color-secondary);
+    border-left: rfs-value(5px solid $color-primary);
     padding: rfs-value(0 0 0 30px);
     line-height: 1.6;
     p:last-child{
