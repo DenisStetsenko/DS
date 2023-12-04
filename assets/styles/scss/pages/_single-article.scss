@@ -234,11 +234,11 @@
         }
       }
       h3{
-        margin: rfs-value(45px 0 15px);
+        margin: rfs-value(48px 0 12px);
       }
       h4{
         @include font-size(22px);
-        margin: rfs-value(40px 0 12px);
+        margin: rfs-value(40px 0 10px);
       }
       h5{
         @include font-size(20px);
@@ -274,7 +274,7 @@
       }
       p b,
       p strong{
-        font-weight: 700;
+        //font-weight: 700;
       }
 
       // comment form shortcode

@@ -104,7 +104,8 @@ $font-weight-bolder       : 600;
 $font-weight-bold         : 700;
 
 $line-height-sm   : 1.25;
-$line-height-base : 1.725;
+//$line-height-base : 1.725;
+$line-height-base : 1.65;
 $line-height-lg   : 2;
 
 $breadcrumb-active-color  : $color-gray;
@@ -625,7 +626,7 @@ $slick-dot-color-active   : $color-black;
   background-color: transparent;
   padding: rfs-value(1px 0);
   border-bottom: rfs-value(1px solid $color-primary);
-  box-shadow: rfs-value(inset 0 -2px 0 0 $color-primary);
+  box-shadow: rfs-value(inset 0 -3px 0 0 $color-primary);
   -webkit-text-decoration-skip: objects;
   overflow-wrap: break-word;
   &:hover{
