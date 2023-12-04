@@ -202,7 +202,8 @@
 
   // Block Editor => Image
   .wp-block-image{
-    margin: $paragraph-margin-bottom 0;
+    //margin: $paragraph-margin-bottom 0;
+    margin: rfs-value(25px 0 25px 0);
 
     :where([style*=border-width]) {
       border-style: solid;
@@ -557,6 +558,9 @@
     line-height: 1.6;
     p:last-child{
       margin-bottom: 0;
+    }
+    p strong{
+      font-family: $font-secondary;
     }
     cite{
       color: #7d7b7b;

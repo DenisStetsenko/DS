@@ -6,7 +6,7 @@
  */
 ?>
 
-<div id="right-sidebar" class="position-relative flex-grow-1">
+<div id="right-sidebar" class="position-relative flex-grow-1 ps-xxl-3">
 	<div class="sticky-top">
 		<?php
 		if ( is_single() && 'post' == get_post_type() && is_page_template('single-comparison-template.php') && is_active_sidebar( 'comparison-sidebar' ) ) {

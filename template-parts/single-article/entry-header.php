@@ -16,6 +16,6 @@ if ( $custom_title_width && $custom_title_width != '-1' ) {
 		$subtitle = $excerpt;
 	}
 	if ( $subtitle ) : ?>
-		<p class="subtitle font-secondary mb-0 fw-semibold fs-3 mt-3"><?= wp_strip_all_tags($subtitle); ?></p>
+		<p class="subtitle font-secondary mb-0"><?= wp_strip_all_tags($subtitle); ?></p>
 	<?php endif; ?>
 </div>

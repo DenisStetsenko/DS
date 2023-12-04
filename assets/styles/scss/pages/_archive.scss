@@ -16,9 +16,9 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: rfs-value(15px);
-    @include font-size(17px);
+    @include font-size(18px);
     @include media-breakpoint-up(md){
-      @include font-size(18px);
+      @include font-size(20px);
     }
     p{
       &:last-child{
@@ -27,9 +27,10 @@
     }
   }
   .subtitle{
+    margin-top: rfs-value(10px);
     @include font-size(17px);
     @include media-breakpoint-up(md){
-      @include font-size(22px);
+      @include font-size(20px);
     }
   }
 }
