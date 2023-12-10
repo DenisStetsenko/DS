@@ -73,3 +73,12 @@ if ( ! function_exists('wp_custom_theme_setup') ) {
   }
 }
 add_action( 'after_setup_theme', 'wp_custom_theme_setup' );
+
+
+/**
+ * Disable srcset on frontend
+ */
+function disable_wp_responsive_images() {
+	return 1;
+}
+add_filter('max_srcset_image_width', 'disable_wp_responsive_images');
