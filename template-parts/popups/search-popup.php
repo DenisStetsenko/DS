@@ -23,8 +23,8 @@
   searchModal.addEventListener('hidden.bs.modal', event => {
       searchModalResults.innerHTML = "";
       searchModalForm.reset();
-      searchModalResults.classList.remove("ajax-search-active");
-  })
+      searchModalResults.classList.remove("ajax-search-active", "ajax-search-error");
+  });
 	<?php endif; ?>
   function wp_ajax_live_search(el){
 		(function($) {

@@ -192,7 +192,7 @@ header#page-header{
   }
   &.mobile-content-sm-size{
     @include media-breakpoint-down(md){
-      @include font-size(19px);
+      @include font-size(18px);
     }
   }
   p a:not(.btn), li a:not(.btn){

@@ -258,7 +258,7 @@
         "spacing": {
           "margin": {
             "top": "3.125rem",
-            "right": "0.625rem",
+            "right": "0",
             "bottom": "3.125rem",
             "left": "0.625rem"
           },
@@ -266,7 +266,7 @@
             "top": "0",
             "right": "0",
             "bottom": "0",
-            "left": "30px"
+            "left": "1.5625rem"
           }
         },
         "border":{

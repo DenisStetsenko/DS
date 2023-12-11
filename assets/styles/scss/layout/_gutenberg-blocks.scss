@@ -553,12 +553,8 @@
   .wp-block-quote{
     @include font-size($h3-font-size);
     border-left: rfs-value(5px solid $color-primary);
-    @include margin(50px 10px);
+    @include margin(50px 0 50px 1px);
     padding: rfs-value(0 0 0 25px);
-    @include media-breakpoint-up(md){
-      @include margin(50px 20px);
-      padding: rfs-value(0 0 0 30px);
-    }
     @include media-breakpoint-down(sm){
       @include font-size(20px !important);
     }
