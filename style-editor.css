@@ -1,3 +1,7 @@
+:where(:not(.alignleft):not(.alignright):not(.alignfull)){
+	box-sizing: border-box;
+}
+
 ta,
 .ta-editor-shortcode {
 	box-shadow: none;

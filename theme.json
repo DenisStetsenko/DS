@@ -32,6 +32,11 @@
           "name": "Primary Dark"
         },
         {
+          "slug": "light-yellow",
+          "color": "#fffadd",
+          "name": "Light Yellow"
+        },
+        {
           "slug": "white",
           "color": "#ffffff",
           "name": "White"

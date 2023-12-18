@@ -439,7 +439,7 @@ $slick-dot-color-active   : $color-black;
 @mixin custom-list-styling($color: $color-primary-dark){
   list-style: none;
   padding-left: rfs-value(18px);
-  margin: rfs-value(26px 0 26px 8px);
+  margin: rfs-value(16px 0 16px 0);
   li{
     margin-bottom: rfs-value(22px);
     &:last-child{ margin-bottom: 0; }
@@ -624,11 +624,16 @@ $slick-dot-color-active   : $color-black;
   text-decoration: none;
   z-index: 1;
   background-color: transparent;
-  padding: rfs-value(1px 0);
   border-bottom: rfs-value(1px solid $color-primary);
-  box-shadow: rfs-value(inset 0 -3px 0 0 $color-primary);
+  box-shadow: rfs-value(inset 0 -2px 0 0 $color-primary);
   -webkit-text-decoration-skip: objects;
   overflow-wrap: break-word;
+  -webkit-transition: all .25s ease-in;
+  -moz-transition: all .25s ease-in;
+  -ms-transition: all .25s ease-in;
+  -o-transition: all .25s ease-in;
+  transition: all .25s ease-in;
+  cursor: pointer;
   &:hover{
     box-shadow: rfs-value(inset 0 -30px 0 0 $color-primary);
   }

@@ -157,7 +157,7 @@
   }
 
   ul.wp-block-list{
-    @include custom-list-styling();
+    @include custom-list-styling($color: #ffcc00);
     &.pros{
       li:before{
         color: $color-success;
@@ -192,7 +192,7 @@
   }
 
   ol.wp-block-list{
-    margin: rfs-value(26px 0 26px 8px);
+    margin: rfs-value(16px 0 16px 0);
     padding-left: rfs-value(25px);
     li{
       margin-bottom: rfs-value(22px);
