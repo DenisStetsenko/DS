@@ -55,11 +55,15 @@ function get_spacing_value( $spacing_value ) {
  * Usage: acf_link(get_field('button'), 'extra-class-name');
  ************************************************************************************************************************/
 if ( ! function_exists( 'acf_link' ) ) {
-	function acf_link( $acf_field = null, $class = 'btn', $rel = 'noopener' ) {
+	function acf_link( $acf_field = null, $class = 'btn' ) {
 		$link = '';
-		if ( $acf_field ) {
-			$target = $acf_field['target'] ? 'target="_blank" rel="' . $rel . '"' : '';
-			$link = '<a class="' . $class . '" href="' . esc_url( $acf_field['url'] ) . '" ' . $target . '>' . wp_strip_all_tags( $acf_field['title'] ) . '</a>';
+		
+		if ($acf_field) {
+			$target = !empty($acf_field['target']) ? 'target="_blank" rel="noopener"' : '';
+			$link = sprintf(
+				'<a class="%s" href="%s" data-acf="button" %s>%s</a>',
+				esc_attr($class), esc_url($acf_field['url']), $target, wp_kses_post($acf_field['title'])
+			);
 		}
 		
 		return $link;
