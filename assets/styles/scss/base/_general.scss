@@ -110,24 +110,26 @@ embed, iframe, object { max-width: 100%; }
 .btn{
   @include custom-letter-spacing();
   font-weight: 600;
-  transition: all 300ms ease;
-  box-shadow: 0 0 0.188rem 0 transparent;
-  &:hover{
-    transform: translateY(-2px);
-    box-shadow: 0 0.188rem 0.438rem 0 rgba(0, 0, 0, 0.35);
-  }
 
   &.btn-primary{
     --bs-btn-color: #292929;
     --bs-btn-bg: #fdd11f;
     --bs-btn-border-color: #fdd11f;
     --bs-btn-hover-color: #292929;
-    --bs-btn-hover-bg: #fdd11f;
-    --bs-btn-hover-border-color: #fdd11f;
+    --bs-btn-hover-bg: #ffd941;
+    --bs-btn-hover-border-color: #ffd941;
     --bs-btn-active-color: #292929;
-    --bs-btn-active-bg: #fdd11f;
-    --bs-btn-active-border-color: #fdd11f;
-
+    --bs-btn-active-bg: #ffd941;
+    --bs-btn-active-border-color: #ffd941;
+    background-image: linear-gradient(30deg, #fdd11f, #fdd11f);
+    background-size: 100% auto;
+    &:hover{
+      background-image: linear-gradient(30deg, #ffd941, #ffd941);
+      background-position: right center;
+      background-size: 200% auto;
+      -webkit-animation: pulseBtn 2s infinite;
+      animation: pulseBtn 2s infinite;
+    }
   }
   &.btn-accent{
 
@@ -142,7 +144,6 @@ embed, iframe, object { max-width: 100%; }
     --bs-btn-active-color: #292929;
     --bs-btn-active-bg: transparent;
     --bs-btn-active-border-color: #292929;
-    font-weight: 500;
   }
 }
 

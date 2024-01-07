@@ -48,15 +48,18 @@
   }
 
   .hero-header{
+    padding: rfs-value(0 0 18px 0);
+    min-height: initial;
     .entry-header{
       max-width: var(--title-width);
-      margin-left: auto;
+      margin-left: 0;
       margin-right: auto;
-      //h1.entry-title {
-      //  @include media-breakpoint-up(md){
-      //    @include font-size(52px);
-      //  }
-      //}
+      h1.entry-title {
+        @include media-breakpoint-up(md){
+          @include font-size(48px);
+          line-height: 1.15;
+        }
+      }
     }
     .subtitle{
       //@include font-size(18px);
