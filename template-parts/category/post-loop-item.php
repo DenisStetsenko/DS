@@ -19,19 +19,19 @@ if ( $args && ! empty($args['layout']) ) {
 			$layout = 'col-12';
 			break;
 		case '2-cols' :
-			$layout = 'two-cols col-md-6';
+			$layout = 'two-cols col-sm-6';
 			break;
 		case '3-cols' :
-			$layout = 'three-cols col-sm-6 col-lg-4 col-xl-4';
+			$layout = 'three-cols col-sm-6 col-xl-4';
 			break;
 		case '4-cols' :
-			$layout = 'four-cols col-md-6 col-xl-3';
+			$layout = 'four-cols col-sm-6 col-xl-3';
 			break;
 		default:
-			$layout = 'col-md-6 col-xl-4';
+			$layout = 'col-sm-6 col-xl-4';
 	}
 } else {
-	$layout = 'col-md-6 col-xl-4';
+	$layout = 'col-sm-6 col-xl-4';
 }
 
 // Include Author / Date / Reading Time
@@ -46,12 +46,11 @@ if ( $args && ! empty($args['include-author-block']) && $args['include-author-bl
 //	$post_m_date				= get_the_modified_date( 'M j, Y' );
 //	$format_post_m_date = date("Y-m-d", strtotime($post_m_date));
 	
-	$author_block_html .= '<figure class="article-author font-secondary fs-5 mt-3 mb-0 text-gray">';
+	$author_block_html .= '<figure class="article-author font-secondary fs-5 mb-0 text-gray border-top">';
 		$author_block_html .= '<figcaption>';
 	
 			$author_block_html .= '<ul class="list-inline mb-0">';
 		
-			//$author_block_html .= '<li class="list-inline-item author-name">'. __( 'By <cite class="fst-normal">'.$author_name.'</cite>', 'wp-theme' ) . '</li>';
 	
 			$author_block_html .= '<li class="list-inline-item wp-reading-time">';
 				$author_block_html .= is_page_template('single-review-template.php') ? do_shortcode('[wp-reading-time]') : do_shortcode('[acf-reading-time]');
@@ -60,8 +59,10 @@ if ( $args && ! empty($args['include-author-block']) && $args['include-author-bl
 //		if ( get_the_modified_date() != get_the_date() ) :
 //			$author_block_html .=	'<li class="list-inline-item dateModified"><time datetime="'. $format_post_m_date .'" itemprop="dateModified">'. sprintf( __( '%s', 'wp-theme' ), $post_m_date ) .'</time></li>';
 //		else :
+//			$author_block_html .=	'<li class="list-inline-item datePublished"><time datetime="'. $format_post_date .'" itemprop="datePublished">'. sprintf( __( '%s', 'wp-theme' ), $post_date ) .'</time></li>';
 //		endif;
-			$author_block_html .=	'<li class="list-inline-item datePublished"><time datetime="'. $format_post_date .'" itemprop="datePublished">'. sprintf( __( '%s', 'wp-theme' ), $post_date ) .'</time></li>';
+			
+			$author_block_html .= '<li class="list-inline-item author-name">'. __( '<i class="author-icon"></i><cite class="fst-normal">'.$author_name.'</cite>', 'wp-theme' ) . '</li>';
 	
 			$author_block_html .= '</ul>';
 			
@@ -91,19 +92,19 @@ $post_html_attrs .= $layout;
 
 ?>
 <div class="<?= $post_html_attrs; ?>">
-	<article class="post-loop-item rounded-3 position-relative border flex-grow-1 bg-white overflow-hidden">
+	<article class="post-loop-item rounded-3 position-relative border flex-grow-1 bg-white overflow-hidden d-flex flex-column">
 		<div class="bg rounded-top-3 d-block" style="background: url(<?= get_the_post_thumbnail_url() ? get_the_post_thumbnail_url(get_the_ID(), 'medium_large') : 'https://place-hold.it/420x250'; ?>) no-repeat center/cover"></div>
-		<div class="inner">
-			<?php
-			//if ( $main_term ) echo '<span class="category rounded bg-light-gray text-uppercase fw-bolder border font-secondary text-gray d-inline-block">' . get_cat_name($main_term) . '</span>';
-			the_title( '<h3 class="entry-title mb-2">', '</h3>' );
-			
-			if ( $subtitle ) : ?>
-				<p class="subtitle font-secondary mb-0"><?= wp_strip_all_tags($subtitle); ?></p>
-			<?php endif;
-			
-			echo $author_block_html != '' ? $author_block_html : '';
-			?>
+		<div class="inner d-flex flex-fill flex-column justify-content-between">
+			<div class="top">
+				<?php
+				//if ( $main_term ) echo '<span class="category rounded bg-light-gray text-uppercase fw-bolder border font-secondary text-gray d-inline-block">' . get_cat_name($main_term) . '</span>';
+				the_title( '<h3 class="entry-title mb-2">', '</h3>' );
+				
+				if ( $subtitle ) : ?>
+					<p class="subtitle font-secondary mb-0"><?= wp_strip_all_tags($subtitle); ?></p>
+				<?php endif; ?>
+			</div>
+			<?php echo $author_block_html != '' ? $author_block_html : ''; ?>
 		</div>
 		<a title="<?php _e('Read the Article', 'wp-theme'); ?>" aria-label="<?php _e('Read the Article', 'wp-theme'); ?>"
 			 href="<?php the_permalink(); ?>" class="post-link stretched-link"
