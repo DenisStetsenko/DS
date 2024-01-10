@@ -539,6 +539,7 @@ add_filter('the_content', function ($content){
  */
 function define_site_name_on_google() {
 	if ( is_front_page() ) : ?>
+		<!-- JSON-LD Website schema script tag -->
 		<script type="application/ld+json">
 			{
 				"@context" : "https://schema.org",
@@ -547,6 +548,7 @@ function define_site_name_on_google() {
 				"url" : "<?= get_bloginfo('url'); ?>"
 			}
 		</script>
+		<!-- End JSON-LD Website schema script tag -->
 	<?php endif;
 }
 add_action( 'wp_head', 'define_site_name_on_google', 3 );
