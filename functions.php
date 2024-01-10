@@ -530,3 +530,24 @@ add_filter('the_content', function ($content){
 	$replace = array(" noreferrer" => "" ,"noreferrer " => "");
 	return strtr($content, $replace);
 }, 99);
+
+
+/**
+ * Manually Define Site Name for Google
+ * @return void
+ * https://developers.google.com/search/docs/appearance/site-names
+ */
+function define_site_name_on_google() {
+	if ( is_front_page() ) : ?>
+	<script type="application/ld+json">
+		{
+			"@context" : "https://schema.org",
+			"@type" : "WebSite",
+			"name" : "<?= get_bloginfo('name'); ?>",
+			"url" : "<?= get_bloginfo('url'); ?>"
+		}
+	</script>
+	<?php
+	endif;
+}
+add_action('wp_head', 'define_site_name_on_google', 1);
