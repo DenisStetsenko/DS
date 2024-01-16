@@ -88,6 +88,9 @@ ta,
 
 /* Block Quote custom styles */
 /* ------------------------------------------------------------------------------------------------------------------- */
+.wp-block-quote p{
+	margin-bottom: 22px;
+}
 .wp-block-quote .wp-block-quote__citation{
 	font-size: 20px;
 	color: #7d7b7b;
