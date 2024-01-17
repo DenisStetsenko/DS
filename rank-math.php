@@ -13,7 +13,7 @@ add_filter( 'rank_math/noopener', '__return_false');
  * Disable Gutenberg Sidebar Integration
  * Use this filter to remove Rank Math integration from the Gutenberg Sidebar and add old meta boxes below the content area.
  */
-add_filter( 'rank_math/gutenberg/enabled', '__return_false' );
+//add_filter( 'rank_math/gutenberg/enabled', '__return_false' );
 
 
 /**
