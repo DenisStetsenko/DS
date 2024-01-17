@@ -71,14 +71,6 @@
         }
       }
     }
-    .subtitle{
-      //@include font-size(18px);
-      //margin-top: 5px;
-      //@include media-breakpoint-up(md){
-      //  @include font-size($h3-font-size);
-      //  margin-top: 10px;
-      //}
-    }
   }
 
   .rankmath-breadcrumb-container{
@@ -242,19 +234,33 @@
         }
       }
       h2 {
+        font-size: rfs-value(29px);
+        @include media-breakpoint-up(sm){
+          @include font-size($h2-font-size);
+        }
         & + h3 {
           margin-top: rfs-value(10px);
         }
       }
-      h3{
+      h3:not(.accordion-header){
+        font-size: rfs-value(25px);
+        @include media-breakpoint-up(sm){
+          @include font-size($h3-font-size);
+        }
         margin: rfs-value(48px 0 12px);
       }
       h4{
-        @include font-size(22px);
+        font-size: rfs-value(22px);
+        @include media-breakpoint-up(sm){
+          @include font-size(22px);
+        }
         margin: rfs-value(48px 0 10px);
       }
       h5{
-        @include font-size(20px);
+        font-size: rfs-value(20px);
+        @include media-breakpoint-up(sm){
+          @include font-size(20px);
+        }
         margin: rfs-value(48px 0 10px);
       }
       ul:not(.list):not(.wp-block-pros-and-cons):not(.wp-block-list) > li,

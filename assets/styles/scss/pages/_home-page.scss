@@ -18,17 +18,7 @@
     padding-bottom: rfs-value(80px);
   }
   .entry-content{
-    @include font-size(24px);
-    @include media-breakpoint-only(sm){
-      @include font-size(19px);
-    }
-    @include media-breakpoint-only(md){
-
-      @include font-size(27px);
-    }
-    @include media-breakpoint-only(lg){
-      @include font-size(19px);
-    }
+    @include font-size(19px);
     @include media-breakpoint-up(xl){
       @include font-size(22px);
     }
@@ -41,6 +31,9 @@
       font-weight: 800;
       @include media-breakpoint-down(sm){
         @include font-size(48px);
+      }
+      @include media-breakpoint-down(md){
+        line-height: 1.35;
       }
       @include media-breakpoint-only(sm){
         @include font-size(46px);

@@ -161,8 +161,9 @@ header.section-title{
   h2{
     margin-bottom: 0;
     font-weight: 800;
-    @include media-breakpoint-down(sm){
-      @include font-size(50px);
+    @include font-size(48px);
+    @include media-breakpoint-up(sm){
+      @include font-size($h2-font-size);
     }
   }
 }
