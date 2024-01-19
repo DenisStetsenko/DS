@@ -109,8 +109,8 @@ if ( ! function_exists( 'wp_custom_scripts_and_styles' ) ) {
 		
 		
 			// Fancybox Init
-			wp_enqueue_style('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/4.0.31/fancybox.min.css', null, array() );
-			wp_enqueue_script('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/4.0.31/fancybox.umd.min.js', array(), null, array( 'in_footer' => true, 'strategy'  => 'defer' ) );
+			wp_enqueue_style('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.min.css', null, array() );
+			wp_enqueue_script('fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.umd.js', array(), null, array( 'in_footer' => true, 'strategy'  => 'defer' ) );
 			wp_add_inline_script( 'fancybox',
 				"document.addEventListener('DOMContentLoaded', () => {
 					Fancybox.bind('[data-fancybox], .entry-content a[href$=\"png\"], .entry-content a[href$=\"jpg\"]', {
