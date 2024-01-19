@@ -497,7 +497,7 @@ ol.wp-block-list li:before{
 	margin-top: 0;
 	font-family: var(--wp--preset--font-family--inter);
 	font-weight: 600;
-	font-size: 24px;
+	font-size: 22px;
 	margin-bottom: 10px;
 }
 .wp-block-acf-accordion .accordion-item .accordion-header .accordion-button{
