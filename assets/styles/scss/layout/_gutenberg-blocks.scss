@@ -582,12 +582,8 @@
     }
     p{
       @include margin(0 0 22px 0);
-    }
-    p:last-child{
-      margin-bottom: 0;
-    }
-    p strong{
-      font-family: $font-secondary;
+      &:last-child, &:last-of-type{ margin-bottom: 0; }
+      strong{ font-family: $font-secondary; }
     }
     cite{
       color: #7d7b7b;
