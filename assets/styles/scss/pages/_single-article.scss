@@ -234,8 +234,8 @@
         }
       }
       h2 {
-        font-size: rfs-value(29px);
-        @include media-breakpoint-up(sm){
+        font-size: rfs-value(28px);
+        @include media-breakpoint-up(md){
           @include font-size($h2-font-size);
         }
         & + h3 {
@@ -244,23 +244,17 @@
       }
       h3:not(.accordion-header){
         font-size: rfs-value(25px);
-        @include media-breakpoint-up(sm){
+        @include media-breakpoint-up(md){
           @include font-size($h3-font-size);
         }
         margin: rfs-value(48px 0 12px);
       }
       h4{
         font-size: rfs-value(22px);
-        @include media-breakpoint-up(sm){
-          @include font-size(22px);
-        }
         margin: rfs-value(48px 0 10px);
       }
       h5{
         font-size: rfs-value(20px);
-        @include media-breakpoint-up(sm){
-          @include font-size(20px);
-        }
         margin: rfs-value(48px 0 10px);
       }
       ul:not(.list):not(.wp-block-pros-and-cons):not(.wp-block-list) > li,
