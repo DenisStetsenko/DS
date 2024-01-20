@@ -13,7 +13,7 @@ add_filter( 'rank_math/noopener', '__return_false');
  * Disable Gutenberg Sidebar Integration
  * Use this filter to remove Rank Math integration from the Gutenberg Sidebar and add old meta boxes below the content area.
  */
-//add_filter( 'rank_math/gutenberg/enabled', '__return_false' );
+add_filter( 'rank_math/gutenberg/enabled', '__return_false' );
 
 
 /**
@@ -34,23 +34,6 @@ add_filter( 'rank_math/link/remove_class', '__return_true' );
  * RankMath Remove rel="nofollow" and rel="sponsored" checkboxes from ACF Link Popup
  */
 add_action('admin_enqueue_scripts', function (){
-//	wp_localize_script(
-//		'wplink',
-//		'wpLinkL10n',
-//		[
-//			'title'             => esc_html__( 'Insert/edit link', 'rank-math' ),
-//			'update'            => esc_html__( 'Update', 'rank-math' ),
-//			'save'              => esc_html__( 'Add Link', 'rank-math' ),
-//			'noTitle'           => esc_html__( '(no title)', 'rank-math' ),
-//			'noMatchesFound'    => esc_html__( 'No matches found.', 'rank-math' ),
-//			'linkSelected'      => esc_html__( 'Link selected.', 'rank-math' ),
-//			'linkInserted'      => esc_html__( 'Link inserted.', 'rank-math' ),
-//			'relCheckbox'       => __( 'Add <code>rel="nofollow"</code>', 'rank-math' ),
-//			'sponsoredCheckbox' => __( 'Add <code>rel="sponsored"</code>', 'rank-math' ),
-//			'linkTitle'         => esc_html__( 'Link Title', 'rank-math' ),
-//		]
-//	);
-	
 	// Simply hide them and think of better solution.
 	$custom_css = "
 								#wp-link-wrap .link-target{ display: block; }
