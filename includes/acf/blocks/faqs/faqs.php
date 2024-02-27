@@ -40,6 +40,7 @@ if (isset($block['style']['spacing']['margin']['bottom'])) {
 	foreach( $faqs as $key => $item ) :
 		$active 	= $key === array_key_first($faqs);
 		$field_id = $uniqueID. '-' . $i;
+		if ( $active ) $loop_item_class_name = $loop_item_class_name . ' collapsed';
 		?>
 		
 		<div class="accordion-item rounded overflow-hidden">
