@@ -612,17 +612,17 @@
         cursor: pointer;
         @include font-size(20px);
         @include media-breakpoint-up(sm){
-          @include font-size(22px);
+          @include font-size(21px);
         }
         &[aria-expanded="false"]:hover{
-          color: $color-secondary;
+          background-color: $color-primary-light;
         }
       }
       .accordion-body{
         .entry-content{
           @include font-size(16px);
           @include media-breakpoint-up(md){
-            @include font-size($h4-font-size);
+            @include font-size(17px);
           }
         }
       }
