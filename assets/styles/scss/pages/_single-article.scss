@@ -90,7 +90,11 @@
   }
 
   .single-entry-body{
-    margin-top: rfs-fluid-value(50px);
+    //margin-top: rfs-fluid-value(50px);
+    margin-top: rfs-value(45px);
+    @include media-breakpoint-up(lg){
+      margin-top: rfs-value(65px);
+    }
     @include media-breakpoint-down(lg){
       .container-xl{
         max-width: 800px;
