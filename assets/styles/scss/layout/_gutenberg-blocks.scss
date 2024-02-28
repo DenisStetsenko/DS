@@ -489,32 +489,25 @@
       }
     }
     &.has-primary-background-color{
-      color: $color-primary;
-      border-top-color: $color-primary;
+      border-top-color: var(--wp--preset--color--primary);
     }
     &.has-primary-dark-background-color{
-      color: $color-primary-dark;
-      border-top-color: $color-primary-dark;
+      border-top-color: var(--wp--preset--color--primary-dark);
     }
     &.has-black-background-color{
-      color: $color-black;
-      border-top-color: $color-black;
+      border-top-color: var(--wp--preset--color--black);
     }
     &.has-white-background-color{
-      color: $color-white;
-      border-top-color: $color-white;
+      border-top-color: var(--wp--preset--color--white);
     }
     &.has-gray-background-color{
-      color: $color-gray;
-      border-top-color: $color-gray;
+      border-top-color: var(--wp--preset--color--gray);
     }
     &.has-light-gray-background-color{
-      color: $color-light-gray;
-      border-top-color: $color-light-gray;
+      border-top-color: var(--wp--preset--color--light-gray);
     }
     &.has-border-gray-background-color{
-      color: $color-border-gray;
-      border-top-color: $color-border-gray;
+      border-top-color: var(--wp--preset--color--border-gray);
     }
   }
 
@@ -574,7 +567,7 @@
   // Block Editor => Quote
   .wp-block-quote{
     @include font-size($h3-font-size);
-    border-left: rfs-value(5px solid $color-primary);
+    border-left: rfs-value(5px solid var(--wp--preset--color--primary));
     padding: rfs-value(0 0 0 25px);
     margin: rfs-value(20px 0 30px 0);
     @include media-breakpoint-down(sm){
