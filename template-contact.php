@@ -24,7 +24,7 @@ get_header(); ?>
 
 							</article>
 						<?php }
-						echo do_shortcode('[gravityform id="1" title="false" description="false" ajax="true"]');
+						//echo do_shortcode('[gravityform id="1" title="false" description="false" ajax="true"]');
 						?>
 					</div>
 				</div>
