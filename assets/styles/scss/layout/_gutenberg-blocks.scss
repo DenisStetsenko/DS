@@ -15,6 +15,7 @@
 
   --wp--preset--color--primary      : #fdd11f;
   --wp--preset--color--primary-dark : #f0c000;
+  --wp--preset--color--light-yellow : #fffadd;
   --wp--preset--color--secondary    : #3ba7fa;
   --wp--preset--color--white        : #ffffff;
   --wp--preset--color--black        : #292929;
@@ -52,6 +53,9 @@
   .has-light-gray-color{
     color: var(--wp--preset--color--light-gray);
   }
+  .has-light-yellow-color{
+    color: var(--wp--preset--color--light-yellow);
+  }
 
   // Background Colors
   .has-black-background-color{
@@ -77,6 +81,9 @@
   }
   .has-light-gray-background-color{
     background-color: var(--wp--preset--color--light-gray);
+  }
+  .has-light-yellow-background-color{
+    background-color: var(--wp--preset--color--light-yellow);
   }
 
   // Border Color
