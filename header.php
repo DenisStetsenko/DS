@@ -19,7 +19,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	
+	<meta name="impact-site-verification" value="-890410088" />
 	<meta name="msapplication-TileColor" content="#2d89ef">
 	<meta name="theme-color" content="#ffffff">
 	<link rel="apple-touch-icon" sizes="180x180" href="<?= site_url( '/apple-touch-icon.png' ); ?>">
