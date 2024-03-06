@@ -16,34 +16,11 @@ html, body {
   }
 }
 
-a {
-  transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s ease-in-out;
-}
-a:focus { outline:none; }
-p:empty { display: none; }
-textarea { resize: none; }
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type=button] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
+::selection { text-shadow: none; background: $color-light-yellow; }
 ::-webkit-input-placeholder { color: $color-black; opacity: 1; }
 :-moz-placeholder { color: $color-black; opacity: 1; }
 ::-moz-placeholder { color: $color-black; opacity: 1; }
 :-ms-input-placeholder { color:$color-black; opacity: 1; }
-
-//input:focus::-webkit-input-placeholder { color: transparent; }
-//input:focus:-moz-placeholder { color: transparent; } /* FF 4-18 */
-//input:focus::-moz-placeholder { color: transparent; } /* FF 19+ */
-//input:focus:-ms-input-placeholder { color: transparent; } /* IE 10+ */
 
 embed, iframe, object { max-width: 100%; }
 

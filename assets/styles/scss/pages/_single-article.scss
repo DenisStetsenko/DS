@@ -232,7 +232,7 @@
 
       // general styling
       h2:not(.title) {
-        margin: rfs-value(55px 0 15px);
+        margin: rfs-value(55px 0 16px);
         &:first-child {
           margin-top: 0;
         }
@@ -242,8 +242,8 @@
         @include media-breakpoint-up(md){
           @include font-size($h2-font-size);
         }
-        & + h3 {
-          margin-top: rfs-value(10px);
+        & + h3:not(.accordion-header) {
+          margin-top: rfs-value(20px);
         }
       }
       h3:not(.accordion-header){
@@ -251,13 +251,19 @@
         @include media-breakpoint-up(md){
           @include font-size($h3-font-size);
         }
-        margin: rfs-value(48px 0 12px);
+        margin: rfs-value(48px 0 16px);
+        //&:not(.title){ font-weight: 600; }
+        & + h4 {
+          margin-top: rfs-value(20px);
+        }
       }
       h4{
+        //font-weight: 600;
         font-size: rfs-value(22px);
         margin: rfs-value(48px 0 10px);
       }
       h5{
+        //font-weight: 600;
         font-size: rfs-value(20px);
         margin: rfs-value(48px 0 10px);
       }

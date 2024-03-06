@@ -57,6 +57,7 @@ body {
   background-color: var(--#{$prefix}body-bg); // 2
   -webkit-text-size-adjust: 100%; // 3
   -webkit-tap-highlight-color: rgba($black, 0); // 4
+  -moz-font-feature-settings: "liga" on;
 }
 // scss-docs-end reboot-body-rules
 
@@ -129,6 +130,7 @@ h6 {
 p {
   margin-top: 0;
   margin-bottom: $paragraph-margin-bottom;
+  &:empty { display: none; }
 }
 
 
@@ -243,7 +245,9 @@ sup { top: -.5em; }
 a {
   color: rgba(var(--#{$prefix}link-color-rgb), var(--#{$prefix}link-opacity, 1));
   text-decoration: $link-decoration;
-
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  a:focus { outline:none; }
   &:hover {
     --#{$prefix}link-color-rgb: var(--#{$prefix}link-hover-color-rgb);
     text-decoration: $link-hover-decoration;
@@ -298,6 +302,13 @@ code {
   @include font-size($code-font-size);
   color: var(--#{$prefix}code-color);
   word-wrap: break-word;
+
+  background: #f0f6f9;
+  border: rfs-value(1px solid #e1eaef);
+  border-radius: rfs-value(4px);
+  font-weight: 400;
+  padding: 0.15em 0.4em;
+  vertical-align: middle;
 
   // Streamline the style when inside anchors to avoid broken underline and more
   a > & {

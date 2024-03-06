@@ -37,6 +37,11 @@
           "name": "Light Yellow"
         },
         {
+          "slug": "callout-green",
+          "color": "#e2f6e9",
+          "name": "Callout Green"
+        },
+        {
           "slug": "white",
           "color": "#ffffff",
           "name": "White"
@@ -106,8 +111,8 @@
         },
         {
           "slug": "x-large",
-          "size": "2rem",
-          "name": "Extra Large (32px)"
+          "size": "1.875rem",
+          "name": "Extra Large (30px)"
         },
         {
           "slug": "huge",
@@ -331,7 +336,7 @@
       },
       "h2": {
         "typography": {
-          "fontSize": "2rem",
+          "fontSize": "1.875rem",
           "lineHeight": "1.25",
           "fontWeight": "700"
         },

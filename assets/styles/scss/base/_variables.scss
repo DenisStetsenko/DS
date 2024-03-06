@@ -14,7 +14,6 @@ $color-primary-dark  : #f0c000;
 $color-secondary        : #3ba7fa; $secondary  : $color-secondary;
 $color-secondary-light  : #a9daff;
 
-//$color-accent        : #5333ed;
 $color-accent        : $color-secondary;
 $color-gray          : #595959;
 
@@ -22,10 +21,10 @@ $color-light-gray    : #f7f8f9;
 $color-border-gray   : #eaecee;
 
 $color-danger        : #EB5757;
-//$color-success       : #36c384;
 $color-success       : #10AA65;
 
-$color-cultured      : #F5F7F7;
+$color-light-yellow  : #fffadd;
+$color-callout-green : #e2f6e9;
 
 $theme-colors: (
     "primary"     : $color-primary,
@@ -38,6 +37,7 @@ $custom-colors: (
     "accent"          : $color-accent,
     "gray"            : $color-gray,
     "light-gray"      : $color-light-gray,
+    "light-yellow"    : $color-light-yellow,
     "primary-light"   : $color-primary-light,
     "primary-dark"    : $color-primary-dark,
     "secondary-light" : $color-secondary-light,
@@ -208,6 +208,10 @@ $list-group-item-padding-x : 0;
 $list-group-item-padding-y : 0.4375rem;
 $list-group-border-width   : 0;
 
+/* Code */
+$code-font-size : 1.0625rem;
+$code-color     : $color-black;
+
 /* Links */
 $link-color             : $color-black;
 $link-hover-color       : $color-black;
@@ -223,7 +227,7 @@ $headings-margin-bottom : 1.25rem;
 
 /* H1-H6 Responsive */
 $h1-font-size : 44px;
-$h2-font-size : 32px;
+$h2-font-size : 30px;
 $h3-font-size : 26px;
 
 $h4-font-size : 18px;

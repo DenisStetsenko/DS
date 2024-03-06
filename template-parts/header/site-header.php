@@ -11,7 +11,8 @@ $wrapper_classes  = 'site-header';
 $wrapper_classes .= has_custom_logo() ? ' has-logo' : '';
 $wrapper_classes .= ' sticky-top';
 
-$wrapper_classes .= ' bg-white';
+$wrapper_classes .= is_singular('post') ? ' bg-light-gray' : ' bg-white';
+
 ?>
 
 <?php get_template_part( 'template-parts/header/notification-bar' ); ?>

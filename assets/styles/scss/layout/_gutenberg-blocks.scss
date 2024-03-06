@@ -13,17 +13,18 @@
   --wp--preset--spacing--large    : 3.75rem;  // 60px
   --wp--preset--spacing--x-large  : 5rem;     // 80px
 
-  --wp--preset--color--primary      : #fdd11f;
-  --wp--preset--color--primary-dark : #f0c000;
-  --wp--preset--color--light-yellow : #fffadd;
-  --wp--preset--color--secondary    : #3ba7fa;
-  --wp--preset--color--white        : #ffffff;
-  --wp--preset--color--black        : #292929;
-  --wp--preset--color--gray         : #595959;
-  --wp--preset--color--light-gray   : #f7f8f9;
-  --wp--preset--color--border-gray  : #eaecee;
-  --wp--preset--color--success      : #10AA65;
-  --wp--preset--color--danger       : #EB5757;
+  --wp--preset--color--primary        : #fdd11f;
+  --wp--preset--color--primary-dark   : #f0c000;
+  --wp--preset--color--light-yellow   : #fffadd;
+  --wp--preset--color--secondary      : #3ba7fa;
+  --wp--preset--color--white          : #ffffff;
+  --wp--preset--color--black          : #292929;
+  --wp--preset--color--gray           : #595959;
+  --wp--preset--color--light-gray     : #f7f8f9;
+  --wp--preset--color--border-gray    : #eaecee;
+  --wp--preset--color--callout-green  : #e2f6e9;
+  --wp--preset--color--success        : #10AA65;
+  --wp--preset--color--danger         : #EB5757;
 
   --wp--preset--font-family--inter  : "Inter", sans-serif;
   --wp--preset--font-family--lora   : "Lora", serif;
@@ -56,6 +57,9 @@
   .has-light-yellow-color{
     color: var(--wp--preset--color--light-yellow);
   }
+  .has-callout-green-color{
+    color: var(--wp--preset--color--callout-green);
+  }
 
   // Background Colors
   .has-black-background-color{
@@ -85,6 +89,9 @@
   .has-light-yellow-background-color{
     background-color: var(--wp--preset--color--light-yellow);
   }
+  .has-callout-green-background-color{
+    background-color: var(--wp--preset--color--callout-green);
+  }
 
   // Border Color
   .has-primary-border-color {
@@ -111,6 +118,12 @@
   .has-border-gray-border-color {
     border-color: var(--wp--preset--color--border-gray);
   }
+  .has-light-yellow-border-color {
+    border-color: var(--wp--preset--color--light-yellow);
+  }
+  .has-callout-green-border-color {
+    border-color: var(--wp--preset--color--callout-green);
+  }
 
   // Font Family
   .has-inter-font-family{
@@ -121,15 +134,9 @@
   }
 
   // Align
-  .has-text-align-left{
-    text-align: left;
-  }
-  .has-text-align-center{
-    text-align: center;
-  }
-  .has-text-align-right{
-    text-align: right;
-  }
+  .has-text-align-left{ text-align: left; }
+  .has-text-align-center{ text-align: center; }
+  .has-text-align-right{ text-align: right; }
 
   // Block Editor Font Sizes
   .has-small-font-size {
@@ -831,6 +838,7 @@
     .product-heading {
 
       .title {
+        font-weight: $headings-font-weight;
         .number{
           background-color: $color-primary;
           padding-left: rfs-value(10px);
