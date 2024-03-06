@@ -153,12 +153,9 @@ $toc_black: #111;
         font-weight: 600;
         line-height: 1.25;
         margin-bottom: 0;
-        @include font-size(32px);
+        @include font-size(30px);
         @include media-breakpoint-only(lg){
           @include font-size(28px);
-        }
-        @include media-breakpoint-only(xl){
-          @include font-size(30px);
         }
       }
     }
@@ -214,7 +211,7 @@ $toc_black: #111;
           margin-bottom: rfs-value(12px);
         }
         .ez-toc-link{
-          @include font-size(17px);
+          @include font-size(16px);
           font-weight: 400;
           &:hover{
             color: $toc_black;
@@ -228,7 +225,8 @@ $toc_black: #111;
       // 2nd Level
       .ez-toc-list-level-3{
         margin-left: rfs-value(10px);
-        margin-top: rfs-value(5px);
+        //margin-top: rfs-value(5px);
+        margin-top: 0;
         list-style: none;
         line-height: 1.4;
         &.offset-top{
@@ -237,11 +235,12 @@ $toc_black: #111;
         li{
           outline: none;
           &:not(:last-child){
-            margin-bottom: rfs-value(2px);
+            //margin-bottom: rfs-value(2px);
+            margin-bottom: 0;
           }
           .ez-toc-link{
             font-weight: 300;
-            @include font-size(16px);
+            @include font-size(15px);
             &:hover{
               color: $toc_black;
               text-decoration: underline;
@@ -251,7 +250,6 @@ $toc_black: #111;
           }
         }
       }
-
 
     }
   }
