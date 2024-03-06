@@ -271,7 +271,7 @@ ol.wp-block-list li:before{
 /* Pros & Cons */
 /* ------------------------------------------------------------------------------------------------------------------- */
 .wp-block-acf-pros-cons{
-	margin-block-start: 40px !important;
+	margin-block-start: 30px !important;
 	margin-block-end:  40px !important;
 }
 .wp-block-acf-pros-cons .wp-block-pros-and-cons{

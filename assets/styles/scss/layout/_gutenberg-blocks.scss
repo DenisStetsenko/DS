@@ -773,7 +773,7 @@
   // Block Editor => Pros & Cons
   // ===================================================================================================================
   .wp-block-pros-and-cons{
-    margin-top: 2.5rem;
+    margin-top: rfs-value(30px);
     margin-bottom: 2.5rem;
     .column {
       &:not(:last-child){
