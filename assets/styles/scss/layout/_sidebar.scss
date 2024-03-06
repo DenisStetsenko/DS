@@ -176,7 +176,6 @@ $toc_black: #111;
 
     .ez-toc-list{
       li{
-        //transition: color 300ms ease;
         outline: none;
         &.active-parent{
           & > .ez-toc-link{
@@ -192,8 +191,7 @@ $toc_black: #111;
           }
         }
         .ez-toc-link{
-          //color: $color-black;
-          color: $color-gray;
+          color: $color-black;
           text-decoration: none;
           font-weight: 400;
           transition: color .2s ease-in-out;

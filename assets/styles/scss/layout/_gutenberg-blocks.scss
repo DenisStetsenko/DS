@@ -786,10 +786,9 @@
       }
 
       .entry-content{
-        @include font-size(18px);
+        @include font-size(17px);
         font-weight: 400;
         padding: rfs-value(27px 25px);
-        //line-height: 1.6;
         &.pros-content{
           ul li:before{ background-image: escape-svg($bs-check-icon); }
         }
@@ -822,6 +821,7 @@
               vertical-align: text-bottom;
               margin-left: rfs-value(-26px);
             }
+            strong{ font-weight: 600 }
           }
         }
       }

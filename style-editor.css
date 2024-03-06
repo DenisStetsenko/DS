@@ -295,7 +295,7 @@ ol.wp-block-list li:before{
 	color: #fff;
 	padding: 0.875rem 1.625rem;
 	font-family: var(--wp--preset--font-family--inter);
-	font-weight: 700;
+	font-weight: 600;
 	font-size: 1.375rem;
 }
 .wp-block-acf-pros-cons .wp-block-pros-and-cons .column.pros .heading{
@@ -306,7 +306,7 @@ ol.wp-block-list li:before{
 }
 
 .wp-block-acf-pros-cons .wp-block-pros-and-cons .column .entry-content{
-	font-size: 1.125rem;
+	font-size: 1.0625rem;
 	font-weight: 400;
 	padding: 25px;
 	font-family: var(--wp--preset--font-family--inter);
@@ -340,6 +340,7 @@ ol.wp-block-list li:before{
 	left: 0;
 	top: 0;
 }
+.wp-block-acf-pros-cons .wp-block-pros-and-cons .column .entry-content ul li strong { font-weight: 600 }
 .wp-block-acf-pros-cons .wp-block-pros-and-cons .column .entry-content.pros-content ul li:before{
 	content: "✓";
 	color: var(--wp--preset--color--success);
