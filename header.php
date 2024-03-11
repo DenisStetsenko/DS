@@ -28,6 +28,7 @@
 	<link rel="manifest" href="<?= site_url( '/site.webmanifest' ); ?>">
 	<link rel="mask-icon" href="<?= site_url( '/safari-pinned-tab.svg' ); ?>" color="#444444">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="dns-prefetch" href="//www.googletagmanager.com"/>
 	<?php wp_head(); ?>
 </head>
 
