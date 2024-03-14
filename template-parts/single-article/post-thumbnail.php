@@ -5,3 +5,7 @@ if ( has_post_thumbnail() ) {
 	echo get_the_post_thumbnail_caption() ? '<figcaption class="figure-caption font-secondary text-gray fs-6 mt-2">' . get_the_post_thumbnail_caption() . '</figcaption>' : '';
 	echo '</figure>';
 }
+
+if ( is_single() && 'post' == get_post_type() && is_page_template('single-review-template.php') ) {
+	echo do_shortcode('[rank_math_rich_snippet]');
+}

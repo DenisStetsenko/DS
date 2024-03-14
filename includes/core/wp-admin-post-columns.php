@@ -29,8 +29,12 @@ add_action( "manage_post_posts_custom_column", function ( $column_name, $post_id
 	if ( $column_name == 'post-layout' ) {
 		$template = get_post_meta( $post_id, '_wp_page_template', true );
 		if ( $template === 'default' || $template === '' ) {
-			$icon = '<span class="informational-post-layout" style="color: #a225ea; font-weight: 600">Info Post</span>';
-		} else {
+			$icon = '<span class="informational-post-layout" style="color: #25afea; font-weight: 600">Informational</span>';
+		}
+		elseif ( $template === 'single-review-template.php' ) {
+			$icon = '<span class="informational-post-layout" style="color: #a225ea; font-weight: 600">Review</span>';
+		}
+		elseif ( $template === 'single-comparison-template.php' ) {
 			$icon = '<span class="list-post-layout" style="color: #11b264; font-weight: 600">List Post</span>';
 		}
 		
