@@ -52,5 +52,17 @@ add_action('admin_enqueue_scripts', function (){
  * @param string $html.
  */
 add_filter( 'rank_math/snippet/html', function( $html ) {
+	// Remove <h5> with class 'rank-math-title'
+	$html = preg_replace('/<h5 class="rank-math-title">.*?<\/h5>/', '', $html);
+	
+	// Remove <div> with class 'rank-math-review-image' and its contents
+	$html = preg_replace('/<div class="rank-math-review-image">(.*?)<\/div>/s', '', $html);
+	
+	// Remove <p> element with any content
+	$html = preg_replace('/<p>(.*?)<\/p>/', '', $html);
+	
+	// Remove <br> tags
+	$html = preg_replace('/<br\s*\/?>/', '', $html);
+	
 	return $html;
 });
