@@ -52,6 +52,10 @@ add_action('admin_enqueue_scripts', function (){
  * @param string $html.
  */
 add_filter( 'rank_math/snippet/html', function( $html ) {
+	
+	// Replace 'Editor's Rating' with 'Review Score'
+	$html = str_replace("Editor's Rating", "Review Score", $html);
+	
 	// Remove <h5> with class 'rank-math-title'
 	$html = preg_replace('/<h5 class="rank-math-title">.*?<\/h5>/', '', $html);
 	

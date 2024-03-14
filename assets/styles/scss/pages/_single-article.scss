@@ -57,6 +57,36 @@
     margin-right: auto;
   }
 
+  #rank-math-rich-snippet-wrapper{
+    margin-top: 10px;
+    font-family: $font-secondary;
+    color: $color-gray;
+    .rank-math-review-data{
+      margin: 0;
+      .rank-math-total-wrapper{
+        padding: 0;
+        float: none;
+        display: flex;
+        align-items: center;
+        @include font-size(18px);
+        strong{ font-weight: 500; }
+        .rank-math-total{
+          color: $color-gray;
+          float: none;
+          order: 3;
+          @include font-size(18px);
+          margin: 1px 0 0 4px;
+          font-weight: 400;
+        }
+        .rank-math-review-star{
+          float: none;
+          margin: 0 0 0 5px;
+          order: 2;
+        }
+      }
+    }
+  }
+
   .hero-header{
     padding: rfs-value(0 0 18px 0);
     min-height: initial;
