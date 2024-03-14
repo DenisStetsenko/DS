@@ -17,5 +17,10 @@ if ( $custom_title_width && $custom_title_width != '-1' ) {
 	}
 	if ( $subtitle ) : ?>
 		<p class="subtitle font-secondary mb-0"><?= wp_strip_all_tags($subtitle); ?></p>
-	<?php endif; ?>
+	<?php endif;
+	
+	if ( is_single() && 'post' == get_post_type() && is_page_template('single-review-template.php') ) {
+		echo do_shortcode('[rank_math_rich_snippet]');
+	}
+	?>
 </div>

@@ -43,3 +43,14 @@ add_action('admin_enqueue_scripts', function (){
 	
 	wp_add_inline_style( 'rank-math-common', $custom_css );
 }, 999 );
+
+
+/**
+ * Filter to change review snippet HTML
+ * https://rankmath.com/kb/filters-hooks-api-developer/#change-review-snippet-html
+ *
+ * @param string $html.
+ */
+add_filter( 'rank_math/snippet/html', function( $html ) {
+	return $html;
+});
