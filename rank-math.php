@@ -63,7 +63,7 @@ add_filter( 'rank_math/snippet/html', function( $html ) {
 	$html = preg_replace('/<div class="rank-math-review-image">(.*?)<\/div>/s', '', $html);
 	
 	// Remove <p> element with any content
-	$html = preg_replace('/<p>(.*?)<\/p>/', '', $html);
+	$html = preg_replace('/<p>(.*?)<\/p>/s', '', $html);
 	
 	// Remove <br> tags
 	$html = preg_replace('/<br\s*\/?>/', '', $html);
